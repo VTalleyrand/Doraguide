@@ -1,0 +1,51 @@
+.cta-final {
+  background: var(--color-surface);
+  padding: 5rem 15%;
+}
+
+.cta-final__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.cta-final__animation {
+  width: min(100%, 20.4rem);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-final__animation-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.cta-final__title {
+  margin: 0;
+  font-size: var(--section-title-size);
+  font-weight: var(--section-title-weight);
+  color: var(--color-text);
+  line-height: var(--section-title-line-height);
+  letter-spacing: var(--section-title-tracking);
+  text-wrap: balance;
+}
+
+.cta-final__body {
+  margin: 0;
+  max-width: 60ch;
+  font-size: var(--section-body-size);
+  color: var(--section-body-color);
+  line-height: var(--section-body-line-height);
+  text-wrap: pretty;
+}
+
+.cta-final__actions {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}

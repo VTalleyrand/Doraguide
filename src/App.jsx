@@ -1,0 +1,42 @@
+import { useLayoutEffect } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+function App({ children, locationPath, locationHash }) {
+  const isHomePage = locationPath === '/';
+
+  useLayoutEffect(() => {
+    const html = document.documentElement;
+    const prevBehavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+
+    if (locationHash && isHomePage) {
+      const target = document.querySelector(locationHash);
+      if (target) {
+        target.scrollIntoView({ block: 'start' });
+        html.style.scrollBehavior = prevBehavior;
+        return;
+      }
+    }
+
+    window.scrollTo(0, 0);
+    html.scrollTop = 0;
+    document.body.scrollTop = 0;
+    html.style.scrollBehavior = prevBehavior;
+  }, [isHomePage, locationHash, locationPath]);
+
+  return (
+    <div className={`app-layout ${isHomePage ? 'app-layout--home' : ''}`}>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <Header />
+      <main className="main-content" id="main-content">
+        {children}
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
