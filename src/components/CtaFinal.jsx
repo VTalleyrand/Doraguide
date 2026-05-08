@@ -78,7 +78,7 @@ const CtaFinal = () => {
           <RiveComponent className="cta-final__animation-canvas" />
         </div>
         <h2 className="cta-final__title">
-          Let Dora guide you through your next walk.
+          Ready for an adventure?
         </h2>
         <p className="cta-final__body">
           Join early access and discover cities at your own pace.
