@@ -7,7 +7,42 @@
       name="mapkit-token"
       content="%VITE_MAPKIT_TOKEN%"
     />
-    <title>Dora</title>
+    <!--
+      Static metadata is enough for this single landing page because every shared
+      URL should present the same title, description, and preview image.
+    -->
+    <!--
+      Dynamic per-tour previews require SSR, prerendering, or generated static
+      HTML because social crawlers usually do not execute client-side React
+      reliably.
+    -->
+    <title>Dora — Walking Guide</title>
+    <meta
+      name="description"
+      content="Discover cities through narrated audio guides to history, art, culture, architecture, and hidden places."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dora — Walking Guide" />
+    <meta
+      property="og:description"
+      content="Discover cities through narrated audio guides to history, art, culture, architecture, and hidden places."
+    />
+    <meta
+      property="og:image"
+      content="https://doraguide.com/dora-social-preview.jpg"
+    />
+    <meta property="og:url" content="https://doraguide.com" />
+    <meta property="og:site_name" content="Dora" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dora — Walking Guide" />
+    <meta
+      name="twitter:description"
+      content="Discover cities through narrated audio guides to history, art, culture, architecture, and hidden places."
+    />
+    <meta
+      name="twitter:image"
+      content="https://doraguide.com/dora-social-preview.jpg"
+    />
     <script defer src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

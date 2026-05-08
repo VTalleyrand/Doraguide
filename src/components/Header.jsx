@@ -58,7 +58,6 @@ const Header = () => {
         >
           <span></span>
           <span></span>
-          <span></span>
         </button>
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`} id="nav-links">
           {navItems.map((item) => (
