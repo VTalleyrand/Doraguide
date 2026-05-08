@@ -19,10 +19,10 @@
   --shadow-strong: 0 24px 60px rgba(31, 27, 22, 0.12);
   --section-title-size: clamp(2.8rem, 4vw, 3.8rem);
   --section-title-weight: 500;
-  --section-title-line-height: 1.1;
-  --section-title-tracking: -0.02em;
+  --section-title-line-height: 1.02;
+  --section-title-tracking: -0.035em;
   --section-body-size: 1.6rem;
-  --section-body-line-height: 1.65;
+  --section-body-line-height: 1.5;
   --section-body-color: var(--color-text-subtle);
   --motion-fast: 140ms;
   --motion-base: 220ms;
@@ -36,6 +36,18 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+a,
+button,
+[role='button'],
+input,
+label,
+select,
+summary,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 html {

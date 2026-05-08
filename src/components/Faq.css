@@ -6,14 +6,14 @@
 .faq__inner {
   display: grid;
   grid-template-columns: minmax(22rem, 0.72fr) minmax(0, 1.28fr);
-  gap: 2.8rem;
+  gap: 2.4rem;
   align-items: start;
 }
 
 .faq__header {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.9rem;
   align-items: flex-start;
   text-align: left;
   padding-top: 0.4rem;

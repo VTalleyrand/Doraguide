@@ -34,14 +34,16 @@
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0;
+  text-align: center;
 }
 
 .bento-body p {
-  margin: 0;
+  margin: 0 auto;
   font-size: 1.6rem;
   color: var(--color-text-subtle);
   line-height: 1.55;
   max-width: 42ch;
+  text-align: center;
   text-wrap: pretty;
 }
 

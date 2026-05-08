@@ -18,20 +18,20 @@
 }
 
 .hero h1 {
-  font-size: clamp(3.2rem, 5.6vw, 5.4rem);
+  font-size: clamp(3.4rem, 5.8vw, 5.8rem);
   font-weight: 500;
-  line-height: 1.08;
-  letter-spacing: -0.015em;
+  line-height: 1;
+  letter-spacing: -0.035em;
   text-wrap: balance;
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
 }
 
 .hero p {
   font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   color: var(--color-text-subtle);
-  max-width: 48rem;
-  margin: 0 auto 3.4rem;
-  line-height: 1.55;
+  max-width: 54rem;
+  margin: 0 auto 3rem;
+  line-height: 1.48;
   text-align: center;
   text-wrap: pretty;
 }
@@ -72,13 +72,13 @@
 
   .hero h1 {
     font-size: clamp(2.6rem, 6.4vw, 3.5rem);
-    line-height: 1.2;
+    line-height: 1.04;
   }
 
   .hero p {
     font-size: 1.4rem;
-    line-height: 1.5;
-    margin-bottom: 2.6rem;
+    line-height: 1.42;
+    margin-bottom: 2.4rem;
   }
 
   .hero-buttons {
