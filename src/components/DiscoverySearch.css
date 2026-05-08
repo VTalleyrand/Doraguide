@@ -267,8 +267,9 @@
   .discovery-search__kicker {
     font-size: 2rem;
     max-width: 100%;
-    min-height: calc(1.32em * 3);
-    gap: 0.16em 0.5ch;
+    min-height: calc(1.12em * 3);
+    gap: 0.02em 0.5ch;
+    line-height: 1.12;
   }
 
   .discovery-search__phrase {
