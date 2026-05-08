@@ -13,7 +13,14 @@ function App({ children, locationPath, locationHash }) {
     if (locationHash && isHomePage) {
       const target = document.querySelector(locationHash);
       if (target) {
-        target.scrollIntoView({ block: 'start' });
+        const prefersReducedMotion = window.matchMedia(
+          '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        target.scrollIntoView({
+          block: 'start',
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        });
         html.style.scrollBehavior = prevBehavior;
         return;
       }
