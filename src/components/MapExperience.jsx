@@ -643,7 +643,7 @@ const MapExperience = () => {
   const shouldShowStatus = Boolean(status) || showControl;
 
   return (
-    <section className="map-experience" id="experience">
+    <section className="map-experience" id="listen">
       <div className="map-experience__container">
         <div className="map-experience__text">
           <h2>Try a Dora audio stop right now.</h2>

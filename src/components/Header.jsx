@@ -35,9 +35,9 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const navItems = [
-    { id: 'experience', label: 'Listen' },
+    { id: 'listen', label: 'Listen' },
     { id: 'features', label: 'Features' },
-    { id: 'use-cases', label: 'Cities' },
+    { id: 'cities', label: 'Cities' },
     { id: 'faq', label: 'FAQ' },
   ];
 

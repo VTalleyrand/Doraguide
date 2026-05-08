@@ -35,9 +35,9 @@ const Hero = () => {
     const selectedTheme = storyButtonThemeRef.current || pickRandomStoryTheme();
     updateStoryButtonTheme(selectedTheme);
 
-    const experienceSection = document.getElementById('experience');
-    if (experienceSection) {
-      experienceSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const listenSection = document.getElementById('listen');
+    if (listenSection) {
+      listenSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     window.dispatchEvent(
@@ -95,7 +95,7 @@ const Hero = () => {
             className={`secondary-btn hero-story-btn ${
               storyButtonTheme ? 'is-randomized' : ''
             }`}
-            href="#experience"
+            href="#listen"
             onMouseEnter={applyRandomStoryTheme}
             onMouseLeave={clearStoryTheme}
             onFocus={applyRandomStoryTheme}
