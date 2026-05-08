@@ -8,8 +8,13 @@ const storyButtonThemes = [
   { background: '#F9D452', foreground: '#ffffff', stopId: 'palermo' },
 ];
 
-const pickRandomStoryTheme = () =>
-  storyButtonThemes[Math.floor(Math.random() * storyButtonThemes.length)];
+const pickRandomStoryTheme = (exclude) => {
+  const candidates =
+    exclude
+      ? storyButtonThemes.filter((theme) => theme !== exclude)
+      : storyButtonThemes;
+  return candidates[Math.floor(Math.random() * candidates.length)];
+};
 
 const Hero = () => {
   const [storyButtonTheme, setStoryButtonTheme] = useState(null);
@@ -32,7 +37,7 @@ const Hero = () => {
   const handleStoryClick = (event) => {
     event.preventDefault();
 
-    const selectedTheme = storyButtonThemeRef.current || pickRandomStoryTheme();
+    const selectedTheme = pickRandomStoryTheme(storyButtonThemeRef.current);
     updateStoryButtonTheme(selectedTheme);
 
     const listenSection = document.getElementById('listen');
