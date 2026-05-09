@@ -1,24 +1,22 @@
 import { StrictMode, useEffect, useState } from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import './global.css';
 import App from './App.jsx';
-import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Terms from './pages/Terms.jsx';
-import Privacy from './pages/Privacy.jsx';
-import Press from './pages/Press.jsx';
+import { routeMetadata, siteUrl, socialImage } from './metadata.js';
+import { normalizePath, routes } from './routes.jsx';
 
-const routes = {
-  '/': Home,
-  '/about': About,
-  '/terms': Terms,
-  '/privacy': Privacy,
-  '/press': Press,
+const setMetaContent = (selector, content) => {
+  const element = document.head.querySelector(selector);
+  if (element) {
+    element.setAttribute('content', content);
+  }
 };
 
-const normalizePath = (path) => {
-  if (!path || path === '') return '/';
-  return path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
+const setCanonicalUrl = (href) => {
+  const link = document.head.querySelector('link[rel="canonical"]');
+  if (link) {
+    link.setAttribute('href', href);
+  }
 };
 
 function RouterApp() {
@@ -60,6 +58,22 @@ function RouterApp() {
     return () => document.removeEventListener('click', handleDocumentClick);
   }, []);
 
+  useEffect(() => {
+    const metadata = routeMetadata[location.pathname] || routeMetadata['/'];
+    const canonicalUrl = `${siteUrl}${metadata.canonicalPath}`;
+
+    document.title = metadata.title;
+    setCanonicalUrl(canonicalUrl);
+    setMetaContent('meta[name="description"]', metadata.description);
+    setMetaContent('meta[property="og:title"]', metadata.socialTitle);
+    setMetaContent('meta[property="og:description"]', metadata.description);
+    setMetaContent('meta[property="og:url"]', canonicalUrl);
+    setMetaContent('meta[property="og:image"]', socialImage);
+    setMetaContent('meta[name="twitter:title"]', metadata.socialTitle);
+    setMetaContent('meta[name="twitter:description"]', metadata.description);
+    setMetaContent('meta[name="twitter:image"]', socialImage);
+  }, [location.pathname]);
+
   const Page = routes[location.pathname] || Home;
 
   return (
@@ -69,8 +83,15 @@ function RouterApp() {
   );
 }
 
-createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root');
+const app = (
   <StrictMode>
     <RouterApp />
   </StrictMode>
 );
+
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, app);
+} else {
+  createRoot(rootElement).render(app);
+}

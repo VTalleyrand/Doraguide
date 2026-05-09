@@ -1,11 +1,11 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App({ children, locationPath, locationHash }) {
   const isHomePage = locationPath === '/';
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const html = document.documentElement;
     const prevBehavior = html.style.scrollBehavior;
     html.style.scrollBehavior = 'auto';

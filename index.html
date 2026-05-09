@@ -8,19 +8,23 @@
       content="%VITE_MAPKIT_TOKEN%"
     />
     <!--
-      Static metadata is enough for this single landing page because every shared
-      URL should present the same title, description, and preview image.
+      Static metadata is enough for the homepage shell because the main landing
+      page uses one shared title, description, and preview image.
     -->
     <!--
-      Dynamic per-tour previews require SSR, prerendering, or generated static
-      HTML because social crawlers usually do not execute client-side React
-      reliably.
+      Dynamic per-route or per-tour previews require SSR, prerendering, or
+      generated static HTML because social crawlers usually do not execute
+      client-side React reliably.
     -->
     <title>Dora</title>
     <meta
       name="description"
       content="Discover cities through narrated audio guides to history, art, culture, architecture, and hidden places."
     />
+    <link rel="canonical" href="https://doraguide.com" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dora — Audio Walking Tours" />
     <meta
@@ -31,6 +35,8 @@
       property="og:image"
       content="https://doraguide.com/dora-social-preview.jpg"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://doraguide.com" />
     <meta property="og:site_name" content="Dora" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -43,12 +49,29 @@
       name="twitter:image"
       content="https://doraguide.com/dora-social-preview.jpg"
     />
+    <meta name="twitter:image:alt" content="Dora characters reading a map" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Dora",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "iOS",
+        "description": "Discover cities through narrated audio guides to history, art, culture, architecture, and hidden places.",
+        "url": "https://doraguide.com",
+        "image": "https://doraguide.com/dora-social-preview.jpg"
+      }
+    </script>
     <script defer src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <noscript>
+      Dora is an audio walking tour app for discovering cities through narrated
+      guides to history, art, culture, architecture, and hidden places.
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

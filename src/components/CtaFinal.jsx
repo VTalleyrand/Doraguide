@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
-import {
-  Alignment,
-  EventType,
-  Fit,
-  Layout,
-  useRive,
-} from '@rive-app/react-canvas';
+import * as riveReact from '@rive-app/react-canvas';
 import mapCharacter from '../assets/mapcharacter.riv?url';
 import './CtaFinal.css';
+
+const riveExports = riveReact.Layout ? riveReact : riveReact.default;
+const { Alignment, EventType, Fit, Layout, useRive } = riveExports;
 
 const CtaFinal = () => {
   const [playbackConfig, setPlaybackConfig] = useState(null);

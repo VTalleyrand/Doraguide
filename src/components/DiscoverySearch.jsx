@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
-import {
-  Alignment,
-  EventType,
-  Fit,
-  Layout,
-  useRive,
-} from '@rive-app/react-canvas';
+import * as riveReact from '@rive-app/react-canvas';
 import favoritesAnimation from '../assets/favorites.riv?url';
 import './DiscoverySearch.css';
+
+const riveExports = riveReact.Layout ? riveReact : riveReact.default;
+const { Alignment, EventType, Fit, Layout, useRive } = riveExports;
 
 const placeTypes = [
   { label: 'Bridges', phrase: 'bridges', color: '#3B97FA', foreground: '#ffffff' },
