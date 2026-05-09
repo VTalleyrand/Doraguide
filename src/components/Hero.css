@@ -4,10 +4,10 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: calc(75vh - 8rem);
+  min-height: calc(83vh - 8rem);
   background: transparent;
   color: var(--color-text);
-  padding: 7.2rem 2rem 9.4rem;
+  padding: 11.2rem 2rem 13.2rem;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -87,6 +87,8 @@
   }
 
   .hero {
-    padding-bottom: 6.6rem;
+    min-height: calc(79vh - 8rem);
+    padding-top: 8.8rem;
+    padding-bottom: 9.2rem;
   }
 }
