@@ -56,7 +56,7 @@
 
 .use-cases__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem 1.6rem;
   width: 100%;
 }
@@ -120,6 +120,12 @@
   color: var(--use-cases-city-color);
 }
 
+@media (max-width: 1024px) {
+  .use-cases__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .use-cases,
   .cta-final,
@@ -147,5 +153,19 @@
 
   .use-cases__title-copy {
     text-wrap: balance;
+  }
+
+  .use-cases__grid {
+    gap: 1rem;
+  }
+
+  .use-cases__card {
+    padding: 1.6rem 1.7rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .use-cases__grid {
+    grid-template-columns: 1fr;
   }
 }
