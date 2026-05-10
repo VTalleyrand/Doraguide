@@ -1,5 +1,6 @@
 import ommisImage from '../assets/images/ommis.png';
 import iphoneMockup from '../assets/images/iphone_mockup.png';
+import discoverPoster from '../assets/images/discover-poster.jpg';
 import discoverVideo from '../assets/videos/discover.mp4';
 import './Features.css';
 
@@ -27,7 +28,8 @@ const FeatureScene = ({ feature }) => {
             muted
             loop
             playsInline
-            preload="metadata"
+            poster={discoverPoster}
+            preload="auto"
           />
           <img
             className="feature-scene__phone-frame"
