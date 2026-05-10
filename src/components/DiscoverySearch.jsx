@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as riveReact from '@rive-app/react-canvas';
-import favoritesAnimation from '../assets/favorites.riv?url';
+import favoritesAnimation from '../assets/animations/favorites.riv?url';
 import './DiscoverySearch.css';
 
 const riveExports = riveReact.Layout ? riveReact : riveReact.default;

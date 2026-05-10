@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as riveReact from '@rive-app/react-canvas';
-import mapCharacter from '../assets/mapcharacter.riv?url';
+import mapCharacter from '../assets/animations/mapcharacter.riv?url';
 import './CtaFinal.css';
 
 const riveExports = riveReact.Layout ? riveReact : riveReact.default;

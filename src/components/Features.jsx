@@ -1,4 +1,6 @@
-import ommisImage from '../assets/ommis.png';
+import ommisImage from '../assets/images/ommis.png';
+import iphoneMockup from '../assets/images/iphone_mockup.png';
+import discoverVideo from '../assets/videos/discover.mp4';
 import './Features.css';
 
 const FeatureScene = ({ feature }) => {
@@ -17,19 +19,23 @@ const FeatureScene = ({ feature }) => {
   if (feature.id === 'guide') {
     return (
       <div className="feature-scene feature-scene--guide">
-        <div className="feature-scene__stage">
-          <div className="feature-scene__map-line feature-scene__map-line--one" />
-          <div className="feature-scene__map-line feature-scene__map-line--two" />
-          <div className="feature-scene__marker">
-            <span />
-          </div>
-          <div className="feature-scene__wave" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-            <i />
-          </div>
-          <div className="feature-scene__play">Play story</div>
+        <div className="feature-scene__phone">
+          <video
+            className="feature-scene__phone-video"
+            src={discoverVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          />
+          <img
+            className="feature-scene__phone-frame"
+            src={iphoneMockup}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     );
@@ -84,7 +90,7 @@ const Features = () => {
       id: 'guide',
       title: "Discover what's around you",
       description:
-        'See a landmark, press play, and learn the story behind it.',
+        'Select a landmark, press play, and learn the story behind it.',
       accent: 'accent-guide',
     },
     {

@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import './MapExperience.css';
-import newYorkAudio from '../assets/new_york.mp3';
-import parisAudio from '../assets/paris.mp3';
-import milanAudio from '../assets/milan.mp3';
-import palermoAudio from '../assets/palermo.mp3';
+import newYorkAudio from '../assets/audio/new_york.mp3';
+import parisAudio from '../assets/audio/paris.mp3';
+import milanAudio from '../assets/audio/milan.mp3';
+import palermoAudio from '../assets/audio/palermo.mp3';
 
 const appMarkerColors = {
   Art: '#6265FA',
