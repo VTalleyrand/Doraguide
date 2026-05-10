@@ -239,7 +239,7 @@ const CityVote = () => {
               ? 'See which city Dora travelers want next.'
               : isThankYouView
                 ? `${savedVote} is on the board.`
-              : 'Select a city to vote for the one you would like to explore with Dora next.'}
+              : 'Which city would you like to see next on Dora?'}
           </p>
         </header>
 

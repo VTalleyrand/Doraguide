@@ -26,6 +26,7 @@ const validCities = new Set([
 ]);
 
 const sqlString = (value) => `'${String(value).replaceAll("'", "''")}'`;
+const voteDateUtc = () => new Date().toISOString().slice(0, 10);
 
 const runSql = (sql) =>
   new Promise((resolve, reject) => {
@@ -51,11 +52,57 @@ const initDb = async () => {
       city TEXT NOT NULL,
       ip_hash TEXT NOT NULL,
       vote_date TEXT NOT NULL,
-      created_at TEXT NOT NULL DEFAULT (datetime('now')),
-      UNIQUE(ip_hash, vote_date)
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
+  `);
+
+  const voteIndexes = await runSql('PRAGMA index_list(votes);');
+  const hasLegacyVoteDateUnique = voteIndexes.some(
+    (index) => index.unique === 1 && index.origin === 'u',
+  );
+
+  if (hasLegacyVoteDateUnique) {
+    await runSql(`
+      ALTER TABLE votes RENAME TO votes_legacy_unique;
+
+      CREATE TABLE votes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        city TEXT NOT NULL,
+        ip_hash TEXT NOT NULL,
+        vote_date TEXT NOT NULL,
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      );
+
+      INSERT INTO votes (id, city, ip_hash, vote_date, created_at)
+      SELECT id, city, ip_hash, vote_date, created_at
+      FROM votes_legacy_unique;
+
+      DROP TABLE votes_legacy_unique;
+    `);
+  }
+
+  await runSql(`
     CREATE INDEX IF NOT EXISTS idx_votes_city ON votes(city);
     CREATE INDEX IF NOT EXISTS idx_votes_date ON votes(vote_date);
+
+    CREATE TABLE IF NOT EXISTS vote_limits (
+      ip_hash TEXT PRIMARY KEY,
+      city TEXT NOT NULL,
+      voted_at TEXT NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_vote_limits_voted_at ON vote_limits(voted_at);
+
+    INSERT OR IGNORE INTO vote_limits (ip_hash, city, voted_at)
+    SELECT recent.ip_hash, votes.city, recent.voted_at
+    FROM (
+      SELECT ip_hash, MAX(created_at) AS voted_at
+      FROM votes
+      WHERE datetime(created_at) > datetime('now', '-24 hours')
+      GROUP BY ip_hash
+    ) AS recent
+    INNER JOIN votes
+      ON votes.ip_hash = recent.ip_hash
+      AND votes.created_at = recent.voted_at;
   `);
 };
 
@@ -88,8 +135,6 @@ const readJsonBody = (request) =>
     });
   });
 
-const todayUtc = () => new Date().toISOString().slice(0, 10);
-
 const getClientIp = (request) => {
   const forwardedFor = request.headers['x-forwarded-for'];
   const realIp = request.headers['x-real-ip'];
@@ -117,32 +162,42 @@ const getTotals = async () => {
   }, {});
 };
 
-const getExistingVote = async (ipHash, voteDate) => {
+const cleanupExpiredVoteLimits = async () => {
+  await runSql(`
+    DELETE FROM vote_limits
+    WHERE datetime(voted_at) <= datetime('now', '-24 hours');
+  `);
+};
+
+const getExistingVote = async (ipHash) => {
   const rows = await runSql(`
-    SELECT city
-    FROM votes
+    SELECT city, voted_at, datetime(voted_at, '+24 hours') AS reset_at
+    FROM vote_limits
     WHERE ip_hash = ${sqlString(ipHash)}
-      AND vote_date = ${sqlString(voteDate)}
     LIMIT 1;
   `);
 
-  return rows[0]?.city || '';
+  return rows[0] || null;
 };
 
 const handleVoteStatus = async (request, response) => {
-  const voteDate = todayUtc();
+  await cleanupExpiredVoteLimits();
+
   const ipHash = hashIp(getClientIp(request));
-  const city = await getExistingVote(ipHash, voteDate);
+  const existingVote = await getExistingVote(ipHash);
 
   sendJson(response, 200, {
-    votedToday: Boolean(city),
-    city,
-    voteDate,
+    votedToday: Boolean(existingVote),
+    city: existingVote?.city || '',
+    votedAt: existingVote?.voted_at || '',
+    resetAt: existingVote?.reset_at || '',
     totals: await getTotals(),
   });
 };
 
 const handleVoteSubmit = async (request, response) => {
+  await cleanupExpiredVoteLimits();
+
   const payload = await readJsonBody(request);
   const city = String(payload.city || '').trim();
 
@@ -154,49 +209,69 @@ const handleVoteSubmit = async (request, response) => {
     return;
   }
 
-  const voteDate = todayUtc();
+  const voteDate = voteDateUtc();
+  const votedAt = new Date().toISOString();
   const ipHash = hashIp(getClientIp(request));
-  const existingCity = await getExistingVote(ipHash, voteDate);
+  const existingVote = await getExistingVote(ipHash);
 
-  if (existingCity) {
+  if (existingVote) {
     sendJson(response, 409, {
       error: 'already_voted',
-      message: 'This IP address has already voted today.',
-      city: existingCity,
-      voteDate,
+      message: 'This IP address has already voted in the last 24 hours.',
+      city: existingVote.city,
+      votedAt: existingVote.voted_at,
+      resetAt: existingVote.reset_at,
       totals: await getTotals(),
     });
     return;
   }
 
   await runSql(`
-    INSERT INTO votes (city, ip_hash, vote_date)
-    VALUES (${sqlString(city)}, ${sqlString(ipHash)}, ${sqlString(voteDate)});
+    INSERT INTO votes (city, ip_hash, vote_date, created_at)
+    VALUES (
+      ${sqlString(city)},
+      ${sqlString(ipHash)},
+      ${sqlString(voteDate)},
+      ${sqlString(votedAt)}
+    );
+
+    INSERT INTO vote_limits (ip_hash, city, voted_at)
+    VALUES (${sqlString(ipHash)}, ${sqlString(city)}, ${sqlString(votedAt)})
+    ON CONFLICT(ip_hash) DO UPDATE SET
+      city = excluded.city,
+      voted_at = excluded.voted_at;
   `);
 
   sendJson(response, 201, {
     ok: true,
     city,
     voteDate,
+    votedAt,
     totals: await getTotals(),
   });
 };
 
 const handleDevVoteReset = async (request, response) => {
-  const voteDate = todayUtc();
   const ipHash = hashIp(getClientIp(request));
 
   await runSql(`
+    DELETE FROM vote_limits
+    WHERE ip_hash = ${sqlString(ipHash)};
+
     DELETE FROM votes
-    WHERE ip_hash = ${sqlString(ipHash)}
-      AND vote_date = ${sqlString(voteDate)};
+    WHERE id IN (
+      SELECT id
+      FROM votes
+      WHERE ip_hash = ${sqlString(ipHash)}
+      ORDER BY datetime(created_at) DESC
+      LIMIT 1
+    );
   `);
 
   sendJson(response, 200, {
     ok: true,
     votedToday: false,
     city: '',
-    voteDate,
     totals: await getTotals(),
   });
 };
