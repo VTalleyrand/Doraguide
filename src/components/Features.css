@@ -595,13 +595,17 @@
 
 @media (max-width: 640px) {
   .bento-card:nth-child(1) .bento-media {
-    flex-basis: clamp(36rem, 118vw, 52rem);
-    min-height: clamp(36rem, 118vw, 52rem);
-    padding-block: 2rem;
+    flex-basis: clamp(44rem, 136vw, 62rem);
+    min-height: clamp(44rem, 136vw, 62rem);
+    padding-block: 3rem;
+  }
+
+  .bento-card:nth-child(1) .feature-scene {
+    min-height: 100%;
   }
 
   .feature-scene__phone {
-    width: clamp(17rem, 72vw, 22.5rem);
+    width: clamp(17rem, 68vw, 21.5rem);
     height: auto;
   }
 }
