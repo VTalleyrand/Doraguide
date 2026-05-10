@@ -40,4 +40,11 @@ export const routeMetadata = {
     canonicalPath: '/press',
     socialTitle: 'Press — Dora',
   },
+  '/vote': {
+    title: 'Vote for Dora’s Next City',
+    description:
+      'Vote for the next city you would like to see added to Dora’s walking audio guides.',
+    canonicalPath: '/vote',
+    socialTitle: 'Vote for Dora’s Next City',
+  },
 };

@@ -10,9 +10,19 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM nginx:1.27-alpine
+FROM node:20-alpine
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/dist/ /usr/share/nginx/html/
+COPY --from=build /app/dist/ /app/dist/
+COPY server/ /app/server/
+
+RUN apk add --no-cache sqlite
+
+ENV NODE_ENV=production
+ENV PORT=80
+ENV VOTES_DB_PATH=/data/dora-votes.sqlite
+
+VOLUME ["/data"]
 
 EXPOSE 80
+
+CMD ["node", "/app/server/index.mjs"]
