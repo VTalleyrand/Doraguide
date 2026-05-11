@@ -12,17 +12,19 @@ RUN npm run build
 
 FROM node:20-alpine
 
-COPY --from=build /app/dist/ /app/dist/
+COPY --from=build /app/dist/ /usr/share/nginx/html/
 COPY server/ /app/server/
+COPY nginx.conf /etc/nginx/http.d/default.conf
+COPY scripts/start-production.sh /app/start-production.sh
 
-RUN apk add --no-cache sqlite
+RUN apk add --no-cache nginx sqlite && chmod +x /app/start-production.sh
 
 ENV NODE_ENV=production
-ENV PORT=80
+ENV PORT=3001
 ENV VOTES_DB_PATH=/data/dora-votes.sqlite
 
 VOLUME ["/data"]
 
 EXPOSE 80
 
-CMD ["node", "/app/server/index.mjs"]
+CMD ["/app/start-production.sh"]
