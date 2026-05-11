@@ -13,6 +13,8 @@ const port = Number(process.env.PORT || 80);
 const contentTypes = {
   '.css': 'text/css; charset=utf-8',
   '.html': 'text/html; charset=utf-8',
+  '.jpeg': 'image/jpeg',
+  '.jpg': 'image/jpeg',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.mp3': 'audio/mpeg',
@@ -46,23 +48,75 @@ const safeStaticPath = (pathname) => {
 
 const serveStatic = async (request, response, url) => {
   let filePath = safeStaticPath(url.pathname);
+  let fileStat;
 
   try {
-    const fileStat = await stat(filePath);
+    fileStat = await stat(filePath);
     if (fileStat.isDirectory()) {
       filePath = path.join(filePath, 'index.html');
+      fileStat = await stat(filePath);
     }
   } catch {
     filePath = path.join(distDir, 'index.html');
+    fileStat = await stat(filePath);
   }
 
   const extension = path.extname(filePath);
+  const contentType = contentTypes[extension] || 'application/octet-stream';
+  const cacheControl = url.pathname.startsWith('/assets/')
+    ? 'public, max-age=31536000, immutable'
+    : 'no-cache';
+  const baseHeaders = {
+    'Accept-Ranges': 'bytes',
+    'Content-Type': contentType,
+    'Cache-Control': cacheControl,
+  };
+  const range = request.headers.range;
+
+  if (range && fileStat.size > 0) {
+    const match = /^bytes=(\d*)-(\d*)$/.exec(range);
+
+    if (!match) {
+      response.writeHead(416, {
+        ...baseHeaders,
+        'Content-Range': `bytes */${fileStat.size}`,
+      });
+      response.end();
+      return;
+    }
+
+    const requestedStart = match[1] ? Number(match[1]) : 0;
+    const requestedEnd = match[2] ? Number(match[2]) : fileStat.size - 1;
+    const start = Math.max(0, requestedStart);
+    const end = Math.min(requestedEnd, fileStat.size - 1);
+
+    if (start > end || start >= fileStat.size) {
+      response.writeHead(416, {
+        ...baseHeaders,
+        'Content-Range': `bytes */${fileStat.size}`,
+      });
+      response.end();
+      return;
+    }
+
+    response.writeHead(206, {
+      ...baseHeaders,
+      'Content-Length': end - start + 1,
+      'Content-Range': `bytes ${start}-${end}/${fileStat.size}`,
+    });
+    createReadStream(filePath, { start, end }).pipe(response);
+    return;
+  }
+
   response.writeHead(200, {
-    'Content-Type': contentTypes[extension] || 'application/octet-stream',
-    'Cache-Control': url.pathname.startsWith('/assets/')
-      ? 'public, max-age=31536000, immutable'
-      : 'no-cache',
+    ...baseHeaders,
+    'Content-Length': fileStat.size,
   });
+
+  if (request.method === 'HEAD') {
+    response.end();
+    return;
+  }
 
   createReadStream(filePath).pipe(response);
 };

@@ -1,7 +1,7 @@
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { routeMetadata, siteUrl, socialImage } from '../src/metadata.js';
+import { routeMetadata, siteUrl, socialImage } from '../client/src/metadata.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');

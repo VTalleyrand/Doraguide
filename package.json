@@ -7,9 +7,9 @@
     "node": "20.x"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node scripts/prerender.mjs",
-    "preview": "vite preview",
+    "dev": "vite --config client/vite.config.js",
+    "build": "vite build --config client/vite.config.js && vite build --config client/vite.config.js --ssr src/entry-server.jsx --outDir ../dist/server && node scripts/prerender.mjs",
+    "preview": "vite preview --config client/vite.config.js",
     "start": "node server/index.mjs"
   },
   "dependencies": {

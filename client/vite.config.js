@@ -2,12 +2,14 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  root: import.meta.dirname,
+  envDir: '..',
   plugins: [
     react(),
     {
       name: 'dora-local-vote-api',
       async configureServer(server) {
-        const { createVoteApiHandler } = await import('./server/votes.mjs');
+        const { createVoteApiHandler } = await import('../server/votes.mjs');
         const handleVoteApi = await createVoteApiHandler({ allowDevTools: true });
 
         server.middlewares.use(async (request, response, next) => {
@@ -31,6 +33,10 @@ export default defineConfig({
       },
     },
   ],
+  build: {
+    outDir: '../dist',
+    emptyOutDir: true,
+  },
   server: {
     allowedHosts: ['local.doraguide.com'],
   }
