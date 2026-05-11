@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import './MapExperience.css';
 import newYorkAudio from '../assets/audio/new_york.mp3';
 import parisAudio from '../assets/audio/paris.mp3';
@@ -13,22 +13,117 @@ const appMarkerColors = {
   Neighborhood: '#F9D452',
 };
 
-const markerStyleForCategory = (category) => {
-  return {
-    color: appMarkerColors[category] || appMarkerColors.Cultural,
-    glyphColor: '#ffffff',
-    glyphText: 'D',
-  };
-};
+const markerStyleForCategory = (category) => ({
+  color: appMarkerColors[category] || appMarkerColors.Cultural,
+  glyphColor: '#ffffff',
+  glyphText: 'D',
+});
 
 const markerColorForCategory = (category) =>
   appMarkerColors[category] || appMarkerColors.Cultural;
 
+const MapDockPlayGlyph = () => (
+  <svg
+    className="map-experience__viz-dock-play-glyph"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M6.5145 2.14251C6.20556 1.95715 5.82081 1.95229 5.5073 2.1298C5.19379 2.30731 5 2.63973 5 3V21C5 21.3603 5.19379 21.6927 5.5073 21.8702C5.82081 22.0477 6.20556 22.0429 6.5145 21.8575L21.5145 12.8575C21.8157 12.6768 22 12.3513 22 12C22 11.6487 21.8157 11.3232 21.5145 11.1425L6.5145 2.14251Z"
+    />
+  </svg>
+);
+
+const MapDockPauseGlyph = () => (
+  <svg
+    className="map-experience__viz-dock-play-glyph"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M4 4C4 3.44772 4.44772 3 5 3H9C9.55228 3 10 3.44772 10 4V20C10 20.5523 9.55228 21 9 21H5C4.44772 21 4 20.5523 4 20V4Z"
+    />
+    <path
+      fill="currentColor"
+      d="M14 4C14 3.44772 14.4477 3 15 3H19C19.5523 3 20 3.44772 20 4V20C20 20.5523 19.5523 21 19 21H15C14.4477 21 14 20.5523 14 20V4Z"
+    />
+  </svg>
+);
+
+const formatClock = (totalSeconds) => {
+  const t = Number.isFinite(totalSeconds)
+    ? Math.max(0, Math.floor(totalSeconds))
+    : 0;
+  const m = Math.floor(t / 60);
+  const s = t % 60;
+  return `${m}:${String(s).padStart(2, '0')}`;
+};
+
+/** Parses labels like "6:28" used in `sampleStops[].duration`. */
+const parseClockLabelToSeconds = (label) => {
+  if (!label || typeof label !== 'string') return 0;
+  const match = label.trim().match(/^(\d+):(\d{2})$/);
+  if (!match) return 0;
+  const m = Number(match[1]);
+  const s = Number(match[2]);
+  if (!Number.isFinite(m) || !Number.isFinite(s) || s > 59) return 0;
+  return m * 60 + s;
+};
+
+const sampleStops = [
+  {
+    id: 'new-york',
+    title: 'New York',
+    category: 'Art',
+    duration: '6:28',
+    coordinate: { latitude: 40.748541, longitude: -73.985758 },
+    hook: 'A fast-moving introduction to the city’s layers: Dutch trading post, immigrant capital, skyscraper laboratory, cultural engine.',
+    audioSrc: newYorkAudio,
+    tone: { frequencies: [349.23, 440, 587.33], duration: 1.9 },
+  },
+  {
+    id: 'paris',
+    title: 'Paris',
+    category: 'Nature',
+    duration: '6:48',
+    coordinate: { latitude: 48.8566, longitude: 2.3522 },
+    hook: 'A story of river islands, revolutions, boulevards, cafés, museums, and the rituals that make Paris feel like Paris.',
+    audioSrc: parisAudio,
+    tone: { frequencies: [415.3, 554.37, 659.25], duration: 1.6 },
+  },
+  {
+    id: 'milan',
+    title: 'Milan',
+    category: 'Historical',
+    duration: '6:30',
+    coordinate: { latitude: 45.4642, longitude: 9.19 },
+    hook: 'A compact introduction to Milan through its cathedral, courtyards, fashion houses, factories, and quiet design intelligence.',
+    audioSrc: milanAudio,
+    tone: { frequencies: [329.63, 493.88, 659.25], duration: 1.7 },
+  },
+  {
+    id: 'palermo',
+    title: 'Palermo',
+    category: 'Neighborhood',
+    duration: '5:40',
+    coordinate: { latitude: 38.1157, longitude: 13.3615 },
+    hook: 'Arab-Norman palaces, baroque churches, chaotic markets, and Mediterranean sea air.',
+    audioSrc: palermoAudio,
+    tone: { frequencies: [392, 523.25, 698.46], duration: 2.1 },
+  },
+];
+
+const DEFAULT_STOP_ID = 'new-york';
+
 const MapExperience = () => {
-  const [status, setStatus] = useState('Loading the map preview...');
-  const [activeStopId, setActiveStopId] = useState(null);
+  const [status, setStatus] = useState('');
+  const [activeStopId, setActiveStopId] = useState(DEFAULT_STOP_ID);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showControl, setShowControl] = useState(false);
+  const [mapAwaitingPlay, setMapAwaitingPlay] = useState(false);
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [fallbackState, setFallbackState] = useState({
     visible: false,
     title: 'Map preview unavailable.',
@@ -37,47 +132,8 @@ const MapExperience = () => {
   const audioRef = useRef(null);
   const endedHandlerRef = useRef(null);
   const playbackRequestRef = useRef(0);
-  const statusControlRef = useRef(null);
   const statusRegionRef = useRef(null);
   const mapViewRef = useRef(null);
-
-  const sampleStops = [
-    {
-      id: 'new-york',
-      title: 'New York City',
-      category: 'Art',
-      coordinate: { latitude: 40.748541, longitude: -73.985758 },
-      audioSrc: newYorkAudio,
-      tone: { frequencies: [349.23, 440, 587.33], duration: 1.9 },
-    },
-    {
-      id: 'paris',
-      title: 'Paris',
-      category: 'Nature',
-      coordinate: { latitude: 48.8566, longitude: 2.3522 },
-      audioSrc: parisAudio,
-      tone: { frequencies: [415.3, 554.37, 659.25], duration: 1.6 },
-    },
-    {
-      id: 'milan',
-      title: 'Milan',
-      category: 'Historical',
-      coordinate: { latitude: 45.4642, longitude: 9.19 },
-      audioSrc: milanAudio,
-      tone: { frequencies: [329.63, 493.88, 659.25], duration: 1.7 },
-    },
-    {
-      id: 'palermo',
-      title: 'Palermo',
-      category: 'Neighborhood',
-      coordinate: { latitude: 38.1157, longitude: 13.3615 },
-      audioSrc: palermoAudio,
-      tone: { frequencies: [392, 523.25, 698.46], duration: 2.1 },
-    },
-  ];
-
-  const stopById = new Map(sampleStops.map((stop) => [stop.id, stop]));
-  const [listItems, setListItems] = useState([]);
   const annotationsRef = useRef(new Map());
   const isMapReadyRef = useRef(false);
   const mapRetryTimerRef = useRef(null);
@@ -89,6 +145,28 @@ const MapExperience = () => {
     map: null,
     isPlaying: false,
   });
+
+  const stopById = useMemo(
+    () => new Map(sampleStops.map((stop) => [stop.id, stop])),
+    []
+  );
+
+  const [listItems, setListItems] = useState(() =>
+    sampleStops.map((stop) => ({
+      id: stop.id,
+      title: stop.title,
+      duration: stop.duration,
+      markerColor: markerColorForCategory(stop.category),
+      markerForeground: '#ffffff',
+      isActive: stop.id === DEFAULT_STOP_ID,
+    }))
+  );
+
+  const activeStop =
+    stopById.get(activeStopId) ?? stopById.get(DEFAULT_STOP_ID) ?? null;
+  const clipDurationSeconds = activeStop
+    ? parseClockLabelToSeconds(activeStop.duration)
+    : 0;
 
   useEffect(() => {
     initializeMapExperience();
@@ -127,7 +205,9 @@ const MapExperience = () => {
     const clearFalseFallback = () => {
       const hasRenderedMapSurface =
         mapViewEl.childElementCount > 0 ||
-        mapViewEl.querySelector('canvas, .mapkit-map, .mapkit-annotation-container');
+        mapViewEl.querySelector(
+          'canvas, .mapkit-map, .mapkit-annotation-container'
+        );
 
       if (hasRenderedMapSurface) {
         isMapReadyRef.current = true;
@@ -157,7 +237,7 @@ const MapExperience = () => {
     const handleHeroStoryRequest = (event) => {
       const stopId = event?.detail?.stopId;
       if (!stopId) return;
-      focusStop(stopId, { source: 'list' });
+      focusStop(stopId, { source: 'list', autoPlay: true });
     };
 
     window.addEventListener('dora:play-story-stop', handleHeroStoryRequest);
@@ -169,6 +249,30 @@ const MapExperience = () => {
       );
     };
   }, []);
+
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el || !activeStopId) return;
+
+    const sync = () => {
+      setElapsedSeconds(Math.floor(el?.currentTime || 0));
+    };
+
+    if (isPlaying) {
+      sync();
+      el.addEventListener('timeupdate', sync);
+      el.addEventListener('seeked', sync);
+      return () => {
+        el.removeEventListener('timeupdate', sync);
+        el.removeEventListener('seeked', sync);
+      };
+    }
+
+    if (showControl && el.readyState >= 1) {
+      sync();
+    }
+    return undefined;
+  }, [isPlaying, showControl, activeStopId]);
 
   const initializeMapExperience = () => {
     buildStopList();
@@ -190,14 +294,68 @@ const MapExperience = () => {
   };
 
   const buildStopList = () => {
-    const items = sampleStops.map((stop) => ({
-      id: stop.id,
-      title: stop.title,
-      markerColor: markerColorForCategory(stop.category),
-      markerForeground: '#ffffff',
-      isActive: false,
-    }));
-    setListItems(items);
+    setListItems(
+      sampleStops.map((stop) => ({
+        id: stop.id,
+        title: stop.title,
+        duration: stop.duration,
+        markerColor: markerColorForCategory(stop.category),
+        markerForeground: '#ffffff',
+        isActive: stop.id === DEFAULT_STOP_ID,
+      }))
+    );
+  };
+
+  const showMapFallback = (title, detail) => {
+    setStatus(detail || title || '');
+    setFallbackState({
+      visible: true,
+      title,
+      detail: detail || '',
+    });
+  };
+
+  const readTokenExpiry = (token) => {
+    try {
+      const payloadSegment = token.split('.')[1];
+      if (!payloadSegment) return null;
+      const normalized = payloadSegment.replace(/-/g, '+').replace(/_/g, '/');
+      const padded = normalized.padEnd(
+        normalized.length + ((4 - (normalized.length % 4)) % 4),
+        '='
+      );
+      const payload = JSON.parse(window.atob(padded));
+      return typeof payload.exp === 'number' ? payload.exp * 1000 : null;
+    } catch {
+      return null;
+    }
+  };
+
+  const computeBounds = (stops) => {
+    const initial = stops[0].coordinate;
+    let minLat = initial.latitude;
+    let maxLat = initial.latitude;
+    let minLon = initial.longitude;
+    let maxLon = initial.longitude;
+
+    stops.forEach((stop) => {
+      const { latitude, longitude } = stop.coordinate;
+      minLat = Math.min(minLat, latitude);
+      maxLat = Math.max(maxLat, latitude);
+      minLon = Math.min(minLon, longitude);
+      maxLon = Math.max(maxLon, longitude);
+    });
+
+    const paddingFactor = 1.35;
+    const latDelta = Math.max(0.02, (maxLat - minLat) * paddingFactor);
+    const lonDelta = Math.max(0.02, (maxLon - minLon) * paddingFactor);
+
+    return {
+      centerLat: (minLat + maxLat) / 2,
+      centerLon: (minLon + maxLon) / 2,
+      spanLat: latDelta,
+      spanLon: lonDelta,
+    };
   };
 
   const initializeMap = () => {
@@ -211,7 +369,6 @@ const MapExperience = () => {
       mapRetryCountRef.current += 1;
       const shouldRetry = mapRetryCountRef.current <= 20;
       if (shouldRetry) {
-        setStatus('Loading the map preview...');
         scheduleMapRetry();
         return;
       }
@@ -291,8 +448,6 @@ const MapExperience = () => {
     setFallbackState((prev) => ({ ...prev, visible: false }));
     isMapReadyRef.current = true;
 
-    setStatus('');
-
     activeStateRef.current.map = configuredMap;
 
     sampleStops.forEach((stop) => {
@@ -303,7 +458,6 @@ const MapExperience = () => {
       const markerStyle = markerStyleForCategory(stop.category);
       const annotation = new mapkitApi.MarkerAnnotation(coordinate, {
         title: stop.title,
-        subtitle: stop.subtitle,
         ...markerStyle,
       });
       annotation.data = { id: stop.id };
@@ -326,11 +480,12 @@ const MapExperience = () => {
       activeStateRef.current.suppressMapSelect = null;
       if (shouldSuppress) return;
 
-      focusStop(id, { source: 'map' });
+      focusStop(id, { source: 'map', autoPlay: false });
     });
 
     configuredMap.addEventListener('deselect', () => {
       activeStateRef.current.suppressMapSelect = null;
+      setMapAwaitingPlay(false);
     });
   };
 
@@ -342,6 +497,14 @@ const MapExperience = () => {
       source: options.source || 'list',
       autoPlay: options.autoPlay ?? true,
     };
+
+    const shouldAdjustMap =
+      options.adjustMap ??
+      (resolvedOptions.autoPlay && resolvedOptions.source === 'list');
+
+    if (activeStateRef.current.stopId !== stopId) {
+      stopAudio();
+    }
 
     const isAlreadyPlaying =
       resolvedOptions.autoPlay &&
@@ -359,7 +522,7 @@ const MapExperience = () => {
 
     const annotation = annotationsRef.current.get(stopId);
     const map = activeStateRef.current.map;
-    if (annotation && map && resolvedOptions.source !== 'map') {
+    if (annotation && map && shouldAdjustMap) {
       try {
         const span =
           activeStateRef.current.baseSpan ||
@@ -385,15 +548,25 @@ const MapExperience = () => {
 
     activeStateRef.current.stopId = stopId;
     setActiveStopId(stopId);
+    setElapsedSeconds(0);
 
     if (resolvedOptions.autoPlay) {
+      setMapAwaitingPlay(false);
       if (!playStopAudio(stop)) {
         setStatus(
           'Audio preview is not available in this browser. Try another browser to listen.'
         );
+      } else {
+        setStatus('');
       }
     } else {
-      setStatus(`${stop.title} selected.`);
+      if (resolvedOptions.source === 'map') {
+        setMapAwaitingPlay(true);
+      }
+      if (resolvedOptions.source === 'list') {
+        setMapAwaitingPlay(false);
+      }
+      setStatus('');
     }
   };
 
@@ -410,7 +583,6 @@ const MapExperience = () => {
       const element = audioRef.current;
       stopAudio({ invalidatePlayback: false });
 
-      // Ensure old listeners from previous stops do not leak stale status text.
       if (endedHandlerRef.current) {
         element.removeEventListener('ended', endedHandlerRef.current);
         endedHandlerRef.current = null;
@@ -423,7 +595,8 @@ const MapExperience = () => {
       const handleEnded = () => {
         if (playbackRequestRef.current !== requestId) return;
         stopAudio();
-        setStatus(`Finished playing ${stop.title}.`, { showControl: false });
+        setMapAwaitingPlay(false);
+        setStatus(`Finished playing ${stop.title}.`);
         setIsPlaying(false);
         setShowControl(false);
       };
@@ -435,7 +608,7 @@ const MapExperience = () => {
         activeStateRef.current.isPlaying = true;
         setIsPlaying(true);
         setShowControl(true);
-        renderNowPlaying(false, stop.id);
+        renderNowPlaying();
       };
 
       const playPromise = element.play();
@@ -477,9 +650,7 @@ const MapExperience = () => {
       return false;
     }
 
-    setStatus(`Playing a short preview for ${stop.title}.`, {
-      showControl: false,
-    });
+    setStatus(`Playing a short preview for ${stop.title}.`);
     activeStateRef.current.isPlaying = true;
     setIsPlaying(true);
     setShowControl(false);
@@ -525,7 +696,8 @@ const MapExperience = () => {
 
     setTimeout(() => {
       stopFn();
-      setStatus('Choose a city and tap to hear another sample story.');
+      setMapAwaitingPlay(false);
+      setStatus('Choose a city and tap play to hear another sample story.');
     }, duration * 1000 + 150);
 
     return true;
@@ -549,182 +721,215 @@ const MapExperience = () => {
     setShowControl(false);
   };
 
-  const computeBounds = (stops) => {
-    const initial = stops[0].coordinate;
-    let minLat = initial.latitude;
-    let maxLat = initial.latitude;
-    let minLon = initial.longitude;
-    let maxLon = initial.longitude;
-
-    stops.forEach((stop) => {
-      const { latitude, longitude } = stop.coordinate;
-      minLat = Math.min(minLat, latitude);
-      maxLat = Math.max(maxLat, latitude);
-      minLon = Math.min(minLon, longitude);
-      maxLon = Math.max(maxLon, longitude);
-    });
-
-    const paddingFactor = 1.35;
-    const latDelta = Math.max(0.02, (maxLat - minLat) * paddingFactor);
-    const lonDelta = Math.max(0.02, (maxLon - minLon) * paddingFactor);
-
-    return {
-      centerLat: (minLat + maxLat) / 2,
-      centerLon: (minLon + maxLon) / 2,
-      spanLat: latDelta,
-      spanLon: lonDelta,
-    };
+  const renderNowPlaying = () => {
+    setStatus('');
   };
 
-  const renderNowPlaying = (isPaused = false, stopIdOverride = null) => {
-    const stopId =
-      stopIdOverride || activeStateRef.current.stopId || activeStopId;
-    const stop = stopById.get(stopId);
+  const handleCitySelect = (stopId) => {
+    focusStop(stopId, { source: 'list', autoPlay: true });
+  };
+
+  const startOrTogglePlayback = () => {
+    const sid = activeStopId;
+    if (!sid) return;
+    const stop = stopById.get(sid);
     if (!stop) return;
-    const message = isPaused
-      ? `Paused: ${stop.title}`
-      : `Now Playing: ${stop.title}`;
-    setStatus(message, { showControl: true, isPaused });
+
+    if (isPlaying && audioRef.current && !audioRef.current.paused) {
+      handlePauseResume();
+      return;
+    }
+
+    if (
+      showControl &&
+      audioRef.current &&
+      audioRef.current.paused &&
+      activeStateRef.current.stopId === sid
+    ) {
+      handlePauseResume();
+      return;
+    }
+
+    focusStop(sid, { source: 'list', autoPlay: true });
   };
 
-  const showMapFallback = (title, detail) => {
-    setStatus(detail || title);
-    setFallbackState({
-      visible: true,
-      title,
-      detail: detail || '',
-    });
-  };
+  const handlePauseResume = () => {
+    const sid = activeStateRef.current.stopId || activeStopId;
+    if (!sid) return;
 
-  const readTokenExpiry = (token) => {
-    try {
-      const payloadSegment = token.split('.')[1];
-      if (!payloadSegment) return null;
-      const normalized = payloadSegment.replace(/-/g, '+').replace(/_/g, '/');
-      const padded = normalized.padEnd(
-        normalized.length + ((4 - (normalized.length % 4)) % 4),
-        '='
-      );
-      const payload = JSON.parse(window.atob(padded));
-      return typeof payload.exp === 'number' ? payload.exp * 1000 : null;
-    } catch {
-      return null;
+    if (isPlaying && audioRef.current && !audioRef.current.paused) {
+      audioRef.current.pause();
+      activeStateRef.current.isPlaying = false;
+      setIsPlaying(false);
+      setElapsedSeconds(Math.floor(audioRef.current.currentTime || 0));
+      renderNowPlaying();
+    } else if (audioRef.current && audioRef.current.paused) {
+      audioRef.current
+        .play()
+        .then(() => {
+          activeStateRef.current.isPlaying = true;
+          setIsPlaying(true);
+          renderNowPlaying();
+        })
+        .catch((error) => {
+          console.warn('Audio resume failed', error);
+        });
     }
   };
 
-  const handleControlClick = () => {
-    if (isPlaying) {
-      if (audioRef.current && !audioRef.current.paused) {
-        audioRef.current.pause();
-        activeStateRef.current.isPlaying = false;
-        setIsPlaying(false);
-        renderNowPlaying(true, activeStateRef.current.stopId);
-      }
-    } else {
-      if (audioRef.current && audioRef.current.paused) {
-        audioRef.current
-          .play()
-          .then(() => {
-            activeStateRef.current.isPlaying = true;
-            setIsPlaying(true);
-            renderNowPlaying(false, activeStateRef.current.stopId);
-          })
-          .catch((error) => {
-            console.warn('Audio resume failed', error);
-          });
-      }
-    }
-  };
+  const hasSelection = Boolean(activeStop);
+  const shouldShowMapDock =
+    hasSelection && (isPlaying || showControl || mapAwaitingPlay);
+  const shouldShowStatus = Boolean(status.trim());
 
-  const handleStopClick = (stopId) => {
-    focusStop(stopId, { source: 'list' });
-  };
+  const displayElapsedSeconds =
+    hasSelection && (isPlaying || showControl || mapAwaitingPlay)
+      ? elapsedSeconds
+      : 0;
+  const countdownSeconds = Math.max(
+    0,
+    clipDurationSeconds - displayElapsedSeconds
+  );
 
-  const shouldShowStatus = Boolean(status) || showControl;
+  const elapsedCountdownPair = `${formatClock(displayElapsedSeconds)} / ${formatClock(countdownSeconds)}`;
 
   return (
     <section className="map-experience" id="listen">
-      <div className="map-experience__container">
-        <div className="map-experience__text">
-          <h2>Try a Dora audio stop right now.</h2>
-          <p>
-            Tap a stop or marker to hear a sample story.
-          </p>
-          {shouldShowStatus && (
-            <div
-              ref={statusRegionRef}
-              className="map-experience__status"
-              role="status"
-              aria-live="polite"
-            >
-              <span className="map-experience__status-text">{status}</span>
-              <button
-                ref={statusControlRef}
-                className={`map-experience__status-control ${
-                  showControl ? 'is-visible' : 'is-hidden'
-                }`}
-                type="button"
-                onClick={handleControlClick}
-                aria-hidden={!showControl}
-                tabIndex={showControl ? 0 : -1}
-                disabled={!showControl}
-                aria-label={
-                  isPlaying ? 'Pause audio preview' : 'Resume audio preview'
-                }
-              >
-                {isPlaying ? 'Pause' : 'Play'}
-              </button>
+      <div className="map-experience__inner">
+        <div className="map-experience__layout">
+          <div className="map-experience__listen-column">
+            <div className="map-experience__intro">
+              <h2>Try a Dora audio stop right now.</h2>
+              <p>Tap a stop or marker to hear a sample story.</p>
             </div>
-          )}
-          <div className="map-experience__list">
-            {listItems.map((item) => (
-              <article
-                key={item.id}
-                className={`map-experience__item ${
-                  item.isActive ? 'is-active' : ''
-                }`}
-                style={{
-                  '--map-stop-color': item.markerColor,
-                  '--map-stop-foreground': item.markerForeground,
-                }}
+
+            {shouldShowStatus && (
+              <div
+                ref={statusRegionRef}
+                className="map-experience__listen-status"
+                role="status"
+                aria-live="polite"
               >
-                <button
-                  type="button"
-                  className="map-experience__item-button"
-                  onClick={() => handleStopClick(item.id)}
-                  aria-pressed={item.isActive}
-                >
-                  <span className="map-experience__item-title">
-                    {item.title}
-                  </span>
-                </button>
-              </article>
-            ))}
+                {status}
+              </div>
+            )}
+
+            <div className="map-experience__panel map-experience__panel--listen">
+              <div className="map-experience__listen-head">
+                <div className="map-experience__chips">
+                  <span className="map-experience__chip">{activeStop.title}</span>
+                  <span className="map-experience__chip">{activeStop.duration}</span>
+                </div>
+
+                <h3 className="map-experience__listen-story-title">
+                  {activeStop.title}
+                </h3>
+
+                <p className="map-experience__listen-hook">{activeStop.hook}</p>
+              </div>
+
+              <div className="map-experience__city-section">
+                <div className="map-experience__city-label">Choose a city</div>
+                <div className="map-experience__city-grid">
+                  {listItems.map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      className={`map-experience__city-btn ${
+                        item.isActive ? 'is-active' : ''
+                      }`}
+                      style={{
+                        '--map-stop-color': item.markerColor,
+                        '--map-stop-foreground': item.markerForeground,
+                      }}
+                      onClick={() => handleCitySelect(item.id)}
+                    >
+                      <span className="map-experience__city-btn-title">
+                        {item.title}
+                      </span>
+                      <span className="map-experience__city-btn-meta">
+                        {item.duration}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div
-          className={`map-experience__map ${
-            fallbackState.visible ? 'has-fallback' : ''
-          }`}
-        >
+
           <div
-            ref={mapViewRef}
-            id="dora-map"
-            className="map-experience__map-view"
-            role="presentation"
-            aria-label="Preview of Dora tour stops"
-          ></div>
-          <div
-            className="map-experience__fallback"
-            id="mapkit-fallback"
-            hidden={!fallbackState.visible}
+            className={`map-experience__panel map-experience__panel--viz ${
+              fallbackState.visible ? 'has-fallback' : ''
+            }`}
           >
-            <p className="map-experience__fallback-title">
-              {fallbackState.title}
-            </p>
-            <p className="smallprint">
-              {fallbackState.detail}
-            </p>
+            <div className="map-experience__viz map-experience__viz--mapkit">
+              <div
+                ref={mapViewRef}
+                id="dora-map"
+                className="map-experience__map-view"
+                role="presentation"
+                aria-label="Preview of Dora tour stops"
+              />
+              <div
+                className="map-experience__fallback"
+                id="mapkit-fallback"
+                hidden={!fallbackState.visible}
+              >
+                <p className="map-experience__fallback-title">
+                  {fallbackState.title}
+                </p>
+                <p className="map-experience__fallback-detail">
+                  {fallbackState.detail}
+                </p>
+              </div>
+
+              {shouldShowMapDock && (
+                <div className="map-experience__viz-dock">
+                  <div className="map-experience__viz-dock-text">
+                    <div className="map-experience__viz-dock-eyebrow">
+                      Discovering
+                    </div>
+                    <div className="map-experience__viz-dock-title">
+                      {activeStop.title}
+                    </div>
+                    <div
+                      className="map-experience__viz-dock-timer"
+                      aria-label={`Elapsed ${formatClock(displayElapsedSeconds)}, ${formatClock(countdownSeconds)} remaining`}
+                    >
+                      {elapsedCountdownPair}
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    className="map-experience__viz-dock-play"
+                    onClick={startOrTogglePlayback}
+                    aria-label={
+                      isPlaying ? 'Pause audio preview' : 'Play audio preview'
+                    }
+                  >
+                    <span
+                      className="map-experience__viz-dock-play-crossfade"
+                      aria-hidden="true"
+                    >
+                      <span
+                        className={`map-experience__viz-dock-play-layer map-experience__viz-dock-play-layer--play ${
+                          !isPlaying ? 'is-visible' : ''
+                        }`}
+                      >
+                        <MapDockPlayGlyph />
+                      </span>
+                      <span
+                        className={`map-experience__viz-dock-play-layer map-experience__viz-dock-play-layer--pause ${
+                          isPlaying ? 'is-visible' : ''
+                        }`}
+                      >
+                        <MapDockPauseGlyph />
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
