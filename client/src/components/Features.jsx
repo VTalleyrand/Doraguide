@@ -97,16 +97,16 @@ const Features = () => {
     },
     {
       id: 'tour',
-      title: 'Create a custom tour',
+      title: 'Routes that fit your day',
       description:
-        'Become an expert of any city by curating routes that fit your interests and turn historical sites, museums, parks, or landmarks into a tour that fits your taste and schedule.',
+        'Pick a recommended tour, or build your own around the places that interest you.',
       accent: 'accent-tour',
     },
     {
       id: 'discover',
-      title: 'Let Dora surprise you',
+      title: 'Walk your way',
       description:
-        'Dora helps you notice corners that are often overlooked and learn about what makes them special.',
+        'Dora builds routes from your location, so every walk can start right where you are.',
       accent: 'accent-discover',
     },
     {

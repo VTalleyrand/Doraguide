@@ -55,9 +55,9 @@ const Hero = () => {
           <br /> right where you stand.
         </h1>
         <p>
-          Dora is a walking audio guide app that helps you explore cities through
-          curated tours, nearby sights, and custom routes, on your own or with
-          friends.
+          Dora turns cities into a narrated cultural experience, revealing the
+          stories behind the landmarks, neighborhoods, museums, parks, and hidden
+          corners. Alone or with friends.
         </p>
         <div className="hero-buttons">
           {/* <button className="primary-btn" type="button">

@@ -59,8 +59,8 @@
 }
 
 .bento-card:nth-child(1) .bento-media {
-  flex-basis: 34rem;
-  min-height: 34rem;
+  flex-basis: 40rem;
+  min-height: 40rem;
 }
 
 .bento-card:nth-child(1) .bento-body p {
@@ -378,7 +378,7 @@
 
 .feature-scene__phone {
   position: relative;
-  height: clamp(24rem, 88%, 42.2rem);
+  height: clamp(28rem, 98%, 48rem);
   aspect-ratio: 729 / 1504;
   filter: drop-shadow(0 26px 38px rgba(31, 27, 22, 0.16));
 }
@@ -496,12 +496,12 @@
   }
 
   .bento-card:nth-child(1) .bento-media {
-    flex-basis: clamp(30rem, 72vw, 42rem);
-    min-height: clamp(30rem, 72vw, 42rem);
+    flex-basis: clamp(36rem, 84vw, 50rem);
+    min-height: clamp(36rem, 84vw, 50rem);
   }
 
   .feature-scene__phone {
-    height: clamp(24rem, 88%, 36rem);
+    height: clamp(30rem, 98%, 44rem);
   }
 
   .feature-scene--tour {
@@ -535,12 +535,12 @@
   }
 
   .bento-card:nth-child(1) .bento-media {
-    flex-basis: 36rem;
-    min-height: 36rem;
+    flex-basis: 44rem;
+    min-height: 44rem;
   }
 
   .feature-scene__phone {
-    height: clamp(30rem, 88%, 39rem);
+    height: clamp(36rem, 98%, 47rem);
   }
 
   .feature-scene--tour {
@@ -580,12 +580,12 @@
   }
 
   .bento-card:nth-child(1) .bento-media {
-    flex-basis: 46rem;
-    min-height: 46rem;
+    flex-basis: 56rem;
+    min-height: 56rem;
   }
 
   .feature-scene__phone {
-    height: 88%;
+    height: 96%;
   }
 
   .feature-scene--tour {
@@ -605,7 +605,7 @@
   }
 
   .feature-scene__phone {
-    width: clamp(17rem, 68vw, 21.5rem);
+    width: clamp(20.5rem, 82vw, 26rem);
     height: auto;
   }
 }

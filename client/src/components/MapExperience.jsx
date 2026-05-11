@@ -799,8 +799,8 @@ const MapExperience = () => {
         <div className="map-experience__layout">
           <div className="map-experience__listen-column">
             <div className="map-experience__intro">
-              <h2>Try a Dora audio stop right now.</h2>
-              <p>Tap a stop or marker to hear a sample story.</p>
+              <h2>Hear Dora in action.</h2>
+              <p>Select a city or tap a marker to hear a sample story.</p>
             </div>
 
             {shouldShowStatus && (
