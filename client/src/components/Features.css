@@ -602,10 +602,11 @@
 
   .bento-card:nth-child(1) .feature-scene {
     min-height: 100%;
+    overflow: visible;
   }
 
   .feature-scene__phone {
-    width: clamp(20.5rem, 82vw, 26rem);
+    width: min(78vw, calc(100% - 2rem), 24rem);
     height: auto;
   }
 }
