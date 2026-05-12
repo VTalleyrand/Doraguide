@@ -377,7 +377,6 @@
   position: relative;
   height: clamp(28rem, 98%, 48rem);
   aspect-ratio: 729 / 1504;
-  filter: drop-shadow(0 26px 38px rgba(31, 27, 22, 0.16));
 }
 
 .feature-scene__phone-video {
