@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header/index.jsx';
+import Footer from './components/Footer/index.jsx';
 
 function App({ children, locationPath, locationHash }) {
   const isHomePage = locationPath === '/';
