@@ -18,7 +18,7 @@
   --shadow-soft: 0 18px 40px rgba(31, 27, 22, 0.08);
   --shadow-strong: 0 24px 60px rgba(31, 27, 22, 0.12);
   --section-title-size: clamp(2.8rem, 4vw, 3.8rem);
-  --section-title-weight: 500;
+  --section-title-weight: 600;
   --section-title-line-height: 1.02;
   --section-title-tracking: -0.035em;
   --section-body-size: 1.6rem;

@@ -39,7 +39,7 @@
 
 .map-experience__intro {
   max-width: none;
-  margin-bottom: 0;
+  margin: 0 0 1.6rem;
 }
 
 .map-experience__intro h2 {
@@ -51,12 +51,36 @@
   text-wrap: balance;
 }
 
-.map-experience__intro p {
-  margin: 0.6rem 0 0;
-  font-size: var(--section-body-size);
-  line-height: var(--section-body-line-height);
-  max-width: 39rem;
+.map-experience__listen-hint {
+  margin: 0.85rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.45;
   color: var(--section-body-color);
+  max-width: none;
+}
+
+.map-experience__city-section--compact {
+  padding: 0.75rem 0.85rem 0.8rem;
+}
+
+.map-experience__city-label--compact {
+  margin-bottom: 0.55rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+.map-experience__city-btn--compact {
+  min-height: 3.85rem;
+  padding: 0.55rem 0.75rem;
+  gap: 0.12rem;
+}
+
+.map-experience__city-btn--compact .map-experience__city-btn-title {
+  font-size: 1.08rem;
+}
+
+.map-experience__city-btn--compact .map-experience__city-btn-meta {
+  font-size: 0.92rem;
 }
 
 .map-experience__listen-status {
@@ -187,14 +211,16 @@
 }
 
 .map-experience__city-btn.is-active {
-  background: color-mix(
-    in srgb,
-    var(--map-stop-color, var(--color-accent)) 14%,
-    #ffffff 86%
-  );
-  box-shadow:
-    inset 0 0 0 0.5px var(--map-stop-color, var(--color-accent)),
-    0 8px 18px rgba(31, 27, 22, 0.05);
+  background: var(--map-stop-color, var(--color-accent));
+  color: var(--map-stop-foreground, #ffffff);
+  box-shadow: 0 8px 18px rgba(31, 27, 22, 0.12);
+}
+
+.map-experience__city-btn.is-active:hover {
+  background: var(--map-stop-color, var(--color-accent));
+  color: var(--map-stop-foreground, #ffffff);
+  box-shadow: 0 8px 18px rgba(31, 27, 22, 0.14);
+  filter: brightness(0.97);
 }
 
 .map-experience__city-btn-title {
@@ -212,7 +238,7 @@
 }
 
 .map-experience__city-btn.is-active .map-experience__city-btn-meta {
-  color: var(--map-stop-color, var(--color-accent));
+  color: var(--map-stop-foreground, #ffffff);
 }
 
 .map-experience__panel--viz {
@@ -226,6 +252,7 @@
   border-radius: 1.6rem;
   background: transparent;
   box-shadow: none;
+  align-self: stretch;
 }
 
 .map-experience__viz {

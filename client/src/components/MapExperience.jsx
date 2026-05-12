@@ -796,13 +796,12 @@ const MapExperience = () => {
   return (
     <section className="map-experience" id="listen">
       <div className="map-experience__inner">
+        <div className="map-experience__intro">
+          <h2>Hear Dora in action.</h2>
+        </div>
+
         <div className="map-experience__layout">
           <div className="map-experience__listen-column">
-            <div className="map-experience__intro">
-              <h2>Hear Dora in action.</h2>
-              <p>Select a city or tap a marker to hear a sample story.</p>
-            </div>
-
             {shouldShowStatus && (
               <div
                 ref={statusRegionRef}
@@ -828,14 +827,16 @@ const MapExperience = () => {
                 <p className="map-experience__listen-hook">{activeStop.hook}</p>
               </div>
 
-              <div className="map-experience__city-section">
-                <div className="map-experience__city-label">Choose a city</div>
+              <div className="map-experience__city-section map-experience__city-section--compact">
+                <div className="map-experience__city-label map-experience__city-label--compact">
+                  Choose a city
+                </div>
                 <div className="map-experience__city-grid">
                   {listItems.map((item) => (
                     <button
                       key={item.id}
                       type="button"
-                      className={`map-experience__city-btn ${
+                      className={`map-experience__city-btn map-experience__city-btn--compact ${
                         item.isActive ? 'is-active' : ''
                       }`}
                       style={{
@@ -854,6 +855,9 @@ const MapExperience = () => {
                   ))}
                 </div>
               </div>
+              <p className="map-experience__listen-hint">
+                Select a city or tap a marker to hear a sample story.
+              </p>
             </div>
           </div>
 
