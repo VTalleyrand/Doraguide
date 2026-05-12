@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { streetLayouts, tourStops } from './tourRouteData';
 import {
   buildActiveRoutePath,
@@ -8,14 +8,51 @@ import {
   getRandomUserLocationStart,
 } from './tourRouteUtils';
 
+const createDefaultSceneState = () => {
+  const streetLayout = streetLayouts[0];
+  const [fromNodeId, toNodeId] = streetLayout.edges[0];
+  const fromNode = streetLayout.nodes[fromNodeId];
+  const toNode = streetLayout.nodes[toNodeId];
+  const progress = 0.5;
+
+  return {
+    streetLayout,
+    userLocationStart: {
+      id: 'user-location',
+      routeNodeId: 'user-location',
+      attachEdge: [fromNodeId, toNodeId],
+      x: fromNode.x + (toNode.x - fromNode.x) * progress,
+      y: fromNode.y + (toNode.y - fromNode.y) * progress,
+    },
+    slotByStopId: {
+      museum: { routeNodeId: 'stop-nw' },
+      market: { routeNodeId: 'stop-ne' },
+      bridge: { routeNodeId: 'stop-sw' },
+      park: { routeNodeId: 'stop-se' },
+      theater: { routeNodeId: 'stop-center' },
+    },
+  };
+};
+
+const createRandomSceneState = () => {
+  const streetLayout = getRandomStreetLayout(streetLayouts);
+
+  return {
+    streetLayout,
+    userLocationStart: getRandomUserLocationStart(streetLayout),
+    slotByStopId: getRandomStopPlacements(streetLayout),
+  };
+};
+
 const TourRouteScene = () => {
   const [selectedStopIds, setSelectedStopIds] = useState([]);
   const [drawingSegmentId, setDrawingSegmentId] = useState(null);
-  const [streetLayout] = useState(() => getRandomStreetLayout(streetLayouts));
-  const [userLocationStart] = useState(() =>
-    getRandomUserLocationStart(streetLayout)
-  );
-  const [slotByStopId] = useState(() => getRandomStopPlacements(streetLayout));
+  const [sceneState, setSceneState] = useState(createDefaultSceneState);
+  const { streetLayout, userLocationStart, slotByStopId } = sceneState;
+
+  useEffect(() => {
+    setSceneState(createRandomSceneState());
+  }, []);
 
   const selectedStops = useMemo(
     () =>
