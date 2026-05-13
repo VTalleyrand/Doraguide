@@ -27,7 +27,7 @@
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--color-text-subtle);
   max-width: 54rem;
   margin: 0 auto 3rem;
@@ -76,7 +76,7 @@
   }
 
   .hero p {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 1.42;
     margin-bottom: 2.4rem;
   }
