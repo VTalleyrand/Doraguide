@@ -34,6 +34,20 @@ const getNodeDistance = (fromNodeId, toNodeId, nodes) => {
   return Math.hypot(dx, dy);
 };
 
+/** Sum of edge weights along the shortest graph path; Infinity if unreachable or invalid. */
+export const graphPathDistance = (fromNodeId, toNodeId, nodes, edges) => {
+  if (fromNodeId === toNodeId) return 0;
+  const nodeIds = findStreetRoute(fromNodeId, toNodeId, nodes, edges);
+  if (nodeIds.length < 2 || nodeIds[0] !== fromNodeId || nodeIds[nodeIds.length - 1] !== toNodeId) {
+    return Infinity;
+  }
+  let sum = 0;
+  for (let i = 0; i < nodeIds.length - 1; i += 1) {
+    sum += getNodeDistance(nodeIds[i], nodeIds[i + 1], nodes);
+  }
+  return sum;
+};
+
 const buildRoundedPath = (points, cornerRadius = 14) => {
   if (!points || points.length < 2) return '';
   if (points.length === 2) {
@@ -86,6 +100,68 @@ export const buildPathForNodeIds = (nodeIds, cornerRadius = 14, nodes) => {
     .filter(Boolean)
     .map(toSvgPoint);
   return buildRoundedPath(points, cornerRadius);
+};
+
+/** Drop middle points that sit on the same straight H/V run (reduces miter / stub artifacts). */
+const simplifyAxisAlignedPoints = (points, eps = 0.35) => {
+  if (points.length <= 2) return points;
+  const out = [points[0]];
+  for (let i = 1; i < points.length - 1; i += 1) {
+    const a = out[out.length - 1];
+    const b = points[i];
+    const c = points[i + 1];
+    const onHorizontalRun =
+      Math.abs(a.y - b.y) < eps && Math.abs(b.y - c.y) < eps;
+    const onVerticalRun =
+      Math.abs(a.x - b.x) < eps && Math.abs(b.x - c.x) < eps;
+    if (!onHorizontalRun && !onVerticalRun) out.push(b);
+  }
+  out.push(points[points.length - 1]);
+  return out;
+};
+
+/** Straight line segments only (horizontal / vertical), for grid-aligned UI paths. */
+export const buildPolylinePathForNodeIds = (nodeIds, nodes) => {
+  const points = nodeIds
+    .map((nodeId) => nodes[nodeId])
+    .filter(Boolean)
+    .map(toSvgPoint);
+  if (points.length < 2) return '';
+  const deduped = points.filter(
+    (point, index) =>
+      index === 0 ||
+      Math.abs(point.x - points[index - 1].x) > 0.01 ||
+      Math.abs(point.y - points[index - 1].y) > 0.01
+  );
+  if (deduped.length < 2) return '';
+  const simplified = simplifyAxisAlignedPoints(deduped);
+  if (simplified.length < 2) return '';
+  const minSeg = 0.02;
+  let path = `M ${simplified[0].x} ${simplified[0].y}`;
+  for (let index = 1; index < simplified.length; index += 1) {
+    const prev = simplified[index - 1];
+    const current = simplified[index];
+    const dx = Math.abs(current.x - prev.x);
+    const dy = Math.abs(current.y - prev.y);
+    if (dx > minSeg && dy > minSeg) {
+      const cx = prev.x;
+      const cy = current.y;
+      const leg1 = Math.hypot(cx - prev.x, cy - prev.y);
+      const leg2 = Math.hypot(current.x - cx, current.y - cy);
+      if (leg1 > minSeg && leg2 > minSeg) {
+        path += ` L ${cx} ${cy} L ${current.x} ${current.y}`;
+      } else if (leg2 > minSeg) {
+        path += ` L ${current.x} ${current.y}`;
+      } else if (leg1 > minSeg) {
+        path += ` L ${cx} ${cy}`;
+      } else {
+        path += ` L ${current.x} ${current.y}`;
+      }
+    } else {
+      path += ` L ${current.x} ${current.y}`;
+    }
+  }
+  return path;
 };
 
 const findStreetRoute = (fromNodeId, toNodeId, nodes, edges) => {
@@ -213,4 +289,16 @@ export const buildActiveRoutePath = (fromStop, toStop, nodes, edges) => {
     12,
     nodes
   );
+};
+
+/** Shortest path on the street graph as straight H/V segments (no corner rounding). */
+export const buildActiveOrthogonalRoutePath = (fromStop, toStop, nodes, edges) => {
+  if (!fromStop || !toStop) return '';
+  const nodeIds = findStreetRoute(
+    fromStop.routeNodeId,
+    toStop.routeNodeId,
+    nodes,
+    edges
+  );
+  return buildPolylinePathForNodeIds(nodeIds, nodes);
 };

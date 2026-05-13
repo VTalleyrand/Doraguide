@@ -21,7 +21,7 @@ const features = [
     id: 'discover',
     title: 'Walk your way',
     description:
-      'Dora builds routes from your location, so every walk can start right where you are.',
+      'Dora builds routes from your current location, so the starting location is always where you are.',
     accent: 'accent-discover',
   },
   {

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { streetLayouts, tourStops } from './tourRouteData';
 import {
   buildActiveRoutePath,
@@ -44,15 +44,147 @@ const createRandomSceneState = () => {
   };
 };
 
+const DEMO_ROUTE_START_DELAY_MS = 700;
+const DEMO_ROUTE_STEP_MS = 1150;
+const DEMO_ROUTE_RESET_DELAY_MS = 1800;
+const DEMO_ROUTE_RESUME_DELAY_MS = 3000;
+
+const getPointDistance = (fromNodeId, toNodeId, routeNodes) => {
+  const fromNode = routeNodes[fromNodeId];
+  const toNode = routeNodes[toNodeId];
+  if (!fromNode || !toNode) return Infinity;
+  return Math.hypot(fromNode.x - toNode.x, fromNode.y - toNode.y);
+};
+
+const getNodeVector = (fromNodeId, toNodeId, routeNodes) => {
+  const fromNode = routeNodes[fromNodeId];
+  const toNode = routeNodes[toNodeId];
+  if (!fromNode || !toNode) return null;
+  return {
+    x: toNode.x - fromNode.x,
+    y: toNode.y - fromNode.y,
+  };
+};
+
+const getBacktrackPenalty = (
+  previousNodeId,
+  currentNodeId,
+  candidateNodeId,
+  routeNodes
+) => {
+  if (!previousNodeId) return 0;
+
+  const previousVector = getNodeVector(previousNodeId, currentNodeId, routeNodes);
+  const candidateVector = getNodeVector(
+    currentNodeId,
+    candidateNodeId,
+    routeNodes
+  );
+  if (!previousVector || !candidateVector) return 0;
+
+  const previousLength = Math.hypot(previousVector.x, previousVector.y);
+  const candidateLength = Math.hypot(candidateVector.x, candidateVector.y);
+  if (!previousLength || !candidateLength) return 0;
+
+  const directionScore =
+    (previousVector.x * candidateVector.x +
+      previousVector.y * candidateVector.y) /
+    (previousLength * candidateLength);
+
+  return directionScore < 0 ? Math.abs(directionScore) * 28 : 0;
+};
+
+const getVisitedNodePenalty = (candidateNodeId, visitedNodeIds, routeNodes) => {
+  const closestVisitedDistance = visitedNodeIds.reduce(
+    (closestDistance, visitedNodeId) =>
+      Math.min(
+        closestDistance,
+        getPointDistance(candidateNodeId, visitedNodeId, routeNodes)
+      ),
+    Infinity
+  );
+
+  return closestVisitedDistance < 24 ? (24 - closestVisitedDistance) * 0.75 : 0;
+};
+
+const buildNaturalDemoRoute = ({ routeNodes, slotByStopId, userLocationStart }) => {
+  const remainingStops = tourStops
+    .map((stop) => ({
+      ...stop,
+      routeNodeId: slotByStopId[stop.id]?.routeNodeId,
+    }))
+    .filter((stop) => routeNodes[stop.routeNodeId]);
+
+  const routeLength = Math.min(
+    remainingStops.length,
+    3 + Math.floor(Math.random() * 3)
+  );
+  const route = [];
+  const visitedNodeIds = [userLocationStart.routeNodeId];
+  let previousNodeId = null;
+  let currentNodeId = userLocationStart.routeNodeId;
+
+  while (route.length < routeLength && remainingStops.length > 0) {
+    const rankedStops = remainingStops
+      .map((stop) => {
+        const distance = getPointDistance(
+          currentNodeId,
+          stop.routeNodeId,
+          routeNodes
+        );
+        return {
+          ...stop,
+          score:
+            distance +
+            getBacktrackPenalty(
+              previousNodeId,
+              currentNodeId,
+              stop.routeNodeId,
+              routeNodes
+            ) +
+            getVisitedNodePenalty(stop.routeNodeId, visitedNodeIds, routeNodes),
+        };
+      })
+      .sort((a, b) => a.score - b.score);
+    const candidateCount = Math.min(2, rankedStops.length);
+    const nextStop = rankedStops[Math.floor(Math.random() * candidateCount)];
+    route.push(nextStop.id);
+    previousNodeId = currentNodeId;
+    currentNodeId = nextStop.routeNodeId;
+    visitedNodeIds.push(currentNodeId);
+
+    const selectedIndex = remainingStops.findIndex(
+      (stop) => stop.id === nextStop.id
+    );
+    remainingStops.splice(selectedIndex, 1);
+  }
+
+  return route;
+};
+
 const TourRouteScene = () => {
   const [selectedStopIds, setSelectedStopIds] = useState([]);
   const [drawingSegmentId, setDrawingSegmentId] = useState(null);
   const [sceneState, setSceneState] = useState(createDefaultSceneState);
+  const [hasHydrated, setHasHydrated] = useState(false);
+  const [isDemoActive, setIsDemoActive] = useState(true);
+  const [demoCycle, setDemoCycle] = useState(0);
+  const demoResumeTimerRef = useRef(null);
   const { streetLayout, userLocationStart, slotByStopId } = sceneState;
 
   useEffect(() => {
     setSceneState(createRandomSceneState());
+    setHasHydrated(true);
   }, []);
+
+  useEffect(
+    () => () => {
+      if (demoResumeTimerRef.current) {
+        window.clearTimeout(demoResumeTimerRef.current);
+      }
+    },
+    []
+  );
 
   const selectedStops = useMemo(
     () =>
@@ -99,7 +231,94 @@ const TourRouteScene = () => {
     });
   }, [routeEdges, routeNodes, selectedStops, userLocationStart]);
 
+  useEffect(() => {
+    if (!hasHydrated || !isDemoActive) return undefined;
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return undefined;
+    }
+
+    const demoStopIds = buildNaturalDemoRoute({
+      routeNodes,
+      slotByStopId,
+      userLocationStart,
+    });
+    if (demoStopIds.length === 0) return undefined;
+
+    const timers = [];
+    setSelectedStopIds([]);
+    setDrawingSegmentId(null);
+
+    demoStopIds.forEach((stopId, index) => {
+      timers.push(
+        window.setTimeout(() => {
+          setSelectedStopIds((current) => {
+            const previousStopId =
+              current.length === 0
+                ? userLocationStart.id
+                : current[current.length - 1];
+            setDrawingSegmentId(`${previousStopId}->${stopId}`);
+            return [...current, stopId];
+          });
+        }, DEMO_ROUTE_START_DELAY_MS + index * DEMO_ROUTE_STEP_MS)
+      );
+    });
+
+    timers.push(
+      window.setTimeout(() => {
+        setSelectedStopIds([]);
+        setDrawingSegmentId(null);
+        setDemoCycle((current) => current + 1);
+      }, DEMO_ROUTE_START_DELAY_MS + demoStopIds.length * DEMO_ROUTE_STEP_MS + DEMO_ROUTE_RESET_DELAY_MS)
+    );
+
+    return () => {
+      timers.forEach((timer) => window.clearTimeout(timer));
+    };
+  }, [
+    demoCycle,
+    hasHydrated,
+    isDemoActive,
+    routeNodes,
+    slotByStopId,
+    userLocationStart,
+  ]);
+
+  const clearDemoResumeTimer = () => {
+    if (!demoResumeTimerRef.current) return;
+    window.clearTimeout(demoResumeTimerRef.current);
+    demoResumeTimerRef.current = null;
+  };
+
+  const pauseDemo = () => {
+    clearDemoResumeTimer();
+    if (isDemoActive) {
+      setIsDemoActive(false);
+      setSelectedStopIds([]);
+      setDrawingSegmentId(null);
+    }
+  };
+
+  const scheduleDemoResume = () => {
+    clearDemoResumeTimer();
+    demoResumeTimerRef.current = window.setTimeout(() => {
+      demoResumeTimerRef.current = null;
+      setSelectedStopIds([]);
+      setDrawingSegmentId(null);
+      setDemoCycle((current) => current + 1);
+      setIsDemoActive(true);
+    }, DEMO_ROUTE_RESUME_DELAY_MS);
+  };
+
+  const handleMapBlur = (event) => {
+    if (event.currentTarget.contains(event.relatedTarget)) return;
+    scheduleDemoResume();
+  };
+
   const handleStopSelect = (stopId) => {
+    pauseDemo();
     setSelectedStopIds((current) => {
       if (current.includes(stopId)) {
         setDrawingSegmentId(null);
@@ -115,7 +334,14 @@ const TourRouteScene = () => {
   const userLocationNode = routeNodes[userLocationStart.routeNodeId];
 
   return (
-    <div className="feature-scene feature-scene--tour">
+    <div
+      className="feature-scene feature-scene--tour"
+      onPointerEnter={pauseDemo}
+      onPointerLeave={scheduleDemoResume}
+      onPointerDown={pauseDemo}
+      onFocusCapture={pauseDemo}
+      onBlurCapture={handleMapBlur}
+    >
       <div className="feature-scene__stage">
         <svg
           className="feature-scene__street-map"
