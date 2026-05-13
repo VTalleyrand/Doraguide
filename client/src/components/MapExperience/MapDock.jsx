@@ -33,11 +33,11 @@ const MapDockPauseGlyph = () => (
 const MapDock = ({
   activeStop,
   displayElapsedSeconds,
-  countdownSeconds,
+  totalDurationSeconds,
   isPlaying,
   onTogglePlayback,
 }) => {
-  const elapsedCountdownPair = `${formatClock(displayElapsedSeconds)} / ${formatClock(countdownSeconds)}`;
+  const elapsedTotalPair = `${formatClock(displayElapsedSeconds)} / ${formatClock(totalDurationSeconds)}`;
 
   return (
     <div className="map-experience__viz-dock">
@@ -46,9 +46,9 @@ const MapDock = ({
         <div className="map-experience__viz-dock-title">{activeStop.title}</div>
         <div
           className="map-experience__viz-dock-timer"
-          aria-label={`Elapsed ${formatClock(displayElapsedSeconds)}, ${formatClock(countdownSeconds)} remaining`}
+          aria-label={`Elapsed ${formatClock(displayElapsedSeconds)} of ${formatClock(totalDurationSeconds)}`}
         >
-          {elapsedCountdownPair}
+          {elapsedTotalPair}
         </div>
       </div>
       <button

@@ -543,7 +543,7 @@ const MapExperience = () => {
     setTimeout(() => {
       stopFn();
       setMapAwaitingPlay(false);
-      setStatus('Choose a city and tap play to hear another sample story.');
+      setStatus('Choose a story and tap play to hear another sample.');
     }, duration * 1000 + 150);
 
     return true;
@@ -632,10 +632,7 @@ const MapExperience = () => {
     hasSelection && (isPlaying || showControl || mapAwaitingPlay)
       ? elapsedSeconds
       : 0;
-  const countdownSeconds = Math.max(
-    0,
-    clipDurationSeconds - displayElapsedSeconds
-  );
+  const totalDurationSeconds = clipDurationSeconds;
 
   return (
     <section className="map-experience" id="listen">
@@ -659,7 +656,7 @@ const MapExperience = () => {
             shouldShowMapDock={shouldShowMapDock}
             activeStop={activeStop}
             displayElapsedSeconds={displayElapsedSeconds}
-            countdownSeconds={countdownSeconds}
+            totalDurationSeconds={totalDurationSeconds}
             isPlaying={isPlaying}
             onTogglePlayback={startOrTogglePlayback}
           />

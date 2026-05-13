@@ -36,7 +36,7 @@ const MapListenPanel = ({
 
       <CitySelector listItems={listItems} onCitySelect={onCitySelect} />
       <p className="map-experience__listen-hint">
-        Select a city or tap a marker to hear a sample story.
+        Select a story or tap a marker to hear a sample.
       </p>
     </div>
   </div>

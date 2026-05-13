@@ -6,7 +6,7 @@ const MapPreview = ({
   shouldShowMapDock,
   activeStop,
   displayElapsedSeconds,
-  countdownSeconds,
+  totalDurationSeconds,
   isPlaying,
   onTogglePlayback,
 }) => (
@@ -36,7 +36,7 @@ const MapPreview = ({
         <MapDock
           activeStop={activeStop}
           displayElapsedSeconds={displayElapsedSeconds}
-          countdownSeconds={countdownSeconds}
+          totalDurationSeconds={totalDurationSeconds}
           isPlaying={isPlaying}
           onTogglePlayback={onTogglePlayback}
         />

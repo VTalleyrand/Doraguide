@@ -1,7 +1,7 @@
 const CitySelector = ({ listItems, onCitySelect }) => (
   <div className="map-experience__city-section map-experience__city-section--compact">
     <div className="map-experience__city-label map-experience__city-label--compact">
-      Choose a city
+      Pick a story
     </div>
     <div className="map-experience__city-grid">
       {listItems.map((item) => (

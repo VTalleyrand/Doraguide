@@ -59,8 +59,11 @@
   max-width: none;
 }
 
-.map-experience__city-section--compact {
-  padding: 0.75rem 0.85rem 0.8rem;
+.map-experience__city-section.map-experience__city-section--compact {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .map-experience__city-label--compact {
