@@ -1,0 +1,325 @@
+.story-listen {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background:
+    radial-gradient(
+      circle at 50% 4%,
+      color-mix(in srgb, var(--story-accent, #3b97fa) 14%, transparent) 0,
+      transparent 32rem
+    ),
+    #171512;
+}
+
+.story-listen__shell {
+  --story-accent: #3b97fa;
+  width: min(100%, 43rem);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+  padding: 2.4rem 2.4rem 8.8rem;
+}
+
+.story-listen__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  isolation: isolate;
+}
+
+.story-listen__overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  padding: 2.4rem;
+  padding-top: 6.8rem;
+  color: #ffffff;
+}
+
+.story-listen__eyebrow {
+  position: absolute;
+  top: 2.4rem;
+  left: 2.4rem;
+  z-index: 2;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.story-listen__eyebrow:hover {
+  color: #ffffff;
+}
+
+.story-listen__title {
+  margin: 0;
+  font-size: clamp(3.6rem, 12vw, 5.4rem);
+  font-weight: 650;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+}
+
+.story-listen__hook {
+  margin: 1.2rem 0 0;
+  font-size: 1.34rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.story-listen__player {
+  margin-top: 1.8rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.story-listen__progress-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.story-listen__play {
+  width: 6.4rem;
+  height: 6.4rem;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.story-listen__play-icon {
+  width: 4.2rem;
+  height: 4.2rem;
+}
+
+.story-listen__progress-row {
+  margin-top: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: 650;
+  color: rgba(255, 255, 255, 0.7);
+  font-variant-numeric: tabular-nums;
+}
+
+.story-listen__progress {
+  width: 100%;
+  height: 2.2rem;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.story-listen__progress::-webkit-slider-runnable-track {
+  height: 0.52rem;
+  border-radius: 9999px;
+  background:
+    linear-gradient(#ffffff, #ffffff) 0 / var(--story-progress, 0%) 100% no-repeat,
+    rgba(255, 255, 255, 0.2);
+}
+
+.story-listen__progress::-webkit-slider-thumb {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-top: -0.59rem;
+  appearance: none;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.24);
+}
+
+.story-listen__progress::-moz-range-track {
+  height: 0.52rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.story-listen__progress::-moz-range-progress {
+  height: 0.52rem;
+  border-radius: 9999px;
+  background: #ffffff;
+}
+
+.story-listen__progress::-moz-range-thumb {
+  width: 1.7rem;
+  height: 1.7rem;
+  border: 0;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.24);
+}
+
+.story-listen__wave {
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.32rem;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.story-listen__wave span {
+  width: 0.28rem;
+  height: 0.8rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.5);
+  transform-origin: center;
+}
+
+.story-listen__wave span:nth-child(5n + 1) {
+  height: 1.15rem;
+}
+
+.story-listen__wave span:nth-child(5n + 2) {
+  height: 2.2rem;
+}
+
+.story-listen__wave span:nth-child(3n) {
+  height: 1.9rem;
+}
+
+.story-listen__wave span:nth-child(4n) {
+  height: 1.35rem;
+}
+
+.story-listen__wave.is-playing span {
+  animation: story-wave 880ms ease-in-out infinite;
+}
+
+.story-listen__wave.is-playing span:nth-child(2n) {
+  animation-delay: 120ms;
+}
+
+.story-listen__wave.is-playing span:nth-child(3n) {
+  animation-delay: 240ms;
+}
+
+.story-listen__audio {
+  display: none;
+}
+
+.story-listen__cta {
+  display: inline-flex;
+  position: fixed;
+  left: 50%;
+  bottom: max(3.2rem, calc(env(safe-area-inset-bottom) + 1.8rem));
+  z-index: 4;
+  width: min(calc(100% - 3.2rem), 36rem);
+  transform: translateX(-50%);
+  box-shadow: 0 1.2rem 2.8rem rgba(31, 27, 22, 0.13);
+}
+
+.app-layout--story,
+.app-layout--story .main-content {
+  background: #171512;
+}
+
+.app-layout--story {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.app-layout--story .main-content {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.story-listen__play:focus-visible,
+.story-listen__progress:focus-visible,
+.story-listen__cta:focus-visible {
+  outline: 2px solid var(--story-accent);
+  outline-offset: 4px;
+}
+
+@keyframes story-wave {
+  0%,
+  100% {
+    transform: scaleY(0.62);
+  }
+
+  50% {
+    transform: scaleY(1.18);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-listen__wave.is-playing span {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-listen {
+    align-items: stretch;
+  }
+
+  .story-listen__shell {
+    width: min(100%, 43rem);
+    padding: 1.6rem 1.6rem 8.4rem;
+  }
+
+  .story-listen__overlay {
+    padding: 1.8rem 0 0;
+    padding-top: 5.8rem;
+  }
+
+  .story-listen__eyebrow {
+    top: 2rem;
+    left: 2rem;
+  }
+
+  .story-listen__hook {
+    font-size: 1.22rem;
+  }
+
+  .story-listen__title {
+    font-size: clamp(3.1rem, 11vw, 4.6rem);
+  }
+
+  .story-listen__player {
+    margin-top: 1.4rem;
+  }
+
+  .story-listen__play {
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+
+  .story-listen__play-icon {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+}

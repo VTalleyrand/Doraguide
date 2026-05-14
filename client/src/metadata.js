@@ -48,3 +48,17 @@ export const routeMetadata = {
     socialTitle: 'Vote for Dora’s Next City',
   },
 };
+
+export const getRouteMetadata = (pathname) => {
+  if (pathname?.startsWith('/s/')) {
+    return {
+      title: 'Listen on Dora',
+      description:
+        'Listen to a free Dora audio story, then get early access to the app.',
+      canonicalPath: pathname,
+      socialTitle: 'Listen on Dora',
+    };
+  }
+
+  return routeMetadata[pathname] || routeMetadata['/'];
+};

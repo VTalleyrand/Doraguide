@@ -4,6 +4,7 @@ import Footer from './components/Footer/index.jsx';
 
 function App({ children, locationPath, locationHash }) {
   const isHomePage = locationPath === '/';
+  const isStoryPage = locationPath.startsWith('/s/');
 
   useEffect(() => {
     const html = document.documentElement;
@@ -33,15 +34,19 @@ function App({ children, locationPath, locationHash }) {
   }, [isHomePage, locationHash, locationPath]);
 
   return (
-    <div className={`app-layout ${isHomePage ? 'app-layout--home' : ''}`}>
+    <div
+      className={`app-layout ${isHomePage ? 'app-layout--home' : ''} ${
+        isStoryPage ? 'app-layout--story' : ''
+      }`}
+    >
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
-      <Header />
+      {!isStoryPage && <Header />}
       <main className="main-content" id="main-content">
         {children}
       </main>
-      <Footer />
+      {!isStoryPage && <Footer />}
     </div>
   );
 }

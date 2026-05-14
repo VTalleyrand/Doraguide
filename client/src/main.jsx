@@ -2,8 +2,8 @@ import { StrictMode, useEffect, useState } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import './global.css';
 import App from './App.jsx';
-import { routeMetadata, siteUrl, socialImage } from './metadata.js';
-import { normalizePath, routes } from './routes.jsx';
+import { getRouteMetadata, siteUrl, socialImage } from './metadata.js';
+import { normalizePath, resolvePageForPath } from './routes.jsx';
 
 const setMetaContent = (selector, content) => {
   const element = document.head.querySelector(selector);
@@ -59,7 +59,7 @@ function RouterApp() {
   }, []);
 
   useEffect(() => {
-    const metadata = routeMetadata[location.pathname] || routeMetadata['/'];
+    const metadata = getRouteMetadata(location.pathname);
     const canonicalUrl = `${siteUrl}${metadata.canonicalPath}`;
 
     document.title = metadata.title;
@@ -74,11 +74,11 @@ function RouterApp() {
     setMetaContent('meta[name="twitter:image"]', socialImage);
   }, [location.pathname]);
 
-  const Page = routes[location.pathname] || Home;
+  const Page = resolvePageForPath(location.pathname);
 
   return (
     <App locationPath={location.pathname} locationHash={location.hash}>
-      <Page />
+      <Page routePath={location.pathname} />
     </App>
   );
 }
