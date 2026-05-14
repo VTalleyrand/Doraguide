@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   appMarkerColors,
   sampleStops,
@@ -11,8 +11,7 @@ import '../components/Header/Header.css';
 import './StoryListen.css';
 
 const fallbackStory = sampleStops[0];
-const earlyAccessUrl =
-  'https://docs.google.com/forms/d/e/1FAIpQLSdJFFJN6tyLpKh5g0WvLWzTQ1IOtyw48im_OGJqYCILGNcp6w/viewform';
+const appDownloadUrl = '/';
 const storyRoutePrefix = '/s/';
 
 const getStorySlugFromPath = (path) => {
@@ -68,6 +67,16 @@ const StoryListen = ({ routePath }) => {
   const duration = loadedDuration || fallbackDuration;
   const progress = duration > 0 ? Math.min(currentTime / duration, 1) : 0;
 
+  useEffect(() => {
+    document.documentElement.classList.add('story-listen-page');
+    document.body.classList.add('story-listen-page');
+
+    return () => {
+      document.documentElement.classList.remove('story-listen-page');
+      document.body.classList.remove('story-listen-page');
+    };
+  }, []);
+
   const togglePlayback = () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -120,7 +129,9 @@ const StoryListen = ({ routePath }) => {
             <h1 className="story-listen__title" id="story-listen-title">
               {story.title}
             </h1>
-            <p className="story-listen__hook">{story.hook}</p>
+            <div className="story-listen__hook" aria-label={story.hook}>
+              <span>{story.hook}</span>
+            </div>
 
             <div className="story-listen__player">
               <button
@@ -184,15 +195,13 @@ const StoryListen = ({ routePath }) => {
           />
         </div>
 
-        <a
-          className="design-btn story-listen__cta"
-          href={earlyAccessUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AppleIcon />
-          Get early access
-        </a>
+        <div className="story-listen__cta-wrap">
+          <p>Want more stories nearby?</p>
+          <a className="design-btn story-listen__cta" href={appDownloadUrl}>
+            <AppleIcon />
+            Download on iOS
+          </a>
+        </div>
       </div>
     </section>
   );
