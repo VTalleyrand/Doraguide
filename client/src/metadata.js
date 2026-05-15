@@ -49,6 +49,13 @@ export const routeMetadata = {
   },
 };
 
+export const storyRoutePaths = [
+  '/s/new-york',
+  '/s/paris',
+  '/s/milan',
+  '/s/palermo',
+];
+
 export const getRouteMetadata = (pathname) => {
   if (pathname?.startsWith('/s/')) {
     return {

@@ -1,7 +1,13 @@
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { routeMetadata, siteUrl, socialImage } from '../client/src/metadata.js';
+import {
+  getRouteMetadata,
+  routeMetadata,
+  siteUrl,
+  socialImage,
+  storyRoutePaths,
+} from '../client/src/metadata.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
@@ -72,7 +78,13 @@ const writeRoute = async (routePath, html) => {
   await writeFile(path.join(routeDir, 'index.html'), html);
 };
 
-for (const [routePath, metadata] of Object.entries(routeMetadata)) {
+const prerenderRoutes = [
+  ...Object.keys(routeMetadata),
+  ...storyRoutePaths,
+];
+
+for (const routePath of prerenderRoutes) {
+  const metadata = getRouteMetadata(routePath);
   const appHtml = render(routePath);
   const html = applyMetadata(
     template.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`),
