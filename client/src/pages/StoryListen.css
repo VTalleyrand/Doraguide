@@ -85,6 +85,7 @@ body.story-listen-page {
   line-height: 0.98;
   letter-spacing: -0.035em;
   text-align: center;
+  transform: translateY(-3rem);
 }
 
 .story-listen__hook {
@@ -97,6 +98,7 @@ body.story-listen-page {
   color: rgba(255, 255, 255, 0.72);
   text-align: center;
   text-wrap: pretty;
+  transform: translateY(-3rem);
 }
 
 .story-listen__player {
