@@ -11,7 +11,8 @@ import '../components/Header/Header.css';
 import './StoryListen.css';
 
 const fallbackStory = sampleStops[0];
-const appDownloadUrl = '/';
+const appDownloadUrl =
+  'https://docs.google.com/forms/d/e/1FAIpQLSdJFFJN6tyLpKh5g0WvLWzTQ1IOtyw48im_OGJqYCILGNcp6w/viewform';
 const storyRoutePrefix = '/s/';
 
 const getStorySlugFromPath = (path) => {
@@ -116,22 +117,15 @@ const StoryListen = ({ routePath }) => {
     >
       <div className="story-listen__shell">
         <div className="story-listen__card">
-          <a
-            className="story-listen__eyebrow"
-            href="/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Dora audio story
+          <a className="story-listen__eyebrow" href="/">
+            You found a Dora story
           </a>
 
           <div className="story-listen__overlay">
             <h1 className="story-listen__title" id="story-listen-title">
               {story.title}
             </h1>
-            <div className="story-listen__hook" aria-label={story.hook}>
-              <span>{story.hook}</span>
-            </div>
+            <p className="story-listen__hook">{story.hook}</p>
 
             <div className="story-listen__player">
               <button
@@ -197,7 +191,12 @@ const StoryListen = ({ routePath }) => {
 
         <div className="story-listen__cta-wrap">
           <p>Want more stories nearby?</p>
-          <a className="design-btn story-listen__cta" href={appDownloadUrl}>
+          <a
+            className="design-btn story-listen__cta"
+            href={appDownloadUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
             <AppleIcon />
             Download on iOS
           </a>
