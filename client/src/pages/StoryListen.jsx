@@ -14,6 +14,14 @@ const fallbackStory = sampleStops[0];
 const appDownloadUrl =
   'https://docs.google.com/forms/d/e/1FAIpQLSdJFFJN6tyLpKh5g0WvLWzTQ1IOtyw48im_OGJqYCILGNcp6w/viewform';
 const storyRoutePrefix = '/s/';
+const storyCityAccentColors = {
+  'new-york': 'var(--marker-indigo)',
+  amsterdam: 'var(--marker-blue)',
+  paris: 'var(--marker-green)',
+  milan: 'var(--marker-orange)',
+  barcelona: 'var(--marker-blue)',
+  palermo: 'var(--marker-yellow)',
+};
 
 const getStorySlugFromPath = (path) => {
   if (!path || !path.startsWith(storyRoutePrefix)) return '';
@@ -63,7 +71,10 @@ const StoryListen = ({ routePath }) => {
     return sampleStops.find((stop) => stop.id === slug) || fallbackStory;
   }, [routePath]);
 
-  const markerColor = appMarkerColors[story.category] || appMarkerColors.Cultural;
+  const markerColor =
+    storyCityAccentColors[story.id] ||
+    appMarkerColors[story.category] ||
+    appMarkerColors.Cultural;
   const fallbackDuration = parseClockLabelToSeconds(story.duration);
   const duration = loadedDuration || fallbackDuration;
   const progress = duration > 0 ? Math.min(currentTime / duration, 1) : 0;
@@ -117,7 +128,12 @@ const StoryListen = ({ routePath }) => {
     >
       <div className="story-listen__shell">
         <div className="story-listen__card">
-          <a className="story-listen__eyebrow" href="/">
+          <a
+            className="story-listen__eyebrow"
+            href="/"
+            target="_blank"
+            rel="noreferrer"
+          >
             You found a Dora story
           </a>
 
