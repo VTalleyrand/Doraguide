@@ -139,7 +139,7 @@ body.story-listen-page {
 }
 
 .story-listen__progress-row {
-  margin-top: 1.3rem;
+  margin-top: 2.4rem;
   font-size: 1.2rem;
   font-weight: 650;
   color: rgba(255, 255, 255, 0.7);
@@ -351,6 +351,10 @@ body.story-listen-page {
   }
 
   .story-listen__player {
+    margin-top: 1.4rem;
+  }
+
+  .story-listen__progress-row {
     margin-top: 1.4rem;
   }
 
