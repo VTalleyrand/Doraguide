@@ -49,21 +49,26 @@ export const routeMetadata = {
   },
 };
 
-export const storyRoutePaths = [
-  '/s/new-york',
-  '/s/paris',
-  '/s/milan',
-  '/s/palermo',
-];
+export const storyRouteNames = {
+  '/s/new-york': 'New York',
+  '/s/paris': 'Paris',
+  '/s/milan': 'Milan',
+  '/s/palermo': 'Palermo',
+};
+
+export const storyRoutePaths = Object.keys(storyRouteNames);
 
 export const getRouteMetadata = (pathname) => {
   if (pathname?.startsWith('/s/')) {
+    const locationName = storyRouteNames[pathname] || 'this place';
+    const title = `Dora - Discovering ${locationName}`;
+
     return {
-      title: 'Listen on Dora',
+      title,
       description:
         'Listen to a free Dora audio story, then get early access to the app.',
       canonicalPath: pathname,
-      socialTitle: 'Listen on Dora',
+      socialTitle: title,
     };
   }
 
