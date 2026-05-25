@@ -1,31 +1,22 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import {
-  appMarkerColors,
-  sampleStops,
-} from '../components/MapExperience/mapExperienceData.js';
+import { appMarkerColors } from '../components/MapExperience/mapExperienceData.js';
+import { getFeaturedStoryBySlug } from '../data/featuredLocations.js';
+import { getStorySlugFromPath } from '../routes.jsx';
 import {
   formatClock,
-  parseClockLabelToSeconds,
 } from '../components/MapExperience/mapExperienceUtils.js';
 import '../components/Header/Header.css';
 import './StoryListen.css';
 
-const fallbackStory = sampleStops[0];
 const appDownloadUrl =
   'https://docs.google.com/forms/d/e/1FAIpQLSdJFFJN6tyLpKh5g0WvLWzTQ1IOtyw48im_OGJqYCILGNcp6w/viewform';
-const storyRoutePrefix = '/s/';
 const storyCityAccentColors = {
-  'new-york': 'var(--marker-indigo)',
+  new_york: 'var(--marker-indigo)',
   amsterdam: 'var(--marker-blue)',
   paris: 'var(--marker-green)',
   milan: 'var(--marker-orange)',
   barcelona: 'var(--marker-blue)',
   palermo: 'var(--marker-yellow)',
-};
-
-const getStorySlugFromPath = (path) => {
-  if (!path || !path.startsWith(storyRoutePrefix)) return '';
-  return decodeURIComponent(path.slice(storyRoutePrefix.length));
 };
 
 const PlayIcon = () => (
@@ -68,15 +59,13 @@ const StoryListen = ({ routePath }) => {
 
   const story = useMemo(() => {
     const slug = getStorySlugFromPath(routePath);
-    return sampleStops.find((stop) => stop.id === slug) || fallbackStory;
+    return getFeaturedStoryBySlug(slug);
   }, [routePath]);
 
   const markerColor =
-    storyCityAccentColors[story.id] ||
-    appMarkerColors[story.category] ||
+    storyCityAccentColors[story?.citySlug] ||
     appMarkerColors.Cultural;
-  const fallbackDuration = parseClockLabelToSeconds(story.duration);
-  const duration = loadedDuration || fallbackDuration;
+  const duration = loadedDuration;
   const progress = duration > 0 ? Math.min(currentTime / duration, 1) : 0;
 
   useEffect(() => {
@@ -88,6 +77,21 @@ const StoryListen = ({ routePath }) => {
       document.body.classList.remove('story-listen-page');
     };
   }, []);
+
+  useEffect(() => {
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setLoadedDuration(0);
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current.load();
+    }
+  }, [story?.id, story?.audioSrc]);
+
+  if (!story) {
+    return null;
+  }
 
   const togglePlayback = () => {
     const audio = audioRef.current;

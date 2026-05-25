@@ -1,3 +1,11 @@
+import {
+  STORY_ROUTE_BASE,
+  STORY_ROUTE_PREFIX,
+  getFeaturedStoryBySlug,
+  storyRouteNames,
+  storyRoutePaths,
+} from './data/featuredLocations.js';
+
 export const siteUrl = 'https://doraguide.com';
 
 export const defaultDescription =
@@ -49,25 +57,37 @@ export const routeMetadata = {
   },
 };
 
-export const storyRouteNames = {
-  '/s/new-york': 'New York',
-  '/s/paris': 'Paris',
-  '/s/milan': 'Milan',
-  '/s/palermo': 'Palermo',
+export { storyRouteNames, storyRoutePaths };
+
+const getStorySlugFromPathname = (pathname) => {
+  const normalizedPath =
+    pathname?.endsWith('/') && pathname !== '/'
+      ? pathname.slice(0, -1)
+      : pathname || '/';
+  if (normalizedPath === STORY_ROUTE_BASE) return '';
+  if (!normalizedPath.startsWith(STORY_ROUTE_PREFIX)) return '';
+  return decodeURIComponent(normalizedPath.slice(STORY_ROUTE_PREFIX.length));
 };
 
-export const storyRoutePaths = Object.keys(storyRouteNames);
-
 export const getRouteMetadata = (pathname) => {
-  if (pathname?.startsWith('/s/')) {
-    const locationName = storyRouteNames[pathname] || 'this place';
+  const slug = getStorySlugFromPathname(pathname);
+  const isStoryRoute =
+    pathname === STORY_ROUTE_BASE || pathname?.startsWith(STORY_ROUTE_PREFIX);
+
+  if (isStoryRoute) {
+    const story = getFeaturedStoryBySlug(slug);
+    if (!story) return routeMetadata['/'];
+
+    const canonicalPath = `${STORY_ROUTE_PREFIX}${slug}`;
+    const locationName = storyRouteNames[canonicalPath] || story.title;
     const title = `Dora - Discovering ${locationName}`;
 
     return {
       title,
       description:
+        story.hook ||
         'Listen to a free Dora audio story, then get early access to the app.',
-      canonicalPath: pathname,
+      canonicalPath,
       socialTitle: title,
     };
   }

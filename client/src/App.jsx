@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import Header from './components/Header/index.jsx';
 import Footer from './components/Footer/index.jsx';
+import { isValidStoryPath } from './routes.jsx';
 
 function App({ children, locationPath, locationHash }) {
   const isHomePage = locationPath === '/';
-  const isStoryPage = locationPath.startsWith('/s/');
+  const isStoryPage = isValidStoryPath(locationPath);
 
   useEffect(() => {
     const html = document.documentElement;

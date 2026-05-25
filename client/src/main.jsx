@@ -3,7 +3,12 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import './global.css';
 import App from './App.jsx';
 import { getRouteMetadata, siteUrl, socialImage } from './metadata.js';
-import { normalizePath, resolvePageForPath } from './routes.jsx';
+import {
+  isStoryPath,
+  isValidStoryPath,
+  normalizePath,
+  resolvePageForPath,
+} from './routes.jsx';
 
 const setMetaContent = (selector, content) => {
   const element = document.head.querySelector(selector);
@@ -57,6 +62,13 @@ function RouterApp() {
     document.addEventListener('click', handleDocumentClick);
     return () => document.removeEventListener('click', handleDocumentClick);
   }, []);
+
+  useEffect(() => {
+    if (isStoryPath(location.pathname) && !isValidStoryPath(location.pathname)) {
+      window.history.replaceState({}, '', '/');
+      setLocation({ pathname: '/', hash: '' });
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     const metadata = getRouteMetadata(location.pathname);

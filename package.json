@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "vite --config client/vite.config.js",
+    "dev:local": "vite --config client/vite.config.js --host --port 5174",
     "build": "vite build --config client/vite.config.js && vite build --config client/vite.config.js --ssr src/entry-server.jsx --outDir ../dist/server && node scripts/prerender.mjs",
     "preview": "vite preview --config client/vite.config.js",
     "start": "node server/index.mjs"

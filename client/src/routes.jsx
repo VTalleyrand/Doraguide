@@ -5,8 +5,11 @@ import Privacy from './pages/Privacy.jsx';
 import Press from './pages/Press.jsx';
 import CityVote from './pages/CityVote.jsx';
 import StoryListen from './pages/StoryListen.jsx';
-
-const storyRoutePrefix = '/s/';
+import {
+  STORY_ROUTE_BASE,
+  STORY_ROUTE_PREFIX,
+  getFeaturedStoryBySlug,
+} from './data/featuredLocations.js';
 
 export const routes = {
   '/': Home,
@@ -24,14 +27,27 @@ export const normalizePath = (path) => {
 
 export const getStorySlugFromPath = (path) => {
   const normalizedPath = normalizePath(path);
-  if (!normalizedPath.startsWith(storyRoutePrefix)) return '';
-  return decodeURIComponent(normalizedPath.slice(storyRoutePrefix.length));
+  if (normalizedPath === STORY_ROUTE_BASE) return '';
+  if (!normalizedPath.startsWith(STORY_ROUTE_PREFIX)) return '';
+  return decodeURIComponent(normalizedPath.slice(STORY_ROUTE_PREFIX.length));
+};
+
+export const isStoryPath = (path) => {
+  const normalizedPath = normalizePath(path);
+  return (
+    normalizedPath === STORY_ROUTE_BASE ||
+    normalizedPath.startsWith(STORY_ROUTE_PREFIX)
+  );
+};
+
+export const isValidStoryPath = (path) => {
+  const slug = getStorySlugFromPath(path);
+  return Boolean(slug && getFeaturedStoryBySlug(slug));
 };
 
 export const resolvePageForPath = (path) => {
   const normalizedPath = normalizePath(path);
-  return (
-    routes[normalizedPath] ||
-    (getStorySlugFromPath(normalizedPath) ? StoryListen : routes['/'])
-  );
+  if (routes[normalizedPath]) return routes[normalizedPath];
+  if (isValidStoryPath(normalizedPath)) return StoryListen;
+  return routes['/'];
 };
