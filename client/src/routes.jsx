@@ -9,6 +9,9 @@ import {
   STORY_ROUTE_BASE,
   STORY_ROUTE_PREFIX,
   getFeaturedStoryBySlug,
+  getStorySlugFromPath,
+  isStoryPathCandidate,
+  normalizeSitePath,
 } from './data/featuredLocations.js';
 
 export const routes = {
@@ -20,25 +23,11 @@ export const routes = {
   '/vote': CityVote,
 };
 
-export const normalizePath = (path) => {
-  if (!path || path === '') return '/';
-  return path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
-};
+export const normalizePath = normalizeSitePath;
 
-export const getStorySlugFromPath = (path) => {
-  const normalizedPath = normalizePath(path);
-  if (normalizedPath === STORY_ROUTE_BASE) return '';
-  if (!normalizedPath.startsWith(STORY_ROUTE_PREFIX)) return '';
-  return decodeURIComponent(normalizedPath.slice(STORY_ROUTE_PREFIX.length));
-};
+export { getStorySlugFromPath, STORY_ROUTE_BASE, STORY_ROUTE_PREFIX };
 
-export const isStoryPath = (path) => {
-  const normalizedPath = normalizePath(path);
-  return (
-    normalizedPath === STORY_ROUTE_BASE ||
-    normalizedPath.startsWith(STORY_ROUTE_PREFIX)
-  );
-};
+export const isStoryPath = isStoryPathCandidate;
 
 export const isValidStoryPath = (path) => {
   const slug = getStorySlugFromPath(path);

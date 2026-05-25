@@ -1,0 +1,333 @@
+{
+  "mediaBaseUrl": "https://media.internetinterns.com/audio",
+  "generatedAt": "2026-05-25T08:13:13.225Z",
+  "locationCount": 58,
+  "cities": [
+    {
+      "city": "New York",
+      "citySlug": "new_york",
+      "locations": [
+        {
+          "title": "Times Square",
+          "description": "Neon canyon where Broadway meets the world.",
+          "audioUrl": "https://media.internetinterns.com/audio/new_york_us/timesSquare.mp3"
+        },
+        {
+          "title": "National September 11 Memorial & Museum",
+          "description": "Twin‑tower footprints re‑imagined as solemn waterfalls and an underground museum chronicling 9/11.",
+          "audioUrl": "https://media.internetinterns.com/audio/new_york_us/911MemorialandMuseum.mp3"
+        },
+        {
+          "title": "Brooklyn Bridge",
+          "description": "1883 engineering marvel linking boroughs by span.",
+          "audioUrl": "https://media.internetinterns.com/audio/new_york_us/brooklynBridge.mp3"
+        },
+        {
+          "title": "Central Park",
+          "description": "843 acres of meadows, lakes, and woodland paths.",
+          "audioUrl": "https://media.internetinterns.com/audio/new_york_us/centralPark.mp3"
+        },
+        {
+          "title": "Rockefeller Center",
+          "description": "Art Deco complex with Top of the Rock, skating rink, and public art.",
+          "audioUrl": "https://media.internetinterns.com/audio/new_york_us/rockefellerCenter.mp3"
+        },
+        {
+          "title": "Empire State Building",
+          "description": "Art-Deco titan with 86th-floor observatory.",
+          "audioUrl": "https://media.internetinterns.com/audio/new_york_us/empireStateBuilding.mp3"
+        },
+        {
+          "title": "The High Line",
+          "description": "Elevated rail line reborn as a linear park through Chelsea and Hudson Yards.",
+          "audioUrl": "https://media.internetinterns.com/audio/new_york_us/highline.mp3"
+        },
+        {
+          "title": "Staten Island Ferry",
+          "description": "Free ferry offering spectacular views of the Statue of Liberty, Ellis Island, and Manhattan skyline—New York's best bargain sightseeing cruise.",
+          "audioUrl": "https://media.internetinterns.com/audio/new_york_us/statenIslandFerry.mp3"
+        },
+        {
+          "title": "Statue of Liberty",
+          "description": "Copper colossus gifted by France in 1886.",
+          "audioUrl": "https://media.internetinterns.com/audio/new_york_us/statueOfLibertyAudio.mp3"
+        }
+      ]
+    },
+    {
+      "city": "Paris",
+      "citySlug": "paris",
+      "locations": [
+        {
+          "title": "Eiffel Tower",
+          "description": "Wrought-iron lattice tower built 1887-89 for the 1889 Universal Exhibition; named after engineer Gustave Eiffel and now a 330-m-tall global icon.",
+          "audioUrl": "https://media.internetinterns.com/audio/paris_fr/eiffelTower.mp3"
+        },
+        {
+          "title": "Notre‑Dame Cathedral",
+          "description": "Gothic masterpiece built from the 12th to 14th centuries with soaring flying buttresses and rose windows; seat of the Archdiocese of Paris.",
+          "audioUrl": "https://media.internetinterns.com/audio/paris_fr/notreDameCathedral.mp3"
+        },
+        {
+          "title": "Pyramide du Louvre",
+          "description": "Glass pyramid designed by I.M. Pei and commissioned by President Francois Mitterrand; completed in 1989, it stands 22 m high with 673 panes and serves as the Louvre's main entrance.",
+          "audioUrl": "https://media.internetinterns.com/audio/paris_fr/pyramideDuLouvre.mp3"
+        },
+        {
+          "title": "Arc de Triomphe",
+          "description": "Monumental arch at Place Charles de Gaulle honouring Napoleon's victories; construction began in 1806 and the 50-m-high arch is engraved with bas-reliefs and the names of battles and generals.",
+          "audioUrl": "https://media.internetinterns.com/audio/paris_fr/arcDeTriomphe.mp3"
+        },
+        {
+          "title": "Musee d'Orsay",
+          "description": "Former Beaux-Arts railway station turned museum housing world-famous Impressionist and Post-Impressionist paintings by Monet, Degas, Van Gogh and others.",
+          "audioUrl": "https://media.internetinterns.com/audio/paris_fr/museeDOrsay.mp3"
+        },
+        {
+          "title": "Palais Garnier",
+          "description": "Opulent 1,979-seat opera house completed in 1875 by architect Charles Garnier; its marble foyer and gilded auditorium epitomise Second-Empire grandeur.",
+          "audioUrl": "https://media.internetinterns.com/audio/paris_fr/palaisGarnier.mp3"
+        },
+        {
+          "title": "Pantheon",
+          "description": "Neoclassical mausoleum built between 1758 and 1790 as a church; it now honours France's great men and women, housing the tombs of Voltaire, Rousseau, Marie Curie and others.",
+          "audioUrl": "https://media.internetinterns.com/audio/paris_fr/pantheon.mp3"
+        },
+        {
+          "title": "Place de la Concorde",
+          "description": "Vast 18th-century square designed by Ange-Jacques Gabriel and renamed during the French Revolution; features the 23-m Luxor Obelisk and two monumental fountains.",
+          "audioUrl": "https://media.internetinterns.com/audio/paris_fr/placeDeLaConcorde.mp3"
+        },
+        {
+          "title": "Tuileries Garden",
+          "description": "Formal garden laid out by Catherine de Medicis in the 16th century and redesigned by Andre Le Notre for Louis XIV; it later became a stage for royal festivities and revolutionary events.",
+          "audioUrl": "https://media.internetinterns.com/audio/paris_fr/tuileriesGarden.mp3"
+        }
+      ]
+    },
+    {
+      "city": "Barcelona",
+      "citySlug": "barcelona",
+      "locations": [
+        {
+          "title": "Basílica de la Sagrada Família",
+          "description": "Gaudí's still‑unfinished basilica blending Gothic and Art Nouveau forms, begun in 1882 and expected to be completed in 2026.",
+          "audioUrl": "https://media.internetinterns.com/audio/barcelona_es/sagradaFamilia.mp3"
+        },
+        {
+          "title": "Park Güell",
+          "description": "Gaudí‑designed hillside park with mosaics and gingerbread gatehouses, built 1900–1914 and now a UNESCO site.",
+          "audioUrl": "https://media.internetinterns.com/audio/barcelona_es/parkGuell.mp3"
+        },
+        {
+          "title": "Casa Batlló",
+          "description": "Gaudí's modernist house with skeletal balconies, a shimmering trencadís façade and a dragon‑like roof.",
+          "audioUrl": "https://media.internetinterns.com/audio/barcelona_es/casaBatllo.mp3"
+        },
+        {
+          "title": "Cathedral of Barcelona",
+          "description": "The 13th‑century Gothic cathedral of Saint Eulalia, crowned with gargoyles and a neo‑Gothic façade.",
+          "audioUrl": "https://media.internetinterns.com/audio/barcelona_es/cathedralOfBarcelona.mp3"
+        },
+        {
+          "title": "Barri Gòtic",
+          "description": "Medieval core of Barcelona's old town—narrow alleys, hidden squares and centuries‑old buildings form a labyrinth of history.",
+          "audioUrl": "https://media.internetinterns.com/audio/barcelona_es/barriGotic.mp3"
+        },
+        {
+          "title": "La Barceloneta",
+          "description": "Seaside quarter on a narrow peninsula known for its beach, seafood restaurants and lively boardwalk.",
+          "audioUrl": "https://media.internetinterns.com/audio/barcelona_es/laBarceloneta.mp3"
+        },
+        {
+          "title": "Platja de la Barceloneta",
+          "description": "Barcelona's wide city beach with a lively promenade lined with restaurants and clubs.",
+          "audioUrl": "https://media.internetinterns.com/audio/barcelona_es/platjaBarceloneta.mp3"
+        },
+        {
+          "title": "Arc de Triomf",
+          "description": "Red‑brick triumphal arch built as the gateway to Barcelona's 1888 Universal Exhibition.",
+          "audioUrl": "https://media.internetinterns.com/audio/barcelona_es/arcDeTriomf.mp3"
+        },
+        {
+          "title": "Santa Maria del Mar",
+          "description": "14th‑century Gothic basilica in El Born, famed for its austere single‑style construction and widely regarded as Barcelona's most beautiful Gothic church.",
+          "audioUrl": "https://media.internetinterns.com/audio/barcelona_es/santaMariaDelMar.mp3"
+        },
+        {
+          "title": "Palau de la Música Catalana",
+          "description": "Modernist concert hall and UNESCO site.",
+          "audioUrl": "https://media.internetinterns.com/audio/barcelona_es/palauMusicaCatalana.mp3"
+        }
+      ]
+    },
+    {
+      "city": "Amsterdam",
+      "citySlug": "amsterdam",
+      "locations": [
+        {
+          "title": "Rijksmuseum",
+          "description": "Dutch national museum showcasing Golden Age masterpieces and Amsterdam's cultural heritage.",
+          "audioUrl": "https://media.internetinterns.com/audio/amsterdam_nl/rijksmuseum.mp3"
+        },
+        {
+          "title": "Museumplein",
+          "description": "One of Amsterdam's largest public squares, lined by world‑class museums and wide green lawns.",
+          "audioUrl": "https://media.internetinterns.com/audio/amsterdam_nl/museumplein.mp3"
+        },
+        {
+          "title": "Anne Frank House",
+          "description": "Historic canal house where Anne Frank wrote her diary; now a museum of remembrance.",
+          "audioUrl": "https://media.internetinterns.com/audio/amsterdam_nl/anneFrankHouse.mp3"
+        },
+        {
+          "title": "Dam Square",
+          "description": "Amsterdam's central square — monuments, pigeons, and non‑stop city life.",
+          "audioUrl": "https://media.internetinterns.com/audio/amsterdam_nl/deDam.mp3"
+        },
+        {
+          "title": "Royal Palace",
+          "description": "17th‑century City Hall turned royal palace, presiding over Dam Square.",
+          "audioUrl": "https://media.internetinterns.com/audio/amsterdam_nl/koninklijkPaleis.mp3"
+        },
+        {
+          "title": "Canal Ring",
+          "description": "UNESCO‑listed ring of 17th‑century canals defining Amsterdam's postcard views.",
+          "audioUrl": "https://media.internetinterns.com/audio/amsterdam_nl/grachtengordel.mp3"
+        },
+        {
+          "title": "Van Gogh Museum",
+          "description": "Home to the world's largest collection of Van Gogh paintings and letters.",
+          "audioUrl": "https://media.internetinterns.com/audio/amsterdam_nl/vanGoghMuseum.mp3"
+        },
+        {
+          "title": "Jordaan",
+          "description": "Canal‑laced former working‑class district now famed for galleries and brown cafés.",
+          "audioUrl": "https://media.internetinterns.com/audio/amsterdam_nl/jordaan.mp3"
+        },
+        {
+          "title": "Albert Cuyp Market",
+          "description": "Bustling street market in De Pijp famed for its diverse food stalls and Dutch treats.",
+          "audioUrl": "https://media.internetinterns.com/audio/amsterdam_nl/albertCuypMarket.mp3"
+        },
+        {
+          "title": "Vondelpark",
+          "description": "Amsterdam's beloved 19th‑century park with lakes, lawns, statues and an open‑air theatre.",
+          "audioUrl": "https://media.internetinterns.com/audio/amsterdam_nl/vondelpark.mp3"
+        }
+      ]
+    },
+    {
+      "city": "Milan",
+      "citySlug": "milan",
+      "locations": [
+        {
+          "title": "Duomo di Milano",
+          "description": "Gothic cathedral begun in 1386, Italy's largest church, with thousands of spires and statues and the golden Madonnina atop its pink‑marble roof.",
+          "audioUrl": "https://media.internetinterns.com/audio/milan_it/duomoDiMilano.mp3"
+        },
+        {
+          "title": "Galleria Vittorio Emanuele II",
+          "description": "19th‑century glass‑roofed arcade linking Piazza del Duomo with Teatro alla Scala, built 1865‑1877 by Giuseppe Mengoni and named for Italy's first king.",
+          "audioUrl": "https://media.internetinterns.com/audio/milan_it/galleriaVittorioEmanueleII.mp3"
+        },
+        {
+          "title": "Castello Sforzesco",
+          "description": "15th‑century Visconti–Sforza fortress turned ducal residence and barracks, now housing civic museums and artworks including Michelangelo's Pietà Rondanini.",
+          "audioUrl": "https://media.internetinterns.com/audio/milan_it/castelloSforzesco.mp3"
+        },
+        {
+          "title": "Teatro alla Scala",
+          "description": "Opera house opened in 1778 on the former site of Santa Maria alla Scala, designed by Giuseppe Piermarini and famed for premiering Italian operas.",
+          "audioUrl": "https://media.internetinterns.com/audio/milan_it/teatroAllaScala.mp3"
+        },
+        {
+          "title": "Basilica di Santa Maria delle Grazie",
+          "description": "Renaissance church and UNESCO site designed by Bramante and linked to Leonardo da Vinci's mural \"The Last Supper\".",
+          "audioUrl": "https://media.internetinterns.com/audio/milan_it/basilicaDiSantaMariaDelleGrazie.mp3"
+        },
+        {
+          "title": "Navigli",
+          "description": "Romantic southwestern district defined by the Naviglio Grande and Naviglio Pavese canals—remnants of a 150‑km waterway system once used to transport goods and marble for the Duomo.",
+          "audioUrl": "https://media.internetinterns.com/audio/milan_it/navigliNeighborhood.mp3"
+        },
+        {
+          "title": "Brera",
+          "description": "Bohemian–bourgeois quarter where cobbled lanes, cafés and art galleries attract artists and collectors around Palazzo Brera.",
+          "audioUrl": "https://media.internetinterns.com/audio/milan_it/breraNeighborhood.mp3"
+        },
+        {
+          "title": "Pinacoteca di Brera",
+          "description": "Milan's first public art museum at Palazzo Brera, showcasing prestigious masterpieces and sculptures from the Renaissance to the 20th century.",
+          "audioUrl": "https://media.internetinterns.com/audio/milan_it/pinacotecaDiBrera.mp3"
+        },
+        {
+          "title": "Bosco Verticale",
+          "description": "Pair of residential towers completed in 2014 that host over 800 trees, 11,000 perennials and 5,000 shrubs—creating a vertical forest equivalent to a 20,000 m² woodland.",
+          "audioUrl": "https://media.internetinterns.com/audio/milan_it/boscoVerticale.mp3"
+        },
+        {
+          "title": "Porta Nuova",
+          "description": "Contemporary business district around Piazza Gae Aulenti, part of Milan's urban regeneration and the first neighbourhood worldwide to earn both LEED and WELL certifications.",
+          "audioUrl": "https://media.internetinterns.com/audio/milan_it/portaNuovaNeighborhood.mp3"
+        }
+      ]
+    },
+    {
+      "city": "Palermo",
+      "citySlug": "palermo",
+      "locations": [
+        {
+          "title": "Quattro Canti",
+          "description": "Baroque crossroads where Via Maqueda meets Corso Vittorio Emanuele; four concave facades symbolize the seasons and Palermo's historic quarters.",
+          "audioUrl": "https://media.internetinterns.com/audio/palermo_it/quattroCanti.mp3"
+        },
+        {
+          "title": "Teatro Massimo",
+          "description": "Opera house inaugurated in 1897, renowned for grand neoclassical architecture, superb acoustics, and status as one of Europe's largest theaters.",
+          "audioUrl": "https://media.internetinterns.com/audio/palermo_it/teatroMassimo.mp3"
+        },
+        {
+          "title": "Palermo Cathedral",
+          "description": "Cathedral complex begun in 1185 that blends Norman, Gothic, Baroque, and Neoclassical styles; houses royal tombs and richly decorated chapels.",
+          "audioUrl": "https://media.internetinterns.com/audio/palermo_it/palermoCathedral.mp3"
+        },
+        {
+          "title": "Fontana Pretoria / Piazza Pretoria",
+          "description": "High-Renaissance fountain covering much of Piazza Pretoria; originally sculpted by Francesco Camilliani for a Tuscan villa, it features more than fifty statues of mythological figures whose nudity earned it the nickname Fountain of Shame.",
+          "audioUrl": "https://media.internetinterns.com/audio/palermo_it/fontanaPretoria.mp3"
+        },
+        {
+          "title": "The Royal Palace (Palazzo dei Normanni)",
+          "description": "Europe's oldest royal residence, begun in the ninth century and expanded by Norman kings; today it houses the Sicilian Regional Assembly.",
+          "audioUrl": "https://media.internetinterns.com/audio/palermo_it/palazzoDeiNormanni.mp3"
+        },
+        {
+          "title": "Cappella Palatina",
+          "description": "Royal chapel commissioned by King Roger II and completed in 1143, famous for glittering Byzantine mosaics paired with carved Arab-Norman wooden ceilings.",
+          "audioUrl": "https://media.internetinterns.com/audio/palermo_it/cappellaPalatina.mp3"
+        },
+        {
+          "title": "Ballarò Market",
+          "description": "Lively street market on Palermo's south side where vendors shout and scooters weave through stalls overflowing with produce, meats, and street food; the bazaar blends Italian staples with North African spices.",
+          "audioUrl": "https://media.internetinterns.com/audio/palermo_it/ballaroMarket.mp3"
+        },
+        {
+          "title": "Teatro Politeama",
+          "description": "Nineteenth-century neoclassical theater crowned with a bronze quadriga; its open-air stage and arcaded facade make it Palermo's second major opera house.",
+          "audioUrl": "https://media.internetinterns.com/audio/palermo_it/teatroPoliteama.mp3"
+        },
+        {
+          "title": "La Martorana (Santa Maria dell'Ammiraglio)",
+          "description": "Twelfth-century church built by Admiral George of Antioch in thanks to the Virgin Mary; originally a Greek-cross plan, the church has been altered over centuries and even hosted Sicily's aristocratic parliament after the 1282 uprising.",
+          "audioUrl": "https://media.internetinterns.com/audio/palermo_it/laMartorana.mp3"
+        },
+        {
+          "title": "San Cataldo Church",
+          "description": "Arab-Norman church founded around 1160 by Maio of Bari; its austere interior was never decorated and it later served as a post office before restoration in 1885.",
+          "audioUrl": "https://media.internetinterns.com/audio/palermo_it/sanCataldoChurch.mp3"
+        }
+      ]
+    }
+  ]
+}

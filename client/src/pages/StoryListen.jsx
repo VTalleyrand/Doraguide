@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { appMarkerColors } from '../components/MapExperience/mapExperienceData.js';
-import { getFeaturedStoryBySlug } from '../data/featuredLocations.js';
-import { getStorySlugFromPath } from '../routes.jsx';
+import {
+  getFeaturedStoryBySlug,
+  getStorySlugFromPath,
+} from '../data/featuredLocations.js';
 import {
   formatClock,
 } from '../components/MapExperience/mapExperienceUtils.js';

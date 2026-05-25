@@ -1,7 +1,8 @@
 import {
-  STORY_ROUTE_BASE,
   STORY_ROUTE_PREFIX,
   getFeaturedStoryBySlug,
+  getStorySlugFromPath,
+  isStoryPathCandidate,
   storyRouteNames,
   storyRoutePaths,
 } from './data/featuredLocations.js';
@@ -59,20 +60,9 @@ export const routeMetadata = {
 
 export { storyRouteNames, storyRoutePaths };
 
-const getStorySlugFromPathname = (pathname) => {
-  const normalizedPath =
-    pathname?.endsWith('/') && pathname !== '/'
-      ? pathname.slice(0, -1)
-      : pathname || '/';
-  if (normalizedPath === STORY_ROUTE_BASE) return '';
-  if (!normalizedPath.startsWith(STORY_ROUTE_PREFIX)) return '';
-  return decodeURIComponent(normalizedPath.slice(STORY_ROUTE_PREFIX.length));
-};
-
 export const getRouteMetadata = (pathname) => {
-  const slug = getStorySlugFromPathname(pathname);
-  const isStoryRoute =
-    pathname === STORY_ROUTE_BASE || pathname?.startsWith(STORY_ROUTE_PREFIX);
+  const slug = getStorySlugFromPath(pathname);
+  const isStoryRoute = isStoryPathCandidate(pathname);
 
   if (isStoryRoute) {
     const story = getFeaturedStoryBySlug(slug);

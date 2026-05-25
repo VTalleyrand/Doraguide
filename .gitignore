@@ -1,6 +1,7 @@
 node_modules
 dist
-data
+# SQLite and local vote API data (root only — not client/src/data featured stories)
+/data/
 .env
 .env.*
 .DS_Store

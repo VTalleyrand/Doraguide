@@ -64,7 +64,9 @@ function RouterApp() {
   }, []);
 
   useEffect(() => {
-    if (isStoryPath(location.pathname) && !isValidStoryPath(location.pathname)) {
+    const normalized = normalizePath(location.pathname);
+
+    if (isStoryPath(normalized) && !isValidStoryPath(normalized)) {
       window.history.replaceState({}, '', '/');
       setLocation({ pathname: '/', hash: '' });
     }
