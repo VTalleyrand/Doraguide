@@ -1,7 +1,19 @@
-import newYorkAudio from '../../assets/audio/new_york.mp3';
-import parisAudio from '../../assets/audio/paris.mp3';
-import milanAudio from '../../assets/audio/milan.mp3';
-import palermoAudio from '../../assets/audio/palermo.mp3';
+import featuredMedia from '../../data/featured-locations-media.json' with { type: 'json' };
+
+const mediaFolderByCitySlug = new Map(
+  featuredMedia.cities.map((city) => {
+    const firstAudioUrl = city.locations.find((location) => location.audioUrl)
+      ?.audioUrl;
+    const folderUrl = firstAudioUrl?.replace(/\/[^/]+$/, '') || '';
+
+    return [city.citySlug, folderUrl];
+  })
+);
+
+const getCityAudioSrc = (citySlug, fileName) => {
+  const folderUrl = mediaFolderByCitySlug.get(citySlug);
+  return folderUrl ? `${folderUrl}/${fileName}` : '';
+};
 
 export const appMarkerColors = {
   Art: '#6265FA',
@@ -21,7 +33,7 @@ export const sampleStops = [
     duration: '6:28',
     coordinate: { latitude: 40.748541, longitude: -73.985758 },
     hook: 'A fast-moving introduction to the city’s layers: Dutch trading post, immigrant capital, skyscraper laboratory, cultural engine.',
-    audioSrc: newYorkAudio,
+    audioSrc: getCityAudioSrc('new_york', 'new_york.mp3'),
     tone: { frequencies: [349.23, 440, 587.33], duration: 1.9 },
   },
   {
@@ -31,7 +43,7 @@ export const sampleStops = [
     duration: '6:48',
     coordinate: { latitude: 48.8566, longitude: 2.3522 },
     hook: 'A story of river islands, revolutions, boulevards, cafés, museums, and the rituals that make Paris feel like Paris.',
-    audioSrc: parisAudio,
+    audioSrc: getCityAudioSrc('paris', 'paris.mp3'),
     tone: { frequencies: [415.3, 554.37, 659.25], duration: 1.6 },
   },
   {
@@ -41,7 +53,7 @@ export const sampleStops = [
     duration: '6:30',
     coordinate: { latitude: 45.4642, longitude: 9.19 },
     hook: 'A compact introduction to Milan through its cathedral, courtyards, fashion houses, factories, and quiet design intelligence.',
-    audioSrc: milanAudio,
+    audioSrc: getCityAudioSrc('milan', 'milan.mp3'),
     tone: { frequencies: [329.63, 493.88, 659.25], duration: 1.7 },
   },
   {
@@ -51,7 +63,7 @@ export const sampleStops = [
     duration: '5:40',
     coordinate: { latitude: 38.1157, longitude: 13.3615 },
     hook: 'Arab-Norman palaces, baroque churches, chaotic markets, and Mediterranean sea air.',
-    audioSrc: palermoAudio,
+    audioSrc: getCityAudioSrc('palermo', 'palermo.mp3'),
     tone: { frequencies: [392, 523.25, 698.46], duration: 2.1 },
   },
 ];
