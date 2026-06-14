@@ -26,6 +26,7 @@ const MapExperience = () => {
   });
   const audioRef = useRef(null);
   const endedHandlerRef = useRef(null);
+  const errorHandlerRef = useRef(null);
   const playbackRequestRef = useRef(0);
   const statusRegionRef = useRef(null);
   const mapViewRef = useRef(null);
@@ -417,7 +418,11 @@ const MapExperience = () => {
   };
 
   const playStopAudio = (stop) => {
-    if (stop.audioSrc) {
+    const audioSources = [stop.audioSrc, stop.fallbackAudioSrc].filter(
+      (source, index, sources) => source && sources.indexOf(source) === index
+    );
+
+    if (audioSources.length > 0) {
       const requestId = playbackRequestRef.current + 1;
       playbackRequestRef.current = requestId;
 
@@ -434,9 +439,10 @@ const MapExperience = () => {
         endedHandlerRef.current = null;
       }
 
-      element.src = stop.audioSrc;
-      element.currentTime = 0;
-      element.volume = 1;
+      if (errorHandlerRef.current) {
+        element.removeEventListener('error', errorHandlerRef.current);
+        errorHandlerRef.current = null;
+      }
 
       const handleEnded = () => {
         if (playbackRequestRef.current !== requestId) return;
@@ -449,6 +455,14 @@ const MapExperience = () => {
       endedHandlerRef.current = handleEnded;
       element.addEventListener('ended', handleEnded);
 
+      const finishWithTone = () => {
+        if (!playTone(stop)) {
+          setStatus(
+            'Audio preview is not available in this browser. Try another browser to listen.'
+          );
+        }
+      };
+
       const updateToPlaying = () => {
         if (playbackRequestRef.current !== requestId) return;
         activeStateRef.current.isPlaying = true;
@@ -457,25 +471,43 @@ const MapExperience = () => {
         renderNowPlaying();
       };
 
-      const playPromise = element.play();
+      const playSource = (sourceIndex) => {
+        if (playbackRequestRef.current !== requestId) return;
 
-      if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.then(updateToPlaying).catch((error) => {
+        const source = audioSources[sourceIndex];
+        if (!source) {
+          finishWithTone();
+          return;
+        }
+
+        const tryNextSource = (error) => {
           if (playbackRequestRef.current !== requestId) return;
-          console.warn(
-            'Audio playback failed; falling back to generated tone.',
-            error
-          );
+          console.warn('Audio playback failed; trying fallback source.', error);
           stopAudio({ invalidatePlayback: false });
-          if (!playTone(stop)) {
-            setStatus(
-              'Audio preview is not available in this browser. Try another browser to listen.'
-            );
-          }
+          playSource(sourceIndex + 1);
+        };
+
+        errorHandlerRef.current = () => {
+          tryNextSource(element.error);
+        };
+        element.addEventListener('error', errorHandlerRef.current, {
+          once: true,
         });
-      } else {
-        updateToPlaying();
-      }
+
+        element.src = source;
+        element.currentTime = 0;
+        element.volume = 1;
+
+        const playPromise = element.play();
+
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.then(updateToPlaying).catch(tryNextSource);
+        } else {
+          updateToPlaying();
+        }
+      };
+
+      playSource(0);
 
       return true;
     }
@@ -559,6 +591,10 @@ const MapExperience = () => {
         audioRef.current.removeEventListener('ended', endedHandlerRef.current);
         endedHandlerRef.current = null;
       }
+      if (errorHandlerRef.current) {
+        audioRef.current.removeEventListener('error', errorHandlerRef.current);
+        errorHandlerRef.current = null;
+      }
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
     }
@@ -638,7 +674,11 @@ const MapExperience = () => {
     <section className="map-experience" id="listen">
       <div className="map-experience__inner">
         <div className="map-experience__intro">
-          <h2>Hear Dora in action.</h2>
+          <h2>Every place has a story.</h2>
+          <p>
+            Listen to a sample from one of Dora's audio guides and experience
+            how the city comes to life around you.
+          </p>
         </div>
 
         <div className="map-experience__layout">

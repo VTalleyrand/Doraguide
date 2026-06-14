@@ -10,7 +10,7 @@ import {
 export const siteUrl = 'https://doraguide.com';
 
 export const defaultDescription =
-  'Discover cities through narrated audio guides to history, art, culture, architecture, and hidden places.';
+  'Tap a landmark and hear its story with Dora, an audio guide app for discovering the places around you.';
 
 export const socialTitle = 'Dora — Audio Walking Tours';
 

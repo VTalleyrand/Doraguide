@@ -75,7 +75,7 @@ const Header = () => {
           rel="noreferrer"
         >
           {appleIcon}
-          Early Access
+          Download Dora
         </a>
       </nav>
     </header>

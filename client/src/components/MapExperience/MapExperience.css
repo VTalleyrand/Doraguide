@@ -52,6 +52,15 @@
   text-wrap: balance;
 }
 
+.map-experience__intro p {
+  margin: 1.1rem 0 0;
+  max-width: 62rem;
+  font-size: 1.5rem;
+  line-height: 1.52;
+  color: var(--section-body-color);
+  text-wrap: pretty;
+}
+
 .map-experience__listen-hint {
   margin: 0.85rem 0 0;
   font-size: 1.2rem;
@@ -492,6 +501,16 @@
 @media (max-width: 640px) {
   .map-experience {
     padding: 1.5rem 2.4rem 5rem;
+  }
+
+  .map-experience__inner,
+  .map-experience__intro,
+  .map-experience__layout {
+    max-width: calc(100vw - 4.8rem);
+  }
+
+  .map-experience__intro p {
+    max-width: 30rem;
   }
 
   .map-experience__city-grid {

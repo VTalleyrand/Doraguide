@@ -41,13 +41,13 @@ const UseCases = () => {
         <h2 className="use-cases__title">
           <span className="use-cases__title-number">400+</span>
           <span className="use-cases__title-copy">
-            guides across 6 different cities.
+            stories waiting to be discovered.
           </span>
         </h2>
         <p className="use-cases__lede">
-          Dora launches with narrated guides and tours for landmarks, art,
-          museums, parks, and historical sites in New York, Paris, Milan,
-          Palermo, Amsterdam, and Barcelona. More to come soon.
+          From iconic landmarks to local favorites, Dora helps you understand the
+          places around you in New York, Paris, Amsterdam, Milan, Barcelona, and
+          Palermo, with more cities on the way.
         </p>
         <div className="use-cases__grid">
           {launchCities.map((entry) => (

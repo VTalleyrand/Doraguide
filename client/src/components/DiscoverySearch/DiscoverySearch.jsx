@@ -172,7 +172,7 @@ function DiscoverySearch() {
             <h2 className="discovery-search__title" id="discovery-search-title">
               <span className="discovery-search__title-line">More than</span>
               <br />
-              <span className="discovery-search__title-line">landmarks.</span>
+              <span className="discovery-search__title-line">just landmarks.</span>
             </h2>
             <p className="discovery-search__kicker">
               <span className="discovery-search__phrase">

@@ -63,11 +63,25 @@
   color: var(--hero-story-color);
 }
 
+@media (max-width: 640px) {
+  .hero-content {
+    width: min(100%, 30rem);
+    max-width: calc(100vw - 4.8rem);
+  }
+
+  .hero p {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+}
+
 @media (max-width: 400px) {
   .hero-content {
     transform: translateY(-5%);
-    width: 85%;
-    max-width: 85%;
   }
 
   .hero h1 {
@@ -79,11 +93,6 @@
     font-size: 1.6rem;
     line-height: 1.42;
     margin-bottom: 2.4rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 1.6rem;
   }
 
   .hero {

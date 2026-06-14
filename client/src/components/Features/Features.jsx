@@ -5,30 +5,30 @@ import './Features.css';
 const features = [
   {
     id: 'guide',
-    title: "Discover what's around you",
+    title: "See what's around you",
     description:
-      'Select a landmark, press play, and learn the story behind it.',
+      'Open the map, tap any landmark, and start listening instantly.',
     accent: 'accent-guide',
   },
   {
     id: 'tour',
-    title: 'Routes that fit your day',
+    title: 'Follow a guided route',
     description:
-      'Pick a recommended tour, or build your own around the places that interest you.',
+      'Choose a recommended walking tour and let Dora guide you from stop to stop.',
     accent: 'accent-tour',
   },
   {
     id: 'discover',
-    title: 'Walk your way',
+    title: 'Start from wherever you are',
     description:
-      'Dora builds routes from your current location, so the starting location is always where you are.',
+      'Dora builds routes from your location, so every walk can begin right where you stand.',
     accent: 'accent-discover',
   },
   {
     id: 'explore-create',
     title: 'Roam with Friends',
     description:
-      'Sync Dora with your friends, host a tour, and let the city unfold around you.',
+      'Sync Dora with your friends and let the city unfold around you.',
     accent: 'accent-explore-create',
     image: ommisImage,
     imageAlt: 'Dora shared listening preview',
