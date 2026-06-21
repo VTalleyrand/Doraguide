@@ -7,6 +7,7 @@ import {
   siteUrl,
   socialImage,
   storyRoutePaths,
+  tourRoutePaths,
 } from '../client/src/metadata.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -81,6 +82,7 @@ const writeRoute = async (routePath, html) => {
 const prerenderRoutes = [
   ...Object.keys(routeMetadata),
   ...storyRoutePaths,
+  ...tourRoutePaths,
 ];
 
 for (const routePath of prerenderRoutes) {

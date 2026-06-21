@@ -12,13 +12,13 @@ export const siteUrl = 'https://doraguide.com';
 export const defaultDescription =
   'Tap a landmark and hear its story with Dora, an audio guide app for discovering the places around you.';
 
-export const socialTitle = 'Dora — Audio Walking Tours';
+export const socialTitle = 'Dora - Landmarks & Stories';
 
 export const socialImage = `${siteUrl}/dora-social-preview.jpg`;
 
 export const routeMetadata = {
   '/': {
-    title: 'Dora',
+    title: 'Dora - Landmarks & Stories',
     description: defaultDescription,
     canonicalPath: '/',
     socialTitle,
