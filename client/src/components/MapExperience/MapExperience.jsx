@@ -676,8 +676,8 @@ const MapExperience = () => {
         <div className="map-experience__intro">
           <h2>Every place has a story.</h2>
           <p>
-            Listen to a sample from one of Dora's audio guides and experience
-            how the city comes to life around you.
+            Listen to a sample from one of Dora's stories and experience how a
+            place comes to life.
           </p>
         </div>
 

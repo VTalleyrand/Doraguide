@@ -40,14 +40,11 @@ const UseCases = () => {
         <p className="use-cases__eyebrow">At launch</p>
         <h2 className="use-cases__title">
           <span className="use-cases__title-number">400+</span>
-          <span className="use-cases__title-copy">
-            stories waiting to be discovered.
-          </span>
+          <span className="use-cases__title-copy">reasons to look up.</span>
         </h2>
         <p className="use-cases__lede">
-          From iconic landmarks to local favorites, Dora helps you understand the
-          places around you in New York, Paris, Amsterdam, Milan, Barcelona, and
-          Palermo, with more cities on the way.
+          From forgotten theaters in Palermo to immigrant stories in New York and
+          hidden histories in Amsterdam.
         </p>
         <div className="use-cases__grid">
           {launchCities.map((entry) => (

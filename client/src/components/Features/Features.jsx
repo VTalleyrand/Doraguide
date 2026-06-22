@@ -7,28 +7,28 @@ const features = [
     id: 'guide',
     title: "See what's around you",
     description:
-      'Open the map, tap any landmark, and start listening instantly.',
+      'Choose a place, press play, and discover the people, moments, and stories that shaped it.',
     accent: 'accent-guide',
   },
   {
     id: 'tour',
-    title: 'Follow a guided route',
+    title: 'Follow a Path',
     description:
-      'Choose a recommended walking tour and let Dora guide you from stop to stop.',
+      'Discover connected places, stories, and moments that reveal a different side of the city.',
     accent: 'accent-tour',
   },
   {
     id: 'discover',
-    title: 'Start from wherever you are',
+    title: 'Start where you are',
     description:
-      'Dora builds routes from your location, so every walk can begin right where you stand.',
+      'No fixed starting point. Every route begins from your location.',
     accent: 'accent-discover',
   },
   {
     id: 'explore-create',
     title: 'Roam with Friends',
     description:
-      'Sync Dora with your friends and let the city unfold around you.',
+      'Start a shared session and listen to the same stories together in real time.',
     accent: 'accent-explore-create',
     image: ommisImage,
     imageAlt: 'Dora shared listening preview',

@@ -15,11 +15,6 @@ const Faq = () => {
         'Open Dora, search for a city, a landmark, or start right where you are. Tap a site, pick one of our recommended tours, or create your own. You can curate your perfect route, listen as you walk, or shake your phone and let the app surprise you.',
     },
     {
-      question: 'What does Dora solve?',
-      answer:
-        'Dora saves you from searching across maps, articles, blogs, and websites just to understand the place in front of you. It also removes the tradeoffs of fixed tours, like set times, crowded groups, and rigid routes, so you can discover a city on your own terms.',
-    },
-    {
       question: 'Where is Dora available?',
       answer:
         'Dora is currently available in New York, Paris, Milan, Palermo, Amsterdam, and Barcelona, with more cities being added over time.',
