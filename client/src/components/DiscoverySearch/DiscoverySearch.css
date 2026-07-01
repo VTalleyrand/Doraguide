@@ -47,7 +47,8 @@
 
 .discovery-search__eyebrow {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-line-height);
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -57,10 +58,10 @@
 .discovery-search__title {
   margin: 0;
   max-width: 10ch;
-  font-size: clamp(5.2rem, 10vw, 9.8rem);
-  font-weight: 600;
-  line-height: 0.92;
-  letter-spacing: -0.05em;
+  font-size: var(--type-hero-title-size);
+  font-weight: var(--type-hero-title-weight);
+  line-height: var(--type-hero-title-line-height);
+  letter-spacing: 0;
   color: var(--color-text);
 }
 
@@ -77,10 +78,10 @@
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.12em 0.55ch;
-  font-size: clamp(1.9rem, 2.2vw, 2.4rem);
+  font-size: var(--type-feature-title-size);
   font-weight: 500;
-  line-height: 1.32;
-  letter-spacing: -0.025em;
+  line-height: var(--type-feature-title-line-height);
+  letter-spacing: 0;
   color: var(--color-text-subtle);
 }
 
@@ -114,7 +115,7 @@
   position: relative;
   z-index: 2;
   margin: 0.2rem 0 0;
-  font-size: 1.3rem;
+  font-size: var(--type-label-size);
   font-weight: 500;
   line-height: 1.4;
   color: var(--color-text-subtle);
@@ -260,16 +261,16 @@
 
   .discovery-search__title {
     max-width: 8ch;
-    font-size: clamp(4.2rem, 14vw, 6.2rem);
-    line-height: 0.96;
+    font-size: var(--type-section-title-size);
+    line-height: var(--type-section-title-line-height);
   }
 
   .discovery-search__kicker {
-    font-size: 2rem;
+    font-size: var(--type-feature-title-size);
     max-width: 100%;
-    min-height: calc(1.12em * 3);
+    min-height: calc(var(--type-feature-title-line-height) * 1em * 3);
     gap: 0.02em 0.5ch;
-    line-height: 1.12;
+    line-height: var(--type-feature-title-line-height);
   }
 
   .discovery-search__phrase {

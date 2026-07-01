@@ -1,0 +1,199 @@
+.crafted-features {
+  --screen-width: clamp(13rem, 15vw, 20rem);
+  --screen-gap: clamp(1.2rem, 2vw, 2.4rem);
+  width: 100vw;
+  max-width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding: clamp(4rem, 6vw, 6.5rem) 0 clamp(2rem, 3vw, 3.25rem);
+  overflow: hidden;
+  background: #fff;
+}
+
+.crafted-features__screen-stage {
+  position: relative;
+  min-height: clamp(29rem, 38vw, 47rem);
+  padding-block: clamp(4.8rem, 6vw, 6.4rem) 4rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  isolation: isolate;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.crafted-features__screen-stage::-webkit-scrollbar {
+  display: none;
+}
+
+.crafted-features__track {
+  display: flex;
+  width: max-content;
+}
+
+.crafted-features__screen-group {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--screen-gap);
+  padding-right: var(--screen-gap);
+}
+
+.crafted-features__screen {
+  --screen-accent: var(--marker-indigo);
+  position: relative;
+  z-index: 1;
+  flex: 0 0 var(--screen-width);
+  width: var(--screen-width);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.9;
+  transform: translateY(0) scale(1);
+  transform-origin: center bottom;
+  transition:
+    filter var(--motion-base) var(--ease-standard),
+    opacity var(--motion-base) var(--ease-standard),
+    transform 420ms var(--ease-emphasized);
+  will-change: transform;
+}
+
+.crafted-features__screen::before {
+  content: '';
+  position: absolute;
+  inset: 1.6% 3.6%;
+  z-index: -1;
+  border-radius: 4.8rem;
+  opacity: 0;
+  box-shadow:
+    0 0 0 0.5px color-mix(in srgb, var(--screen-accent) 64%, transparent),
+    0 2rem 5rem color-mix(in srgb, var(--screen-accent) 20%, transparent);
+  transition: opacity var(--motion-base) var(--ease-standard);
+}
+
+.crafted-features__screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.crafted-features__screen:hover,
+.crafted-features__screen:focus-visible {
+  z-index: 20;
+  opacity: 1;
+  transform: translateY(-1.4rem) scale(1.08);
+}
+
+.crafted-features__screen:hover::before,
+.crafted-features__screen:focus-visible::before {
+  opacity: 1;
+}
+
+.crafted-features__screen:focus-visible {
+  outline: none;
+}
+
+.crafted-features__screen-stage:has(.crafted-features__screen:hover) .crafted-features__screen:not(:hover),
+.crafted-features__screen-stage:has(.crafted-features__screen:focus-visible) .crafted-features__screen:not(:focus-visible) {
+  opacity: 0.24;
+  filter: saturate(0.55) blur(0.2px);
+}
+
+.crafted-features__caption {
+  width: min(68rem, calc(100% - 4.8rem));
+  min-height: 8.8rem;
+  margin: -1.8rem auto 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(0.8rem);
+  transition:
+    opacity var(--motion-base) var(--ease-standard),
+    transform var(--motion-base) var(--ease-standard);
+}
+
+.crafted-features__caption.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.crafted-features__caption h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.6rem, 1.8vw, 2.4rem);
+  font-weight: 760;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.crafted-features__caption p {
+  max-width: 52rem;
+  margin: 1rem auto 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.1vw, 1.28rem);
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+
+.crafted-features__screen--indigo {
+  --screen-accent: var(--marker-indigo);
+}
+
+.crafted-features__screen--green {
+  --screen-accent: var(--marker-green);
+}
+
+.crafted-features__screen--blue {
+  --screen-accent: var(--marker-blue);
+}
+
+.crafted-features__screen--orange {
+  --screen-accent: var(--marker-orange);
+}
+
+.crafted-features__screen--yellow {
+  --screen-accent: var(--marker-yellow);
+}
+
+@media (max-width: 1024px) {
+  .crafted-features {
+    --screen-width: clamp(12.5rem, 22vw, 18.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .crafted-features {
+    --screen-width: clamp(11.5rem, 48vw, 16.5rem);
+    --screen-gap: 1rem;
+    width: auto;
+    max-width: none;
+    margin-inline: -2.4rem;
+    padding-block: 3.6rem 2.4rem;
+  }
+
+  .crafted-features__screen-stage {
+    min-height: clamp(26rem, 96vw, 37rem);
+    padding-block: 4.4rem 3.6rem;
+  }
+
+  .crafted-features__caption {
+    width: min(100vw - 3.2rem, 34rem);
+    min-height: 9.2rem;
+    margin-top: -1.2rem;
+  }
+
+  .crafted-features__caption h3 {
+    font-size: 1.45rem;
+  }
+
+  .crafted-features__caption p {
+    font-size: 0.98rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crafted-features__screen,
+  .crafted-features__screen::before,
+  .crafted-features__caption {
+    transition: none;
+  }
+}

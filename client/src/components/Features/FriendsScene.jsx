@@ -1,5 +1,5 @@
-const FriendsScene = ({ image, imageAlt }) => (
-  <div className="feature-scene feature-scene--friends">
+const FriendsScene = ({ image, imageAlt, variant }) => (
+  <div className={`feature-scene feature-scene--friends feature-scene--${variant}`}>
     <div className="feature-scene__stage">
       <div className="feature-scene__image-wrap">
         <img src={image} alt={imageAlt} />

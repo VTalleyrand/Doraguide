@@ -7,12 +7,12 @@ const Faq = () => {
     {
       question: 'What is Dora?',
       answer:
-        'Dora is a narrated tour guide app that helps you explore, discover, and learn about cities through audio stories and curated routes of nearby sites or custom tours, alone or with friends.',
+        'Dora helps you understand the world around you through the stories behind real places. Open the app, choose a nearby landmark, street, building, park, or neighborhood, and press play to discover why it matters.',
     },
     {
       question: 'How does it work?',
       answer:
-        'Open Dora, search for a city, a landmark, or start right where you are. Tap a site, pick one of our recommended tours, or create your own. You can curate your perfect route, listen as you walk, or shake your phone and let the app surprise you.',
+        'Open Dora and start from where you are. You can discover nearby places, follow a recommended route, create your own, or shake your phone and let Dora surprise you. Tap a place, press play, and listen on location.',
     },
     {
       question: 'Where is Dora available?',
@@ -20,14 +20,21 @@ const Faq = () => {
         'Dora is currently available in New York, Paris, Milan, Palermo, Amsterdam, and Barcelona, with more cities being added over time.',
     },
     {
-      question: 'Can I build my own tour?',
+      question: 'Can I build my own route?',
       answer:
-        'Absolutely. Search for cities and landmarks and add them to a custom tour.',
+        'Yes. You can search for places, save the ones that interest you, and build a custom route around the stories you want to hear.',
+    },
+    {
+      question: 'Can I read instead of listen?',
+      answer:
+        'Yes. Every story includes a transcript, so you can read, listen, or follow along while the audio plays.',
     },
     {
       question: 'What’s free and what requires a pass?',
-      answer:
-        'Dora is free to browse and preview. Purchasing a pass unlocks the full audio experience across single stories and tours.',
+      answer: [
+        'Dora is free to browse and try. City stories, neighborhood stories, and select popular locations are available without paying.',
+        'A pass or subscription unlocks full access to all stories and routes, plus Live Activities, full transcripts, and the ability to host Roam with Friends sessions. Friends can join a Roam session for free.',
+      ],
     },
   ];
 
@@ -72,7 +79,13 @@ const Faq = () => {
                 id={panelId}
                 aria-hidden={openQuestion !== item.question}
               >
-                <p className="faq__answer">{item.answer}</p>
+                {(Array.isArray(item.answer) ? item.answer : [item.answer]).map(
+                  (paragraph, index) => (
+                    <p className="faq__answer" key={index}>
+                      {paragraph}
+                    </p>
+                  )
+                )}
               </div>
               </article>
             );

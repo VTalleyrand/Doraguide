@@ -51,14 +51,17 @@ const Hero = () => {
     <section className="hero">
       <div className="hero-content">
         <h1>
-          Travel beyond{' '}
+          <span className="hero-title-line">Understand the world</span>{' '}
           <br className="hero-title-break" aria-hidden="true" />
-          the landmarks.
+          <span className="hero-title-line hero-title-line--second">
+            around you.
+          </span>
         </h1>
         <p>
-          Dora helps you discover the people, places, and moments that shaped the
-          cities around you. Start where you are and turn every place into a story
-          worth remembering.
+          The only app built for the moment curiosity strikes. Discover the
+          stories behind landmarks, statues, architecture, neighborhoods, and more,
+          turning curiosity into understanding. No Googling. No Wikipedia. No
+          endless tabs just to piece the story together.
         </p>
         <div className="hero-buttons">
           {/* <button className="primary-btn" type="button">

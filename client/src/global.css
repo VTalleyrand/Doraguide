@@ -2,7 +2,7 @@
   --font-family: 'Inter', 'Helvetica Neue', Arial, system-ui, sans-serif;
   --color-background: #ffffff;
   --color-surface: #ffffff;
-  --color-surface-muted: #f0e8dc;
+  --color-surface-muted: #FAFAFA;
   --color-text: #1f1b16;
   --color-text-muted: #4a4036;
   --color-text-subtle: #786f64;
@@ -17,12 +17,36 @@
   --marker-yellow: #F9D452;
   --shadow-soft: 0 18px 40px rgba(31, 27, 22, 0.08);
   --shadow-strong: 0 24px 60px rgba(31, 27, 22, 0.12);
-  --section-title-size: clamp(2.8rem, 4vw, 3.8rem);
-  --section-title-weight: 600;
-  --section-title-line-height: 1.02;
-  --section-title-tracking: -0.035em;
-  --section-body-size: 1.6rem;
-  --section-body-line-height: 1.5;
+  --type-brand-size: 1.8rem;
+  --type-nav-size: 1.5rem;
+  --type-button-size: 1.7rem;
+  --type-label-size: 1.3rem;
+  --type-label-line-height: 1.2;
+  --type-hero-title-size: clamp(4.2rem, 6vw, 6.5rem);
+  --type-hero-title-line-height: 1.1;
+  --type-hero-title-weight: 700;
+  --type-hero-body-size: 1.7rem;
+  --type-hero-body-line-height: 1.5;
+  --type-section-title-size: clamp(2.8rem, 3.6vw, 4.4rem);
+  --type-section-title-weight: 700;
+  --type-section-title-line-height: 1;
+  --type-feature-title-size: 2.8rem;
+  --type-feature-title-line-height: 1.15;
+  --type-feature-title-weight: 600;
+  --type-subsection-title-size: clamp(2.6rem, 3vw, 4.4rem);
+  --type-subsection-title-line-height: 1.1;
+  --type-card-title-size: 1.7rem;
+  --type-card-body-size: 1.5rem;
+  --type-body-size: 1.6rem;
+  --type-body-line-height: 1.5;
+  --type-ui-title-size: 1.6rem;
+  --type-ui-body-size: 1.5rem;
+  --section-title-size: var(--type-section-title-size);
+  --section-title-weight: var(--type-section-title-weight);
+  --section-title-line-height: var(--type-section-title-line-height);
+  --section-title-tracking: 0;
+  --section-body-size: var(--type-body-size);
+  --section-body-line-height: var(--type-body-line-height);
   --section-body-color: var(--color-text-subtle);
   --motion-fast: 140ms;
   --motion-base: 220ms;
@@ -269,7 +293,7 @@ body.menu-open {
 
 .content-page__eyebrow {
   margin: 0 0 1.2rem;
-  font-size: 1.3rem;
+  font-size: var(--type-label-size);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -278,17 +302,17 @@ body.menu-open {
 
 .content-page h1 {
   margin: 0;
-  font-size: clamp(4.2rem, 7vw, 6.6rem);
-  line-height: 0.98;
-  letter-spacing: -0.05em;
+  font-size: var(--type-hero-title-size);
+  line-height: var(--type-hero-title-line-height);
+  letter-spacing: 0;
   max-width: 12ch;
 }
 
 .content-page__intro {
   margin: 2rem 0 0;
   max-width: 68rem;
-  font-size: 1.95rem;
-  line-height: 1.7;
+  font-size: var(--type-hero-body-size);
+  line-height: var(--type-hero-body-line-height);
   color: var(--color-text-muted);
 }
 
@@ -313,9 +337,9 @@ body.menu-open {
 .content-page__section h2,
 .content-page__callout h2 {
   margin: 0 0 1.2rem;
-  font-size: 2rem;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  font-size: var(--type-ui-title-size);
+  line-height: 1.5;
+  letter-spacing: 0;
 }
 
 .content-page__section p {
@@ -338,7 +362,7 @@ body.menu-open {
 
 .content-page__subsection h3 {
   margin: 0 0 0.8rem;
-  font-size: 1.6rem;
+  font-size: var(--type-ui-title-size);
   line-height: 1.4;
   color: var(--color-text);
 }
@@ -369,7 +393,7 @@ body.menu-open {
 }
 
 .content-page__fact span {
-  font-size: 1.2rem;
+  font-size: var(--type-label-size);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -377,7 +401,7 @@ body.menu-open {
 }
 
 .content-page__fact strong {
-  font-size: 1.8rem;
+  font-size: var(--type-card-title-size);
   line-height: 1.35;
   color: var(--color-text);
 }
@@ -405,8 +429,8 @@ body.menu-open {
 }
 
 .content-page--legal h1 {
-  font-size: clamp(3.6rem, 5vw, 5.2rem);
-  line-height: 1.02;
+  font-size: var(--type-section-title-size);
+  line-height: var(--type-section-title-line-height);
   max-width: none;
 }
 
@@ -421,8 +445,8 @@ body.menu-open {
 .legal-doc__header .content-page__intro {
   max-width: none;
   margin-top: 2.2rem;
-  font-size: 1.7rem;
-  line-height: 1.6;
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line-height);
 }
 
 .legal-doc__main {
@@ -436,12 +460,12 @@ body.menu-open {
 .content-page--legal .content-page__list,
 .content-page--legal .legal-doc__section p,
 .content-page--legal .content-page__subsection h3 {
-  font-size: 1.5rem;
+  font-size: var(--type-ui-body-size);
   line-height: 1.65;
 }
 
 .content-page--legal .legal-doc__section h2 {
-  font-size: 1.9rem;
+  font-size: var(--type-card-title-size);
 }
 
 .legal-doc__sections {
@@ -459,9 +483,9 @@ body.menu-open {
 
 .legal-doc__section h2 {
   margin: 0 0 1.2rem;
-  font-size: 2rem;
+  font-size: var(--type-ui-title-size);
   line-height: 1.2;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .legal-doc__section p {
@@ -510,21 +534,21 @@ body.menu-open {
   }
 
   .content-page__intro {
-    font-size: 1.75rem;
+    font-size: var(--type-hero-body-size);
   }
 
   .content-page--legal .content-page__intro {
-    font-size: 1.5rem;
+    font-size: var(--type-ui-body-size);
   }
 
   .content-page--legal h1 {
-    font-size: 3.2rem;
+    font-size: var(--type-section-title-size);
   }
 
   .content-page--legal .content-page__list,
   .content-page--legal .legal-doc__section p,
   .content-page--legal .content-page__subsection h3 {
-    font-size: 1.45rem;
+    font-size: var(--type-ui-body-size);
   }
 
   .content-page__fact {

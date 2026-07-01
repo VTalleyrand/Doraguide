@@ -1,20 +1,29 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import './MapExperience.css';
-import MapListenPanel from './MapListenPanel';
 import MapPreview from './MapPreview';
 import { DEFAULT_STOP_ID, sampleStops } from './mapExperienceData';
 import {
   computeBounds,
   isMapKitAlreadyInitializedError,
-  markerColorForCategory,
   markerStyleForCategory,
   parseClockLabelToSeconds,
   readTokenExpiry,
 } from './mapExperienceUtils';
 
+const sampleLinkThemes = [
+  { color: '#6265FA', stopId: 'new-york' },
+  { color: '#04C977', stopId: 'paris' },
+  { color: '#FE8101', stopId: 'milan' },
+  { color: '#F9D452', stopId: 'palermo' },
+];
+
+const pickRandomSampleLinkTheme = () =>
+  sampleLinkThemes[Math.floor(Math.random() * sampleLinkThemes.length)];
+
 const MapExperience = () => {
   const [status, setStatus] = useState('');
   const [activeStopId, setActiveStopId] = useState(DEFAULT_STOP_ID);
+  const [sampleLinkTheme, setSampleLinkTheme] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showControl, setShowControl] = useState(false);
   const [mapAwaitingPlay, setMapAwaitingPlay] = useState(false);
@@ -25,10 +34,10 @@ const MapExperience = () => {
     detail: 'The interactive preview is not available right now.',
   });
   const audioRef = useRef(null);
+  const sampleLinkThemeRef = useRef(null);
   const endedHandlerRef = useRef(null);
   const errorHandlerRef = useRef(null);
   const playbackRequestRef = useRef(0);
-  const statusRegionRef = useRef(null);
   const mapViewRef = useRef(null);
   const annotationsRef = useRef(new Map());
   const isMapReadyRef = useRef(false);
@@ -45,17 +54,6 @@ const MapExperience = () => {
   const stopById = useMemo(
     () => new Map(sampleStops.map((stop) => [stop.id, stop])),
     []
-  );
-
-  const [listItems, setListItems] = useState(() =>
-    sampleStops.map((stop) => ({
-      id: stop.id,
-      title: stop.title,
-      duration: stop.duration,
-      markerColor: markerColorForCategory(stop.category),
-      markerForeground: '#ffffff',
-      isActive: stop.id === DEFAULT_STOP_ID,
-    }))
   );
 
   const activeStop =
@@ -171,7 +169,6 @@ const MapExperience = () => {
   }, [isPlaying, showControl, activeStopId]);
 
   const initializeMapExperience = () => {
-    buildStopList();
     initializeMap();
   };
 
@@ -181,19 +178,6 @@ const MapExperience = () => {
       mapRetryTimerRef.current = null;
       initializeMap();
     }, 260);
-  };
-
-  const buildStopList = () => {
-    setListItems(
-      sampleStops.map((stop) => ({
-        id: stop.id,
-        title: stop.title,
-        duration: stop.duration,
-        markerColor: markerColorForCategory(stop.category),
-        markerForeground: '#ffffff',
-        isActive: stop.id === DEFAULT_STOP_ID,
-      }))
-    );
   };
 
   const showMapFallback = (title, detail) => {
@@ -359,13 +343,6 @@ const MapExperience = () => {
       activeStateRef.current.isPlaying;
 
     if (isAlreadyPlaying) return;
-
-    setListItems((prevItems) =>
-      prevItems.map((item) => ({
-        ...item,
-        isActive: item.id === stopId,
-      }))
-    );
 
     const annotation = annotationsRef.current.get(stopId);
     const map = activeStateRef.current.map;
@@ -607,10 +584,6 @@ const MapExperience = () => {
     setStatus('');
   };
 
-  const handleCitySelect = (stopId) => {
-    focusStop(stopId, { source: 'list', autoPlay: true });
-  };
-
   const startOrTogglePlayback = () => {
     const sid = activeStopId;
     if (!sid) return;
@@ -659,6 +632,26 @@ const MapExperience = () => {
     }
   };
 
+  const handleSampleStoryClick = () => {
+    const themedStopId = sampleLinkThemeRef.current?.stopId;
+    focusStop(themedStopId ?? activeStopId ?? DEFAULT_STOP_ID, {
+      source: 'list',
+      autoPlay: true,
+    });
+  };
+
+  const applySampleLinkTheme = () => {
+    if (sampleLinkThemeRef.current) return;
+    const theme = pickRandomSampleLinkTheme();
+    sampleLinkThemeRef.current = theme;
+    setSampleLinkTheme(theme);
+  };
+
+  const clearSampleLinkTheme = () => {
+    sampleLinkThemeRef.current = null;
+    setSampleLinkTheme(null);
+  };
+
   const hasSelection = Boolean(activeStop);
   const shouldShowMapDock =
     hasSelection && (isPlaying || showControl || mapAwaitingPlay);
@@ -673,23 +666,44 @@ const MapExperience = () => {
   return (
     <section className="map-experience" id="listen">
       <div className="map-experience__inner">
-        <div className="map-experience__intro">
-          <h2>Every place has a story.</h2>
-          <p>
-            Listen to a sample from one of Dora's stories and experience how a
-            place comes to life.
-          </p>
-        </div>
-
         <div className="map-experience__layout">
-          <MapListenPanel
-            activeStop={activeStop}
-            listItems={listItems}
-            status={status}
-            statusRegionRef={statusRegionRef}
-            shouldShowStatus={shouldShowStatus}
-            onCitySelect={handleCitySelect}
-          />
+          <div className="map-experience__copy-column">
+            <h2>Every place has a story.</h2>
+            <p>
+              Discover why places exist, what happened there, and how they shaped
+              the world around us, from the places you pass every day to the ones
+              you’re seeing for the first time.
+            </p>
+            <button
+              type="button"
+              className={`map-experience__sample-link ${
+                sampleLinkTheme ? 'is-themed' : ''
+              }`}
+              onMouseEnter={applySampleLinkTheme}
+              onMouseLeave={clearSampleLinkTheme}
+              onFocus={applySampleLinkTheme}
+              onBlur={clearSampleLinkTheme}
+              onClick={handleSampleStoryClick}
+              style={
+                sampleLinkTheme
+                  ? {
+                      '--map-sample-link-hover-color': sampleLinkTheme.color,
+                    }
+                  : undefined
+              }
+            >
+              Listen to a sample story →
+            </button>
+            {shouldShowStatus && (
+              <div
+                className="map-experience__listen-status"
+                role="status"
+                aria-live="polite"
+              >
+                {status}
+              </div>
+            )}
+          </div>
           <MapPreview
             fallbackState={fallbackState}
             mapViewRef={mapViewRef}

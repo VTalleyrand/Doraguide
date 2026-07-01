@@ -19,26 +19,36 @@
 }
 
 .hero h1 {
-  font-size: clamp(3.4rem, 5.8vw, 5.8rem);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.035em;
+  font-size: var(--type-hero-title-size);
+  font-weight: var(--type-hero-title-weight);
+  line-height: var(--type-hero-title-line-height);
+  letter-spacing: 0;
   margin-bottom: 1.4rem;
-  text-wrap: nowrap;
+  text-wrap: balance;
+}
+
+.hero-title-line {
+  display: inline-block;
+  animation: hero-enter 720ms var(--ease-emphasized) 80ms both;
+}
+
+.hero-title-line--second {
+  animation-delay: 180ms;
 }
 
 .hero-title-break {
-  display: none;
+  display: block;
 }
 
 .hero p {
-  font-size: 1.6rem;
+  font-size: var(--type-hero-body-size);
   color: var(--color-text-subtle);
-  max-width: 54rem;
+  max-width: 66rem;
   margin: 0 auto 3rem;
-  line-height: 1.48;
+  line-height: var(--type-hero-body-line-height);
   text-align: center;
   text-wrap: pretty;
+  animation: hero-enter 720ms var(--ease-emphasized) 300ms both;
 }
 
 .hero-buttons {
@@ -47,6 +57,14 @@
   gap: 1.4rem;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.hero-buttons .primary-btn {
+  animation: hero-enter 720ms var(--ease-emphasized) 440ms both;
+}
+
+.hero-buttons .secondary-btn {
+  animation: hero-enter 720ms var(--ease-emphasized) 540ms both;
 }
 
 .hero-story-btn {
@@ -68,19 +86,24 @@
   color: var(--hero-story-color);
 }
 
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.6rem) scale(0.985);
+    filter: blur(0.6rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
 @media (max-width: 640px) {
   .hero-content {
     width: min(100%, 30rem);
     max-width: calc(100vw - 4.8rem);
-  }
-
-  .hero-title-break {
-    display: block;
-  }
-
-  .hero h1 {
-    text-wrap: balance;
-    white-space: normal;
   }
 
   .hero p {
@@ -99,13 +122,13 @@
   }
 
   .hero h1 {
-    font-size: clamp(2.6rem, 6.4vw, 3.5rem);
-    line-height: 1.04;
+    font-size: var(--type-section-title-size);
+    line-height: var(--type-section-title-line-height);
   }
 
   .hero p {
-    font-size: 1.6rem;
-    line-height: 1.42;
+    font-size: var(--type-hero-body-size);
+    line-height: var(--type-hero-body-line-height);
     margin-bottom: 2.4rem;
   }
 
@@ -113,5 +136,14 @@
     min-height: calc(79vh - 8rem);
     padding-top: 8.8rem;
     padding-bottom: 9.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-line,
+  .hero p,
+  .hero-buttons .primary-btn,
+  .hero-buttons .secondary-btn {
+    animation: none;
   }
 }

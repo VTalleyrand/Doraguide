@@ -1,14 +1,21 @@
 .cta-final {
   background: var(--color-surface);
-  padding: 5rem 15%;
+  padding: clamp(1.8rem, 2.5vw, 2.9rem) max(1.6rem, 8vw);
 }
 
 .cta-final__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1.6rem;
   text-align: center;
+}
+
+.cta-final__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 60ch;
 }
 
 .cta-final__animation {
@@ -26,20 +33,20 @@
 
 .cta-final__title {
   margin: 0;
-  font-size: clamp(2.4rem, 5.8vw, 3.8rem);
+  font-size: var(--section-title-size);
   font-weight: var(--section-title-weight);
   color: var(--color-text);
   line-height: var(--section-title-line-height);
-  letter-spacing: 0;
-  white-space: nowrap;
+  letter-spacing: var(--section-title-tracking);
+  text-wrap: balance;
 }
 
 .cta-final__body {
-  margin: 0;
-  max-width: 60ch;
+  margin: 1.2rem 0 0;
   font-size: var(--section-body-size);
   color: var(--section-body-color);
   line-height: var(--section-body-line-height);
+  max-width: 49rem;
   text-wrap: pretty;
 }
 
@@ -48,4 +55,5 @@
   gap: 1.6rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 2rem;
 }

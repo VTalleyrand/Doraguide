@@ -5,30 +5,30 @@ import './Features.css';
 const features = [
   {
     id: 'guide',
-    title: "See what's around you",
+    title: "Discover what's nearby",
     description:
-      'Choose a place, press play, and discover the people, moments, and stories that shaped it.',
+      'Start wherever you are. Dora uncovers the landmarks, architecture, neighborhoods, and hidden places waiting around you.',
     accent: 'accent-guide',
   },
   {
     id: 'tour',
-    title: 'Follow a Path',
+    title: 'Shake',
     description:
-      'Discover connected places, stories, and moments that reveal a different side of the city.',
+      "Can't decide? Shake your phone and let Dora surprise you with a place or route based on your interests.",
     accent: 'accent-tour',
   },
   {
     id: 'discover',
-    title: 'Start where you are',
+    title: 'Follow a Route',
     description:
-      'No fixed starting point. Every route begins from your location.',
+      'Follow a recommended route or create your own to connect places through stories worth discovering.',
     accent: 'accent-discover',
   },
   {
     id: 'explore-create',
     title: 'Roam with Friends',
     description:
-      'Start a shared session and listen to the same stories together in real time.',
+      'Start a shared session and listen to the same stories with perfectly synchronized playback.',
     accent: 'accent-explore-create',
     image: ommisImage,
     imageAlt: 'Dora shared listening preview',
@@ -38,18 +38,16 @@ const features = [
 const Features = () => (
   <section className="showcase" id="features">
     <div className="showcase-inner">
-      <h2 className="showcase-title">Discover cities your way.</h2>
+      <h2 className="showcase-title">Explore on your own terms</h2>
       <div className="bento-grid">
         {features.map((feature) => (
           <article
             key={feature.id}
-            className={`bento-card ${feature.accent}`}
+            className={`bento-card bento-card--${feature.id} ${feature.accent}`}
           >
             <div
               className="bento-media"
-              aria-hidden={
-                feature.image || feature.id === 'tour' ? undefined : true
-              }
+              aria-hidden={feature.id === 'discover' ? undefined : true}
             >
               <FeatureScene feature={feature} />
             </div>

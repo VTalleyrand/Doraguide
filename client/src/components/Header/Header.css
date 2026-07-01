@@ -8,8 +8,8 @@
 }
 
 .logo {
-  font-size: 2.4rem;
-  font-weight: 500;
+  font-size: var(--type-brand-size);
+  font-weight: 600;
   color: var(--color-text);
   text-decoration: none;
 }
@@ -27,8 +27,8 @@
 .nav-links a {
   text-decoration: none;
   color: var(--color-text);
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-size: var(--type-nav-size);
+  line-height: 2;
   letter-spacing: 0.01em;
   transition: color var(--motion-fast) var(--ease-standard);
 }
@@ -62,8 +62,8 @@
   min-height: clamp(4.4rem, 4.02rem + 0.35vw, 4.8rem);
   white-space: nowrap;
   line-height: 1;
-  font-size: clamp(1.38rem, 1.12rem + 0.28vw, 1.6rem);
-  font-weight: 500;
+  font-size: var(--type-button-size);
+  font-weight: 600;
   cursor: pointer;
   transition: background-color var(--motion-base) var(--ease-standard);
 }

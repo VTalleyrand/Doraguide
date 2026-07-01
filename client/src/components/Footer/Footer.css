@@ -12,11 +12,11 @@
 }
 
 .site-footer__brand {
-  font-size: 2rem;
+  font-size: var(--type-brand-size);
   font-weight: 600;
   color: var(--color-text);
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .site-footer__nav {
@@ -26,7 +26,7 @@
 }
 
 .site-footer__nav a {
-  font-size: 1.4rem;
+  font-size: var(--type-nav-size);
   color: var(--color-text-muted);
   text-decoration: none;
   line-height: 1.4;
@@ -39,7 +39,7 @@
 
 .site-footer__note {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: var(--type-label-size);
   line-height: 1.5;
   color: var(--color-text-subtle);
 }

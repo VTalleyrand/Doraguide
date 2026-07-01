@@ -4,6 +4,7 @@ import Features from '../components/Features/index.jsx';
 import UseCases from '../components/UseCases/index.jsx';
 import DiscoverySearch from '../components/DiscoverySearch/index.jsx';
 import Faq from '../components/Faq/index.jsx';
+import CraftedFeatures from '../components/CraftedFeatures/index.jsx';
 import CtaFinal from '../components/CtaFinal/index.jsx';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <UseCases />
       <DiscoverySearch />
       <Faq />
+      <CraftedFeatures />
       <CtaFinal />
     </>
   );

@@ -1,8 +1,7 @@
 .map-experience {
   position: relative;
   z-index: 1;
-  padding: 1.5rem 15% 5rem;
-  min-height: 54rem;
+  padding: clamp(4rem, 8vw, 7rem) 15% clamp(5rem, 9vw, 8rem);
   background: var(--color-surface);
   color: var(--color-text);
   /* Hairline inset on cards (neutral, not cream) */
@@ -28,42 +27,74 @@
 
 .map-experience__inner {
   width: 100%;
+  max-width: 118rem;
+  margin: 0 auto;
 }
 
-.map-experience__listen-column {
-  flex: 5 1 0;
-  min-width: 0;
+.map-experience__copy-column {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: start;
+  gap: 0;
+  width: 100%;
+  max-width: 32rem;
+  min-width: 0;
+  text-align: left;
+  padding-right: clamp(0.5rem, 2vw, 2rem);
 }
 
-.map-experience__intro {
-  max-width: none;
-  margin: 0 0 1.6rem;
-}
-
-.map-experience__intro h2 {
+.map-experience__copy-column h2 {
   font-size: var(--section-title-size);
   margin: 0;
   font-weight: var(--section-title-weight);
   line-height: var(--section-title-line-height);
   letter-spacing: var(--section-title-tracking);
+  text-align: left;
   text-wrap: balance;
+  max-width: 16ch;
 }
 
-.map-experience__intro p {
-  margin: 1.1rem 0 0;
-  max-width: 62rem;
-  font-size: 1.5rem;
-  line-height: 1.52;
+.map-experience__copy-column p {
+  margin: 1.35rem 0 0;
+  max-width: 38ch;
+  font-size: var(--section-body-size);
+  line-height: var(--section-body-line-height);
   color: var(--section-body-color);
+  text-align: left;
   text-wrap: pretty;
+}
+
+.map-experience__sample-link {
+  margin-top: 3.6rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text);
+  font-size: var(--type-ui-body-size);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--motion-base) var(--ease-standard);
+}
+
+.map-experience__sample-link.is-themed:hover,
+.map-experience__sample-link.is-themed:focus-visible {
+  color: var(--map-sample-link-hover-color);
+}
+
+.map-experience__sample-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 0.2rem;
 }
 
 .map-experience__listen-hint {
   margin: 0.85rem 0 0;
-  font-size: 1.2rem;
+  font-size: var(--type-label-size);
   line-height: 1.45;
   color: var(--section-body-color);
   max-width: none;
@@ -97,18 +128,18 @@
 }
 
 .map-experience__listen-status {
-  margin-bottom: 0;
-  font-size: 1.35rem;
-  line-height: 1.55;
+  margin-top: 1.4rem;
+  font-size: var(--type-card-body-size);
+  line-height: var(--type-body-line-height);
   color: var(--color-text-muted);
+  text-align: left;
 }
 
 .map-experience__layout {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 2.6rem;
-  min-height: 42rem;
+  display: grid;
+  grid-template-columns: minmax(18rem, 32rem) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(3rem, 5.5vw, 6.5rem);
 }
 
 .map-experience__panel {
@@ -135,7 +166,7 @@
   flex-wrap: wrap;
   gap: 0.55rem;
   margin-bottom: 0.85rem;
-  font-size: 1rem;
+  font-size: var(--type-label-size);
   color: color-mix(in srgb, var(--color-text) 54%, transparent);
 }
 
@@ -149,16 +180,16 @@
 
 .map-experience__listen-story-title {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: var(--type-feature-title-size);
   font-weight: 600;
-  line-height: 1.03;
-  letter-spacing: -0.035em;
+  line-height: var(--type-feature-title-line-height);
+  letter-spacing: 0;
 }
 
 .map-experience__listen-hook {
   margin: 0.85rem 0 0;
-  font-size: 1.35rem;
-  line-height: 1.53;
+  font-size: var(--type-card-body-size);
+  line-height: var(--type-body-line-height);
   color: color-mix(in srgb, var(--color-text) 72%, transparent);
 }
 
@@ -172,7 +203,7 @@
 
 .map-experience__city-label {
   margin-bottom: 0.85rem;
-  font-size: 1rem;
+  font-size: var(--type-label-size);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--color-text) 42%, transparent);
@@ -241,12 +272,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 1.3rem;
+  font-size: var(--type-ui-title-size);
   font-weight: 600;
 }
 
 .map-experience__city-btn-meta {
-  font-size: 1.05rem;
+  font-size: var(--type-label-size);
   color: color-mix(in srgb, var(--color-text) 44%, transparent);
 }
 
@@ -255,9 +286,9 @@
 }
 
 .map-experience__panel--viz {
-  flex: 7 1 0;
   min-width: 0;
   min-height: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -265,19 +296,19 @@
   border-radius: 1.6rem;
   background: transparent;
   box-shadow: none;
-  align-self: stretch;
+  align-self: start;
 }
 
 .map-experience__viz {
   position: relative;
-  flex: 1 1 auto;
-  min-height: 42rem;
-  height: auto;
+  width: 100%;
+  min-height: clamp(34rem, 42vw, 46rem);
+  height: clamp(34rem, 42vw, 46rem);
   overflow: hidden;
-  border-radius: 1.6rem;
-  box-shadow: var(--listen-panel-edge);
-  /* Opaque fill breaks “glass” over MapKit: backdrop-filter often samples this
-     instead of the map. Keep transparent so the dock can composite over real tiles. */
+  border-radius: 1.35rem;
+  box-shadow:
+    var(--listen-panel-edge),
+    0 24px 48px rgba(31, 27, 22, 0.06);
   background: transparent;
 }
 
@@ -329,17 +360,17 @@
 
 .map-experience__fallback-title {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: var(--type-feature-title-size);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: var(--type-feature-title-line-height);
   max-width: 22ch;
   color: var(--color-text);
 }
 
 .map-experience__fallback-detail {
   margin: 0;
-  font-size: 1.35rem;
-  line-height: 1.55;
+  font-size: var(--type-card-body-size);
+  line-height: var(--type-body-line-height);
   max-width: 44ch;
   color: var(--color-text-muted);
 }
@@ -382,7 +413,7 @@
 }
 
 .map-experience__viz-dock-eyebrow {
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   color: color-mix(in srgb, var(--color-text) 48%, transparent);
 }
 
@@ -391,7 +422,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 1.24rem;
+  font-size: var(--type-ui-title-size);
   font-weight: 600;
   text-shadow:
     0 0 1rem rgba(255, 255, 255, 0.8),
@@ -400,7 +431,7 @@
 
 .map-experience__viz-dock-timer {
   margin-top: 0.32rem;
-  font-size: 0.78rem;
+  font-size: 1.3rem;
   font-weight: 500;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.01em;
@@ -472,27 +503,37 @@
 
 @media (max-width: 1024px) {
   .map-experience {
-    padding: 1.5rem 10% 6rem;
+    padding: clamp(3rem, 8vw, 5rem) 10% clamp(4rem, 8vw, 6rem);
   }
 
   .map-experience__layout {
-    flex-direction: column;
-    gap: 2.6rem;
-  }
-
-  .map-experience__listen-column {
-    flex: 0 0 auto;
-    max-width: none;
-    width: 100%;
-  }
-
-  .map-experience__panel--viz {
-    flex: 0 0 auto;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: clamp(2.4rem, 6vw, 3.6rem);
     min-height: 0;
   }
 
+  .map-experience__copy-column {
+    width: 100%;
+    max-width: none;
+    padding-right: 0;
+    align-self: start;
+    justify-content: flex-start;
+  }
+
+  .map-experience__copy-column h2 {
+    max-width: none;
+  }
+
+  .map-experience__copy-column p {
+    max-width: none;
+  }
+
+  .map-experience__panel--viz {
+    width: 100%;
+  }
+
   .map-experience__viz {
-    flex: 0 0 auto;
     height: 36rem;
     min-height: 36rem;
   }
@@ -500,17 +541,17 @@
 
 @media (max-width: 640px) {
   .map-experience {
-    padding: 1.5rem 2.4rem 5rem;
+    padding: clamp(2.8rem, 8vw, 4rem) 2.4rem clamp(3.6rem, 8vw, 5rem);
   }
 
   .map-experience__inner,
-  .map-experience__intro,
+  .map-experience__copy-column,
   .map-experience__layout {
     max-width: calc(100vw - 4.8rem);
   }
 
-  .map-experience__intro p {
-    max-width: 30rem;
+  .map-experience__copy-column p {
+    max-width: none;
   }
 
   .map-experience__city-grid {
@@ -518,7 +559,7 @@
   }
 
   .map-experience__listen-story-title {
-    font-size: 1.95rem;
+    font-size: var(--type-feature-title-size);
   }
 
   .map-experience__viz {
