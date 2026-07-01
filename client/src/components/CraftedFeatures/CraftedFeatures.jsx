@@ -74,21 +74,70 @@ const screenImages = [
   },
 ];
 
+const positiveModulo = (value, length) => ((value % length) + length) % length;
+
 const CraftedFeatures = () => {
   const [activeScreenId, setActiveScreenId] = useState(null);
+  const [isMobileScroller, setIsMobileScroller] = useState(false);
+  const [mobileCursor, setMobileCursor] = useState(screenImages.length * 2);
   const stageRef = useRef(null);
-  const hasInitializedScroll = useRef(false);
+  const hasInitializedDesktopScroll = useRef(false);
+  const hasInitializedMobileScroll = useRef(false);
   const userPauseUntil = useRef(0);
-  const activeScreen = screenImages.find((screen) => screen.id === activeScreenId);
+  const mobileScreenIndex = positiveModulo(mobileCursor, screenImages.length);
+  const screenGroups = isMobileScroller ? [0, 1, 2, 3, 4] : [0, 1, 2];
+  const mobileMiddleGroupStart = screenImages.length * 2;
+  const activeScreen = isMobileScroller
+    ? screenImages[mobileScreenIndex]
+    : screenImages.find((screen) => screen.id === activeScreenId);
 
   const pauseForManualScroll = () => {
     userPauseUntil.current = performance.now() + 1400;
   };
 
+  const centerMobileCursor = (cursor, behavior = 'smooth') => {
+    const stage = stageRef.current;
+    const target = stage?.querySelectorAll('.crafted-features__screen')[cursor];
+
+    if (!stage || !target) return;
+
+    stage.scrollTo({
+      left: target.offsetLeft - (stage.clientWidth - target.clientWidth) / 2,
+      behavior,
+    });
+  };
+
+  const moveMobileCursor = (step) => {
+    pauseForManualScroll();
+    setMobileCursor((current) => current + step);
+  };
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 768px)');
+    const updateIsMobileScroller = () => {
+      const shouldUseMobileScroller = media.matches;
+      setIsMobileScroller(shouldUseMobileScroller);
+
+      if (shouldUseMobileScroller) {
+        hasInitializedMobileScroll.current = false;
+        setMobileCursor(screenImages.length * 2);
+      }
+    };
+
+    updateIsMobileScroller();
+    media.addEventListener('change', updateIsMobileScroller);
+
+    return () => media.removeEventListener('change', updateIsMobileScroller);
+  }, []);
+
   useEffect(() => {
     const stage = stageRef.current;
 
-    if (!stage || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (
+      !stage ||
+      isMobileScroller ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
       return undefined;
     }
 
@@ -102,9 +151,9 @@ const CraftedFeatures = () => {
         return;
       }
 
-      if (!hasInitializedScroll.current) {
+      if (!hasInitializedDesktopScroll.current) {
         stage.scrollLeft = groupWidth;
-        hasInitializedScroll.current = true;
+        hasInitializedDesktopScroll.current = true;
         return;
       }
 
@@ -130,10 +179,62 @@ const CraftedFeatures = () => {
     frameId = requestAnimationFrame(tick);
 
     return () => cancelAnimationFrame(frameId);
-  }, [activeScreenId]);
+  }, [activeScreenId, isMobileScroller]);
+
+  useEffect(() => {
+    const stage = stageRef.current;
+
+    if (!stage || !isMobileScroller) {
+      return undefined;
+    }
+
+    const frameId = requestAnimationFrame(() => {
+      centerMobileCursor(
+        mobileCursor,
+        hasInitializedMobileScroll.current ? 'smooth' : 'auto'
+      );
+      hasInitializedMobileScroll.current = true;
+    });
+
+    let normalizeTimeout;
+
+    if (
+      mobileCursor < screenImages.length ||
+      mobileCursor >= screenImages.length * 4
+    ) {
+      normalizeTimeout = window.setTimeout(() => {
+        const normalizedCursor = mobileMiddleGroupStart + mobileScreenIndex;
+        setMobileCursor(normalizedCursor);
+        requestAnimationFrame(() => centerMobileCursor(normalizedCursor, 'auto'));
+      }, 900);
+    }
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.clearTimeout(normalizeTimeout);
+    };
+  }, [isMobileScroller, mobileCursor, mobileMiddleGroupStart, mobileScreenIndex]);
 
   return (
     <section className="crafted-features" id="crafted">
+      <div className="crafted-features__mobile-controls" aria-label="Browse Dora app screens">
+        <button
+          type="button"
+          className="crafted-features__mobile-control crafted-features__mobile-control--previous"
+          aria-label="Previous screen"
+          onClick={() => moveMobileCursor(-1)}
+        >
+          <span className="crafted-features__mobile-chevron" aria-hidden="true" />
+        </button>
+        <button
+          type="button"
+          className="crafted-features__mobile-control crafted-features__mobile-control--next"
+          aria-label="Next screen"
+          onClick={() => moveMobileCursor(1)}
+        >
+          <span className="crafted-features__mobile-chevron" aria-hidden="true" />
+        </button>
+      </div>
       <div
         ref={stageRef}
         className="crafted-features__screen-stage"
@@ -145,19 +246,26 @@ const CraftedFeatures = () => {
         onWheel={pauseForManualScroll}
       >
         <div className="crafted-features__track">
-          {[0, 1, 2].map((groupIndex) => (
+          {screenGroups.map((groupIndex) => (
             <div
               className="crafted-features__screen-group"
               key={groupIndex}
-              aria-hidden={groupIndex === 1 ? undefined : 'true'}
+              aria-hidden={
+                groupIndex === (isMobileScroller ? 2 : 1) ? undefined : 'true'
+              }
             >
-              {screenImages.map((screen) => (
+              {screenImages.map((screen, screenIndex) => (
                 <button
                   type="button"
-                  className={`crafted-features__screen crafted-features__screen--${screen.tone}`}
+                  className={`crafted-features__screen crafted-features__screen--${screen.tone}${
+                    isMobileScroller &&
+                    groupIndex * screenImages.length + screenIndex === mobileCursor
+                      ? ' is-mobile-active'
+                      : ''
+                  }`}
                   key={`${groupIndex}-${screen.id}`}
                   aria-label={`Focus ${screen.label}`}
-                  tabIndex={groupIndex === 1 ? 0 : -1}
+                  tabIndex={groupIndex === 1 && !isMobileScroller ? 0 : -1}
                   onFocus={() => setActiveScreenId(screen.id)}
                   onMouseEnter={() => setActiveScreenId(screen.id)}
                   onBlur={() => setActiveScreenId(null)}

@@ -82,6 +82,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: clip;
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family);
@@ -93,6 +94,8 @@ body {
 
 #root {
   width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 a {
@@ -120,6 +123,21 @@ section {
   display: flex;
   flex-direction: column;
   background: var(--color-background);
+  overflow-x: clip;
+}
+
+.main-content {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  body,
+  #root,
+  .app-layout,
+  .main-content {
+    overflow-x: hidden;
+  }
 }
 
 .app-layout--home {
@@ -321,6 +339,14 @@ body.menu-open {
   font-size: 1.4rem;
   line-height: 1.5;
   color: var(--color-text-subtle);
+}
+
+.content-page__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 2.4rem;
 }
 
 .content-page__grid {

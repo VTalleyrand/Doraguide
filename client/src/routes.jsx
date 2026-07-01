@@ -3,6 +3,7 @@ import About from './pages/About.jsx';
 import Terms from './pages/Terms.jsx';
 import Privacy from './pages/Privacy.jsx';
 import Press from './pages/Press.jsx';
+import Support from './pages/Support.jsx';
 import CityVote from './pages/CityVote.jsx';
 import StoryListen from './pages/StoryListen.jsx';
 import {
@@ -20,6 +21,7 @@ export const routes = {
   '/terms': Terms,
   '/privacy': Privacy,
   '/press': Press,
+  '/support': Support,
   '/vote': CityVote,
 };
 

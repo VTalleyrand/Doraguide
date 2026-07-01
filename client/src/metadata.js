@@ -49,6 +49,13 @@ export const routeMetadata = {
     canonicalPath: '/press',
     socialTitle: 'Press — Dora',
   },
+  '/support': {
+    title: 'Support — Dora',
+    description:
+      'Contact Dora support for help, questions, or issue reports.',
+    canonicalPath: '/support',
+    socialTitle: 'Support — Dora',
+  },
   '/vote': {
     title: 'Vote for Dora’s Next City',
     description:
