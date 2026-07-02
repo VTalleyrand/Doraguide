@@ -20,3 +20,22 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Smart App Banner
+
+The iOS Smart App Banner code is currently commented out. To re-enable it,
+restore the commented Smart App Banner imports and calls in:
+
+- `client/src/appBanner.js`
+- `client/src/main.jsx`
+- `client/vite.config.js`
+- `scripts/prerender.mjs`
+
+It was previously enabled for builds with:
+
+```bash
+VITE_SHOW_APP_BANNER=true npm run build
+```
+
+The banner uses App Store ID `6746723814` and passes each page's canonical URL
+as the `app-argument`.
