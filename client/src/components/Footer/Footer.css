@@ -22,7 +22,9 @@
 .site-footer__nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1.6rem;
+  width: 100%;
 }
 
 .site-footer__nav a {

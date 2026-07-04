@@ -76,13 +76,18 @@ textarea {
 
 html {
   font-size: 62.5%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   background: #ffffff;
 }
 
 body {
   margin: 0;
-  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family);
@@ -132,6 +137,7 @@ section {
 }
 
 @supports not (overflow: clip) {
+  html,
   body,
   #root,
   .app-layout,
