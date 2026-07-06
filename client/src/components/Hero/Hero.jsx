@@ -60,8 +60,8 @@ const Hero = () => {
         <p>
           The only app built for the moment curiosity strikes. Discover the
           stories behind landmarks, statues, architecture, neighborhoods, and more,
-          turning curiosity into understanding. No Googling. No Wikipedia. No
-          endless tabs just to piece the story together.
+          turning curiosity into a deeper connection with the world around you. No
+          Googling. No Wikipedia. No endless tabs just to piece the story together.
         </p>
         <div className="hero-buttons">
           {/* <button className="primary-btn" type="button">
