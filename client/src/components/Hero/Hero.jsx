@@ -51,10 +51,10 @@ const Hero = () => {
     <section className="hero">
       <div className="hero-content">
         <h1>
-          <span className="hero-title-line">Feel closer to</span>{' '}
+          <span className="hero-title-line">Understand the world</span>{' '}
           <br className="hero-title-break" aria-hidden="true" />
           <span className="hero-title-line hero-title-line--second">
-            every place.
+            around you.
           </span>
         </h1>
         <p>
