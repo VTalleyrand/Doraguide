@@ -237,10 +237,14 @@
     min-height: clamp(28rem, 104vw, 39rem);
     padding-block: 4.2rem 3.6rem;
     contain: layout paint;
-    overflow-x: hidden;
+    overflow-x: auto;
     overscroll-behavior-x: contain;
-    touch-action: pan-y;
     scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  .crafted-features__track {
+    padding-inline: max(0px, calc(50% - var(--screen-width) / 2));
   }
 
   .crafted-features__screen {

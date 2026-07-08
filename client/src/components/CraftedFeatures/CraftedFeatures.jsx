@@ -101,8 +101,13 @@ const CraftedFeatures = () => {
 
     if (!stage || !target) return;
 
+    const stageRect = stage.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const targetCenter = targetRect.left + targetRect.width / 2;
+    const stageCenter = stageRect.left + stageRect.width / 2;
+
     stage.scrollTo({
-      left: target.offsetLeft - (stage.clientWidth - target.clientWidth) / 2,
+      left: stage.scrollLeft + (targetCenter - stageCenter),
       behavior,
     });
   };
