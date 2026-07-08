@@ -9,6 +9,11 @@ import {
 
 export const siteUrl = 'https://doraguide.com';
 
+export const appStoreUrl =
+  'https://apps.apple.com/us/app/dora-landmarks-stories/id6746723814';
+
+export const appStoreAppId = '6746723814';
+
 export const defaultDescription =
   'Tap a landmark and hear its story with Dora, an audio guide app for discovering the places around you.';
 

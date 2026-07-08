@@ -7,11 +7,9 @@ import {
 import {
   formatClock,
 } from '../components/MapExperience/mapExperienceUtils.js';
+import { appStoreUrl } from '../metadata.js';
 import '../components/Header/Header.css';
 import './StoryListen.css';
-
-const appDownloadUrl =
-  'https://docs.google.com/forms/d/e/1FAIpQLSdJFFJN6tyLpKh5g0WvLWzTQ1IOtyw48im_OGJqYCILGNcp6w/viewform';
 const storyCityAccentColors = {
   new_york: 'var(--marker-indigo)',
   amsterdam: 'var(--marker-blue)',
@@ -215,7 +213,7 @@ const StoryListen = ({ routePath }) => {
           <p>Want more stories nearby?</p>
           <a
             className="design-btn story-listen__cta"
-            href={appDownloadUrl}
+            href={appStoreUrl}
             target="_blank"
             rel="noreferrer"
           >

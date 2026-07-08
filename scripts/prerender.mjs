@@ -1,11 +1,10 @@
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-// import {
-//   getSmartAppBannerAppArgument,
-//   getSmartAppBannerTag,
-//   isSmartAppBannerEnabled,
-// } from '../client/src/appBanner.js';
+import {
+  getSmartAppBannerAppArgument,
+  getSmartAppBannerTag,
+} from '../client/src/appBanner.js';
 import {
   getRouteMetadata,
   routeMetadata,
@@ -24,14 +23,14 @@ const template = await readFile(templatePath, 'utf8');
 const { render } = await import(serverEntryPath);
 
 const setTag = (html, pattern, replacement) => html.replace(pattern, replacement);
-// const smartAppBannerPattern =
-//   /<meta\s+name="apple-itunes-app"\s+content="[^"]*"\s*\/>/;
+const smartAppBannerPattern =
+  /<meta\s+name="apple-itunes-app"\s+content="[^"]*"\s*\/>/;
 
 const applyMetadata = (html, metadata) => {
   const canonicalUrl = `${siteUrl}${metadata.canonicalPath}`;
-  // const smartAppBannerTag = isSmartAppBannerEnabled(process.env)
-  //   ? getSmartAppBannerTag(getSmartAppBannerAppArgument(metadata.canonicalPath))
-  //   : '';
+  const smartAppBannerTag = getSmartAppBannerTag(
+    getSmartAppBannerAppArgument(metadata.canonicalPath)
+  );
 
   const metadataHtml = [
     [
@@ -76,12 +75,11 @@ const applyMetadata = (html, metadata) => {
     ],
   ].reduce((result, [pattern, replacement]) => setTag(result, pattern, replacement), html);
 
-  // if (smartAppBannerPattern.test(metadataHtml)) {
-  //   return metadataHtml.replace(smartAppBannerPattern, smartAppBannerTag);
-  // }
-  //
-  // return metadataHtml.replace('<!-- dora-smart-app-banner -->', smartAppBannerTag);
-  return metadataHtml;
+  if (smartAppBannerPattern.test(metadataHtml)) {
+    return metadataHtml.replace(smartAppBannerPattern, smartAppBannerTag);
+  }
+
+  return metadataHtml.replace('<!-- dora-smart-app-banner -->', smartAppBannerTag);
 };
 
 const writeRoute = async (routePath, html) => {

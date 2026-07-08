@@ -1,17 +1,10 @@
-// import { siteUrl } from './metadata.js';
+import { appStoreAppId, siteUrl } from './metadata.js';
 
-// export const appleItunesAppId = '6746723814';
+export const getSmartAppBannerAppArgument = (canonicalPath = '/') =>
+  canonicalPath === '/' ? siteUrl : `${siteUrl}${canonicalPath}`;
 
-// const smartAppBannerEnvKey = 'VITE_SHOW_APP_BANNER';
+export const getSmartAppBannerContent = (appArgument) =>
+  `app-id=${appStoreAppId}, app-argument=${appArgument}`;
 
-// export const isSmartAppBannerEnabled = (env = import.meta.env) =>
-//   env?.[smartAppBannerEnvKey] === 'true';
-
-// export const getSmartAppBannerAppArgument = (canonicalPath = '/') =>
-//   canonicalPath === '/' ? siteUrl : `${siteUrl}${canonicalPath}`;
-
-// export const getSmartAppBannerContent = (appArgument) =>
-//   `app-id=${appleItunesAppId}, app-argument=${appArgument}`;
-
-// export const getSmartAppBannerTag = (appArgument) =>
-//   `<meta name="apple-itunes-app" content="${getSmartAppBannerContent(appArgument)}" />`;
+export const getSmartAppBannerTag = (appArgument) =>
+  `<meta name="apple-itunes-app" content="${getSmartAppBannerContent(appArgument)}" />`;

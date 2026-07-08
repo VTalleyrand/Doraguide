@@ -1,11 +1,10 @@
 import path from 'node:path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
-// import {
-//   getSmartAppBannerAppArgument,
-//   getSmartAppBannerTag,
-//   isSmartAppBannerEnabled,
-// } from './src/appBanner.js';
+import {
+  getSmartAppBannerAppArgument,
+  getSmartAppBannerTag,
+} from './src/appBanner.js';
 
 export default defineConfig(({ mode }) => {
   const projectRoot = path.resolve(import.meta.dirname, '..');
@@ -19,15 +18,12 @@ export default defineConfig(({ mode }) => {
       {
         name: 'dora-html-mapkit-meta',
         transformIndexHtml(html) {
-          return html.replaceAll('%VITE_MAPKIT_TOKEN%', env.VITE_MAPKIT_TOKEN ?? '');
-          // return html
-          //   .replaceAll('%VITE_MAPKIT_TOKEN%', env.VITE_MAPKIT_TOKEN ?? '')
-          //   .replace(
-          //     '<!-- dora-smart-app-banner -->',
-          //     isSmartAppBannerEnabled(env)
-          //       ? getSmartAppBannerTag(getSmartAppBannerAppArgument('/'))
-          //       : ''
-          //   );
+          return html
+            .replaceAll('%VITE_MAPKIT_TOKEN%', env.VITE_MAPKIT_TOKEN ?? '')
+            .replace(
+              '<!-- dora-smart-app-banner -->',
+              getSmartAppBannerTag(getSmartAppBannerAppArgument('/'))
+            );
         },
       },
       {

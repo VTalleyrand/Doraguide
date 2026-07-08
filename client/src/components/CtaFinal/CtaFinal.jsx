@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as riveReact from '@rive-app/react-canvas';
 import mapCharacter from '../../assets/animations/mapcharacter.riv?url';
+import { appStoreUrl } from '../../metadata.js';
 import './CtaFinal.css';
 
 const riveExports = riveReact.Layout ? riveReact : riveReact.default;
@@ -85,7 +86,7 @@ const CtaFinal = () => {
           <div className="cta-final__actions">
             <a
               className="primary-btn"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdJFFJN6tyLpKh5g0WvLWzTQ1IOtyw48im_OGJqYCILGNcp6w/viewform"
+              href={appStoreUrl}
               target="_blank"
               rel="noreferrer"
             >

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { appStoreUrl } from '../../metadata.js';
 import './Header.css';
 
 const appleIcon = (
@@ -70,7 +71,7 @@ const Header = () => {
         </ul>
         <a
           className="design-btn"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdJFFJN6tyLpKh5g0WvLWzTQ1IOtyw48im_OGJqYCILGNcp6w/viewform"
+          href={appStoreUrl}
           target="_blank"
           rel="noreferrer"
         >

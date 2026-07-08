@@ -2,11 +2,10 @@ import { StrictMode, useEffect, useState } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import './global.css';
 import App from './App.jsx';
-// import {
-//   getSmartAppBannerAppArgument,
-//   getSmartAppBannerContent,
-//   isSmartAppBannerEnabled,
-// } from './appBanner.js';
+import {
+  getSmartAppBannerAppArgument,
+  getSmartAppBannerContent,
+} from './appBanner.js';
 import { getRouteMetadata, siteUrl, socialImage } from './metadata.js';
 import {
   isStoryPath,
@@ -29,25 +28,20 @@ const setCanonicalUrl = (href) => {
   }
 };
 
-// const setSmartAppBanner = (content) => {
-//   const selector = 'meta[name="apple-itunes-app"]';
-//   const existing = document.head.querySelector(selector);
-//
-//   if (!isSmartAppBannerEnabled()) {
-//     existing?.remove();
-//     return;
-//   }
-//
-//   if (existing) {
-//     existing.setAttribute('content', content);
-//     return;
-//   }
-//
-//   const meta = document.createElement('meta');
-//   meta.name = 'apple-itunes-app';
-//   meta.content = content;
-//   document.head.appendChild(meta);
-// };
+const setSmartAppBanner = (content) => {
+  const selector = 'meta[name="apple-itunes-app"]';
+  const existing = document.head.querySelector(selector);
+
+  if (existing) {
+    existing.setAttribute('content', content);
+    return;
+  }
+
+  const meta = document.createElement('meta');
+  meta.name = 'apple-itunes-app';
+  meta.content = content;
+  document.head.appendChild(meta);
+};
 
 function RouterApp() {
   const [location, setLocation] = useState(() => ({
@@ -111,11 +105,11 @@ function RouterApp() {
     setMetaContent('meta[name="twitter:title"]', metadata.socialTitle);
     setMetaContent('meta[name="twitter:description"]', metadata.description);
     setMetaContent('meta[name="twitter:image"]', socialImage);
-    // setSmartAppBanner(
-    //   getSmartAppBannerContent(
-    //     getSmartAppBannerAppArgument(metadata.canonicalPath)
-    //   )
-    // );
+    setSmartAppBanner(
+      getSmartAppBannerContent(
+        getSmartAppBannerAppArgument(metadata.canonicalPath)
+      )
+    );
   }, [location.pathname]);
 
   const Page = resolvePageForPath(location.pathname);
