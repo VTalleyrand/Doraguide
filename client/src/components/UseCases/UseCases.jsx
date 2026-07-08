@@ -37,7 +37,7 @@ const UseCases = () => {
   return (
     <section className="use-cases" id="cities">
       <div className="use-cases__inner">
-        <p className="use-cases__eyebrow">At launch</p>
+        <p className="use-cases__eyebrow">Available now</p>
         <h2 className="use-cases__title">
           <span className="use-cases__title-number">400+</span>
           <span className="use-cases__title-copy">reasons to look up.</span>
