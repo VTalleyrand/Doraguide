@@ -154,6 +154,13 @@ section {
   }
 }
 
+@media (max-width: 768px) {
+  .main-content > section {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+}
+
 .app-layout--home {
   /*
   --hero-tint-rgb: 98, 101, 250;

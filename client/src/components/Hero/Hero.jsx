@@ -60,9 +60,9 @@ const Hero = () => {
         </h1>
         <p>
           The only app built for the moment curiosity strikes. Dora reveals the
-          stories behind landmarks, statues, architecture, neighborhoods, and more.
-          No Googling. No Wikipedia. No endless tabs. See something interesting?
-          Open Dora, tap the place, and press play.
+          stories behind landmarks and places around you. No Googling. No Wikipedia.
+          No endless tabs. See something interesting? Open Dora, tap the place, and
+          press play.
         </p>
         <div className="hero-buttons">
           {/* <button className="primary-btn" type="button">

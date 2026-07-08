@@ -880,12 +880,18 @@
     --showcase-inline-gutter: 2.4rem;
   }
 
+  .showcase {
+    overflow-x: clip;
+  }
+
   .bento-media {
     flex: 0 0 auto;
     min-height: 14rem;
+    max-width: 100%;
   }
 
   .bento-card {
+    max-width: 100%;
     min-height: 0;
     padding: 2rem;
   }
@@ -900,8 +906,9 @@
   }
 
   .bento-card--guide .bento-media {
-    flex-basis: clamp(36rem, 84vw, 50rem);
-    min-height: clamp(36rem, 84vw, 50rem);
+    flex-basis: auto;
+    width: 100%;
+    min-height: clamp(28rem, 72vw, 40rem);
   }
 
   .feature-scene__phone {
@@ -910,6 +917,16 @@
 
   .feature-scene--tour {
     --scene-scale: 0.66;
+  }
+
+  .bento-card--guide .feature-scene,
+  .bento-card--explore-create .feature-scene {
+    overflow: hidden;
+  }
+
+  .feature-scene__image-wrap {
+    width: 100%;
+    max-width: 100%;
   }
 
   .bento-card--discover .bento-media {
@@ -993,18 +1010,19 @@
 
 @media (max-width: 640px) {
   .bento-card--guide .bento-media {
-    flex-basis: clamp(44rem, 136vw, 62rem);
-    min-height: clamp(44rem, 136vw, 62rem);
-    padding-block: 3rem;
+    flex-basis: auto;
+    width: 100%;
+    min-height: clamp(32rem, 90vw, 48rem);
+    padding-block: 2rem;
   }
 
   .bento-card--guide .feature-scene {
     min-height: 100%;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .feature-scene__phone {
-    width: min(78vw, calc(100% - 2rem), 24rem);
+    width: min(78%, 24rem);
     height: auto;
   }
 }

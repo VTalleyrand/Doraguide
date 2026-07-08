@@ -547,7 +547,7 @@
   .map-experience__inner,
   .map-experience__copy-column,
   .map-experience__layout {
-    max-width: calc(100vw - 4.8rem);
+    max-width: 100%;
   }
 
   .map-experience__copy-column p {
