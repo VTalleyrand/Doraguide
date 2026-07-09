@@ -33,7 +33,8 @@ const Faq = () => {
       question: 'What’s free and what requires a pass?',
       answer: [
         'Dora is free to browse and try. City stories, neighborhood stories, and select popular locations are available without paying.',
-        'A pass or subscription unlocks full access to all stories and routes, plus Live Activities, full transcripts, and the ability to host Roam with Friends sessions. Friends can join a Roam session for free.',
+        'All other stories include a 1-minute preview, so you can listen before unlocking them.',
+        'A pass or subscription unlocks full access to every story and route, plus Live Activities, full transcripts, and the ability to host Roam with Friends sessions. Friends can join a Roam session for free.',
       ],
     },
   ];
