@@ -117,6 +117,13 @@ const CraftedFeatures = () => {
     setMobileCursor((current) => current + step);
   };
 
+  const selectMobileCursor = (cursor) => {
+    if (!isMobileScroller || cursor === mobileCursor) return;
+
+    pauseForManualScroll();
+    setMobileCursor(cursor);
+  };
+
   useEffect(() => {
     const media = window.matchMedia('(max-width: 768px)');
     const updateIsMobileScroller = () => {
@@ -259,25 +266,37 @@ const CraftedFeatures = () => {
                 groupIndex === (isMobileScroller ? 2 : 1) ? undefined : 'true'
               }
             >
-              {screenImages.map((screen, screenIndex) => (
-                <button
-                  type="button"
-                  className={`crafted-features__screen crafted-features__screen--${screen.tone}${
-                    isMobileScroller &&
-                    groupIndex * screenImages.length + screenIndex === mobileCursor
-                      ? ' is-mobile-active'
-                      : ''
-                  }`}
-                  key={`${groupIndex}-${screen.id}`}
-                  aria-label={`Focus ${screen.label}`}
-                  tabIndex={groupIndex === 1 && !isMobileScroller ? 0 : -1}
-                  onFocus={() => setActiveScreenId(screen.id)}
-                  onMouseEnter={() => setActiveScreenId(screen.id)}
-                  onBlur={() => setActiveScreenId(null)}
-                >
-                  <img src={screen.src} alt={screen.label} loading="lazy" />
-                </button>
-              ))}
+              {screenImages.map((screen, screenIndex) => {
+                const absoluteIndex =
+                  groupIndex * screenImages.length + screenIndex;
+                const isMobileActive =
+                  isMobileScroller && absoluteIndex === mobileCursor;
+
+                return (
+                  <button
+                    type="button"
+                    className={`crafted-features__screen crafted-features__screen--${screen.tone}${
+                      isMobileActive ? ' is-mobile-active' : ''
+                    }`}
+                    key={`${groupIndex}-${screen.id}`}
+                    aria-label={`Focus ${screen.label}`}
+                    aria-current={isMobileActive ? 'true' : undefined}
+                    tabIndex={
+                      isMobileScroller
+                        ? 0
+                        : groupIndex === 1
+                          ? 0
+                          : -1
+                    }
+                    onClick={() => selectMobileCursor(absoluteIndex)}
+                    onFocus={() => setActiveScreenId(screen.id)}
+                    onMouseEnter={() => setActiveScreenId(screen.id)}
+                    onBlur={() => setActiveScreenId(null)}
+                  >
+                    <img src={screen.src} alt={screen.label} loading="lazy" />
+                  </button>
+                );
+              })}
             </div>
           ))}
         </div>

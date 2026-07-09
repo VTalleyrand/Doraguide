@@ -250,7 +250,9 @@
   .crafted-features__screen {
     opacity: 0.34;
     filter: saturate(0.6) blur(0.8px);
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .crafted-features__screen.is-mobile-active {
@@ -258,6 +260,7 @@
     opacity: 1;
     filter: none;
     transform: translateY(-1.4rem) scale(1.06);
+    pointer-events: none;
   }
 
   .crafted-features__screen.is-mobile-active::before {
