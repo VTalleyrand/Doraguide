@@ -2,9 +2,8 @@ import { useMemo, useState } from 'react';
 import { appStoreUrl } from '../../metadata.js';
 import './TopBanner.css';
 
-const bannerLeadDesktop =
+const bannerLead =
   'Dora is live in 6 cities · New York, Paris, Amsterdam, Barcelona, Milan & Palermo';
-const bannerLeadMobile = 'Dora is live in 6 cities';
 const bannerCta = 'Download now →';
 
 const SEGMENT_COUNT = 4;
@@ -28,12 +27,7 @@ const BannerSegment = ({ tabIndex, ariaHidden }) => (
     tabIndex={tabIndex}
     aria-hidden={ariaHidden}
   >
-    <span className="top-banner__lead top-banner__lead--desktop">
-      {bannerLeadDesktop}
-    </span>
-    <span className="top-banner__lead top-banner__lead--mobile">
-      {bannerLeadMobile}
-    </span>
+    <span className="top-banner__lead">{bannerLead}</span>
     <span className="top-banner__cta">{bannerCta}</span>
   </a>
 );
