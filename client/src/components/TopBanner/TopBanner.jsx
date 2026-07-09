@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { appStoreUrl } from '../../metadata.js';
 import './TopBanner.css';
 
-const STORAGE_KEY = 'dora-top-banner-dismissed';
-
-const bannerLead =
+const bannerLeadDesktop =
   'Dora is live in 6 cities · New York, Paris, Amsterdam, Barcelona, Milan & Palermo';
+const bannerLeadMobile = 'Dora is live in 6 cities';
 const bannerCta = 'Download now →';
 
 const SEGMENT_COUNT = 4;
@@ -29,7 +28,12 @@ const BannerSegment = ({ tabIndex, ariaHidden }) => (
     tabIndex={tabIndex}
     aria-hidden={ariaHidden}
   >
-    <span className="top-banner__lead">{bannerLead}</span>
+    <span className="top-banner__lead top-banner__lead--desktop">
+      {bannerLeadDesktop}
+    </span>
+    <span className="top-banner__lead top-banner__lead--mobile">
+      {bannerLeadMobile}
+    </span>
     <span className="top-banner__cta">{bannerCta}</span>
   </a>
 );
@@ -47,30 +51,11 @@ const BannerGroup = ({ inert = false }) => (
 );
 
 const TopBanner = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [accentColor, setAccentColor] = useState(bannerAccentColors[0]);
-
-  useEffect(() => {
-    try {
-      if (window.localStorage.getItem(STORAGE_KEY) === '1') {
-        return;
-      }
-    } catch {
-      // Ignore storage access errors and show the banner.
-    }
-
-    setAccentColor(pickBannerAccent());
-    setIsVisible(true);
-  }, []);
+  const [isVisible, setIsVisible] = useState(true);
+  const accentColor = useMemo(() => pickBannerAccent(), []);
 
   const dismiss = () => {
     setIsVisible(false);
-
-    try {
-      window.localStorage.setItem(STORAGE_KEY, '1');
-    } catch {
-      // Ignore storage write errors; banner still closes for this session.
-    }
   };
 
   if (!isVisible) {

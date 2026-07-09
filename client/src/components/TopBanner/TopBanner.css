@@ -61,6 +61,10 @@
   line-height: 1;
 }
 
+.top-banner__lead--mobile {
+  display: none;
+}
+
 .top-banner__cta {
   font-weight: 650;
 }
@@ -133,9 +137,22 @@
   }
 
   .top-banner__segment {
-    font-size: 1.2rem;
-    gap: 2.2rem;
+    font-size: var(--type-body-size);
+    font-weight: 500;
+    gap: 1.6rem;
     padding-right: 14.4rem;
+  }
+
+  .top-banner__lead--desktop {
+    display: none;
+  }
+
+  .top-banner__lead--mobile {
+    display: inline;
+  }
+
+  .top-banner__cta {
+    font-weight: 600;
   }
 
   .top-banner__close {
