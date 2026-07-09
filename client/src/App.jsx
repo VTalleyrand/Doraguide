@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Header from './components/Header/index.jsx';
 import Footer from './components/Footer/index.jsx';
+import TopBanner from './components/TopBanner/index.jsx';
 import { isValidStoryPath } from './routes.jsx';
 
 function App({ children, locationPath, locationHash }) {
@@ -43,6 +44,7 @@ function App({ children, locationPath, locationHash }) {
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
+      {!isStoryPage && <TopBanner />}
       {!isStoryPage && <Header />}
       <main className="main-content" id="main-content">
         {children}
