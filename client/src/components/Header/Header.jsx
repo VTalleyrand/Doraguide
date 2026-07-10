@@ -76,7 +76,7 @@ const Header = () => {
           rel="noreferrer"
         >
           {appleIcon}
-          Download Dora
+          Download on iOS
         </a>
       </nav>
     </header>

@@ -4,7 +4,7 @@ import './TopBanner.css';
 
 const bannerLead =
   'Dora is live in 6 cities · New York, Paris, Amsterdam, Barcelona, Milan & Palermo';
-const bannerCta = 'Download now →';
+const bannerCta = 'Download on iOS';
 
 const SEGMENT_COUNT = 4;
 

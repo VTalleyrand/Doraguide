@@ -43,12 +43,22 @@
 .hero p {
   font-size: var(--type-hero-body-size);
   color: var(--color-text-subtle);
-  max-width: 66rem;
+  max-width: 72rem;
   margin: 0 auto 3rem;
   line-height: var(--type-hero-body-line-height);
   text-align: center;
   text-wrap: pretty;
   animation: hero-enter 720ms var(--ease-emphasized) 300ms both;
+}
+
+.hero-subtext-break {
+  display: none;
+}
+
+@media (min-width: 641px) {
+  .hero-subtext-break {
+    display: block;
+  }
 }
 
 .hero-buttons {
