@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { appStoreUrl } from '../../metadata.js';
 import './TopBanner.css';
 
@@ -15,8 +15,15 @@ const bannerAccentColors = [
   'var(--marker-orange)',
 ];
 
-const pickBannerAccent = () =>
-  bannerAccentColors[Math.floor(Math.random() * bannerAccentColors.length)];
+const bannerAccentStorageKey = 'dora-top-banner-accent-index';
+
+const pickNextBannerAccentIndex = (previousIndex) => {
+  const availableIndexes = bannerAccentColors
+    .map((_, index) => index)
+    .filter((index) => index !== previousIndex);
+
+  return availableIndexes[Math.floor(Math.random() * availableIndexes.length)];
+};
 
 const BannerSegment = ({ tabIndex, ariaHidden }) => (
   <a
@@ -46,7 +53,27 @@ const BannerGroup = ({ inert = false }) => (
 
 const TopBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
-  const accentColor = useMemo(() => pickBannerAccent(), []);
+  const [accentIndex, setAccentIndex] = useState(0);
+  const hasSelectedAccent = useRef(false);
+
+  useEffect(() => {
+    if (hasSelectedAccent.current) return;
+    hasSelectedAccent.current = true;
+
+    const storedIndex = Number.parseInt(
+      window.sessionStorage.getItem(bannerAccentStorageKey),
+      10
+    );
+    const previousIndex = Number.isInteger(storedIndex) &&
+      storedIndex >= 0 &&
+      storedIndex < bannerAccentColors.length
+      ? storedIndex
+      : null;
+    const nextIndex = pickNextBannerAccentIndex(previousIndex);
+
+    window.sessionStorage.setItem(bannerAccentStorageKey, String(nextIndex));
+    setAccentIndex(nextIndex);
+  }, []);
 
   const dismiss = () => {
     setIsVisible(false);
@@ -61,7 +88,7 @@ const TopBanner = () => {
       className="top-banner"
       role="region"
       aria-label="Announcement"
-      style={{ '--top-banner-accent': accentColor }}
+      style={{ '--top-banner-accent': bannerAccentColors[accentIndex] }}
     >
       <div className="top-banner__viewport">
         <div className="top-banner__track">
