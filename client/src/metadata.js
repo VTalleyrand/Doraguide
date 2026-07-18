@@ -54,12 +54,12 @@ export const routeMetadata = {
     canonicalPath: '/press',
     socialTitle: 'Press — Dora',
   },
-  '/support': {
-    title: 'Support — Dora',
+  '/help': {
+    title: 'Help — Dora',
     description:
-      'Contact Dora support for help, questions, or issue reports.',
-    canonicalPath: '/support',
-    socialTitle: 'Support — Dora',
+      'Find answers to common questions about using Dora, from stories and routes to passes, Roam with Friends, and troubleshooting.',
+    canonicalPath: '/help',
+    socialTitle: 'Help — Dora',
   },
   '/vote': {
     title: 'Vote for Dora’s Next City',
@@ -94,5 +94,5 @@ export const getRouteMetadata = (pathname) => {
     };
   }
 
-  return routeMetadata[pathname] || routeMetadata['/'];
+  return routeMetadata[pathname === '/support' ? '/help' : pathname] || routeMetadata['/'];
 };

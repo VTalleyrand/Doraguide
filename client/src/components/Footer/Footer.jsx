@@ -10,7 +10,7 @@ const Footer = () => {
           <a href="/terms">Terms of Service</a>
           <a href="/privacy">Privacy Policy</a>
           <a href="/press">Press</a>
-          <a href="/support">Support</a>
+          <a href="/help">Help</a>
         </nav>
         <p className="site-footer__note">Made on the road.</p>
       </div>
