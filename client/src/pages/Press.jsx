@@ -13,7 +13,9 @@ const Press = () => {
             </p>
           </div>
           <div className="press-hero__contact">
-            <a href="mailto:press@doraguide.com">press@doraguide.com</a>
+            <a className="primary-btn" href="mailto:hello@volele.co">
+              Email us
+            </a>
           </div>
         </header>
       </div>
