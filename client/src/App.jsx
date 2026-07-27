@@ -2,11 +2,17 @@ import { useEffect } from 'react';
 import Header from './components/Header/index.jsx';
 import Footer from './components/Footer/index.jsx';
 import TopBanner from './components/TopBanner/index.jsx';
-import { isValidStoryPath } from './routes.jsx';
+import {
+  isValidCityGuidePath,
+  isValidNeighborhoodGuidePath,
+  isValidStoryPath,
+} from './routes.jsx';
 
 function App({ children, locationPath, locationHash }) {
   const isHomePage = locationPath === '/';
   const isStoryPage = isValidStoryPath(locationPath);
+  const isCityGuidePage =
+    isValidCityGuidePath(locationPath) || isValidNeighborhoodGuidePath(locationPath);
 
   useEffect(() => {
     const html = document.documentElement;
@@ -39,7 +45,7 @@ function App({ children, locationPath, locationHash }) {
     <div
       className={`app-layout ${isHomePage ? 'app-layout--home' : ''} ${
         isStoryPage ? 'app-layout--story' : ''
-      }`}
+      } ${isCityGuidePage ? 'app-layout--city-guide' : ''}`}
     >
       <a className="skip-link" href="#main-content">
         Skip to content

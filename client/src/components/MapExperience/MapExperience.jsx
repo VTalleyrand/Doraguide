@@ -189,7 +189,7 @@ const MapExperience = () => {
     });
   };
 
-  const initializeMap = () => {
+  const initializeMap = async () => {
     if (isMapReadyRef.current && activeStateRef.current.map) {
       setFallbackState((prev) => ({ ...prev, visible: false }));
       return;

@@ -1,0 +1,3375 @@
+{
+  "generatedAt": "2026-07-27T16:53:26.657Z",
+  "cities": [
+    {
+      "slug": "amsterdam",
+      "name": "Amsterdam",
+      "countryCode": "NL",
+      "landmarks": [
+        {
+          "name": "A'DAM Lookout",
+          "latitude": 52.3841,
+          "longitude": 4.90198,
+          "category": "Cultural",
+          "neighborhood": "Amsterdam‑Noord",
+          "description": "Observation deck and thrill ride on Amsterdam's north bank with panoramic city views and a sky swing."
+        },
+        {
+          "name": "Albert Cuyp Market",
+          "latitude": 52.35543,
+          "longitude": 4.8915,
+          "category": "Cultural",
+          "neighborhood": "De Pijp",
+          "description": "Bustling street market in De Pijp famed for its diverse food stalls and Dutch treats."
+        },
+        {
+          "name": "Amsterdam",
+          "latitude": 52.367066104877,
+          "longitude": 4.9039586366732,
+          "category": "City",
+          "neighborhood": null,
+          "description": "Capital of the Netherlands famed for canals and museums."
+        },
+        {
+          "name": "Amsterdam City Center",
+          "latitude": 52.36762,
+          "longitude": 4.90013,
+          "category": "Neighborhood",
+          "neighborhood": "Amsterdam-Centrum",
+          "description": "Historic core packed with canal houses, museums, nightlife, and Central Station."
+        },
+        {
+          "name": "Amsterdam Museum",
+          "latitude": 52.36591,
+          "longitude": 4.90303,
+          "category": "Cultural",
+          "neighborhood": "Burgwallen",
+          "description": "Museum telling the story of Amsterdam from its origins to today."
+        },
+        {
+          "name": "Anne Frank House",
+          "latitude": 52.37529,
+          "longitude": 4.88394,
+          "category": "Historical",
+          "neighborhood": "Jordaan",
+          "description": "Historic canal house where Anne Frank wrote her diary; now a museum of remembrance."
+        },
+        {
+          "name": "Beguinage",
+          "latitude": 52.36958,
+          "longitude": 4.89035,
+          "category": "Historical",
+          "neighborhood": "Amsterdam-Centrum",
+          "description": "Secluded medieval courtyard of almshouses and a hidden chapel — a tranquil step back in time."
+        },
+        {
+          "name": "Bos en Lommer",
+          "latitude": 52.38093,
+          "longitude": 4.85313,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "A diverse residential district nicknamed \"BoLo,\" known for its blend of cultures, green spaces, and community vibe."
+        },
+        {
+          "name": "Canal Ring",
+          "latitude": 52.36679,
+          "longitude": 4.89205,
+          "category": "Neighborhood",
+          "neighborhood": "Amsterdam-Centrum",
+          "description": "UNESCO‑listed ring of 17th‑century canals defining Amsterdam's postcard views."
+        },
+        {
+          "name": "Concertgebouw",
+          "latitude": 52.35661,
+          "longitude": 4.87861,
+          "category": "Cultural",
+          "neighborhood": "Museumkwartier",
+          "description": "19th‑century concert hall renowned worldwide for its exceptional acoustics and classical performances."
+        },
+        {
+          "name": "Dam Square",
+          "latitude": 52.37317,
+          "longitude": 4.89317,
+          "category": "Cultural",
+          "neighborhood": "Amsterdam-Centrum",
+          "description": "Amsterdam's central square — monuments, pigeons, and non‑stop city life."
+        },
+        {
+          "name": "De Baarsjes",
+          "latitude": 52.36532,
+          "longitude": 4.86023,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Lively west‑side neighborhood with eclectic architecture, canals, and a burgeoning café and food scene."
+        },
+        {
+          "name": "De Pijp",
+          "latitude": 52.35412,
+          "longitude": 4.88815,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Bohemian quarter of cafés, bars and colorful street markets popular with students and creatives."
+        },
+        {
+          "name": "Eye Filmmuseum",
+          "latitude": 52.38447,
+          "longitude": 4.90112,
+          "category": "Cultural",
+          "neighborhood": "Amsterdam‑Noord",
+          "description": "Futuristic riverside film museum with cinemas, exhibitions, and archives of Dutch and world cinema."
+        },
+        {
+          "name": "FOAM Museum",
+          "latitude": 52.36413,
+          "longitude": 4.89338,
+          "category": "Cultural",
+          "neighborhood": "Canal District",
+          "description": "Internationally renowned photography museum presenting diverse exhibitions inside an 18th‑century canal house."
+        },
+        {
+          "name": "Gashouder Westergasfabriek",
+          "latitude": 52.387,
+          "longitude": 4.86889,
+          "category": "Historical",
+          "neighborhood": "Westerpark",
+          "description": "Vast circular gas holder in Westerpark repurposed as an iconic event space for festivals and concerts."
+        },
+        {
+          "name": "H'ART Museum",
+          "latitude": 52.36536,
+          "longitude": 4.90247,
+          "category": "Cultural",
+          "neighborhood": "Plantage",
+          "description": "Once the Hermitage Amsterdam, this riverside museum hosts world‑class exhibitions in a grand canal‑side building."
+        },
+        {
+          "name": "Holocaust Memorial & Dutch Theater",
+          "latitude": 52.36663,
+          "longitude": 4.91101,
+          "category": "Historical",
+          "neighborhood": "Plantage",
+          "description": "Former theater used during WWII; now a memorial and museum."
+        },
+        {
+          "name": "Houthavens",
+          "latitude": 52.39344,
+          "longitude": 4.88232,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Former timber docks transformed into a waterfront neighborhood of modern homes, creative studios, and harborside strolls."
+        },
+        {
+          "name": "Huis Marseille",
+          "latitude": 52.36776,
+          "longitude": 4.8851,
+          "category": "Art",
+          "neighborhood": "Canal District",
+          "description": "The Netherlands' first photography museum, housed in an elegant canal house on the Keizersgracht."
+        },
+        {
+          "name": "Jewish Museum",
+          "latitude": 52.36724,
+          "longitude": 4.90377,
+          "category": "Cultural",
+          "neighborhood": "Plantage",
+          "description": "Museum dedicated to Jewish culture and history in the Netherlands."
+        },
+        {
+          "name": "Jordaan",
+          "latitude": 52.36946,
+          "longitude": 4.8795,
+          "category": "Neighborhood",
+          "neighborhood": "Jordaan",
+          "description": "Canal‑laced former working‑class district now famed for galleries and brown cafés."
+        },
+        {
+          "name": "Museum Het Rembrandthuis",
+          "latitude": 52.36948,
+          "longitude": 4.90121,
+          "category": "Historical",
+          "neighborhood": "Centrum",
+          "description": "17th‑century townhouse where Rembrandt lived and worked, now a museum preserving his life and art."
+        },
+        {
+          "name": "Museum Van Loon",
+          "latitude": 52.3635,
+          "longitude": 4.89318,
+          "category": "Historical",
+          "neighborhood": "Canal District",
+          "description": "Historic canal‑house museum preserving the elegant home and art collection of the Van Loon family."
+        },
+        {
+          "name": "Museumkwartier",
+          "latitude": 52.35549,
+          "longitude": 4.87657,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Cultural heart of Amsterdam where the Rijksmuseum, Van Gogh Museum and Concertgebouw converge."
+        },
+        {
+          "name": "Museumplein",
+          "latitude": 52.35755,
+          "longitude": 4.88299,
+          "category": "Nature",
+          "neighborhood": "Museumkwartier",
+          "description": "One of Amsterdam's largest public squares, lined by world‑class museums and wide green lawns."
+        },
+        {
+          "name": "National Holocaust Names Memorial",
+          "latitude": 52.36588,
+          "longitude": 4.90504,
+          "category": "Historical",
+          "neighborhood": "Plantage",
+          "description": "Commemorative monument listing the names of Dutch Holocaust victims."
+        },
+        {
+          "name": "National Maritime Museum",
+          "latitude": 52.37166,
+          "longitude": 4.91443,
+          "category": "Historical",
+          "neighborhood": "Oosterdok",
+          "description": "Museum exploring Dutch naval history inside a 17th‑century naval storehouse on the Oosterdok."
+        },
+        {
+          "name": "NEMO Science Museum",
+          "latitude": 52.3743,
+          "longitude": 4.91214,
+          "category": "Cultural",
+          "neighborhood": "Oosterdok",
+          "description": "Hands‑on science museum shaped like a giant green ship, offering interactive exhibits for all ages."
+        },
+        {
+          "name": "New Church",
+          "latitude": 52.37402,
+          "longitude": 4.89157,
+          "category": "Historical",
+          "neighborhood": "Amsterdam-Centrum",
+          "description": "Ceremonial church hosting royal inaugurations and acclaimed exhibitions."
+        },
+        {
+          "name": "New Market and Lastage",
+          "latitude": 52.37098,
+          "longitude": 4.90429,
+          "category": "Neighborhood",
+          "neighborhood": "Nieuwmarkt en Lastage",
+          "description": "Historic quarter around the Waag with markets, cafés, and Chinatown nearby."
+        },
+        {
+          "name": "Old Church",
+          "latitude": 52.37457,
+          "longitude": 4.89804,
+          "category": "Historical",
+          "neighborhood": "Amsterdam-Centrum",
+          "description": "Amsterdam's oldest building — a Gothic church surrounded by canals and cobbles."
+        },
+        {
+          "name": "Oud‑Zuid",
+          "latitude": 52.35267,
+          "longitude": 4.87614,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Elegant \"Old South\" district of leafy streets, boutiques and grand 19th‑century homes."
+        },
+        {
+          "name": "Our Lord In The Attic",
+          "latitude": 52.37527,
+          "longitude": 4.89936,
+          "category": "Historical",
+          "neighborhood": "Oudezijds",
+          "description": "17th‑century canal house hiding a clandestine Catholic church in its attic."
+        },
+        {
+          "name": "Pathé Tuschinski Cinema",
+          "latitude": 52.3667,
+          "longitude": 4.8947,
+          "category": "Cultural",
+          "neighborhood": "Centrum",
+          "description": "Extravagant 1921 Art Deco movie palace blending Amsterdam School and Art Nouveau design."
+        },
+        {
+          "name": "Podium Mozaïek",
+          "latitude": 52.38022,
+          "longitude": 4.85411,
+          "category": "Cultural",
+          "neighborhood": "Bos en Lommer",
+          "description": "Cultural theatre and arts venue in Bos en Lommer hosting diverse performances and community events."
+        },
+        {
+          "name": "Pontsteiger Building",
+          "latitude": 52.39322,
+          "longitude": 4.88626,
+          "category": "Historical",
+          "neighborhood": "Houthavens",
+          "description": "Dramatic modern residential building rising like a giant gate over the IJ waterfront in Houthavens."
+        },
+        {
+          "name": "Portuguese Synagogue",
+          "latitude": 52.3676,
+          "longitude": 4.90551,
+          "category": "Historical",
+          "neighborhood": "Plantage",
+          "description": "17th‑century Sephardic synagogue preserved with original interiors."
+        },
+        {
+          "name": "Rijksmuseum",
+          "latitude": 52.36015,
+          "longitude": 4.88518,
+          "category": "Historical",
+          "neighborhood": "Museumkwartier",
+          "description": "Dutch national museum showcasing Golden Age masterpieces and Amsterdam's cultural heritage."
+        },
+        {
+          "name": "Royal Palace",
+          "latitude": 52.37332,
+          "longitude": 4.8913,
+          "category": "Historical",
+          "neighborhood": "Amsterdam-Centrum",
+          "description": "17th‑century City Hall turned royal palace, presiding over Dam Square."
+        },
+        {
+          "name": "Sarphatipark",
+          "latitude": 52.35442,
+          "longitude": 4.89589,
+          "category": "Nature",
+          "neighborhood": "De Pijp",
+          "description": "English‑style city park with ponds, lawns, and a memorial to 19th‑century doctor Samuel Sarphati."
+        },
+        {
+          "name": "Schoonschip Amsterdam",
+          "latitude": 52.39479,
+          "longitude": 4.90624,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Pioneering community of floating eco‑homes creating a sustainable neighbourhood on Amsterdam's northern canal."
+        },
+        {
+          "name": "Statue of André Hazes",
+          "latitude": 52.35658,
+          "longitude": 4.89728,
+          "category": "Historical",
+          "neighborhood": "De Pijp",
+          "description": "Bronze statue honoring beloved Amsterdam singer André Hazes near Albert Cuyp Market."
+        },
+        {
+          "name": "Stedelijk Museum",
+          "latitude": 52.35816,
+          "longitude": 4.87957,
+          "category": "Cultural",
+          "neighborhood": "Museumkwartier",
+          "description": "Amsterdam's premier modern‑art museum, housed in a striking bathtub‑shaped building."
+        },
+        {
+          "name": "STRAAT Museum",
+          "latitude": 52.40212,
+          "longitude": 4.89396,
+          "category": "Cultural",
+          "neighborhood": "Amsterdam‑Noord",
+          "description": "Gigantic street‑art museum on the NDSM wharf showcasing graffiti and murals by artists worldwide."
+        },
+        {
+          "name": "Van Gogh Museum",
+          "latitude": 52.3582,
+          "longitude": 4.88107,
+          "category": "Cultural",
+          "neighborhood": "Museumkwartier",
+          "description": "Home to the world's largest collection of Van Gogh paintings and letters."
+        },
+        {
+          "name": "Vondelpark",
+          "latitude": 52.35814,
+          "longitude": 4.86865,
+          "category": "Nature",
+          "neighborhood": "Oud‑West",
+          "description": "Amsterdam's beloved 19th‑century park with lakes, lawns, statues and an open‑air theatre."
+        },
+        {
+          "name": "Westerpark",
+          "latitude": 52.3891,
+          "longitude": 4.88907,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Industrial heritage meets green living in this transformed district of parks, studios, and repurposed factories."
+        },
+        {
+          "name": "Westerpark",
+          "latitude": 52.3856,
+          "longitude": 4.87788,
+          "category": "Nature",
+          "neighborhood": "Westerpark",
+          "description": "A green expanse in Amsterdam's west where open meadows, ponds, and cultural venues replace city bustle."
+        },
+        {
+          "name": "Zuidas",
+          "latitude": 52.33828,
+          "longitude": 4.86939,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Amsterdam's sleek financial district of skyscrapers, offices and modern housing."
+        }
+      ]
+    },
+    {
+      "slug": "barcelona",
+      "name": "Barcelona",
+      "countryCode": "ES",
+      "landmarks": [
+        {
+          "name": "Arc de Triomf",
+          "latitude": 41.3912,
+          "longitude": 2.18046,
+          "category": "Historical",
+          "neighborhood": "Fort Pienc",
+          "description": "Red‑brick triumphal arch built as the gateway to Barcelona's 1888 Universal Exhibition."
+        },
+        {
+          "name": "Barcelona",
+          "latitude": 41.387229468527,
+          "longitude": 2.16833872654745,
+          "category": "City",
+          "neighborhood": null,
+          "description": "Catalan capital celebrated for Gaudí architecture and vibrant street life."
+        },
+        {
+          "name": "Barri Gòtic",
+          "latitude": 41.37998,
+          "longitude": 2.17263,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Medieval core of Barcelona's old town—narrow alleys, hidden squares and centuries‑old buildings form a labyrinth of history."
+        },
+        {
+          "name": "Basílica de la Sagrada Família",
+          "latitude": 41.40381,
+          "longitude": 2.17414,
+          "category": "Art",
+          "neighborhood": "Eixample",
+          "description": "Gaudí's still‑unfinished basilica blending Gothic and Art Nouveau forms, begun in 1882 and expected to be completed in 2026."
+        },
+        {
+          "name": "Camp Nou",
+          "latitude": 41.38092,
+          "longitude": 2.12264,
+          "category": "Cultural",
+          "neighborhood": "Les Corts",
+          "description": "Iconic stadium opened in 1957 and home to FC Barcelona, now being expanded to seat over 100 000 spectators."
+        },
+        {
+          "name": "Casa Batlló",
+          "latitude": 41.3918,
+          "longitude": 2.16458,
+          "category": "Art",
+          "neighborhood": "Eixample",
+          "description": "Gaudí's modernist house with skeletal balconies, a shimmering trencadís façade and a dragon‑like roof."
+        },
+        {
+          "name": "Casa de l’Ardiaca",
+          "latitude": 41.38423,
+          "longitude": 2.17557,
+          "category": "Historical",
+          "neighborhood": "Barri Gòtic",
+          "description": "The 12th‑century archdeacon's residence features a Renaissance courtyard; its rear wall preserves a section of the Roman wall and the building now houses the city archive."
+        },
+        {
+          "name": "Casa Padellàs & MUHBA",
+          "latitude": 41.38416,
+          "longitude": 2.17745,
+          "category": "Historical",
+          "neighborhood": "Gothic Quarter",
+          "description": "Renaissance‑era mansion housing the Barcelona City History Museum (MUHBA) and its exhibits on urban evolution."
+        },
+        {
+          "name": "Casa Vicens Gaudí",
+          "latitude": 41.40363,
+          "longitude": 2.15041,
+          "category": "Art",
+          "neighborhood": "Gràcia",
+          "description": "Gaudí's first major project (1883–85), a brightly tiled Neo‑Mudéjar house adorned with Moorish and oriental motifs."
+        },
+        {
+          "name": "Cathedral of Barcelona",
+          "latitude": 41.38411,
+          "longitude": 2.17605,
+          "category": "Historical",
+          "neighborhood": "Gothic Quarter",
+          "description": "The 13th‑century Gothic cathedral of Saint Eulalia, crowned with gargoyles and a neo‑Gothic façade."
+        },
+        {
+          "name": "CCCB – Centre de Cultura Contemporània de Barcelona",
+          "latitude": 41.38376,
+          "longitude": 2.16672,
+          "category": "Cultural",
+          "neighborhood": "El Raval",
+          "description": "Urban culture centre hosting exhibitions and events."
+        },
+        {
+          "name": "Ciutat Vella",
+          "latitude": 41.3812879255717,
+          "longitude": 2.18166265020941,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Barcelona's oldest district and historic heart, encompassing the Gothic Quarter, El Raval, La Barceloneta and other storied neighborhoods."
+        },
+        {
+          "name": "Civil War Air Raid Shelter (Plaça del Diamant)",
+          "latitude": 41.40413,
+          "longitude": 2.15589,
+          "category": "Historical",
+          "neighborhood": "Gràcia",
+          "description": "Twelve‑metre‑deep refuge built by locals during the Spanish Civil War, rediscovered in 1992 and open for tours."
+        },
+        {
+          "name": "El Born",
+          "latitude": 41.3846730629451,
+          "longitude": 2.18243161052563,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Trendy medieval area of narrow streets filled with boutiques, tapas bars and the Basilica Santa Maria del Mar."
+        },
+        {
+          "name": "El Born Centre de Cultura i Memòria",
+          "latitude": 41.3856868713,
+          "longitude": 2.18368619709676,
+          "category": "Historical",
+          "neighborhood": "El Born",
+          "description": "A restored 1876 market hall that preserves an excavated neighbourhood from around 1700, allowing visitors to walk among ruins and learn about Barcelona's pre‑industrial history."
+        },
+        {
+          "name": "El Gato de Botero",
+          "latitude": 41.37891,
+          "longitude": 2.16885,
+          "category": "Art",
+          "neighborhood": "El Raval",
+          "description": "Two‑tonne, 7‑metre‑long bronze cat by Fernando Botero that finally settled on Rambla del Raval in 1987."
+        },
+        {
+          "name": "El món neix en cada besada",
+          "latitude": 41.38504,
+          "longitude": 2.1746,
+          "category": "Art",
+          "neighborhood": "Barri Gòtic",
+          "description": "Public mosaic created in 2014 by Joan Fontcuberta and Antoni Cumella using 4 000 photographic tiles; the mural depicts lips kissing and celebrates love in all its forms."
+        },
+        {
+          "name": "El Peix d’Or Frank Gehry",
+          "latitude": 41.38624,
+          "longitude": 2.19677,
+          "category": "Art",
+          "neighborhood": "Port Olímpic",
+          "description": "Huge golden fish sculpture by Frank Gehry created for the 1992 Olympics on Port Olimpic's waterfront."
+        },
+        {
+          "name": "El Raval",
+          "latitude": 41.37889,
+          "longitude": 2.17078,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Formerly working‑class district transformed into a multicultural hub of museums, bars and markets."
+        },
+        {
+          "name": "Hospital de la Santa Creu",
+          "latitude": 41.38678,
+          "longitude": 2.17557,
+          "category": "Historical",
+          "neighborhood": "El Raval",
+          "description": "15th‑century Gothic hospital now a cultural complex."
+        },
+        {
+          "name": "L’Estel Ferit",
+          "latitude": 41.37664,
+          "longitude": 2.19093,
+          "category": "Art",
+          "neighborhood": "Barceloneta",
+          "description": "Stack of rust‑coloured corten‑steel cubes by Rebecca Horn commemorating Barceloneta's shantytown past."
+        },
+        {
+          "name": "La Barceloneta",
+          "latitude": 41.3800692791142,
+          "longitude": 2.18986902843661,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Seaside quarter on a narrow peninsula known for its beach, seafood restaurants and lively boardwalk."
+        },
+        {
+          "name": "La Monumental",
+          "latitude": 41.40026,
+          "longitude": 2.1811,
+          "category": "Historical",
+          "neighborhood": "Eixample",
+          "description": "1914 Mudéjar‑inspired bullring in Eixample that hosted Catalonia's final bullfight in 2011 and now serves as an events venue."
+        },
+        {
+          "name": "MACBA – Museu d’Art Contemporani de Barcelona",
+          "latitude": 41.38334,
+          "longitude": 2.16679,
+          "category": "Art",
+          "neighborhood": "El Raval",
+          "description": "Modernist museum of post‑1945 art."
+        },
+        {
+          "name": "Mercat de la Barceloneta",
+          "latitude": 41.3805,
+          "longitude": 2.18904,
+          "category": "Cultural",
+          "neighborhood": "Barceloneta",
+          "description": "1884 neighbourhood market renovated in 2007, still renowned for fresh fish and produce."
+        },
+        {
+          "name": "Monastery of Sant Pau del Camp",
+          "latitude": 41.37643,
+          "longitude": 2.16965,
+          "category": "Historical",
+          "neighborhood": "El Raval",
+          "description": "Oldest Romanesque church in Barcelona."
+        },
+        {
+          "name": "Muralla Romana de Barcelona",
+          "latitude": 41.38416,
+          "longitude": 2.17672,
+          "category": "Historical",
+          "neighborhood": "Barri Gòtic",
+          "description": "One of the remaining segments of Barcino's Roman wall, incorporated into the rear of Casa de l'Ardiaca and preserving the city's ancient defences."
+        },
+        {
+          "name": "Museu d’Història de Catalunya",
+          "latitude": 41.38095,
+          "longitude": 2.18568,
+          "category": "Cultural",
+          "neighborhood": "Barceloneta",
+          "description": "Museum in the Palau de Mar chronicling Catalonia's history and heritage."
+        },
+        {
+          "name": "Museu Frederic Marès",
+          "latitude": 41.38406,
+          "longitude": 2.17643,
+          "category": "Art",
+          "neighborhood": "Barri Gòtic",
+          "description": "An art and sculpture museum in the Royal Palace complex that showcases thousands of pieces from sculptor Frederic Marès's eclectic collection, including statuary from pre‑Roman times to the 20th century and a 'Collector's Cabinet' of handcrafted objects."
+        },
+        {
+          "name": "Palau Dalmases",
+          "latitude": 41.38472,
+          "longitude": 2.18143,
+          "category": "Cultural",
+          "neighborhood": "El Born",
+          "description": "17th‑century baroque palace with rich history."
+        },
+        {
+          "name": "Palau de la Generalitat de Catalunya",
+          "latitude": 41.38304,
+          "longitude": 2.17647,
+          "category": "Historical",
+          "neighborhood": "Barri Gòtic",
+          "description": "Medieval palace still serving as the seat of the Catalan government, housing the offices of the Presidency of the Generalitat of Catalonia."
+        },
+        {
+          "name": "Palau de la Música Catalana",
+          "latitude": 41.3877,
+          "longitude": 2.1751,
+          "category": "Cultural",
+          "neighborhood": "Sant Pere",
+          "description": "Modernist concert hall and UNESCO site."
+        },
+        {
+          "name": "Palau del Lloctinent",
+          "latitude": 41.3840013962002,
+          "longitude": 2.17728339709667,
+          "category": "Historical",
+          "neighborhood": "Gothic Quarter",
+          "description": "The Lieutenant's Palace—part of the Royal Palace complex—showcases Gothic and Renaissance architecture from the 16th century."
+        },
+        {
+          "name": "Palau Güell",
+          "latitude": 41.37904,
+          "longitude": 2.17408,
+          "category": "Art",
+          "neighborhood": "El Raval",
+          "description": "Gaudí's 1886–88 mansion for Eusebi Güell, with parabolic arches and striking rooftop chimneys; part of Gaudí's UNESCO listing."
+        },
+        {
+          "name": "Park Güell",
+          "latitude": 41.41465,
+          "longitude": 2.15248,
+          "category": "Nature",
+          "neighborhood": "La Salut",
+          "description": "Gaudí‑designed hillside park with mosaics and gingerbread gatehouses, built 1900–1914 and now a UNESCO site."
+        },
+        {
+          "name": "Passeig del Born",
+          "latitude": 41.38489,
+          "longitude": 2.18268,
+          "category": "Cultural",
+          "neighborhood": "El Born",
+          "description": "Medieval jousting ground turned lively promenade with cafés and bars in the heart of El Born."
+        },
+        {
+          "name": "Picasso Museum Barcelona",
+          "latitude": 41.38542,
+          "longitude": 2.18079,
+          "category": "Art",
+          "neighborhood": "El Born",
+          "description": "Museum housed in five medieval palaces on Montcada Street containing more than 4 000 works by Pablo Picasso; opened in 1963 as the first museum devoted to his art."
+        },
+        {
+          "name": "Plaça de Sant Felip Neri",
+          "latitude": 41.3836,
+          "longitude": 2.17486,
+          "category": "Historical",
+          "neighborhood": "Barri Gòtic",
+          "description": "Secluded Baroque square anchored by the Church of Sant Felip Neri; its quiet charm belies the bomb‑scarred façade, remnants of the 1938 air raid that killed 42 people."
+        },
+        {
+          "name": "Plaça del Rei",
+          "latitude": 41.38439,
+          "longitude": 2.17712,
+          "category": "Historical",
+          "neighborhood": "Gothic Quarter",
+          "description": "Historic square in the Gothic Quarter surrounded by royal buildings and filled with echoes of medieval Barcelona."
+        },
+        {
+          "name": "Plaça Reial",
+          "latitude": 41.38016,
+          "longitude": 2.17509,
+          "category": "Cultural",
+          "neighborhood": "Barri Gòtic",
+          "description": "Neoclassical square known for its palm‑lined arcades and nightlife; it features Antoni Gaudí's six‑armed gas lamp posts from 1879, topped with Mercury's caduceus."
+        },
+        {
+          "name": "Platja de la Barceloneta",
+          "latitude": 41.37787,
+          "longitude": 2.19252,
+          "category": "Nature",
+          "neighborhood": "Barceloneta",
+          "description": "Barcelona's wide city beach with a lively promenade lined with restaurants and clubs."
+        },
+        {
+          "name": "Pont del Bisbe",
+          "latitude": 41.38376,
+          "longitude": 2.17619,
+          "category": "Historical",
+          "neighborhood": "Barri Gòtic",
+          "description": "Neo‑Gothic bridge connecting two buildings over Carrer del Bisbe; its ornate stonework glows beautifully when lit at night."
+        },
+        {
+          "name": "Rambla del Raval [studio-test] [studio-test]",
+          "latitude": 41.37861,
+          "longitude": 2.16907,
+          "category": "Cultural",
+          "neighborhood": "El Raval",
+          "description": "Palm‑lined boulevard opened in 2000 to revitalise the dense Raval district and create open space."
+        },
+        {
+          "name": "Recinte Modernista de Sant Pau",
+          "latitude": 41.41177,
+          "longitude": 2.1742,
+          "category": "Historical",
+          "neighborhood": "El Guinardó",
+          "description": "Largest Art Nouveau complex (1901–30) of 12 pavilions linked by tunnels; a former hospital restored as a cultural centre."
+        },
+        {
+          "name": "Reial Cercle Artístic de Barcelona",
+          "latitude": 41.38466,
+          "longitude": 2.1743,
+          "category": "Cultural",
+          "neighborhood": "Barri Gòtic",
+          "description": "Cultural institution founded in 1881 that promotes visual arts, literature and music, organising exhibitions, conferences and concerts."
+        },
+        {
+          "name": "Royal Chapel of Santa Àgata",
+          "latitude": 41.3843232293062,
+          "longitude": 2.17745379982019,
+          "category": "Historical",
+          "neighborhood": "Gothic Quarter",
+          "description": "Gothic royal chapel built in the 14th century, famed for its lofty hall and intricate altarpiece."
+        },
+        {
+          "name": "Saló del Tinell",
+          "latitude": 41.38443,
+          "longitude": 2.17708,
+          "category": "Historical",
+          "neighborhood": "Gothic Quarter",
+          "description": "Medieval ceremonial hall within the Royal Palace complex where Catholic Monarchs received Columbus on his return."
+        },
+        {
+          "name": "Sant Miquel del Port Church",
+          "latitude": 41.37993,
+          "longitude": 2.18829,
+          "category": "Historical",
+          "neighborhood": "Barceloneta",
+          "description": "Baroque parish church on the Barceloneta square with a reconstructed neoclassical façade."
+        },
+        {
+          "name": "Santa Maria del Mar",
+          "latitude": 41.38407,
+          "longitude": 2.18191,
+          "category": "Historical",
+          "neighborhood": "El Born",
+          "description": "14th‑century Gothic basilica in El Born, famed for its austere single‑style construction and widely regarded as Barcelona's most beautiful Gothic church."
+        },
+        {
+          "name": "Temple of Augustus",
+          "latitude": 41.38351,
+          "longitude": 2.17705,
+          "category": "Historical",
+          "neighborhood": "Gothic Quarter",
+          "description": "Roman‑era temple ruins hidden behind houses, with four impressive columns dating back to the 1st century BC."
+        }
+      ]
+    },
+    {
+      "slug": "milan",
+      "name": "Milan",
+      "countryCode": "IT",
+      "landmarks": [
+        {
+          "name": "Arco della Pace",
+          "latitude": 45.47581,
+          "longitude": 9.17224,
+          "category": "Historical",
+          "neighborhood": "Sempione",
+          "description": "Neo‑classical triumphal arch about 25 m tall, designed by Luigi Cagnola and completed in 1838 to celebrate the 1815 peace of Vienna; it is topped by a bronze chariot of Minerva."
+        },
+        {
+          "name": "Arena Civica Gianni Brera",
+          "latitude": 45.47557,
+          "longitude": 9.17829,
+          "category": "Cultural",
+          "neighborhood": "Sempione",
+          "description": "Opened in 1807, the neoclassical Arena Civica (now Gianni Brera Arena) is a multi‑purpose stadium in Parco Sempione that hosts football, rugby and cultural events."
+        },
+        {
+          "name": "Armani / Silos",
+          "latitude": 45.45182,
+          "longitude": 9.16505,
+          "category": "Art",
+          "neighborhood": "Tortona",
+          "description": "Exhibition space opened in 2015 in a converted 1950s granary in the Tortona district, where 4,500 m² of galleries display 600 outfits and 200 accessories from Giorgio Armani's archives."
+        },
+        {
+          "name": "Bagatti Valsecchi Museum",
+          "latitude": 45.4696,
+          "longitude": 9.19488,
+          "category": "Art",
+          "neighborhood": "Fashion District",
+          "description": "House museum where the Bagatti Valsecchi brothers assembled paintings, furniture and decorative arts to recreate a 16th‑century Lombard noble residence."
+        },
+        {
+          "name": "BAM – Biblioteca degli Alberi Milano",
+          "latitude": 45.48476,
+          "longitude": 9.19271,
+          "category": "Nature",
+          "neighborhood": "Porta Nuova",
+          "description": "Contemporary botanical park in the Porta Nuova district where paths weave through collections of tree species and a cultural programme creates a campus for leisure and learning."
+        },
+        {
+          "name": "Basilica di Sant'Ambrogio",
+          "latitude": 45.46242,
+          "longitude": 9.17534,
+          "category": "Historical",
+          "neighborhood": "Sant'Ambrogio",
+          "description": "One of Milan's oldest churches, founded by Saint Ambrose between 379 and 386 and rebuilt in Romanesque style in the 11th–12th century, dedicated to the city's martyrs."
+        },
+        {
+          "name": "Basilica di Sant'Eustorgio",
+          "latitude": 45.45411,
+          "longitude": 9.18168,
+          "category": "Historical",
+          "neighborhood": "Porta Ticinese",
+          "description": "Ancient basilica founded in the 4th century and long venerated as the resting place of the Three Magi after their relics were brought from Constantinople in 344."
+        },
+        {
+          "name": "Basilica di Santa Maria delle Grazie",
+          "latitude": 45.46612,
+          "longitude": 9.17081,
+          "category": "Historical",
+          "neighborhood": "Magenta",
+          "description": "Renaissance church and UNESCO site designed by Bramante and linked to Leonardo da Vinci's mural \"The Last Supper\"."
+        },
+        {
+          "name": "Bastioni di Porta Venezia",
+          "latitude": 45.4752,
+          "longitude": 9.20361,
+          "category": "Historical",
+          "neighborhood": "Porta Venezia",
+          "description": "Stretches of the old city ramparts surrounding Porta Venezia, part of Milan's ancient walls whose present neoclassical gate dates to the 19th century yet traces its origins to medieval and Roman fortifications."
+        },
+        {
+          "name": "Bosco Verticale",
+          "latitude": 45.48576,
+          "longitude": 9.1906,
+          "category": "Nature",
+          "neighborhood": "Porta Nuova",
+          "description": "Pair of residential towers completed in 2014 that host over 800 trees, 11,000 perennials and 5,000 shrubs—creating a vertical forest equivalent to a 20,000 m² woodland."
+        },
+        {
+          "name": "Brera",
+          "latitude": 45.4714,
+          "longitude": 9.18695,
+          "category": "Neighborhood",
+          "neighborhood": "Brera",
+          "description": "Bohemian–bourgeois quarter where cobbled lanes, cafés and art galleries attract artists and collectors around Palazzo Brera."
+        },
+        {
+          "name": "Casa dei Panigarola",
+          "latitude": 45.46499,
+          "longitude": 9.18728,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "Also called the Palace of the Notaries, this Gothic palace on the west side of Piazza Mercanti served as the notaries’ seat; rebuilt in the 15th century and named after the Panigarola family."
+        },
+        {
+          "name": "Casa Museo del Manzoni",
+          "latitude": 45.46797,
+          "longitude": 9.19189,
+          "category": "Cultural",
+          "neighborhood": "Centro Storico",
+          "description": "Lombard Renaissance house at Via Gerolamo Morone 1 where novelist Alessandro Manzoni lived from 1814 until his death, now a museum and study centre."
+        },
+        {
+          "name": "Castello Sforzesco",
+          "latitude": 45.47063,
+          "longitude": 9.17917,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "15th‑century Visconti–Sforza fortress turned ducal residence and barracks, now housing civic museums and artworks including Michelangelo's Pietà Rondanini."
+        },
+        {
+          "name": "Centro Storico",
+          "latitude": 45.46422,
+          "longitude": 9.19043,
+          "category": "Neighborhood",
+          "neighborhood": "Centro Storico",
+          "description": "Historic core of Milan within the former medieval walls, containing landmarks like the Duomo, Galleria and La Scala amid compact streets and cafés."
+        },
+        {
+          "name": "Cimitero Monumentale",
+          "latitude": 45.4847,
+          "longitude": 9.1799,
+          "category": "Historical",
+          "neighborhood": "Monumentale",
+          "description": "19th‑century cemetery laid out by Carlo Maciachini as an 18‑hectare open‑air museum of grand monuments and sculptures along a central avenue leading to the Famedio."
+        },
+        {
+          "name": "Colonne di San Lorenzo",
+          "latitude": 45.45743,
+          "longitude": 9.18083,
+          "category": "Historical",
+          "neighborhood": "Ticinese",
+          "description": "Set of sixteen Corinthian columns from Roman times that were relocated here in the 4th century—probably salvaged from a 2nd‑century temple or bath—to form this colonnade facing the Basilica di San Lorenzo."
+        },
+        {
+          "name": "Duomo di Milano",
+          "latitude": 45.46429,
+          "longitude": 9.19067,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "Gothic cathedral begun in 1386, Italy's largest church, with thousands of spires and statues and the golden Madonnina atop its pink‑marble roof."
+        },
+        {
+          "name": "Fondazione Prada",
+          "latitude": 45.44501,
+          "longitude": 9.20565,
+          "category": "Art",
+          "neighborhood": "Porta Romana",
+          "description": "Contemporary art campus in Largo Isarco that transformed a 1910 gin distillery into a mix of renovated warehouses, laboratories and silos plus new buildings around a courtyard."
+        },
+        {
+          "name": "Galleria Vittorio Emanuele II",
+          "latitude": 45.46609,
+          "longitude": 9.18995,
+          "category": "Cultural",
+          "neighborhood": "Centro Storico",
+          "description": "19th‑century glass‑roofed arcade linking Piazza del Duomo with Teatro alla Scala, built 1865‑1877 by Giuseppe Mengoni and named for Italy's first king."
+        },
+        {
+          "name": "Gallerie d'Italia – Piazza Scala",
+          "latitude": 45.46747,
+          "longitude": 9.19029,
+          "category": "Art",
+          "neighborhood": "Centro Storico",
+          "description": "Museum complex of three neoclassical palaces around Piazza Scala offering 8,300 m² of galleries with 19th‑century works and a 20th‑century \"Cantiere del '900\" collection."
+        },
+        {
+          "name": "Giardini della Guastalla",
+          "latitude": 45.46015,
+          "longitude": 9.19668,
+          "category": "Nature",
+          "neighborhood": "Guastalla",
+          "description": "Public garden created in 1555 for a girls' college, featuring a 17th‑century baroque fish pond, statues and a neoclassical temple by Luigi Cagnola, opened to the public in 1939."
+        },
+        {
+          "name": "Giardini Indro Montanelli",
+          "latitude": 45.47428,
+          "longitude": 9.20015,
+          "category": "Nature",
+          "neighborhood": "Porta Venezia",
+          "description": "Established in 1784, these public gardens in Porta Venezia—Milan's oldest park—span 172,000 m² and house attractions such as the Natural History Museum and the Planetarium."
+        },
+        {
+          "name": "Il Grande Disco",
+          "latitude": 45.46717,
+          "longitude": 9.19306,
+          "category": "Art",
+          "neighborhood": "Centro Storico",
+          "description": "Arnaldo Pomodoro’s gilded bronze 'Grande Disco'—a double‑circle sculpture on a rotating base now in Piazza Filippo Meda—abstractly evokes Leonardo’s Vitruvian Man and symbolises dynamism and energy."
+        },
+        {
+          "name": "Labirinto Arnaldo Pomodoro",
+          "latitude": 45.45422,
+          "longitude": 9.19547,
+          "category": "Art",
+          "neighborhood": "Solari",
+          "description": "The Labirinto di Arnaldo Pomodoro is a 170‑m² underground installation created between 1995 and 2011, leading visitors on a mysterious journey through the sculptor’s motifs beneath a former industrial space."
+        },
+        {
+          "name": "Loggia degli Osii",
+          "latitude": 45.46467,
+          "longitude": 9.18762,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "Commissioned by Matteo Visconti and built between 1316 and 1321, this Gothic civic loggia features a balcony where judges announced verdicts and an unusual black‑and‑white marble façade."
+        },
+        {
+          "name": "Milan",
+          "latitude": 45.4684227533131,
+          "longitude": 9.18227839714162,
+          "category": "City",
+          "neighborhood": null,
+          "description": "Italian design and finance hub, home to the Duomo and La Scala."
+        },
+        {
+          "name": "Milan Natural History Museum",
+          "latitude": 45.47287,
+          "longitude": 9.20256,
+          "category": "Cultural",
+          "neighborhood": "Porta Venezia",
+          "description": "Founded in 1838, this museum occupies a Neo‑Romanesque 19th‑century building in the Indro Montanelli Gardens and displays extensive mineral, paleontology and zoology collections with Italy's largest array of full‑size dioramas."
+        },
+        {
+          "name": "Milano Centrale",
+          "latitude": 45.48728,
+          "longitude": 9.2049,
+          "category": "Historical",
+          "neighborhood": "Stazione Centrale",
+          "description": "Milan’s central railway terminal, inaugurated in 1931 to replace the 1864 station, is Italy’s second‑busiest and largest station and a monumental terminus at the north end of the city."
+        },
+        {
+          "name": "Monumento a Leonardo da Vinci",
+          "latitude": 45.46717,
+          "longitude": 9.19025,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "Marble statue unveiled in 1872 in Piazza della Scala depicting Leonardo da Vinci standing above four disciples, with bas‑reliefs symbolizing painting, sculpture, engineering and architecture."
+        },
+        {
+          "name": "MUDEC",
+          "latitude": 45.45169,
+          "longitude": 9.16171,
+          "category": "Cultural",
+          "neighborhood": "Tortona",
+          "description": "MUDEC – the Museum of Cultures – is an ethnographic museum designed by David Chipperfield in a converted Ansaldo factory, opened in 2015 to present world cultures through exhibitions and events."
+        },
+        {
+          "name": "Museo del Novecento",
+          "latitude": 45.46357,
+          "longitude": 9.19016,
+          "category": "Art",
+          "neighborhood": "Centro Storico",
+          "description": "20th‑century art museum in the Palazzo dell'Arengario on Piazza Duomo, housing one of Italy's most important modern art collections."
+        },
+        {
+          "name": "Museo Diocesano di Milano",
+          "latitude": 45.45418,
+          "longitude": 9.18147,
+          "category": "Art",
+          "neighborhood": "Porta Ticinese",
+          "description": "Art museum housing sacred works from Milan and Lombardy, envisioned in 1931 by Cardinal Ildefonso Schuster to safeguard the Archdiocese's collection and inaugurated in its current Porta Ticinese venue in 2001."
+        },
+        {
+          "name": "Museo Nazionale Scienza e Tecnologia Leonardo da Vinci",
+          "latitude": 45.46303,
+          "longitude": 9.17041,
+          "category": "Cultural",
+          "neighborhood": "Sant'Ambrogio",
+          "description": "Italy's largest science and technology museum, occupying 50,000 m² and housing over 18,000 historical objects to promote scientific culture through research and exhibitions."
+        },
+        {
+          "name": "Navigli",
+          "latitude": 45.44879,
+          "longitude": 9.1629,
+          "category": "Neighborhood",
+          "neighborhood": "Navigli",
+          "description": "Romantic southwestern district defined by the Naviglio Grande and Naviglio Pavese canals—remnants of a 150‑km waterway system once used to transport goods and marble for the Duomo."
+        },
+        {
+          "name": "Palazzo dei Giureconsulti",
+          "latitude": 45.46514,
+          "longitude": 9.18841,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "Built from 1562 in Mannerist style, this palace in Piazza Mercanti originally housed the College of Noble Doctors and later served as Milan’s stock exchange, telegraph office, bank and chamber of commerce."
+        },
+        {
+          "name": "Palazzo del Senato",
+          "latitude": 45.47029,
+          "longitude": 9.1989,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "Baroque palace designed in 1608 by Fabio Mangone for Cardinal Federico Borromeo as a Swiss seminary; later the seat of the Cisalpine and Italian Senate and now the state archives."
+        },
+        {
+          "name": "Palazzo della Ragione",
+          "latitude": 45.46493,
+          "longitude": 9.18788,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "The Palazzo della Ragione, or Broletto Nuovo, is a 13th‑century civic palace in Piazza Mercanti that served as Milan’s administrative and judicial headquarters and later legal archives."
+        },
+        {
+          "name": "Palazzo Fidia",
+          "latitude": 45.46899,
+          "longitude": 9.20169,
+          "category": "Art",
+          "neighborhood": "Porta Venezia",
+          "description": "1932 apartment house by architect Aldo Andreani nicknamed \"Palazzo Fidia\" for its red‑brick \"architectural‑jazz\" façade of curved walls, bow windows and intricate brick patterns."
+        },
+        {
+          "name": "Palazzo Morando",
+          "latitude": 45.46875,
+          "longitude": 9.19672,
+          "category": "Cultural",
+          "neighborhood": "Quadrilatero della Moda",
+          "description": "18th‑century palace on Via Sant'Andrea bequeathed to Milan by Countess Lydia Caprara Morando; it houses the Pinacoteca documenting city life and the Costume Moda Immagine fashion museum."
+        },
+        {
+          "name": "Palazzo Reale",
+          "latitude": 45.4632,
+          "longitude": 9.19131,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "Former royal palace of the Visconti, Sforza, Habsburg and Savoy dynasties beside the Duomo, now a major exhibition centre hosting international art shows."
+        },
+        {
+          "name": "Palazzo Serbelloni",
+          "latitude": 45.46921,
+          "longitude": 9.19993,
+          "category": "Historical",
+          "neighborhood": "Porta Venezia",
+          "description": "Neoclassical palace along Corso Venezia built 1765‑1793 by Simone Cantoni for Duke Gabrio Serbelloni, famous for its Napoleonic Rooms and Enlightenment‑era salons."
+        },
+        {
+          "name": "Parco Sempione",
+          "latitude": 45.47226,
+          "longitude": 9.17724,
+          "category": "Nature",
+          "neighborhood": "Sempione",
+          "description": "40‑hectare green park linking the Castello Sforzesco and Arco della Pace, often called the \"green heart\" of Milan."
+        },
+        {
+          "name": "Piazza degli Affari",
+          "latitude": 45.4647,
+          "longitude": 9.18339,
+          "category": "Cultural",
+          "neighborhood": "Centro Storico",
+          "description": "Square in front of Milan's stock‑exchange building noted for Maurizio Cattelan's 2010 marble sculpture L.O.V.E., a hand with severed fingers leaving only the middle finger as a critique of fascism and finance."
+        },
+        {
+          "name": "Piazza Mercanti",
+          "latitude": 45.46478,
+          "longitude": 9.18768,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "Small square between Piazza Duomo and Piazza Cordusio that was the heart of medieval Milan—once called Piazza del Broletto—housing the city’s administrative buildings and market stalls."
+        },
+        {
+          "name": "Piazzale Loreto",
+          "latitude": 45.48618,
+          "longitude": 9.21686,
+          "category": "Historical",
+          "neighborhood": "Loreto",
+          "description": "Major junction in northeast Milan infamous for the August 1944 execution of fifteen partisans and the April 1945 public display of Benito Mussolini’s corpse."
+        },
+        {
+          "name": "Pinacoteca Ambrosiana",
+          "latitude": 45.46362,
+          "longitude": 9.18555,
+          "category": "Art",
+          "neighborhood": "Centro Storico",
+          "description": "Art gallery founded in 1618 by Cardinal Federico Borromeo, displaying works like Leonardo's Codex Atlanticus, Caravaggio's \"Basket of Fruit\" and Raphael's cartoon for the School of Athens."
+        },
+        {
+          "name": "Pinacoteca di Brera",
+          "latitude": 45.47207,
+          "longitude": 9.18798,
+          "category": "Art",
+          "neighborhood": "Brera",
+          "description": "Milan's first public art museum at Palazzo Brera, showcasing prestigious masterpieces and sculptures from the Renaissance to the 20th century."
+        },
+        {
+          "name": "Planetarium Ulrico Hoepli",
+          "latitude": 45.47396,
+          "longitude": 9.20417,
+          "category": "Cultural",
+          "neighborhood": "Porta Venezia",
+          "description": "Italy's largest planetarium, opened in 1930 in the Porta Venezia gardens with a 19.6‑metre dome and 300‑seat auditorium; designed by Piero Portaluppi for publisher Ulrico Hoepli."
+        },
+        {
+          "name": "Porta Nuova",
+          "latitude": 45.47832,
+          "longitude": 9.19534,
+          "category": "Neighborhood",
+          "neighborhood": "Porta Nuova",
+          "description": "Contemporary business district around Piazza Gae Aulenti, part of Milan's urban regeneration and the first neighbourhood worldwide to earn both LEED and WELL certifications."
+        },
+        {
+          "name": "Porta Venezia",
+          "latitude": 45.47348,
+          "longitude": 9.20394,
+          "category": "Neighborhood",
+          "neighborhood": "Porta Venezia",
+          "description": "Historic eastern gate and surrounding district—once called Porta Orientale—whose current 19th‑century arch sits on medieval and Roman foundations and today is known for its LGBT‑friendly bars and restaurants."
+        },
+        {
+          "name": "Quadrilatero della Moda",
+          "latitude": 45.46964,
+          "longitude": 9.19359,
+          "category": "Cultural",
+          "neighborhood": "Centro Storico",
+          "description": "Milan's luxury fashion district bounded by Via Montenapoleone, Via Manzoni, Via della Spiga and Corso Venezia, where high‑end boutiques and showrooms attract shoppers from around the world."
+        },
+        {
+          "name": "Rondanini Pietà Museum",
+          "latitude": 45.4699,
+          "longitude": 9.17876,
+          "category": "Art",
+          "neighborhood": "Centro Storico",
+          "description": "Michelangelo’s unfinished 'Rondanini Pietà' moved in 2015 to a dedicated museum inside the Castello Sforzesco where visitors first view the statue’s rough back before its haunting front."
+        },
+        {
+          "name": "Rotonda della Besana",
+          "latitude": 45.46043,
+          "longitude": 9.20512,
+          "category": "Historical",
+          "neighborhood": "Guastalla",
+          "description": "Late‑Baroque complex built 1695–1732 as a circular cemetery with a lobed portico and deconsecrated church; its gardens and arcades now serve as a peaceful public space and cultural venue."
+        },
+        {
+          "name": "San Bernardino alle Ossa",
+          "latitude": 45.46258,
+          "longitude": 9.19546,
+          "category": "Historical",
+          "neighborhood": "Centro Storico",
+          "description": "This 13th‑century church is famed for its ossuary where skulls and bones line the walls, created when a cemetery filled up in 1210 and rebuilt after a 1712 fire."
+        },
+        {
+          "name": "Shoah Memorial of Milan",
+          "latitude": 45.48829,
+          "longitude": 9.20818,
+          "category": "Historical",
+          "neighborhood": "Stazione Centrale",
+          "description": "Opened in 2013 at Milano Centrale, the Memoriale della Shoah commemorates Jewish prisoners deported from Platform 21, where twenty trains carried about 1,200 people to extermination camps during the Holocaust."
+        },
+        {
+          "name": "Teatro alla Scala",
+          "latitude": 45.46756,
+          "longitude": 9.18915,
+          "category": "Art",
+          "neighborhood": "Centro Storico",
+          "description": "Opera house opened in 1778 on the former site of Santa Maria alla Scala, designed by Giuseppe Piermarini and famed for premiering Italian operas."
+        },
+        {
+          "name": "Triennale di Milano",
+          "latitude": 45.47229,
+          "longitude": 9.17339,
+          "category": "Art",
+          "neighborhood": "Sempione",
+          "description": "Design museum founded in 2007 and housed in the 1930s Palazzo dell'Arte in Parco Sempione, showcasing Italian design and applied arts."
+        },
+        {
+          "name": "Villa Invernizzi",
+          "latitude": 45.47045,
+          "longitude": 9.20205,
+          "category": "Nature",
+          "neighborhood": "Porta Venezia",
+          "description": "Private villa on Via Cappuccini whose garden hosts a flock of Chilean and African flamingos imported by owner Cavaliere Invernizzi in 1970 and now cared for by his foundation."
+        },
+        {
+          "name": "Villa Necchi Campiglio",
+          "latitude": 45.46849,
+          "longitude": 9.20166,
+          "category": "Cultural",
+          "neighborhood": "Porta Venezia",
+          "description": "Elegant villa completed by architect Piero Portaluppi in 1935 for the Necchi Campiglio family, set in a private garden with a pool and tennis court and later modified by Tomaso Buzzi."
+        }
+      ]
+    },
+    {
+      "slug": "new_york",
+      "name": "New York",
+      "countryCode": "US",
+      "landmarks": [
+        {
+          "name": "100 Eleventh Ave by Jean Nouvel",
+          "latitude": 40.7460171987694,
+          "longitude": -74.0075376494617,
+          "category": "Cultural",
+          "neighborhood": "Chelsea",
+          "description": "Mosaic curtainwall residential tower by Jean Nouvel overlooking the Hudson."
+        },
+        {
+          "name": "520 West 28th Street by Zaha Hadid",
+          "latitude": 40.7510980212783,
+          "longitude": -74.0028681558801,
+          "category": "Cultural",
+          "neighborhood": "Chelsea",
+          "description": "Sinuous High Line–side residences by Zaha Hadid Architects."
+        },
+        {
+          "name": "Abyssinian Baptist Church",
+          "latitude": 40.81683,
+          "longitude": -73.94153,
+          "category": "Historical",
+          "neighborhood": "Harlem",
+          "description": "Historic congregation central to Harlem's spiritual and civic life."
+        },
+        {
+          "name": "African Burial Ground National Museum",
+          "latitude": 40.7148957839798,
+          "longitude": -74.0044058944224,
+          "category": "Historical",
+          "neighborhood": "Financial District",
+          "description": "Sacred resting place honoring 17th‑century enslaved Africans."
+        },
+        {
+          "name": "Alice in Wonderland Statue",
+          "latitude": 40.77515,
+          "longitude": -73.96653,
+          "category": "Nature",
+          "neighborhood": "Upper East Side",
+          "description": "Beloved bronze tableau for climbers and daydreamers by the Lake."
+        },
+        {
+          "name": "Apollo Theater",
+          "latitude": 40.81016,
+          "longitude": -73.95011,
+          "category": "Cultural",
+          "neighborhood": "Harlem",
+          "description": "Legendary stage for African‑American performers and Amateur Night traditions."
+        },
+        {
+          "name": "Asia Society and Museum",
+          "latitude": 40.7701,
+          "longitude": -73.96439,
+          "category": "Cultural",
+          "neighborhood": "Upper East Side",
+          "description": "Exhibitions and programs illuminating Asia's arts, ideas, and policy."
+        },
+        {
+          "name": "Astor Place",
+          "latitude": 40.7300357368134,
+          "longitude": -73.9914219030198,
+          "category": "Historical",
+          "neighborhood": "NoHo",
+          "description": "Granite crossroads marking gateway to Cooper Square."
+        },
+        {
+          "name": "Astral Apartments",
+          "latitude": 40.7319067352186,
+          "longitude": -73.9578162693144,
+          "category": "Historical",
+          "neighborhood": "Greenpoint",
+          "description": "Historic apartment complex in Greenpoint with distinctive architecture."
+        },
+        {
+          "name": "Battery Park",
+          "latitude": 40.7032076374566,
+          "longitude": -74.0154032358672,
+          "category": "Nature",
+          "neighborhood": "Financial District",
+          "description": "Historic waterfront park at Manhattan's southern tip, featuring gardens, monuments, and ferry terminals to Liberty and Ellis Islands."
+        },
+        {
+          "name": "Bayard‑Condict Building",
+          "latitude": 40.7264804463701,
+          "longitude": -73.9950506453479,
+          "category": "Historical",
+          "neighborhood": "NoHo",
+          "description": "Louis Sullivan's sole NYC skyscraper clad in terra‑cotta lace."
+        },
+        {
+          "name": "Box Street and Newtown Creek",
+          "latitude": 40.7374213354062,
+          "longitude": -73.9548164677654,
+          "category": "Nature",
+          "neighborhood": "Greenpoint",
+          "description": "Industrial waterfront area where Box Street meets Newtown Creek."
+        },
+        {
+          "name": "Broadway",
+          "latitude": 40.75959,
+          "longitude": -73.98515,
+          "category": "Cultural",
+          "neighborhood": "Theater District",
+          "description": "Legendary avenue synonymous with New York theater and neon spectacle."
+        },
+        {
+          "name": "Brooklyn Bridge",
+          "latitude": 40.7063095606715,
+          "longitude": -73.9968962332168,
+          "category": "Cultural",
+          "neighborhood": "Financial District",
+          "description": "1883 engineering marvel linking boroughs by span."
+        },
+        {
+          "name": "Bryant Park",
+          "latitude": 40.7535366712681,
+          "longitude": -73.9829636317907,
+          "category": "Nature",
+          "neighborhood": "Midtown",
+          "description": "Midtown's green salon — lawn chairs, film nights, winter rink beside the NYPL."
+        },
+        {
+          "name": "Bushwick Inlet Park",
+          "latitude": 40.7226031274292,
+          "longitude": -73.9612650879329,
+          "category": "Nature",
+          "neighborhood": "Williamsburg",
+          "description": "A modern waterfront park transformed from a former industrial site, offering lush green spaces, public-access shoreline, and active recreation fields with stunning views of the Manhattan skyline."
+        },
+        {
+          "name": "Carl Schurz Park",
+          "latitude": 40.7753,
+          "longitude": -73.94375,
+          "category": "Nature",
+          "neighborhood": "Upper East Side",
+          "description": "Riverside lawns, promenades, and dog runs surrounding Gracie Mansion."
+        },
+        {
+          "name": "Central Park",
+          "latitude": 40.782694,
+          "longitude": -73.965584,
+          "category": "Nature",
+          "neighborhood": "Upper East Side",
+          "description": "843 acres of meadows, lakes, and woodland paths."
+        },
+        {
+          "name": "Central Park Conservatory (Conservatory Garden)",
+          "latitude": 40.7938,
+          "longitude": -73.9526,
+          "category": "Nature",
+          "neighborhood": "Upper East Side",
+          "description": "Formal Italian, French, and English gardens at Central Park's northeast."
+        },
+        {
+          "name": "Chelsea",
+          "latitude": 40.7478485474458,
+          "longitude": -73.9998936600305,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Gallery-rich West Side neighborhood spanning from the High Line to the Hudson."
+        },
+        {
+          "name": "Chelsea Market",
+          "latitude": 40.7424675927162,
+          "longitude": -74.006149313882,
+          "category": "Cultural",
+          "neighborhood": "Meatpacking District",
+          "description": "Food hall and creative hub in the former Nabisco factory complex."
+        },
+        {
+          "name": "Chelsea Piers",
+          "latitude": 40.7474634919434,
+          "longitude": -74.0081368341198,
+          "category": "Cultural",
+          "neighborhood": "Chelsea",
+          "description": "Reinvented Hudson River piers with sports facilities and waterfront access."
+        },
+        {
+          "name": "Chinatown",
+          "latitude": 40.7158278696859,
+          "longitude": -73.9973050882658,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Bustling enclave of dim sum, herbal shops, and red lanterns—America's largest Chinatown pulses with authentic flavors and traditions."
+        },
+        {
+          "name": "Church of The Transfiguration",
+          "latitude": 40.7148002491985,
+          "longitude": -73.9989626300221,
+          "category": "Historical",
+          "neighborhood": "Chinatown",
+          "description": "Historic 1801 church known as the 'Church of Immigrants,' serving diverse communities throughout its history and featuring beautiful Georgian Federal architecture."
+        },
+        {
+          "name": "Clocktower Condominium",
+          "latitude": 40.7039,
+          "longitude": -73.99052,
+          "category": "Historical",
+          "neighborhood": "DUMBO",
+          "description": "1914 Gair Building No. 7 factory reborn as DUMBO's landmark loft tower."
+        },
+        {
+          "name": "Columbia University",
+          "latitude": 40.8075435920132,
+          "longitude": -73.9625673387072,
+          "category": "Cultural",
+          "neighborhood": "Upper West Side",
+          "description": "Ivy League campus anchoring Morningside Heights with neoclassical core."
+        },
+        {
+          "name": "Columbus Park",
+          "latitude": 40.7158756505874,
+          "longitude": -74.0000208453662,
+          "category": "Nature",
+          "neighborhood": "Chinatown",
+          "description": "Historic park in Chinatown that serves as a community gathering place, featuring traditional activities like tai chi, xiangqi (Chinese chess), and cultural celebrations."
+        },
+        {
+          "name": "Cooper Hewitt, Smithsonian Design Museum",
+          "latitude": 40.78458,
+          "longitude": -73.95766,
+          "category": "Art",
+          "neighborhood": "Upper East Side",
+          "description": "Smithsonian museum exploring design's past, present, and future."
+        },
+        {
+          "name": "David Zwirner",
+          "latitude": 40.7459752949221,
+          "longitude": -74.0070040209941,
+          "category": "Art",
+          "neighborhood": "Chelsea",
+          "description": "Flagship Chelsea gallery known for blue-chip contemporary artists."
+        },
+        {
+          "name": "Domino Park",
+          "latitude": 40.715,
+          "longitude": -73.96778,
+          "category": "Nature",
+          "neighborhood": "Williamsburg",
+          "description": "A textbook example of how to turn an abandoned sugar-refinery waterfront into pure public-space gold."
+        },
+        {
+          "name": "Domino Sugar Refinery",
+          "latitude": 40.7143910559983,
+          "longitude": -73.9676357693105,
+          "category": "Historical",
+          "neighborhood": "Williamsburg",
+          "description": "An iconic piece of the Brooklyn skyline, this 19th-century refinery was once the largest in the world. Its preserved structure now stands as the dramatic centerpiece of the award-winning Domino Park."
+        },
+        {
+          "name": "Doyers Street Murals",
+          "latitude": 40.7146275716197,
+          "longitude": -73.9981180431201,
+          "category": "Art",
+          "neighborhood": "Chinatown",
+          "description": "Hidden alleyway gallery showcasing vibrant street art and murals celebrating Chinatown's cultural heritage and contemporary artistic expression."
+        },
+        {
+          "name": "DUMBO",
+          "latitude": 40.703,
+          "longitude": -73.98802,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Down Under the Manhattan Bridge Overpass - trendy waterfront neighborhood with cobblestone streets."
+        },
+        {
+          "name": "East River Park",
+          "latitude": 40.719246962722,
+          "longitude": -73.9743400846539,
+          "category": "Nature",
+          "neighborhood": "Lower East Side",
+          "description": "Long waterfront park with ballfields, bike paths, and big‑sky views along the East River."
+        },
+        {
+          "name": "East River Waterfront Esplanade",
+          "latitude": 40.7033822813217,
+          "longitude": -74.0075383522704,
+          "category": "Nature",
+          "neighborhood": "Financial District",
+          "description": "Scenic riverside promenade offering unobstructed views of Brooklyn Bridge and the East River, perfect for jogging, cycling, or leisurely strolls."
+        },
+        {
+          "name": "Eberhard Faber Pencil Factory",
+          "latitude": 40.7302113362273,
+          "longitude": -73.9583955880028,
+          "category": "Historical",
+          "neighborhood": "Greenpoint",
+          "description": "Historic pencil factory turned residential complex in Greenpoint."
+        },
+        {
+          "name": "Edward Mooney House",
+          "latitude": 40.7149096626188,
+          "longitude": -73.9975072183824,
+          "category": "Historical",
+          "neighborhood": "Chinatown",
+          "description": "Oldest surviving townhouse in Manhattan (1785-89), representing Federal period architecture and the transition from colonial to early American urban development."
+        },
+        {
+          "name": "Eldridge Street Synagogue",
+          "latitude": 40.7165617725406,
+          "longitude": -73.9934143452993,
+          "category": "Historical",
+          "neighborhood": "Lower East Side",
+          "description": "1887 Moorish‑Revival landmark of immigrant faith and architecture."
+        },
+        {
+          "name": "Empire State Building",
+          "latitude": 40.748621,
+          "longitude": -73.985947,
+          "category": "Cultural",
+          "neighborhood": "Midtown",
+          "description": "Art-Deco titan with 86th-floor observatory."
+        },
+        {
+          "name": "Empire Stores",
+          "latitude": 40.70352,
+          "longitude": -73.99168,
+          "category": "Historical",
+          "neighborhood": "DUMBO",
+          "description": "19th‑century coffee warehouses reborn as DUMBO's brick‑and‑steel retail hub."
+        },
+        {
+          "name": "Essex Market",
+          "latitude": 40.7181467704473,
+          "longitude": -73.988168542327,
+          "category": "Cultural",
+          "neighborhood": "Lower East Side",
+          "description": "Beloved public market reborn—global bites, local vendors, and Lower East Side character."
+        },
+        {
+          "name": "Ex Meserole Theater",
+          "latitude": 40.7260184171175,
+          "longitude": -73.9522260506204,
+          "category": "Cultural",
+          "neighborhood": "Greenpoint",
+          "description": "Former theater venue with historical significance in the community."
+        },
+        {
+          "name": "Fearless Girl",
+          "latitude": 40.7067950545678,
+          "longitude": -74.0108330442111,
+          "category": "Cultural",
+          "neighborhood": "Financial District",
+          "description": "A bronze statue of a young girl standing defiantly outside the New York Stock Exchange, created by Kristen Visbal as a symbol of women’s representation and leadership."
+        },
+        {
+          "name": "Fraunces Tavern Museum",
+          "latitude": 40.7035747744418,
+          "longitude": -74.011286274185,
+          "category": "Historical",
+          "neighborhood": "Financial District",
+          "description": "1770s tavern where Washington bid farewell to his officers."
+        },
+        {
+          "name": "Frick Collection",
+          "latitude": 40.77127,
+          "longitude": -73.96747,
+          "category": "Art",
+          "neighborhood": "Upper East Side",
+          "description": "Old Master paintings and decorative arts in a Gilded Age mansion."
+        },
+        {
+          "name": "Gagosian Gallery",
+          "latitude": 40.7495100881739,
+          "longitude": -74.0058560379591,
+          "category": "Art",
+          "neighborhood": "Chelsea",
+          "description": "International gallery presenting major contemporary and modern art."
+        },
+        {
+          "name": "General Theological Seminary",
+          "latitude": 40.7458596686168,
+          "longitude": -74.0039545494619,
+          "category": "Historical",
+          "neighborhood": "Chelsea",
+          "description": "19th‑century collegiate Gothic campus and cloistered lawns in Chelsea."
+        },
+        {
+          "name": "Gracie Mansion (Conservancy)",
+          "latitude": 40.77926,
+          "longitude": -73.94306,
+          "category": "Historical",
+          "neighborhood": "Upper East Side",
+          "description": "1799 Federal‑style residence overlooking the East River; official mayoral home."
+        },
+        {
+          "name": "Grand Ferry Park",
+          "latitude": 40.7167514086574,
+          "longitude": -73.9669267609502,
+          "category": "Nature",
+          "neighborhood": "Williamsburg",
+          "description": "A charming, tranquil park marking the site of a 19th-century ferry to Manhattan. It offers sweeping views of the Williamsburg Bridge and the Manhattan skyline from its quiet corner of the waterfront."
+        },
+        {
+          "name": "Greenacre Park",
+          "latitude": 40.7562244435535,
+          "longitude": -73.9692841204272,
+          "category": "Nature",
+          "neighborhood": "Midtown",
+          "description": "Serene pocket park with a dramatic 25‑foot waterfall."
+        },
+        {
+          "name": "Greenpoint",
+          "latitude": 40.73315,
+          "longitude": -73.95225,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Historic waterfront neighborhood known for its Polish heritage and industrial charm."
+        },
+        {
+          "name": "Greenpoint Terminal Gallery",
+          "latitude": 40.7285077887037,
+          "longitude": -73.9599072033458,
+          "category": "Art",
+          "neighborhood": "Greenpoint",
+          "description": "A vibrant art space featuring contemporary exhibitions within a historic industrial setting."
+        },
+        {
+          "name": "Greenpoint Terminal Market",
+          "latitude": 40.7282602510774,
+          "longitude": -73.9583047214585,
+          "category": "Cultural",
+          "neighborhood": "Greenpoint",
+          "description": "Historic market and terminal space in the heart of Greenpoint."
+        },
+        {
+          "name": "Greenwich Village",
+          "latitude": 40.7334855388754,
+          "longitude": -74.0007451145909,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Bohemia's labyrinth — cafés, clubs, and brownstones where American counterculture took root."
+        },
+        {
+          "name": "Hamilton Fish Park",
+          "latitude": 40.7202717216615,
+          "longitude": -73.9809240238773,
+          "category": "Nature",
+          "neighborhood": "Lower East Side",
+          "description": "Historic rec center, pool, and playgrounds serving the LES community for over a century."
+        },
+        {
+          "name": "Harlem",
+          "latitude": 40.81833,
+          "longitude": -73.95787,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Northern Manhattan nexus of Black culture, jazz, and Renaissance history."
+        },
+        {
+          "name": "Hauser & Wirth",
+          "latitude": 40.7476903403704,
+          "longitude": -74.0067358001133,
+          "category": "Art",
+          "neighborhood": "Chelsea",
+          "description": "Contemporary art powerhouse presenting museum-scale exhibitions."
+        },
+        {
+          "name": "Hell’s Kitchen",
+          "latitude": 40.7623691167491,
+          "longitude": -73.9934429854031,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Lively Midtown West neighborhood of eateries, bars, and tenement history."
+        },
+        {
+          "name": "IAC Building by Frank Gehry",
+          "latitude": 40.7456471121664,
+          "longitude": -74.007715049462,
+          "category": "Cultural",
+          "neighborhood": "Chelsea",
+          "description": "Billowing glass headquarters on the West Side Highway by Frank Gehry."
+        },
+        {
+          "name": "IBM Watson Astor Place",
+          "latitude": 40.7302392548023,
+          "longitude": -73.9903429336108,
+          "category": "Cultural",
+          "neighborhood": "NoHo",
+          "description": "Sleek tech‑and‑design hub anchoring Astor Place's modern plaza."
+        },
+        {
+          "name": "Intrepid Museum",
+          "latitude": 40.764993834767,
+          "longitude": -74.000846696382,
+          "category": "Cultural",
+          "neighborhood": "Hell's Kitchen",
+          "description": "Sea, Air & Space Museum aboard the USS Intrepid on Pier 86."
+        },
+        {
+          "name": "Jefferson Market Garden",
+          "latitude": 40.7344178712709,
+          "longitude": -73.9995364440597,
+          "category": "Nature",
+          "neighborhood": "Greenwich Village",
+          "description": "Volunteer-tended pocket garden — seasonal blooms and true Village calm."
+        },
+        {
+          "name": "Jefferson Market Library",
+          "latitude": 40.7345766443406,
+          "longitude": -73.9991796225798,
+          "category": "Historical",
+          "neighborhood": "Greenwich Village",
+          "description": "Victorian Gothic courthouse reborn as a beloved NYPL branch with a storybook clocktower."
+        },
+        {
+          "name": "Jewish Museum (Upper East Side)",
+          "latitude": 40.78551,
+          "longitude": -73.95738,
+          "category": "Art",
+          "neighborhood": "Upper East Side",
+          "description": "World‑class collection exploring Jewish art and culture across millennia."
+        },
+        {
+          "name": "Joan of Arc Monument",
+          "latitude": 40.7941405832253,
+          "longitude": -73.9765106743492,
+          "category": "Historical",
+          "neighborhood": "Upper West Side",
+          "description": "Bronze equestrian statue of Joan of Arc along Riverside Drive."
+        },
+        {
+          "name": "John Street Park",
+          "latitude": 40.7051,
+          "longitude": -73.98767,
+          "category": "Nature",
+          "neighborhood": "DUMBO",
+          "description": "Northern slice of Brooklyn Bridge Park with marsh, lawn and skyline views."
+        },
+        {
+          "name": "Judd Foundation",
+          "latitude": 40.7236218058007,
+          "longitude": -73.9994360048722,
+          "category": "Art",
+          "neighborhood": "SoHo",
+          "description": "Donald Judd's five‑story cast‑iron home and minimalist shrine."
+        },
+        {
+          "name": "Judson Memorial Church",
+          "latitude": 40.7302842130208,
+          "longitude": -73.998318830221,
+          "category": "Historical",
+          "neighborhood": "Greenwich Village",
+          "description": "Romanesque landmark turned arts-and-activism engine on the park's south edge."
+        },
+        {
+          "name": "Knickerbocker Hotel",
+          "latitude": 40.7555830712677,
+          "longitude": -73.9862808317906,
+          "category": "Historical",
+          "neighborhood": "Times Square",
+          "description": "1906 Beaux-Arts icon reborn — a luxe hotel tied to Broadway and early 20th-century high society."
+        },
+        {
+          "name": "La Plaza Cultural",
+          "latitude": 40.7254607489919,
+          "longitude": -73.978468718265,
+          "category": "Nature",
+          "neighborhood": "East Village",
+          "description": "Community garden and arts space turning a once‑vacant lot into a vibrant green commons."
+        },
+        {
+          "name": "Lexington Candy Shop",
+          "latitude": 40.77771,
+          "longitude": -73.95727,
+          "category": "Cultural",
+          "neighborhood": "Upper East Side",
+          "description": "Classic luncheonette serving old‑school shakes and sandwiches since 1925."
+        },
+        {
+          "name": "Lincoln Center Plaza",
+          "latitude": 40.7724239464162,
+          "longitude": -73.9835521319635,
+          "category": "Cultural",
+          "neighborhood": "Upper West Side",
+          "description": "Fountain court ringed by the Met, Philharmonic, and ballet."
+        },
+        {
+          "name": "Little Island",
+          "latitude": 40.7420303929042,
+          "longitude": -74.0102829562118,
+          "category": "Nature",
+          "neighborhood": "Meatpacking District",
+          "description": "Pier-top park of sculpted tulip pots and river views."
+        },
+        {
+          "name": "Little Italy",
+          "latitude": 40.7193995099417,
+          "longitude": -73.9975432972182,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Historic Italian neighborhood where old-world trattorias and espresso bars preserve the spirit of immigrant New York."
+        },
+        {
+          "name": "London Terrace Apartments",
+          "latitude": 40.7473798671267,
+          "longitude": -74.0026885801426,
+          "category": "Historical",
+          "neighborhood": "Chelsea",
+          "description": "1930s Gothic-inspired apartment complex spanning a full city block."
+        },
+        {
+          "name": "Lower East Side",
+          "latitude": 40.7161372105512,
+          "longitude": -73.9839492259032,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Storied immigrant neighborhood—delis, tenements, galleries, and nightlife in equal measure."
+        },
+        {
+          "name": "Lt Joseph Petrosino Square",
+          "latitude": 40.7218885479935,
+          "longitude": -73.9973830556227,
+          "category": "Nature",
+          "neighborhood": "NoLIta",
+          "description": "Triangular pocket park honoring an early NYPD anti‑Mafia pioneer."
+        },
+        {
+          "name": "Lyceum Theatre",
+          "latitude": 40.75788,
+          "longitude": -73.98459,
+          "category": "Cultural",
+          "neighborhood": "Theater District",
+          "description": "Oldest continuously operating Broadway theater (1903), designed by Herts & Tallant."
+        },
+        {
+          "name": "Mahayana Buddhist Temple",
+          "latitude": 40.7164821400844,
+          "longitude": -73.9953537269839,
+          "category": "Historical",
+          "neighborhood": "Chinatown",
+          "description": "Serene Buddhist temple in the heart of Chinatown, offering a peaceful retreat from the bustling city streets with traditional architecture and spiritual ceremonies."
+        },
+        {
+          "name": "Main Street Lawn",
+          "latitude": 40.70459,
+          "longitude": -73.99024,
+          "category": "Nature",
+          "neighborhood": "DUMBO",
+          "description": "Expansive turf under the Manhattan Bridge—perfect for picnics and 'YO/OY' selfies."
+        },
+        {
+          "name": "Majestic Theatre",
+          "latitude": 40.75851,
+          "longitude": -73.98827,
+          "category": "Cultural",
+          "neighborhood": "Theater District",
+          "description": "1927 Broadway house famed for the long‑running 'Phantom of the Opera'."
+        },
+        {
+          "name": "Manhattan Bridge",
+          "latitude": 40.7077529374811,
+          "longitude": -73.9906383177278,
+          "category": "Historical",
+          "neighborhood": "DUMBO",
+          "description": "1909 suspension bridge connecting Manhattan and Brooklyn with distinctive towers."
+        },
+        {
+          "name": "Marsha P. Johnson State Park",
+          "latitude": 40.721504,
+          "longitude": -73.962036,
+          "category": "Nature",
+          "neighborhood": "Williamsburg",
+          "description": "Grassy river views and the Saturday Smorgasburg food frenzy."
+        },
+        {
+          "name": "McCarren Park",
+          "latitude": 40.722215,
+          "longitude": -73.951423,
+          "category": "Nature",
+          "neighborhood": "Williamsburg",
+          "description": "North Brooklyn's back yard—softball, track, dog run, repeat."
+        },
+        {
+          "name": "McGolrick Park",
+          "latitude": 40.724463,
+          "longitude": -73.943634,
+          "category": "Nature",
+          "neighborhood": "Greenpoint",
+          "description": "Canopy of plane trees, WPA pavilion, and weekend farmers' market vibes."
+        },
+        {
+          "name": "Metropolitan Museum of Art",
+          "latitude": 40.779392,
+          "longitude": -73.963323,
+          "category": "Art",
+          "neighborhood": "Upper East Side",
+          "description": "Global masterpieces spanning 5,000 years."
+        },
+        {
+          "name": "MoMA",
+          "latitude": 40.7614512139388,
+          "longitude": -73.9776227670541,
+          "category": "Art",
+          "neighborhood": "Midtown",
+          "description": "Museum of Modern Art's landmark collection of 20th–21st century works."
+        },
+        {
+          "name": "Museum of Chinese in America",
+          "latitude": 40.7195573826768,
+          "longitude": -73.9990135883602,
+          "category": "Cultural",
+          "neighborhood": "Chinatown",
+          "description": "Dedicated museum preserving and presenting the history, heritage, culture and diverse experiences of Chinese Americans through engaging exhibitions and educational programs."
+        },
+        {
+          "name": "Music Hall of Williamsburg",
+          "latitude": 40.7193236339319,
+          "longitude": -73.9617150167691,
+          "category": "Cultural",
+          "neighborhood": "Williamsburg",
+          "description": "One of New York's most celebrated independent music venues, known for its intimate atmosphere and for hosting a wide array of influential indie rock bands and emerging artists."
+        },
+        {
+          "name": "National September 11 Memorial & Museum",
+          "latitude": 40.71173,
+          "longitude": -74.01339,
+          "category": "Historical",
+          "neighborhood": "Financial District",
+          "description": "Twin‑tower footprints re‑imagined as solemn waterfalls and an underground museum chronicling 9/11."
+        },
+        {
+          "name": "Neue Galerie",
+          "latitude": 40.78145,
+          "longitude": -73.96038,
+          "category": "Art",
+          "neighborhood": "Upper East Side",
+          "description": "Museum of early 20th‑century German and Austrian art and design."
+        },
+        {
+          "name": "New York",
+          "latitude": 40.7127683826315,
+          "longitude": -74.0019193663235,
+          "category": "City",
+          "neighborhood": null,
+          "description": "A global city defined by density, diversity, and constant cultural reinvention."
+        },
+        {
+          "name": "New York Public Library",
+          "latitude": 40.7529921161936,
+          "longitude": -73.9818141162971,
+          "category": "Historical",
+          "neighborhood": "Midtown",
+          "description": "Beaux‑Arts flagship guarded by Patience and Fortitude."
+        },
+        {
+          "name": "NoHo",
+          "latitude": 40.7276170880887,
+          "longitude": -73.9933656234942,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Cast‑iron loftland turned boutique design enclave."
+        },
+        {
+          "name": "Old Police Headquarters",
+          "latitude": 40.7205149464713,
+          "longitude": -73.9979145362422,
+          "category": "Historical",
+          "neighborhood": "NoLIta",
+          "description": "1909 Beaux‑Arts NYPD HQ, exquisitely adapted into landmark residences."
+        },
+        {
+          "name": "One World Trade Center",
+          "latitude": 40.713137,
+          "longitude": -74.013543,
+          "category": "Historical",
+          "neighborhood": "Financial District",
+          "description": "1776-ft spire honoring resilience downtown."
+        },
+        {
+          "name": "Our Lady of Mount Carmel",
+          "latitude": 40.7145875931577,
+          "longitude": -73.9547044783346,
+          "category": "Historical",
+          "neighborhood": "Williamsburg",
+          "description": "A stunning Roman Catholic church that has served as a spiritual and cultural anchor for Williamsburg's Italian-American community for over a century, famed for its annual Giglio festival."
+        },
+        {
+          "name": "Paramount Building",
+          "latitude": 40.7569539712675,
+          "longitude": -73.9867140029541,
+          "category": "Historical",
+          "neighborhood": "Times Square",
+          "description": "Art Deco tower that once housed the Paramount Theatre — premieres, big-band legends, and neon lore."
+        },
+        {
+          "name": "Park Avenue Armory",
+          "latitude": 40.76745,
+          "longitude": -73.96566,
+          "category": "Cultural",
+          "neighborhood": "Upper East Side",
+          "description": "Historic drill hall reborn as a platform for monumental arts events."
+        },
+        {
+          "name": "Pebble Beach",
+          "latitude": 40.70452,
+          "longitude": -73.9906,
+          "category": "Nature",
+          "neighborhood": "DUMBO",
+          "description": "Small waterfront area in Brooklyn Bridge Park with Manhattan skyline views."
+        },
+        {
+          "name": "Plymouth & Adams Streets",
+          "latitude": 40.704,
+          "longitude": -73.98913,
+          "category": "Cultural",
+          "neighborhood": "DUMBO",
+          "description": "Confluence of DUMBO's industrial past and waterfront park present."
+        },
+        {
+          "name": "Port Authority Bus Terminal",
+          "latitude": 40.7568255504295,
+          "longitude": -73.990441967546,
+          "category": "Cultural",
+          "neighborhood": "Hell's Kitchen",
+          "description": "Transit hub serving interstate buses just west of Times Square."
+        },
+        {
+          "name": "Public Theater",
+          "latitude": 40.7292322584601,
+          "longitude": -73.9918565968549,
+          "category": "Cultural",
+          "neighborhood": "NoHo",
+          "description": "Joseph Papp's powerhouse for groundbreaking New York drama."
+        },
+        {
+          "name": "Radio City Music Hall",
+          "latitude": 40.7599759713864,
+          "longitude": -73.9799879318303,
+          "category": "Cultural",
+          "neighborhood": "Midtown",
+          "description": "Art Deco auditorium, home of the Rockettes and major concerts."
+        },
+        {
+          "name": "Riverside Church",
+          "latitude": 40.81184983753,
+          "longitude": -73.9629057873281,
+          "category": "Historical",
+          "neighborhood": "Upper West Side",
+          "description": "Gothic Revival tower and progressive church overlooking the Hudson."
+        },
+        {
+          "name": "Riverside Park",
+          "latitude": 40.8096621998003,
+          "longitude": -73.9673029373645,
+          "category": "Nature",
+          "neighborhood": "Upper West Side",
+          "description": "Hudson-side greenway of lawns, promenades, and shade trees."
+        },
+        {
+          "name": "Rockefeller Center",
+          "latitude": 40.7587361080256,
+          "longitude": -73.9786789674123,
+          "category": "Cultural",
+          "neighborhood": "Midtown",
+          "description": "Art Deco complex with Top of the Rock, skating rink, and public art."
+        },
+        {
+          "name": "Saint Marks Place",
+          "latitude": 40.7281745832419,
+          "longitude": -73.9864908892803,
+          "category": "Cultural",
+          "neighborhood": "East Village",
+          "description": "East Village's legendary strip of counterculture, clubs, vintage shops, and cheap eats."
+        },
+        {
+          "name": "Saint Patrick’s Cathedral",
+          "latitude": 40.7586360515951,
+          "longitude": -73.9762060318304,
+          "category": "Historical",
+          "neighborhood": "Midtown",
+          "description": "Neo‑Gothic landmark and spiritual heart of Midtown."
+        },
+        {
+          "name": "Saints Peter and Paul - Epiphany Parish",
+          "latitude": 40.7136807463896,
+          "longitude": -73.9639337423286,
+          "category": "Historical",
+          "neighborhood": "Greenpoint",
+          "description": "Historic parish church serving the community with distinctive architecture."
+        },
+        {
+          "name": "Sara D. Roosevelt Park",
+          "latitude": 40.721887133615,
+          "longitude": -73.991542503038,
+          "category": "Nature",
+          "neighborhood": "Lower East Side",
+          "description": "Linear park stretching through the Lower East Side, providing green space and recreational facilities connecting diverse neighborhoods from Chinatown to the East Village."
+        },
+        {
+          "name": "Schomburg Center for Research in Black Culture",
+          "latitude": 40.81475,
+          "longitude": -73.94098,
+          "category": "Cultural",
+          "neighborhood": "Harlem",
+          "description": "Premier research library preserving global Black history and culture."
+        },
+        {
+          "name": "SoHo",
+          "latitude": 40.7239695838172,
+          "longitude": -74.0015376550623,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Global art‑fashion engine famed for cast‑iron canyons."
+        },
+        {
+          "name": "Soldiers & Sailors Memorial",
+          "latitude": 40.7919947564894,
+          "longitude": -73.9790095665125,
+          "category": "Historical",
+          "neighborhood": "Upper West Side",
+          "description": "Classical colonnade honoring Union Army soldiers and sailors."
+        },
+        {
+          "name": "Solomon R. Guggenheim Museum",
+          "latitude": 40.78309,
+          "longitude": -73.95906,
+          "category": "Art",
+          "neighborhood": "Upper East Side",
+          "description": "Frank Lloyd Wright's spiral icon housing modern and contemporary art."
+        },
+        {
+          "name": "South Street Seaport Museum",
+          "latitude": 40.7074879939386,
+          "longitude": -74.0039202008733,
+          "category": "Cultural",
+          "neighborhood": "Financial District",
+          "description": "Maritime museum celebrating New York's seafaring heritage with historic ships, galleries, and tales of the port that built the city."
+        },
+        {
+          "name": "St. Ann's Warehouse",
+          "latitude": 40.70393,
+          "longitude": -73.99285,
+          "category": "Cultural",
+          "neighborhood": "DUMBO",
+          "description": "Innovative theater company in a converted tobacco warehouse in DUMBO."
+        },
+        {
+          "name": "St. Anthony of Padua Church",
+          "latitude": 40.7295368105552,
+          "longitude": -73.9537112730142,
+          "category": "Historical",
+          "neighborhood": "Greenpoint",
+          "description": "Victorian-Gothic spire towering over Manhattan Avenue since 1875."
+        },
+        {
+          "name": "Staten Island Ferry",
+          "latitude": 40.7014795047283,
+          "longitude": -74.0132889628516,
+          "category": "Cultural",
+          "neighborhood": "Financial District",
+          "description": "Free ferry offering spectacular views of the Statue of Liberty, Ellis Island, and Manhattan skyline—New York's best bargain sightseeing cruise."
+        },
+        {
+          "name": "Statue of Liberty",
+          "latitude": 40.689516,
+          "longitude": -74.044531,
+          "category": "Historical",
+          "neighborhood": "Liberty Island",
+          "description": "Copper colossus gifted by France in 1886."
+        },
+        {
+          "name": "Stone Street",
+          "latitude": 40.7041692923844,
+          "longitude": -74.0115734887598,
+          "category": "Historical",
+          "neighborhood": "Financial District",
+          "description": "Cobblestone historic district lined with 17th-century charm, outdoor dining, and some of Manhattan's oldest surviving architecture."
+        },
+        {
+          "name": "Strawberry Fields",
+          "latitude": 40.7757604080696,
+          "longitude": -73.9747102467448,
+          "category": "Nature",
+          "neighborhood": "Upper West Side",
+          "description": "Central Park memorial to John Lennon with the 'Imagine' mosaic."
+        },
+        {
+          "name": "Studio Museum in Harlem",
+          "latitude": 40.80864,
+          "longitude": -73.94775,
+          "category": "Art",
+          "neighborhood": "Harlem",
+          "description": "Influential institution championing artists of African descent."
+        },
+        {
+          "name": "Sylvia's",
+          "latitude": 40.8086546031376,
+          "longitude": -73.9444790040127,
+          "category": "Cultural",
+          "neighborhood": "Harlem",
+          "description": "A famous Harlem soul food restaurant serving classic dishes since 1962."
+        },
+        {
+          "name": "Tenement Museum",
+          "latitude": 40.7189562084591,
+          "longitude": -73.989980314554,
+          "category": "Historical",
+          "neighborhood": "Lower East Side",
+          "description": "Immersive tours of restored tenement apartments illuminating immigrant lives on the LES."
+        },
+        {
+          "name": "The Battery Urban Farm",
+          "latitude": 40.7029964684967,
+          "longitude": -74.0150718628511,
+          "category": "Nature",
+          "neighborhood": "Financial District",
+          "description": "Innovative urban agriculture project bringing fresh produce and green education to Lower Manhattan's concrete landscape."
+        },
+        {
+          "name": "The City Reliquary",
+          "latitude": 40.714096,
+          "longitude": -73.955585,
+          "category": "Historical",
+          "neighborhood": "Williamsburg",
+          "description": "Lovable closet-sized museum of NYC oddities and civic ephemera."
+        },
+        {
+          "name": "The Cooper Union: Foundation Building",
+          "latitude": 40.729806469126,
+          "longitude": -73.9903968317604,
+          "category": "Historical",
+          "neighborhood": "NoHo",
+          "description": "1859 brownstone home to Cooper Union's Great Hall and tradition of free education."
+        },
+        {
+          "name": "The Drawing Center",
+          "latitude": 40.7225476296081,
+          "longitude": -74.0027427472218,
+          "category": "Art",
+          "neighborhood": "SoHo",
+          "description": "SoHo gallery championing drawing as radical contemporary art."
+        },
+        {
+          "name": "The Gardens of Remembrance",
+          "latitude": 40.7019905506018,
+          "longitude": -74.0154067299073,
+          "category": "Historical",
+          "neighborhood": "Financial District",
+          "description": "Contemplative memorial garden providing a peaceful space for reflection and remembrance in the heart of the bustling financial district."
+        },
+        {
+          "name": "The High Line",
+          "latitude": 40.7480087560702,
+          "longitude": -74.0047434426106,
+          "category": "Nature",
+          "neighborhood": "Chelsea",
+          "description": "Elevated rail line reborn as a linear park through Chelsea and Hudson Yards."
+        },
+        {
+          "name": "The Hotel Chelsea",
+          "latitude": 40.7444840802906,
+          "longitude": -73.9968973001207,
+          "category": "Historical",
+          "neighborhood": "Chelsea",
+          "description": "Legendary bohemian hotel home to artists, writers, and rock history."
+        },
+        {
+          "name": "The Museum of Broadway",
+          "latitude": 40.7580982361499,
+          "longitude": -73.9843813921832,
+          "category": "Cultural",
+          "neighborhood": "Times Square",
+          "description": "Interactive timeline of Broadway's shows, design, and backstage craft — steps from the theaters."
+        },
+        {
+          "name": "The Oculus",
+          "latitude": 40.71175,
+          "longitude": -74.01155,
+          "category": "Cultural",
+          "neighborhood": "Financial District",
+          "description": "Calatrava's white‑ribbed transit hub soaring above the WTC PATH station."
+        },
+        {
+          "name": "The Paley Center for Media",
+          "latitude": 40.7605154123748,
+          "longitude": -73.9776007183389,
+          "category": "Cultural",
+          "neighborhood": "Midtown",
+          "description": "Museum and archive dedicated to television, radio, and media history."
+        },
+        {
+          "name": "The Stonewall Inn",
+          "latitude": 40.7339869630014,
+          "longitude": -74.0021411632114,
+          "category": "Historical",
+          "neighborhood": "Greenwich Village",
+          "description": "Birthplace of the modern LGBTQ+ rights movement — a National Historic Landmark and living bar."
+        },
+        {
+          "name": "The Ukrainian Museum",
+          "latitude": 40.7288114277819,
+          "longitude": -73.9896344738365,
+          "category": "Cultural",
+          "neighborhood": "East Village",
+          "description": "Museum dedicated to Ukrainian art, history, and the diaspora's cultural legacy."
+        },
+        {
+          "name": "Times Square",
+          "latitude": 40.758516,
+          "longitude": -73.985536,
+          "category": "Cultural",
+          "neighborhood": "Midtown",
+          "description": "Neon canyon where Broadway meets the world."
+        },
+        {
+          "name": "Tin Building",
+          "latitude": 40.7063251145553,
+          "longitude": -74.0022262168343,
+          "category": "Cultural",
+          "neighborhood": "Financial District",
+          "description": "Restored 1907 market hall transformed into a spectacular food emporium featuring artisanal vendors and culinary experiences by the waterfront."
+        },
+        {
+          "name": "Tompkins Square",
+          "latitude": 40.7265514313407,
+          "longitude": -73.9817841032323,
+          "category": "Nature",
+          "neighborhood": "East Village",
+          "description": "East Village commons of protests, pups, and punk — a community park with real edge and heart."
+        },
+        {
+          "name": "Trinity Church",
+          "latitude": 40.7079195725728,
+          "longitude": -74.0117938151942,
+          "category": "Historical",
+          "neighborhood": "Financial District",
+          "description": "1846 Gothic‑Revival spire once NYC's tallest."
+        },
+        {
+          "name": "Upper East Side",
+          "latitude": 40.77417,
+          "longitude": -73.95851,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Elegant uptown enclave of museums, townhouses, and Madison Avenue boutiques."
+        },
+        {
+          "name": "Upper West Side",
+          "latitude": 40.7880684863782,
+          "longitude": -73.9760929747063,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Leafy brownstone blocks between Central Park and the Hudson."
+        },
+        {
+          "name": "Washington & Water Streets View",
+          "latitude": 40.70336,
+          "longitude": -73.98952,
+          "category": "Cultural",
+          "neighborhood": "DUMBO",
+          "description": "Iconic cobblestone vista framing the Manhattan Bridge—Instagram nirvana."
+        },
+        {
+          "name": "Washington Square Park",
+          "latitude": 40.7310219833979,
+          "longitude": -73.9972998167265,
+          "category": "Nature",
+          "neighborhood": "Greenwich Village",
+          "description": "The Village's living room — marble arch, buskers, chess hustlers, and NYU energy."
+        },
+        {
+          "name": "Westbeth Artists Housing",
+          "latitude": 40.7370143355383,
+          "longitude": -74.0086432339135,
+          "category": "Cultural",
+          "neighborhood": "West Village",
+          "description": "Former Bell Labs reborn as a pioneering subsidized artists' community — studios, stories, and creative legacy."
+        },
+        {
+          "name": "Whitney Museum of American Art",
+          "latitude": 40.7397421234061,
+          "longitude": -74.0088736320669,
+          "category": "Art",
+          "neighborhood": "Meatpacking District",
+          "description": "Renzo Piano's riverfront terraces frame bold surveys of 20th–21st-century American art."
+        },
+        {
+          "name": "Williamsburg",
+          "latitude": 40.7081179274945,
+          "longitude": -73.9578185877038,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Historic Brooklyn neighborhood known for its vibrant arts scene, waterfront parks, and cultural diversity."
+        },
+        {
+          "name": "Williamsburg Houses",
+          "latitude": 40.7108543926988,
+          "longitude": -73.943576345675,
+          "category": "Historical",
+          "neighborhood": "Williamsburg",
+          "description": "Historic public housing complex representing important social housing development."
+        },
+        {
+          "name": "WNYC Transmitter Park",
+          "latitude": 40.730035,
+          "longitude": -73.960979,
+          "category": "Nature",
+          "neighborhood": "Greenpoint",
+          "description": "Tiny pier park where radio once ruled, sunsets still do."
+        },
+        {
+          "name": "Wythe Hotel",
+          "latitude": 40.722058,
+          "longitude": -73.958512,
+          "category": "Historical",
+          "neighborhood": "Williamsburg",
+          "description": "117-year-old cooperage reborn as Brooklyn's OG boutique hotel (roof bar slays)."
+        },
+        {
+          "name": "Zabar’s",
+          "latitude": 40.7847833418796,
+          "longitude": -73.9796396742901,
+          "category": "Cultural",
+          "neighborhood": "Upper West Side",
+          "description": "Upper West Side institution for smoked fish, coffee, and cookware."
+        }
+      ]
+    },
+    {
+      "slug": "palermo",
+      "name": "Palermo",
+      "countryCode": "IT",
+      "landmarks": [
+        {
+          "name": "Archivio Storico Comunale",
+          "latitude": 38.1138984648135,
+          "longitude": 13.3631790434143,
+          "category": "Historical",
+          "neighborhood": "Kalsa",
+          "description": "Palermo’s civic memory, preserving centuries of city life inside a monumental former convent."
+        },
+        {
+          "name": "Ballarò Market",
+          "latitude": 38.11075,
+          "longitude": 13.36352,
+          "category": "Cultural",
+          "neighborhood": "Albergheria",
+          "description": "Lively street market on Palermo's south side where vendors shout and scooters weave through stalls overflowing with produce, meats, and street food; the bazaar blends Italian staples with North African spices."
+        },
+        {
+          "name": "Botanical Gardens of Palermo",
+          "latitude": 38.1134331356558,
+          "longitude": 13.3727251332881,
+          "category": "Nature",
+          "neighborhood": "Kalsa",
+          "description": "Research-focused botanical garden opened in 1795, housing rare and exotic plants and serving as an educational institution for botanical science."
+        },
+        {
+          "name": "Cappella Palatina",
+          "latitude": 38.11114,
+          "longitude": 13.3537,
+          "category": "Historical",
+          "neighborhood": "Albergheria",
+          "description": "Royal chapel commissioned by King Roger II and completed in 1143, famous for glittering Byzantine mosaics paired with carved Arab-Norman wooden ceilings."
+        },
+        {
+          "name": "Fontana Pretoria / Piazza Pretoria",
+          "latitude": 38.11569,
+          "longitude": 13.36189,
+          "category": "Historical",
+          "neighborhood": "Albergheria",
+          "description": "High-Renaissance fountain covering much of Piazza Pretoria; originally sculpted by Francesco Camilliani for a Tuscan villa, it features more than fifty statues of mythological figures whose nudity earned it the nickname Fountain of Shame."
+        },
+        {
+          "name": "Foro Italico",
+          "latitude": 38.1174,
+          "longitude": 13.37494,
+          "category": "Nature",
+          "neighborhood": "Kalsa",
+          "description": "Seafront promenade and green space created in 1582 and later expanded along Palermo's waterfront."
+        },
+        {
+          "name": "Kalsa",
+          "latitude": 38.11628,
+          "longitude": 13.36287,
+          "category": "Neighborhood",
+          "neighborhood": null,
+          "description": "Former Arab-era quarter known for narrow streets and historic palaces; heavily bombed in World War II, it retains a gritty charm interspersed with restored gems."
+        },
+        {
+          "name": "La Martorana (Santa Maria dell'Ammiraglio)",
+          "latitude": 38.11493,
+          "longitude": 13.36266,
+          "category": "Historical",
+          "neighborhood": "Albergheria",
+          "description": "Twelfth-century church built by Admiral George of Antioch in thanks to the Virgin Mary; originally a Greek-cross plan, the church has been altered over centuries and even hosted Sicily's aristocratic parliament after the 1282 uprising."
+        },
+        {
+          "name": "Monastery of Santa Caterina",
+          "latitude": 38.11551,
+          "longitude": 13.36343,
+          "category": "Historical",
+          "neighborhood": "Albergheria",
+          "description": "Dominican monastery with a serene cloister and frescoed interiors; now a museum and pastry shop where cloistered nuns' recipes live on."
+        },
+        {
+          "name": "Mura delle Cattive",
+          "latitude": 38.11938,
+          "longitude": 13.37168,
+          "category": "Historical",
+          "neighborhood": "Kalsa",
+          "description": "Sixteenth-century defensive walls named after the \"fallen women\" once confined nearby; today the restored ramparts offer views over the harbor."
+        },
+        {
+          "name": "Palazzo Abatellis",
+          "latitude": 38.11687,
+          "longitude": 13.37087,
+          "category": "Art",
+          "neighborhood": "Kalsa",
+          "description": "Late-fifteenth-century Catalan-Gothic palace built for Admiral Francesco Abatellis; today it houses the Regional Gallery of Sicily with masterpieces such as Antonello da Messina's Annunciata."
+        },
+        {
+          "name": "Palazzo Butera",
+          "latitude": 38.11891,
+          "longitude": 13.37096,
+          "category": "Art",
+          "neighborhood": "Kalsa",
+          "description": "Baroque palace built in the late seventeenth century for nobleman Prince Branciforte; now a contemporary art museum with meticulously restored frescoed halls."
+        },
+        {
+          "name": "Palazzo Chiaramonte Steri",
+          "latitude": 38.11774,
+          "longitude": 13.36979,
+          "category": "Historical",
+          "neighborhood": "Kalsa",
+          "description": "Fourteenth-century fortress-palace and later seat of the Spanish Inquisition; preserved dungeons feature chilling etchings by prisoners."
+        },
+        {
+          "name": "Palazzo Mirto",
+          "latitude": 38.11674,
+          "longitude": 13.36805,
+          "category": "Cultural",
+          "neighborhood": "Kalsa",
+          "description": "Eighteenth-century aristocratic residence with period furnishings intact; visitors glimpse Sicilian high society through opulent salons and private quarters."
+        },
+        {
+          "name": "Palazzo Valguarnera Gangi",
+          "latitude": 38.11494,
+          "longitude": 13.36558,
+          "category": "Historical",
+          "neighborhood": "Kalsa",
+          "description": "Eighteenth-century noble residence rebuilt by Prince Pietro di Valguarnera by merging several houses into an 8,000 m^2 palace; its lavish ballroom inspired Visconti's Il Gattopardo."
+        },
+        {
+          "name": "Palermo",
+          "latitude": 38.116669,
+          "longitude": 13.366667,
+          "category": "City",
+          "neighborhood": null,
+          "description": "A city known for its rich history and cultural heritage."
+        },
+        {
+          "name": "Palermo Cathedral",
+          "latitude": 38.11447,
+          "longitude": 13.35574,
+          "category": "Historical",
+          "neighborhood": "Albergheria",
+          "description": "Cathedral complex begun in 1185 that blends Norman, Gothic, Baroque, and Neoclassical styles; houses royal tombs and richly decorated chapels."
+        },
+        {
+          "name": "Piazza Marina",
+          "latitude": 38.11771,
+          "longitude": 13.3682,
+          "category": "Nature",
+          "neighborhood": "Kalsa",
+          "description": "Historic square in the Kalsa quarter dominated by the Garibaldi Garden, which hosts Europe's largest Ficus macrophylla and was laid out in 1863; the area was once a swamp used by the Spanish Inquisition."
+        },
+        {
+          "name": "Porta Nuova",
+          "latitude": 38.11231,
+          "longitude": 13.35252,
+          "category": "Historical",
+          "neighborhood": "Albergheria",
+          "description": "Monumental city gate erected in 1583 to honor King Philip II's visit; located beside the Royal Palace, it marks the boundary between Palermo's historic center and Albergheria and features sculptures celebrating Spanish military triumphs."
+        },
+        {
+          "name": "Quartiere ebraico Palermo",
+          "latitude": 38.11435,
+          "longitude": 13.36344,
+          "category": "Cultural",
+          "neighborhood": "Kalsa",
+          "description": "Former Giudecca (Jewish quarter) of Palermo with narrow lanes and small artisan workshops; today only a few traces remain but the area retains a distinct cultural heritage."
+        },
+        {
+          "name": "Quattro Canti",
+          "latitude": 38.11584,
+          "longitude": 13.36138,
+          "category": "Historical",
+          "neighborhood": "Albergheria",
+          "description": "Baroque crossroads where Via Maqueda meets Corso Vittorio Emanuele; four concave facades symbolize the seasons and Palermo's historic quarters."
+        },
+        {
+          "name": "San Cataldo Church",
+          "latitude": 38.11491,
+          "longitude": 13.36223,
+          "category": "Historical",
+          "neighborhood": "Albergheria",
+          "description": "Arab-Norman church founded around 1160 by Maio of Bari; its austere interior was never decorated and it later served as a post office before restoration in 1885."
+        },
+        {
+          "name": "Santa Maria dello Spasimo",
+          "latitude": 38.11471,
+          "longitude": 13.37136,
+          "category": "Historical",
+          "neighborhood": "Kalsa",
+          "description": "Unfinished sixteenth-century church, later converted into a plague hospital, theater, and warehouse; now an evocative open-air venue for concerts and exhibitions."
+        },
+        {
+          "name": "Teatro Massimo",
+          "latitude": 38.12042,
+          "longitude": 13.35793,
+          "category": "Cultural",
+          "neighborhood": "Monte di Pietà",
+          "description": "Opera house inaugurated in 1897, renowned for grand neoclassical architecture, superb acoustics, and status as one of Europe's largest theaters."
+        },
+        {
+          "name": "Teatro Politeama",
+          "latitude": 38.12531,
+          "longitude": 13.35718,
+          "category": "Cultural",
+          "neighborhood": "Politeama",
+          "description": "Nineteenth-century neoclassical theater crowned with a bronze quadriga; its open-air stage and arcaded facade make it Palermo's second major opera house."
+        },
+        {
+          "name": "The Royal Palace (Palazzo dei Normanni)",
+          "latitude": 38.11112,
+          "longitude": 13.35333,
+          "category": "Historical",
+          "neighborhood": "Albergheria",
+          "description": "Europe's oldest royal residence, begun in the ninth century and expanded by Norman kings; today it houses the Sicilian Regional Assembly."
+        }
+      ]
+    },
+    {
+      "slug": "paris",
+      "name": "Paris",
+      "countryCode": "FR",
+      "landmarks": [
+        {
+          "name": "Maison de Berlioz",
+          "latitude": 48.8882596887344,
+          "longitude": 2.34201940783979,
+          "category": "Cultural",
+          "neighborhood": "Montmartre",
+          "description": "Historic home of composer Hector Berlioz, offering a glimpse into the early life of one of France’s great Romantic musicians."
+        },
+        {
+          "name": "Arc de Triomphe",
+          "latitude": 48.87391,
+          "longitude": 2.29481,
+          "category": "Historical",
+          "neighborhood": "8th Arrondissement",
+          "description": "Monumental arch at Place Charles de Gaulle honouring Napoleon's victories; construction began in 1806 and the 50-m-high arch is engraved with bas-reliefs and the names of battles and generals."
+        },
+        {
+          "name": "Archaeological Crypt of Notre‑Dame",
+          "latitude": 48.85381,
+          "longitude": 2.34748,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité",
+          "description": "Underground museum beneath the parvis of Notre‑Dame displaying Roman and medieval ruins uncovered in the 1960s."
+        },
+        {
+          "name": "Arenes de Lutece",
+          "latitude": 48.84526,
+          "longitude": 2.35294,
+          "category": "Historical",
+          "neighborhood": "Latin Quarter",
+          "description": "1st-century Roman amphitheatre hidden in the Latin Quarter; once hosted gladiatorial combats and theatrical performances and is among the oldest monuments in Paris."
+        },
+        {
+          "name": "Bastille",
+          "latitude": 48.85376,
+          "longitude": 2.36969,
+          "category": "Neighborhood",
+          "neighborhood": "Bastille",
+          "description": "Lively district surrounding Place de la Bastille, known for its bars, concert venues and the Bassin de l'Arsenal marina."
+        },
+        {
+          "name": "Buste de Dalida",
+          "latitude": 48.8885695021422,
+          "longitude": 2.3380638553697,
+          "category": "Cultural",
+          "neighborhood": "Montmartre",
+          "description": "A beloved Montmartre tribute to Dalida, the legendary singer whose life and career became closely tied to the neighborhood."
+        },
+        {
+          "name": "Café de Flore",
+          "latitude": 48.8541631643558,
+          "longitude": 2.33261398843649,
+          "category": "Cultural",
+          "neighborhood": "6th Arrondissement",
+          "description": "Legendary Saint-Germain café, long associated with Parisian writers, artists, philosophers, and café culture."
+        },
+        {
+          "name": "Carnavalet Museum",
+          "latitude": 48.85722,
+          "longitude": 2.36278,
+          "category": "Historical",
+          "neighborhood": "Le Marais",
+          "description": "Museum of the history of Paris occupying two adjoining mansions with furnished rooms and artefacts chronicling the city's past."
+        },
+        {
+          "name": "Champ de Mars",
+          "latitude": 48.85593,
+          "longitude": 2.29822,
+          "category": "Nature",
+          "neighborhood": "7th Arrondissement",
+          "description": "Vast open park stretching from the Eiffel Tower to the Ecole Militaire; once a military parade ground, now a popular spot for picnics and national celebrations."
+        },
+        {
+          "name": "Church of Saint‑Merri",
+          "latitude": 48.85929,
+          "longitude": 2.3508,
+          "category": "Historical",
+          "neighborhood": "Le Marais",
+          "description": "Flamboyant Gothic parish church near the Centre Pompidou, built 1500–1565 and named after Saint Médéric."
+        },
+        {
+          "name": "Colonne de Juillet",
+          "latitude": 48.85331,
+          "longitude": 2.36929,
+          "category": "Historical",
+          "neighborhood": "Bastille",
+          "description": "Monumental column in the centre of Place de la Bastille commemorating the 1830 Revolution; built 1835-1840, it celebrates the Trois Glorieuses that toppled Charles X and ushered in the July Monarchy."
+        },
+        {
+          "name": "Conciergerie",
+          "latitude": 48.85614,
+          "longitude": 2.34531,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité",
+          "description": "Medieval royal palace turned prison on the Île de la Cité; held Marie‑Antoinette before her execution and now serves as a museum."
+        },
+        {
+          "name": "Cour et Jardin de l’Hôtel de Sully",
+          "latitude": 48.85517,
+          "longitude": 2.36399,
+          "category": "Historical",
+          "neighborhood": "Le Marais",
+          "description": "Baroque mansion built 1624‑1630 with a courtyard and orangery; today home to the Centre des Monuments Nationaux and gateway to Place des Vosges."
+        },
+        {
+          "name": "Dalí Paris",
+          "latitude": 48.8865312518278,
+          "longitude": 2.33987448063096,
+          "category": "Cultural",
+          "neighborhood": "Montmartre",
+          "description": "Museum dedicated to Salvador Dalí’s surreal sculptures, drawings, and dreamlike imagination."
+        },
+        {
+          "name": "Église Saint-Pierre de Montmartre",
+          "latitude": 48.8867583903053,
+          "longitude": 2.34172234730671,
+          "category": "Historical",
+          "neighborhood": "Montmartre",
+          "description": "A 12th-century church and surviving remnant of Montmartre’s royal Benedictine abbey."
+        },
+        {
+          "name": "Église Saint‑Louis‑en‑l’Île",
+          "latitude": 48.85148,
+          "longitude": 2.35736,
+          "category": "Historical",
+          "neighborhood": "Île Saint‑Louis",
+          "description": "Only church on Île Saint‑Louis, built 1664‑1726 in French Baroque style with a gilded interior; Pope Pius VII celebrated Mass here in 1805."
+        },
+        {
+          "name": "Eiffel Tower",
+          "latitude": 48.85887,
+          "longitude": 2.29512,
+          "category": "Historical",
+          "neighborhood": "7th Arrondissement",
+          "description": "Wrought-iron lattice tower built 1887-89 for the 1889 Universal Exhibition; named after engineer Gustave Eiffel and now a 330-m-tall global icon."
+        },
+        {
+          "name": "Grand Palais",
+          "latitude": 48.86624,
+          "longitude": 2.31227,
+          "category": "Cultural",
+          "neighborhood": "8th Arrondissement",
+          "description": "Beaux-Arts exhibition hall built for the 1900 Universal Exposition; renowned for its massive glass-and-steel nave hosting major art fairs and cultural events."
+        },
+        {
+          "name": "Hôtel Carnavalet (Museum of Paris History)",
+          "latitude": 48.85745,
+          "longitude": 2.36239,
+          "category": "Cultural",
+          "neighborhood": "Le Marais",
+          "description": "Museum devoted to the history of Paris, occupying two Renaissance mansions and showcasing furnished rooms and paintings from every era."
+        },
+        {
+          "name": "Hôtel de Lauzun",
+          "latitude": 48.85179,
+          "longitude": 2.35892,
+          "category": "Historical",
+          "neighborhood": "Île Saint‑Louis",
+          "description": "Lavishly decorated 17th‑century mansion on Quai d'Anjou preserving carved, painted and gilded interiors from the Louis XIV era."
+        },
+        {
+          "name": "Hôtel de Ville",
+          "latitude": 48.85661,
+          "longitude": 2.35236,
+          "category": "Historical",
+          "neighborhood": "Hôtel‑de‑Ville",
+          "description": "Neo‑Renaissance city hall that has housed the Paris City Council since 1357; rebuilt after the original city hall burned in 1871."
+        },
+        {
+          "name": "Hotel des Invalides",
+          "latitude": 48.85677,
+          "longitude": 2.31242,
+          "category": "Historical",
+          "neighborhood": "7th Arrondissement",
+          "description": "17th-century complex commissioned by Louis XIV to house wounded soldiers; today it includes military museums and Napoleon's tomb beneath a gilded dome."
+        },
+        {
+          "name": "Hôtel Lambert",
+          "latitude": 48.85098,
+          "longitude": 2.35929,
+          "category": "Historical",
+          "neighborhood": "Île Saint‑Louis",
+          "description": "Grand mansion designed by Louis Le Vau (1640–1644) for financier Jean‑Baptiste Lambert; famed for its opulent Baroque interiors."
+        },
+        {
+          "name": "Hôtel‑Dieu",
+          "latitude": 48.85481,
+          "longitude": 2.34851,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité",
+          "description": "Historic hospital on Île de la Cité tracing its origins to a foundation by St Landry in 651, making it the oldest hospital in France."
+        },
+        {
+          "name": "Île de la Cité & Île Saint‑Louis",
+          "latitude": 48.85219,
+          "longitude": 2.35518,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité & Île Saint‑Louis",
+          "description": "Twin islands at Paris's core: Île de la Cité houses Notre‑Dame, Sainte‑Chapelle and the courts; Île Saint‑Louis is a peaceful enclave of 17th‑century mansions and boutiques."
+        },
+        {
+          "name": "Institut de France",
+          "latitude": 48.8573425463766,
+          "longitude": 2.336963410417,
+          "category": "Historical",
+          "neighborhood": "6th Arrondissement",
+          "description": "A grand riverside institute dedicated to French art, science, language, and culture."
+        },
+        {
+          "name": "Latin Quarter (Quartier Latin)",
+          "latitude": 48.84803,
+          "longitude": 2.35554,
+          "category": "Cultural",
+          "neighborhood": "5th/6th Arrondissements",
+          "description": "Historic Left-Bank district renowned for its student life, bookshops, cafes and universities; named for the medieval scholars who spoke Latin."
+        },
+        {
+          "name": "Le Marais",
+          "latitude": 48.86118,
+          "longitude": 2.35805,
+          "category": "Neighborhood",
+          "neighborhood": "Le Marais",
+          "description": "Historic Right‑Bank district once filled with aristocratic hôtels particuliers; now a fashionable area of galleries, cafés and museums."
+        },
+        {
+          "name": "Le Passe-Muraille",
+          "latitude": 48.8875655976872,
+          "longitude": 2.3380416992075,
+          "category": "Cultural",
+          "neighborhood": "Montmartre",
+          "description": "A playful Montmartre sculpture inspired by Marcel Aymé’s story of a man who could walk through walls."
+        },
+        {
+          "name": "Louvre Museum",
+          "latitude": 48.86075,
+          "longitude": 2.33748,
+          "category": "Art",
+          "neighborhood": "1st Arrondissement",
+          "description": "One of the world's largest and most visited art museums, housed in a former royal palace on the Right Bank; it exhibits nearly 35,000 works from prehistory to the 19th century and first opened as a museum in 1793."
+        },
+        {
+          "name": "Maison de Dalida",
+          "latitude": 48.8869873883322,
+          "longitude": 2.3370117346058,
+          "category": "Cultural",
+          "neighborhood": "Montmartre",
+          "description": "Dalida’s former Montmartre home, a quiet reminder of the singer’s deep connection to the neighborhood."
+        },
+        {
+          "name": "Maison de Victor Hugo",
+          "latitude": 48.85495,
+          "longitude": 2.36615,
+          "category": "Cultural",
+          "neighborhood": "Le Marais",
+          "description": "Townhouse on Place des Vosges where Victor Hugo lived from 1832 to 1848; now a museum displaying his furnishings, manuscripts and sketches."
+        },
+        {
+          "name": "Maison Européenne de la Photographie",
+          "latitude": 48.85532,
+          "longitude": 2.35904,
+          "category": "Art",
+          "neighborhood": "Le Marais",
+          "description": "Centre for contemporary photography opened in 1996 in an 18th‑century mansion in the heart of the Marais."
+        },
+        {
+          "name": "Marche couvert des Enfants Rouges",
+          "latitude": 48.86317,
+          "longitude": 2.36385,
+          "category": "Cultural",
+          "neighborhood": "Le Marais",
+          "description": "Paris's oldest covered market (1615) in the Marais, offering fresh produce, flowers and diverse global food stalls in a convivial atmosphere."
+        },
+        {
+          "name": "Mémorial de la Shoah",
+          "latitude": 48.8551,
+          "longitude": 2.35612,
+          "category": "Historical",
+          "neighborhood": "Le Marais",
+          "description": "Holocaust memorial and documentation centre on rue Geoffroy‑l'Asnier opened in 2005 to preserve archives, educate visitors and connect survivors with new generations."
+        },
+        {
+          "name": "Mémorial des Martyrs de la Déportation",
+          "latitude": 48.85185,
+          "longitude": 2.3523,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité",
+          "description": "Subterranean monument at the tip of Île de la Cité dedicated to the 200 000 people deported from France to Nazi camps during WWII."
+        },
+        {
+          "name": "Musée Cognacq‑Jay",
+          "latitude": 48.85833,
+          "longitude": 2.36143,
+          "category": "Art",
+          "neighborhood": "Le Marais",
+          "description": "Museum housed in the 16th‑century Hôtel Donon displaying an 18th‑century art collection assembled by La Samaritaine founders Théodore‑Ernest Cognacq and Marie‑Louise Jaÿ."
+        },
+        {
+          "name": "Musee d'Orsay",
+          "latitude": 48.86007,
+          "longitude": 2.32641,
+          "category": "Art",
+          "neighborhood": "7th Arrondissement",
+          "description": "Former Beaux-Arts railway station turned museum housing world-famous Impressionist and Post-Impressionist paintings by Monet, Degas, Van Gogh and others."
+        },
+        {
+          "name": "Musee de Cluny (Musee National du Moyen Age)",
+          "latitude": 48.85062,
+          "longitude": 2.34384,
+          "category": "Art",
+          "neighborhood": "Latin Quarter",
+          "description": "National museum of the Middle Ages occupying a 15th-century Gothic mansion built over the ruins of Gallo-Roman baths; famed for its medieval tapestries, including the 'Lady and the Unicorn'."
+        },
+        {
+          "name": "Musee de l'Orangerie",
+          "latitude": 48.86394,
+          "longitude": 2.32253,
+          "category": "Art",
+          "neighborhood": "1st Arrondissement",
+          "description": "Art museum at the west end of the Tuileries Garden famous for Monet's Water Lilies; the artist donated the panels to France in 1918 and they were installed in 1927 as a 'Sistine Chapel of Impressionism'."
+        },
+        {
+          "name": "Musée de la Chasse et de la Nature",
+          "latitude": 48.86147,
+          "longitude": 2.35868,
+          "category": "Cultural",
+          "neighborhood": "Le Marais",
+          "description": "Unique museum exploring human–nature relationships through hunting traditions; founded by François and Jacqueline Sommer and opened in 1967."
+        },
+        {
+          "name": "Musée de Luxembourg",
+          "latitude": 48.8488366876659,
+          "longitude": 2.33402944726573,
+          "category": "Cultural",
+          "neighborhood": "6th Arrondissement",
+          "description": "A historic Paris museum known for intimate exhibitions on art, photography, and cultural history."
+        },
+        {
+          "name": "Musée de Montmartre",
+          "latitude": 48.8877177706574,
+          "longitude": 2.34067444172826,
+          "category": "Cultural",
+          "neighborhood": "Montmartre",
+          "description": "A former artists’ residence overlooking Montmartre’s vineyards, now a museum tracing the neighborhood’s bohemian, artistic, and cabaret history."
+        },
+        {
+          "name": "Musée National Picasso‑Paris",
+          "latitude": 48.85983,
+          "longitude": 2.36261,
+          "category": "Art",
+          "neighborhood": "Le Marais",
+          "description": "Art gallery in the 17th‑century Hôtel Salé dedicated to Pablo Picasso's work; the collection holds over 5 000 pieces."
+        },
+        {
+          "name": "Musee Rodin",
+          "latitude": 48.85535,
+          "longitude": 2.31565,
+          "category": "Art",
+          "neighborhood": "7th Arrondissement",
+          "description": "Museum dedicated to sculptor Auguste Rodin's works, displaying masterpieces like 'The Thinker' and 'The Kiss' inside an 18th-century mansion and sculpture garden."
+        },
+        {
+          "name": "National Archives Museum – Hôtel de Soubise",
+          "latitude": 48.86028,
+          "longitude": 2.35732,
+          "category": "Historical",
+          "neighborhood": "Le Marais",
+          "description": "Museum preserving France's documentary heritage from the Merovingian era through 1958, housed in the historic Hôtel de Soubise and Hôtel de Rohan."
+        },
+        {
+          "name": "Notre‑Dame Cathedral",
+          "latitude": 48.8531,
+          "longitude": 2.3497,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité",
+          "description": "Gothic masterpiece built from the 12th to 14th centuries with soaring flying buttresses and rose windows; seat of the Archdiocese of Paris."
+        },
+        {
+          "name": "Opera Bastille",
+          "latitude": 48.85271,
+          "longitude": 2.37033,
+          "category": "Cultural",
+          "neighborhood": "Bastille",
+          "description": "Modern opera house designed by architect Carlos Ott and inaugurated in 1989; it serves as the main venue for the Paris National Opera."
+        },
+        {
+          "name": "Palais de Justice",
+          "latitude": 48.85584,
+          "longitude": 2.34513,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité",
+          "description": "Massive courthouse complex on the Île de la Cité housing France's Court of Cassation and Paris Court of Appeal."
+        },
+        {
+          "name": "Palais Garnier",
+          "latitude": 48.87213,
+          "longitude": 2.33142,
+          "category": "Art",
+          "neighborhood": "9th Arrondissement",
+          "description": "Opulent 1,979-seat opera house completed in 1875 by architect Charles Garnier; its marble foyer and gilded auditorium epitomise Second-Empire grandeur."
+        },
+        {
+          "name": "Panthéon",
+          "latitude": 48.84635,
+          "longitude": 2.34632,
+          "category": "Historical",
+          "neighborhood": "Latin Quarter",
+          "description": "Neoclassical mausoleum built between 1758 and 1790 as a church; it now honours France's great men and women, housing the tombs of Voltaire, Rousseau, Marie Curie and others."
+        },
+        {
+          "name": "Parc des Buttes-Chaumont",
+          "latitude": 48.8810660167225,
+          "longitude": 2.38277162886061,
+          "category": "Nature",
+          "neighborhood": "19th Arrondissement",
+          "description": "19th-century park in former quarry, with tall trees, lake, waterfalls and old, iron railway bridge."
+        },
+        {
+          "name": "Paris",
+          "latitude": 48.8572737317906,
+          "longitude": 2.35029566593096,
+          "category": "City",
+          "neighborhood": null,
+          "description": "Capital of France known for art, fashion, and culture."
+        },
+        {
+          "name": "Paroisse Saint‑Paul‑Saint‑Louis",
+          "latitude": 48.85465,
+          "longitude": 2.36141,
+          "category": "Historical",
+          "neighborhood": "Le Marais",
+          "description": "Jesuit Baroque church built 1627–1641 on rue Saint‑Antoine; the first Parisian church to adopt Jesuit architectural style."
+        },
+        {
+          "name": "Pavillon Davioud",
+          "latitude": 48.8451349727262,
+          "longitude": 2.33276082438816,
+          "category": "Historical",
+          "neighborhood": "6th Arrondissement",
+          "description": "A small 19th-century garden pavilion in the Luxembourg Gardens, built by Gabriel Davioud and still used today for art exhibitions and cultural events."
+        },
+        {
+          "name": "Picasso's First Studio",
+          "latitude": 48.8861607514134,
+          "longitude": 2.33884729977199,
+          "category": "Art",
+          "neighborhood": "Montmartre",
+          "description": "Where a young artist began testing the ideas, forms, and restless curiosity that would later change modern art."
+        },
+        {
+          "name": "Place Dauphine",
+          "latitude": 48.85642,
+          "longitude": 2.34225,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité",
+          "description": "Triangular square commissioned by Henri IV in 1607 and named after his heir; brick‑and‑stone houses surround a quiet park and cafés."
+        },
+        {
+          "name": "Place de la Bastille",
+          "latitude": 48.85331,
+          "longitude": 2.36939,
+          "category": "Historical",
+          "neighborhood": "Bastille",
+          "description": "Square on the site of the Bastille prison stormed on 14 July 1789; today it is a hub for demonstrations, nightlife and the July Column."
+        },
+        {
+          "name": "Place de la Concorde",
+          "latitude": 48.86572,
+          "longitude": 2.32103,
+          "category": "Historical",
+          "neighborhood": "8th Arrondissement",
+          "description": "Vast 18th-century square designed by Ange-Jacques Gabriel and renamed during the French Revolution; features the 23-m Luxor Obelisk and two monumental fountains."
+        },
+        {
+          "name": "Place de la Republique",
+          "latitude": 48.86819,
+          "longitude": 2.36336,
+          "category": "Historical",
+          "neighborhood": "3rd Arrondissement",
+          "description": "Large square on the border of the 3rd, 10th and 11th Arrondissements; formerly Place du Chateau d'Eau, it was renamed in 1879 and contains the Monument a la Republique with a statue of Marianne."
+        },
+        {
+          "name": "Place des Vosges",
+          "latitude": 48.85572,
+          "longitude": 2.36528,
+          "category": "Historical",
+          "neighborhood": "Le Marais",
+          "description": "Henry IV's red‑brick square (1605–1612), Paris's oldest planned square, surrounded by arcaded mansions and a formal garden."
+        },
+        {
+          "name": "Place du Tertre",
+          "latitude": 48.886515423717,
+          "longitude": 2.34079558946201,
+          "category": "Cultural",
+          "neighborhood": "Montmartre",
+          "description": "Historic Montmartre square known for its open-air artists, cafés, and village-like atmosphere."
+        },
+        {
+          "name": "Place Vendome",
+          "latitude": 48.86753,
+          "longitude": 2.32936,
+          "category": "Cultural",
+          "neighborhood": "1st Arrondissement",
+          "description": "Neoclassical square north of the Tuileries known for the Ritz, Cartier, Chanel and the Ministry of Justice; the central Vendome Column commemorates Napoleon's victories."
+        },
+        {
+          "name": "Point Zero for the Roads of France",
+          "latitude": 48.85356,
+          "longitude": 2.34864,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité",
+          "description": "Bronze star set in the parvis of Notre‑Dame since 1924 marking Kilometre Zero – the point from which all road distances from Paris are measured."
+        },
+        {
+          "name": "Pont de la Tournelle",
+          "latitude": 48.85083,
+          "longitude": 2.35544,
+          "category": "Historical",
+          "neighborhood": "Île Saint‑Louis",
+          "description": "Three‑arch bridge linking Île Saint‑Louis to the Left Bank; rebuilt in 1928 and topped by a statue of St Genevieve."
+        },
+        {
+          "name": "Pont Marie",
+          "latitude": 48.85262,
+          "longitude": 2.35717,
+          "category": "Historical",
+          "neighborhood": "Île Saint‑Louis",
+          "description": "Stone arch bridge connecting Île Saint‑Louis to the Right Bank, built 1614‑1635 and among the oldest bridges in Paris."
+        },
+        {
+          "name": "Pont Neuf",
+          "latitude": 48.85681,
+          "longitude": 2.34058,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité",
+          "description": "Oldest surviving bridge across the Seine (1578–1607) with broad sidewalks and two spans linking the Right and Left Banks."
+        },
+        {
+          "name": "Pyramide du Louvre",
+          "latitude": 48.86115,
+          "longitude": 2.33584,
+          "category": "Art",
+          "neighborhood": "1st Arrondissement",
+          "description": "Glass pyramid designed by I.M. Pei and commissioned by President Francois Mitterrand; completed in 1989, it stands 22 m high with 673 panes and serves as the Louvre's main entrance."
+        },
+        {
+          "name": "Rue du Faubourg Saint-Honore",
+          "latitude": 48.8705,
+          "longitude": 2.31758,
+          "category": "Cultural",
+          "neighborhood": "8th Arrondissement",
+          "description": "One of Paris's most elegant shopping streets near the Tuileries; lined with luxury boutiques and museums, it blends tradition with fashion houses like Hermes."
+        },
+        {
+          "name": "Sacré-Cœur Basilica",
+          "latitude": 48.8867292449894,
+          "longitude": 2.34309357777408,
+          "category": "Historical",
+          "neighborhood": "Montmartre",
+          "description": "A hilltop basilica built after a century of upheaval, now one of Paris’s most recognizable silhouettes and Montmartre’s great landmark."
+        },
+        {
+          "name": "Sainte‑Chapelle",
+          "latitude": 48.85547,
+          "longitude": 2.34475,
+          "category": "Historical",
+          "neighborhood": "Île de la Cité",
+          "description": "13th‑century Gothic chapel built by King Louis IX to house holy relics; renowned for its towering stained‑glass windows."
+        },
+        {
+          "name": "Sorbonne Universite",
+          "latitude": 48.84717,
+          "longitude": 2.34479,
+          "category": "Cultural",
+          "neighborhood": "Latin Quarter",
+          "description": "Prestigious university founded in the 13th century; heart of Parisian intellectual life and one of Europe's oldest centres of higher education."
+        },
+        {
+          "name": "Square du Vert‑Galant",
+          "latitude": 48.85756,
+          "longitude": 2.34003,
+          "category": "Nature",
+          "neighborhood": "Île de la Cité",
+          "description": "Leafy point park (1884) at the tip of Île de la Cité, named for King Henri IV and offering panoramic views of the Seine."
+        },
+        {
+          "name": "Square Louise Michel",
+          "latitude": 48.885043998932,
+          "longitude": 2.34338971861147,
+          "category": "Historical",
+          "neighborhood": "Montmartre",
+          "description": "A lively green slope beneath Sacré-Cœur, where Montmartre opens into one of its most iconic views over Paris."
+        },
+        {
+          "name": "Statue Anne de Bretagne",
+          "latitude": 48.8474722422155,
+          "longitude": 2.3362724003082,
+          "category": "Historical",
+          "neighborhood": "6th Arrondissement",
+          "description": "A quiet tribute to the Breton duchess who became queen of France twice, and whose life helped bind Brittany to the French crown."
+        },
+        {
+          "name": "Stravinsky Fountain",
+          "latitude": 48.85963,
+          "longitude": 2.35134,
+          "category": "Art",
+          "neighborhood": "Beaubourg",
+          "description": "Whimsical fountain of 16 kinetic sculptures inspired by Stravinsky's 'Rite of Spring', created in 1983 by Jean Tinguely and Niki de Saint Phalle."
+        },
+        {
+          "name": "The Centre Pompidou",
+          "latitude": 48.86084,
+          "longitude": 2.35217,
+          "category": "Cultural",
+          "neighborhood": "Beaubourg",
+          "description": "High‑tech cultural centre housing Europe's largest modern and contemporary art collection, plus a library and music centre; designed by Renzo Piano, Richard Rogers and Gianfranco Franchini and opened in 1977."
+        },
+        {
+          "name": "Tuileries Garden",
+          "latitude": 48.86365,
+          "longitude": 2.32749,
+          "category": "Nature",
+          "neighborhood": "1st Arrondissement",
+          "description": "Formal garden laid out by Catherine de Medicis in the 16th century and redesigned by Andre Le Notre for Louis XIV; it later became a stage for royal festivities and revolutionary events."
+        }
+      ]
+    }
+  ]
+}

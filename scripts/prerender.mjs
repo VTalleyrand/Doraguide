@@ -12,6 +12,10 @@ import {
   socialImage,
   storyRoutePaths,
 } from '../client/src/metadata.js';
+import {
+  cityGuideRoutePaths,
+  neighborhoodGuideRoutePaths,
+} from '../client/src/data/cityGuides.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
@@ -95,6 +99,8 @@ const writeRoute = async (routePath, html) => {
 
 const prerenderRoutes = [
   ...Object.keys(routeMetadata),
+  ...cityGuideRoutePaths,
+  ...neighborhoodGuideRoutePaths,
   ...storyRoutePaths,
 ];
 
@@ -108,5 +114,29 @@ for (const routePath of prerenderRoutes) {
 
   await writeRoute(routePath, html);
 }
+
+const escapeXml = (value) =>
+  value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;');
+
+const sitemapRoutes = [
+  ...Object.keys(routeMetadata),
+  ...cityGuideRoutePaths,
+  ...neighborhoodGuideRoutePaths,
+];
+const sitemap = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...sitemapRoutes.map(
+    (routePath) => `  <url><loc>${escapeXml(`${siteUrl}${routePath}`)}</loc></url>`
+  ),
+  '</urlset>',
+].join('\n');
+
+await writeFile(path.join(distDir, 'sitemap.xml'), sitemap);
 
 await rm(path.join(distDir, 'server'), { force: true, recursive: true });

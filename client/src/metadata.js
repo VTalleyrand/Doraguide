@@ -6,6 +6,10 @@ import {
   storyRouteNames,
   storyRoutePaths,
 } from './data/featuredLocations.js';
+import {
+  getCityGuideByPath,
+  getNeighborhoodGuideByPath,
+} from './data/cityGuides.js';
 
 export const siteUrl = 'https://doraguide.com';
 
@@ -73,6 +77,35 @@ export const routeMetadata = {
 export { storyRouteNames, storyRoutePaths };
 
 export const getRouteMetadata = (pathname) => {
+  const neighborhoodGuide = getNeighborhoodGuideByPath(pathname);
+
+  if (neighborhoodGuide) {
+    const { city, neighborhood } = neighborhoodGuide;
+    const canonicalPath = `/cities/${city.routeSlug}/${neighborhood.routeSlug}`;
+    const title = `Places to See in ${neighborhood.name}, ${city.name} | Dora`;
+
+    return {
+      title,
+      description: `Explore ${neighborhood.landmarkCount} places in ${neighborhood.name}, ${city.name}. Find places to see, local history, and stories behind the places around you.`,
+      canonicalPath,
+      socialTitle: `Discover ${neighborhood.name} with Dora`,
+    };
+  }
+
+  const city = getCityGuideByPath(pathname);
+
+  if (city) {
+    const canonicalPath = `/cities/${city.routeSlug}`;
+    const title = `Places to See in ${city.name}: Neighborhood Guide | Dora`;
+
+    return {
+      title,
+      description: `Explore ${city.landmarks.length} places across neighborhoods in ${city.name}, with stories behind the landmarks around you.`,
+      canonicalPath,
+      socialTitle: `Discover ${city.name} with Dora`,
+    };
+  }
+
   const slug = getStorySlugFromPath(pathname);
   const isStoryRoute = isStoryPathCandidate(pathname);
 

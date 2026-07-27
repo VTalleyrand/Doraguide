@@ -63,7 +63,21 @@
         "image": "https://doraguide.com/dora-social-preview.jpg"
       }
     </script>
-    <script defer src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
+    <script>
+      window.doraMapKitReady = false;
+      window.doraMapKitReadyCallback = () => {
+        window.doraMapKitReady = true;
+        window.dispatchEvent(new Event('dora:mapkit-ready'));
+      };
+    </script>
+    <script
+      async
+      crossorigin
+      src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js"
+      data-token="%VITE_MAPKIT_TOKEN%"
+      data-libraries="map,annotations,look-around"
+      data-callback="doraMapKitReadyCallback"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />

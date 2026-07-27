@@ -1,0 +1,225 @@
+.city-guide {
+  background: var(--color-background);
+}
+
+.city-guide__inner {
+  width: min(100% - 4.8rem, 112rem);
+  margin-inline: auto;
+}
+
+.city-guide__hero {
+  padding: 8rem 0 5.6rem;
+}
+
+.city-guide__eyebrow {
+  margin: 0;
+  color: var(--marker-indigo);
+  font-size: var(--type-label-size);
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: var(--type-label-line-height);
+  text-transform: uppercase;
+}
+
+.city-guide h1,
+.city-guide h2,
+.city-guide h3,
+.city-guide h4 {
+  color: var(--color-text);
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.city-guide h1 {
+  max-width: 16ch;
+  margin: 0;
+  font-size: clamp(3.6rem, 4.2vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.city-guide__intro {
+  max-width: 62ch;
+  margin: 2.4rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 1.9rem;
+  line-height: 1.55;
+}
+
+.city-guide__content {
+  padding: 0;
+}
+
+.city-guide__heading {
+  max-width: 72rem;
+}
+
+.city-guide__heading h2,
+.city-guide__closing h2 {
+  margin: 1.3rem 0 0;
+  font-size: var(--type-section-title-size);
+  font-weight: var(--type-section-title-weight);
+  line-height: var(--type-section-title-line-height);
+}
+
+.city-guide__heading > p:last-child {
+  max-width: 58ch;
+  margin: 1.6rem 0 0;
+  color: var(--color-text-subtle);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line-height);
+}
+
+.city-guide__neighborhoods {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 4rem;
+}
+
+.city-guide__neighborhood {
+  min-width: 0;
+  padding: 2.2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.8rem;
+  background: var(--color-surface);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.city-guide__neighborhood:hover {
+  border-color: var(--marker-indigo);
+  box-shadow: 0 0.8rem 2.4rem rgba(31, 27, 22, 0.08);
+  transform: translateY(-0.2rem);
+}
+
+.city-guide__neighborhood:focus-visible {
+  outline: 0.3rem solid var(--marker-indigo);
+  outline-offset: 0.3rem;
+}
+
+.city-guide__neighborhood-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.city-guide__neighborhood h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.city-guide__neighborhood-heading p {
+  margin: 0;
+  color: var(--marker-indigo);
+  font-size: 1.3rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.city-guide__neighborhood ul {
+  display: grid;
+  gap: 0.65rem;
+  margin: 2.2rem 0 0;
+  padding: 1.6rem 0 0;
+  border-top: 1px solid var(--color-border);
+  list-style: none;
+}
+
+.city-guide__neighborhood li {
+  position: relative;
+  padding-left: 1.3rem;
+  color: var(--color-text-subtle);
+  font-size: 1.45rem;
+  line-height: 1.5;
+}
+
+.city-guide__neighborhood li::before {
+  content: '';
+  position: absolute;
+  top: 0.85rem;
+  left: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--marker-indigo);
+}
+
+.city-guide__closing {
+  display: flex;
+  justify-content: center;
+  margin-top: 9rem;
+  padding: clamp(5.6rem, 8vw, 8rem) 2.4rem;
+  background: var(--color-surface);
+}
+
+.city-guide__closing-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 60ch;
+  text-align: center;
+}
+
+.city-guide__closing h2 {
+  margin: 0;
+  font-size: var(--type-section-title-size);
+  font-weight: var(--type-section-title-weight);
+  line-height: var(--type-section-title-line-height);
+}
+
+.city-guide__closing p {
+  max-width: 49rem;
+  margin: 1.2rem 0 0;
+  color: var(--color-text-subtle);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line-height);
+}
+
+.city-guide__closing .primary-btn {
+  margin-top: 2rem;
+}
+
+@media (max-width: 1020px) {
+  .city-guide__neighborhoods {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .city-guide__inner {
+    width: min(100% - 3.2rem, 112rem);
+  }
+
+  .city-guide__hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .city-guide h1 {
+    font-size: clamp(3.6rem, 10vw, 4.8rem);
+  }
+
+  .city-guide__intro {
+    font-size: 1.7rem;
+  }
+
+  .city-guide__content {
+    padding: 6rem 0 0;
+  }
+
+  .city-guide__neighborhoods {
+    margin-top: 4rem;
+  }
+
+  .city-guide__neighborhoods {
+    grid-template-columns: 1fr;
+  }
+
+  .city-guide__closing {
+    margin-top: 6rem;
+    padding: 5.6rem 1.6rem;
+  }
+}

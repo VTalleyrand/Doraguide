@@ -1,0 +1,67 @@
+.neighborhood-map {
+  position: relative;
+  overflow: hidden;
+  min-height: 74rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.8rem;
+  background: var(--color-surface-muted);
+}
+
+.neighborhood-map__selection {
+  position: absolute;
+  z-index: 1;
+  top: 1.6rem;
+  left: 1.6rem;
+  max-width: calc(100% - 3.2rem);
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0.8rem 2rem rgba(31, 27, 22, 0.1);
+  color: var(--color-text);
+  font-size: 1.3rem;
+  font-weight: 650;
+  line-height: 1.35;
+  pointer-events: none;
+}
+
+.neighborhood-map__surface {
+  position: absolute;
+  inset: 0;
+}
+
+.neighborhood-map__surface img {
+  display: inline-block;
+  max-width: none;
+  height: auto;
+  vertical-align: middle;
+}
+
+.neighborhood-map__surface a {
+  line-height: normal;
+}
+
+.neighborhood-map__fallback {
+  position: absolute;
+  inset: auto 1.6rem 1.6rem;
+  z-index: 1;
+  margin: 0;
+  padding: 1rem 1.2rem;
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-text-subtle);
+  font-size: 1.35rem;
+}
+
+@media (max-width: 760px) {
+  .neighborhood-map {
+    min-height: 42rem;
+  }
+
+  .neighborhood-map__selection {
+    top: 1.2rem;
+    left: 1.2rem;
+    max-width: calc(100% - 2.4rem);
+  }
+}

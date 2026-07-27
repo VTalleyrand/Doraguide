@@ -8,6 +8,9 @@ import {
 } from './appBanner.js';
 import { getRouteMetadata, siteUrl, socialImage } from './metadata.js';
 import {
+  isCityGuidePath,
+  isValidCityGuidePath,
+  isValidNeighborhoodGuidePath,
   isStoryPath,
   isValidStoryPath,
   normalizePath,
@@ -85,7 +88,12 @@ function RouterApp() {
   useEffect(() => {
     const normalized = normalizePath(location.pathname);
 
-    if (isStoryPath(normalized) && !isValidStoryPath(normalized)) {
+    if (
+      (isStoryPath(normalized) && !isValidStoryPath(normalized)) ||
+      (isCityGuidePath(normalized) &&
+        !isValidCityGuidePath(normalized) &&
+        !isValidNeighborhoodGuidePath(normalized))
+    ) {
       window.history.replaceState({}, '', '/');
       setLocation({ pathname: '/', hash: '' });
     }
