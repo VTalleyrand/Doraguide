@@ -1,9 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { appMarkerColors } from '../components/MapExperience/mapExperienceData.js';
-import {
-  getFeaturedStoryBySlug,
-  getStorySlugFromPath,
-} from '../data/featuredLocations.js';
+import { getFeaturedStoryByPath } from '../data/featuredLocations.js';
 import {
   formatClock,
 } from '../components/MapExperience/mapExperienceUtils.js';
@@ -57,10 +54,7 @@ const StoryListen = ({ routePath }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [loadedDuration, setLoadedDuration] = useState(0);
 
-  const story = useMemo(() => {
-    const slug = getStorySlugFromPath(routePath);
-    return getFeaturedStoryBySlug(slug);
-  }, [routePath]);
+  const story = useMemo(() => getFeaturedStoryByPath(routePath), [routePath]);
 
   const markerColor =
     storyCityAccentColors[story?.citySlug] ||
@@ -145,7 +139,6 @@ const StoryListen = ({ routePath }) => {
             <h1 className="story-listen__title" id="story-listen-title">
               {story.title}
             </h1>
-            <p className="story-listen__hook">{story.hook}</p>
 
             <div className="story-listen__player">
               <button

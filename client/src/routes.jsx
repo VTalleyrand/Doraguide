@@ -11,7 +11,7 @@ import NeighborhoodGuide from './pages/NeighborhoodGuide.jsx';
 import {
   STORY_ROUTE_BASE,
   STORY_ROUTE_PREFIX,
-  getFeaturedStoryBySlug,
+  getFeaturedStoryByPath,
   getStorySlugFromPath,
   isStoryPathCandidate,
   normalizeSitePath,
@@ -42,10 +42,7 @@ export { CITY_GUIDE_ROUTE_BASE, CITY_GUIDE_ROUTE_PREFIX };
 
 export const isStoryPath = isStoryPathCandidate;
 
-export const isValidStoryPath = (path) => {
-  const slug = getStorySlugFromPath(path);
-  return Boolean(slug && getFeaturedStoryBySlug(slug));
-};
+export const isValidStoryPath = (path) => Boolean(getFeaturedStoryByPath(path));
 
 export const isCityGuidePath = isCityGuidePathCandidate;
 

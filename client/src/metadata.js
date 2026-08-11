@@ -1,7 +1,5 @@
 import {
-  STORY_ROUTE_PREFIX,
-  getFeaturedStoryBySlug,
-  getStorySlugFromPath,
+  getFeaturedStoryByPath,
   isStoryPathCandidate,
   storyRouteNames,
   storyRoutePaths,
@@ -106,22 +104,19 @@ export const getRouteMetadata = (pathname) => {
     };
   }
 
-  const slug = getStorySlugFromPath(pathname);
   const isStoryRoute = isStoryPathCandidate(pathname);
 
   if (isStoryRoute) {
-    const story = getFeaturedStoryBySlug(slug);
+    const story = getFeaturedStoryByPath(pathname);
     if (!story) return routeMetadata['/'];
 
-    const canonicalPath = `${STORY_ROUTE_PREFIX}${slug}`;
+    const canonicalPath = story.path;
     const locationName = storyRouteNames[canonicalPath] || story.title;
     const title = `Dora - Discovering ${locationName}`;
 
     return {
       title,
-      description:
-        story.hook ||
-        'Listen to a free Dora audio story, then get early access to the app.',
+      description: `Listen to the free Dora audio story for ${locationName} in ${story.city}, then get the app for more places nearby.`,
       canonicalPath,
       socialTitle: title,
     };

@@ -126,19 +126,6 @@ body.story-listen-page {
   text-shadow: 0 0.1rem 0 #ffffff;
 }
 
-.story-listen__hook {
-  width: min(100%, 32rem);
-  margin: 1.35rem auto 0;
-  overflow: visible;
-  white-space: normal;
-  font-size: 1.28rem;
-  line-height: 1.45;
-  color: var(--color-text-subtle);
-  text-align: center;
-  text-wrap: pretty;
-  transform: translateY(-3rem);
-}
-
 .story-listen__player {
   width: 100%;
   margin-top: 2.4rem;
@@ -381,11 +368,6 @@ body.story-listen-page {
   .story-listen__eyebrow {
     top: 2rem;
     left: 2rem;
-  }
-
-  .story-listen__hook {
-    width: min(100%, 30rem);
-    font-size: 1.18rem;
   }
 
   .story-listen__title {
