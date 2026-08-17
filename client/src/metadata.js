@@ -52,7 +52,7 @@ export const routeMetadata = {
   '/press': {
     title: 'Press — Dora',
     description:
-      'Find Dora press and media information, or reach out for coverage and partnership conversations.',
+      'Download the Dora press kit for logos, product images, and media information.',
     canonicalPath: '/press',
     socialTitle: 'Press — Dora',
   },
