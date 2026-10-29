@@ -1,0 +1,5 @@
+<loc>https://www.doraguide.com/
+<loc>https://www.doraguide.com/about
+<loc>https://www.doraguide.com/terms
+<loc>https://www.doraguide.com/privacy
+<loc>https://www.doraguide.com/press
