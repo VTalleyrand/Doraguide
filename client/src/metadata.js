@@ -72,6 +72,14 @@ export const routeMetadata = {
   },
 };
 
+export const notFoundMetadata = {
+  title: 'Page not found — Dora',
+  description: 'This page could not be found.',
+  canonicalPath: '/',
+  socialTitle: 'Page not found — Dora',
+  noCanonical: true,
+};
+
 export { storyRouteNames, storyRoutePaths };
 
 export const getRouteMetadata = (pathname) => {
@@ -108,7 +116,7 @@ export const getRouteMetadata = (pathname) => {
 
   if (isStoryRoute) {
     const story = getFeaturedStoryByPath(pathname);
-    if (!story) return routeMetadata['/'];
+    if (!story) return notFoundMetadata;
 
     const canonicalPath = story.path;
     const locationName = storyRouteNames[canonicalPath] || story.title;
@@ -122,5 +130,7 @@ export const getRouteMetadata = (pathname) => {
     };
   }
 
-  return routeMetadata[pathname === '/support' ? '/help' : pathname] || routeMetadata['/'];
+  return (
+    routeMetadata[pathname === '/support' ? '/help' : pathname] || notFoundMetadata
+  );
 };

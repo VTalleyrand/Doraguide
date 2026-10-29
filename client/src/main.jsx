@@ -8,11 +8,6 @@ import {
 } from './appBanner.js';
 import { getRouteMetadata, siteUrl, socialImage } from './metadata.js';
 import {
-  isCityGuidePath,
-  isValidCityGuidePath,
-  isValidNeighborhoodGuidePath,
-  isStoryPath,
-  isValidStoryPath,
   normalizePath,
   resolvePageForPath,
 } from './routes.jsx';
@@ -25,10 +20,13 @@ const setMetaContent = (selector, content) => {
 };
 
 const setCanonicalUrl = (href) => {
-  const link = document.head.querySelector('link[rel="canonical"]');
-  if (link) {
-    link.setAttribute('href', href);
+  let link = document.head.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'canonical';
+    document.head.appendChild(link);
   }
+  link.setAttribute('href', href);
 };
 
 const setSmartAppBanner = (content) => {
@@ -86,25 +84,15 @@ function RouterApp() {
   }, []);
 
   useEffect(() => {
-    const normalized = normalizePath(location.pathname);
-
-    if (
-      (isStoryPath(normalized) && !isValidStoryPath(normalized)) ||
-      (isCityGuidePath(normalized) &&
-        !isValidCityGuidePath(normalized) &&
-        !isValidNeighborhoodGuidePath(normalized))
-    ) {
-      window.history.replaceState({}, '', '/');
-      setLocation({ pathname: '/', hash: '' });
-    }
-  }, [location.pathname]);
-
-  useEffect(() => {
     const metadata = getRouteMetadata(location.pathname);
     const canonicalUrl = `${siteUrl}${metadata.canonicalPath}`;
 
     document.title = metadata.title;
-    setCanonicalUrl(canonicalUrl);
+    if (metadata.noCanonical) {
+      document.head.querySelector('link[rel="canonical"]')?.remove();
+    } else {
+      setCanonicalUrl(canonicalUrl);
+    }
     setMetaContent('meta[name="description"]', metadata.description);
     setMetaContent('meta[property="og:title"]', metadata.socialTitle);
     setMetaContent('meta[property="og:description"]', metadata.description);

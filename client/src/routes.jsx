@@ -8,6 +8,7 @@ import CityVote from './pages/CityVote.jsx';
 import StoryListen from './pages/StoryListen.jsx';
 import CityGuide from './pages/CityGuide.jsx';
 import NeighborhoodGuide from './pages/NeighborhoodGuide.jsx';
+import NotFound from './pages/NotFound.jsx';
 import {
   STORY_ROUTE_BASE,
   STORY_ROUTE_PREFIX,
@@ -57,5 +58,5 @@ export const resolvePageForPath = (path) => {
   if (isValidNeighborhoodGuidePath(normalizedPath)) return NeighborhoodGuide;
   if (isValidCityGuidePath(normalizedPath)) return CityGuide;
   if (isValidStoryPath(normalizedPath)) return StoryListen;
-  return routes['/'];
+  return NotFound;
 };
