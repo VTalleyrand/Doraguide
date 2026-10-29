@@ -103,6 +103,7 @@ const prerenderRoutes = [
   ...cityGuideRoutePaths,
   ...neighborhoodGuideRoutePaths,
   ...storyRoutePaths,
+  '/support', // alias of /help, canonical /help
 ];
 
 for (const routePath of prerenderRoutes) {
