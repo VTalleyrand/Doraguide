@@ -31,11 +31,11 @@ export const routeMetadata = {
     socialTitle,
   },
   '/about': {
-    title: 'About — Dora',
+    title: 'About the Self-Guided Audio Tour Guide App — Dora',
     description:
       'Learn about Dora, a mobile audio guide app for self-guided walking tours and city discovery.',
     canonicalPath: '/about',
-    socialTitle: 'About — Dora',
+    socialTitle: 'About the Self-Guided Audio Tour Guide App — Dora',
   },
   '/terms': {
     title: 'Terms of Service — Dora',
@@ -52,18 +52,18 @@ export const routeMetadata = {
     socialTitle: 'Privacy Policy — Dora',
   },
   '/press': {
-    title: 'Press — Dora',
+    title: 'Press Kit: Logos, Images and Media Info — Dora',
     description:
       'Download the Dora press kit for logos, product images, and media information.',
     canonicalPath: '/press',
-    socialTitle: 'Press — Dora',
+    socialTitle: 'Press Kit: Logos, Images and Media Info — Dora',
   },
   '/help': {
-    title: 'Help — Dora',
+    title: 'Help Center: Stories, Routes, Passes and More — Dora',
     description:
       'Find answers to common questions about using Dora, from stories and routes to passes, Roam with Friends, and troubleshooting.',
     canonicalPath: '/help',
-    socialTitle: 'Help — Dora',
+    socialTitle: 'Help Center: Stories, Routes, Passes and More — Dora',
   },
   '/vote': {
     title: 'Vote for Dora’s Next City',
