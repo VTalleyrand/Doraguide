@@ -42,8 +42,12 @@ const sendNotFound = (response) => {
   response.end('Not found');
 };
 
+// Client routes that render another page and have no prerendered file of their own.
+const routeAliases = { '/support': '/help' };
+
 const resolveStaticPath = (pathname) => {
-  const decodedPath = decodeURIComponent(pathname);
+  const trimmedPath = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+  const decodedPath = decodeURIComponent(routeAliases[trimmedPath] || pathname);
   const cleanPath = decodedPath === '/' ? '/index.html' : decodedPath;
   const resolvedPath = path.resolve(distDir, `.${cleanPath}`);
 
@@ -108,8 +112,14 @@ const serveStatic = async (request, response, url) => {
 
     // Unknown URL: answer with the prerendered not-found page and a real 404.
     filePath = path.join(distDir, '404.html');
-    fileStat = await stat(filePath);
     statusCode = 404;
+
+    try {
+      fileStat = await stat(filePath);
+    } catch {
+      sendNotFound(response);
+      return;
+    }
   }
 
   const extension = path.extname(filePath);
