@@ -9,7 +9,7 @@ import {
   getNeighborhoodGuideByPath,
 } from './data/cityGuides.js';
 
-export const siteUrl = 'https://doraguide.com';
+export const siteUrl = 'https://www.doraguide.com';
 
 export const appStoreUrl =
   'https://apps.apple.com/us/app/dora-landmarks-stories/id6746723814';
