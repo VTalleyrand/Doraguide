@@ -42,13 +42,17 @@ const sendNotFound = (response) => {
   response.end('Not found');
 };
 
+// Real routes that have no prerendered directory of their own.
+const routeAliases = { '/support': '/help' };
+
 const resolveStaticPath = (pathname) => {
   const decodedPath = decodeURIComponent(pathname);
-  const cleanPath = decodedPath === '/' ? '/index.html' : decodedPath;
+  const aliasedPath = routeAliases[decodedPath.replace(/\/+$/, '')] || decodedPath;
+  const cleanPath = aliasedPath === '/' ? '/index.html' : aliasedPath;
   const resolvedPath = path.resolve(distDir, `.${cleanPath}`);
 
   if (!resolvedPath.startsWith(distDir)) {
-    return path.join(distDir, 'index.html');
+    return path.join(distDir, '404.html');
   }
 
   return resolvedPath;
@@ -91,6 +95,7 @@ const parseRange = (range, fileSize) => {
 const serveStatic = async (request, response, url) => {
   let filePath = resolveStaticPath(url.pathname);
   let fileStat;
+  let statusCode = 200;
 
   try {
     fileStat = await stat(filePath);
@@ -105,7 +110,9 @@ const serveStatic = async (request, response, url) => {
       return;
     }
 
-    filePath = path.join(distDir, 'index.html');
+    // Unknown URL: serve the prerendered not-found page with a real 404.
+    statusCode = 404;
+    filePath = path.join(distDir, '404.html');
     fileStat = await stat(filePath);
   }
 
@@ -121,7 +128,7 @@ const serveStatic = async (request, response, url) => {
   };
   const range = request.headers.range;
 
-  if (range && fileStat.size > 0) {
+  if (range && fileStat.size > 0 && statusCode === 200) {
     const parsedRange = parseRange(range, fileStat.size);
 
     if (!parsedRange) {
@@ -148,7 +155,7 @@ const serveStatic = async (request, response, url) => {
     return;
   }
 
-  response.writeHead(200, {
+  response.writeHead(statusCode, {
     ...baseHeaders,
     'Content-Length': fileStat.size,
   });
