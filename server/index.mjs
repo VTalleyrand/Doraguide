@@ -91,6 +91,7 @@ const parseRange = (range, fileSize) => {
 const serveStatic = async (request, response, url) => {
   let filePath = resolveStaticPath(url.pathname);
   let fileStat;
+  let statusCode = 200;
 
   try {
     fileStat = await stat(filePath);
@@ -105,8 +106,10 @@ const serveStatic = async (request, response, url) => {
       return;
     }
 
-    filePath = path.join(distDir, 'index.html');
+    // Unknown URL: serve the prerendered not-found page with a real 404.
+    filePath = path.join(distDir, '404.html');
     fileStat = await stat(filePath);
+    statusCode = 404;
   }
 
   const extension = path.extname(filePath);
@@ -121,7 +124,7 @@ const serveStatic = async (request, response, url) => {
   };
   const range = request.headers.range;
 
-  if (range && fileStat.size > 0) {
+  if (range && fileStat.size > 0 && statusCode === 200) {
     const parsedRange = parseRange(range, fileStat.size);
 
     if (!parsedRange) {
@@ -148,7 +151,7 @@ const serveStatic = async (request, response, url) => {
     return;
   }
 
-  response.writeHead(200, {
+  response.writeHead(statusCode, {
     ...baseHeaders,
     'Content-Length': fileStat.size,
   });
