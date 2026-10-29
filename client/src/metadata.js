@@ -63,13 +63,6 @@ export const routeMetadata = {
     canonicalPath: '/help',
     socialTitle: 'Help Center: Stories, Routes, Passes and More — Dora',
   },
-  '/vote': {
-    title: 'Vote for Dora’s Next City',
-    description:
-      'Vote for the next city you would like to see added to Dora’s walking audio guides.',
-    canonicalPath: '/vote',
-    socialTitle: 'Vote for Dora’s Next City',
-  },
 };
 
 export const notFoundMetadata = {

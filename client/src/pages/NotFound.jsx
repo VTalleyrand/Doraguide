@@ -5,7 +5,6 @@ const links = [
   { href: '/about', label: 'About' },
   { href: '/help', label: 'Help' },
   { href: '/press', label: 'Press' },
-  { href: '/vote', label: 'Vote for a city' },
 ];
 
 function NotFound() {

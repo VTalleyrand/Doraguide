@@ -4,7 +4,6 @@ import Terms from './pages/Terms.jsx';
 import Privacy from './pages/Privacy.jsx';
 import Press from './pages/Press.jsx';
 import Help from './pages/Help.jsx';
-import CityVote from './pages/CityVote.jsx';
 import StoryListen from './pages/StoryListen.jsx';
 import CityGuide from './pages/CityGuide.jsx';
 import NeighborhoodGuide from './pages/NeighborhoodGuide.jsx';
@@ -33,7 +32,6 @@ export const routes = {
   '/press': Press,
   '/help': Help,
   '/support': Help,
-  '/vote': CityVote,
 };
 
 export const normalizePath = normalizeSitePath;
