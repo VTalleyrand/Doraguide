@@ -48,7 +48,7 @@ const resolveStaticPath = (pathname) => {
   const resolvedPath = path.resolve(distDir, `.${cleanPath}`);
 
   if (!resolvedPath.startsWith(distDir)) {
-    return path.join(distDir, 'index.html');
+    return null;
   }
 
   return resolvedPath;
@@ -88,9 +88,39 @@ const parseRange = (range, fileSize) => {
   return { start, end };
 };
 
+const serveNotFoundPage = async (request, response) => {
+  const notFoundPath = path.join(distDir, '404.html');
+  let notFoundStat;
+
+  try {
+    notFoundStat = await stat(notFoundPath);
+  } catch {
+    sendNotFound(response);
+    return;
+  }
+
+  response.writeHead(404, {
+    'Cache-Control': 'no-cache',
+    'Content-Length': notFoundStat.size,
+    'Content-Type': contentTypes['.html'],
+  });
+
+  if (request.method === 'HEAD') {
+    response.end();
+    return;
+  }
+
+  createReadStream(notFoundPath).pipe(response);
+};
+
 const serveStatic = async (request, response, url) => {
   let filePath = resolveStaticPath(url.pathname);
   let fileStat;
+
+  if (!filePath) {
+    await serveNotFoundPage(request, response);
+    return;
+  }
 
   try {
     fileStat = await stat(filePath);
@@ -105,8 +135,8 @@ const serveStatic = async (request, response, url) => {
       return;
     }
 
-    filePath = path.join(distDir, 'index.html');
-    fileStat = await stat(filePath);
+    await serveNotFoundPage(request, response);
+    return;
   }
 
   const extension = path.extname(filePath);
