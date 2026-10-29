@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T16:53:26.657Z",
+  "generatedAt": "2026-10-29T17:35:12.540Z",
   "cities": [
     {
       "slug": "amsterdam",
@@ -208,8 +208,8 @@
         },
         {
           "name": "Museumplein",
-          "latitude": 52.35755,
-          "longitude": 4.88299,
+          "latitude": 52.3570600776357,
+          "longitude": 4.8811695767238,
           "category": "Nature",
           "neighborhood": "Museumkwartier",
           "description": "One of Amsterdam's largest public squares, lined by world‑class museums and wide green lawns."
@@ -328,8 +328,8 @@
         },
         {
           "name": "Sarphatipark",
-          "latitude": 52.35442,
-          "longitude": 4.89589,
+          "latitude": 52.3542741449781,
+          "longitude": 4.89644594380673,
           "category": "Nature",
           "neighborhood": "De Pijp",
           "description": "English‑style city park with ponds, lawns, and a memorial to 19th‑century doctor Samuel Sarphati."
@@ -439,16 +439,16 @@
         },
         {
           "name": "Basílica de la Sagrada Família",
-          "latitude": 41.40381,
-          "longitude": 2.17414,
+          "latitude": 41.403557535925,
+          "longitude": 2.17438076823576,
           "category": "Art",
           "neighborhood": "Eixample",
           "description": "Gaudí's still‑unfinished basilica blending Gothic and Art Nouveau forms, begun in 1882 and expected to be completed in 2026."
         },
         {
           "name": "Camp Nou",
-          "latitude": 41.38092,
-          "longitude": 2.12264,
+          "latitude": 41.3808791481063,
+          "longitude": 2.12060999037123,
           "category": "Cultural",
           "neighborhood": "Les Corts",
           "description": "Iconic stadium opened in 1957 and home to FC Barcelona, now being expanded to seat over 100 000 spectators."
@@ -743,14 +743,14 @@
         },
         {
           "name": "Pont del Bisbe",
-          "latitude": 41.38376,
-          "longitude": 2.17619,
+          "latitude": 41.3834532549604,
+          "longitude": 2.17622532205732,
           "category": "Historical",
           "neighborhood": "Barri Gòtic",
           "description": "Neo‑Gothic bridge connecting two buildings over Carrer del Bisbe; its ornate stonework glows beautifully when lit at night."
         },
         {
-          "name": "Rambla del Raval [studio-test] [studio-test]",
+          "name": "Rambla del Raval",
           "latitude": 41.37861,
           "longitude": 2.16907,
           "category": "Cultural",
@@ -958,8 +958,8 @@
         },
         {
           "name": "Duomo di Milano",
-          "latitude": 45.46429,
-          "longitude": 9.19067,
+          "latitude": 45.4642438730626,
+          "longitude": 9.19153429169835,
           "category": "Historical",
           "neighborhood": "Centro Storico",
           "description": "Gothic cathedral begun in 1386, Italy's largest church, with thousands of spires and statues and the golden Madonnina atop its pink‑marble roof."
@@ -1413,40 +1413,40 @@
         },
         {
           "name": "Brooklyn Bridge",
-          "latitude": 40.7063095606715,
-          "longitude": -73.9968962332168,
+          "latitude": 40.7054192637775,
+          "longitude": -73.9961713032211,
           "category": "Cultural",
           "neighborhood": "Financial District",
           "description": "1883 engineering marvel linking boroughs by span."
         },
         {
           "name": "Bryant Park",
-          "latitude": 40.7535366712681,
-          "longitude": -73.9829636317907,
+          "latitude": 40.7538053695088,
+          "longitude": -73.9836182855256,
           "category": "Nature",
           "neighborhood": "Midtown",
           "description": "Midtown's green salon — lawn chairs, film nights, winter rink beside the NYPL."
         },
         {
           "name": "Bushwick Inlet Park",
-          "latitude": 40.7226031274292,
-          "longitude": -73.9612650879329,
+          "latitude": 40.7229064885346,
+          "longitude": -73.9620173851782,
           "category": "Nature",
           "neighborhood": "Williamsburg",
           "description": "A modern waterfront park transformed from a former industrial site, offering lush green spaces, public-access shoreline, and active recreation fields with stunning views of the Manhattan skyline."
         },
         {
           "name": "Carl Schurz Park",
-          "latitude": 40.7753,
-          "longitude": -73.94375,
+          "latitude": 40.7753257847688,
+          "longitude": -73.9436586245212,
           "category": "Nature",
           "neighborhood": "Upper East Side",
           "description": "Riverside lawns, promenades, and dog runs surrounding Gracie Mansion."
         },
         {
           "name": "Central Park",
-          "latitude": 40.782694,
-          "longitude": -73.965584,
+          "latitude": 40.7837583791843,
+          "longitude": -73.9656127750485,
           "category": "Nature",
           "neighborhood": "Upper East Side",
           "description": "843 acres of meadows, lakes, and woodland paths."
@@ -1517,8 +1517,8 @@
         },
         {
           "name": "Columbus Park",
-          "latitude": 40.7158756505874,
-          "longitude": -74.0000208453662,
+          "latitude": 40.7151019157888,
+          "longitude": -73.9999464043385,
           "category": "Nature",
           "neighborhood": "Chinatown",
           "description": "Historic park in Chinatown that serves as a community gathering place, featuring traditional activities like tai chi, xiangqi (Chinese chess), and cultural celebrations."
@@ -1541,8 +1541,8 @@
         },
         {
           "name": "Domino Park",
-          "latitude": 40.715,
-          "longitude": -73.96778,
+          "latitude": 40.7152419437855,
+          "longitude": -73.9675507073447,
           "category": "Nature",
           "neighborhood": "Williamsburg",
           "description": "A textbook example of how to turn an abandoned sugar-refinery waterfront into pure public-space gold."
@@ -1741,8 +1741,8 @@
         },
         {
           "name": "Hamilton Fish Park",
-          "latitude": 40.7202717216615,
-          "longitude": -73.9809240238773,
+          "latitude": 40.7197617519093,
+          "longitude": -73.9806259950057,
           "category": "Nature",
           "neighborhood": "Lower East Side",
           "description": "Historic rec center, pool, and playgrounds serving the LES community for over a century."
@@ -1861,8 +1861,8 @@
         },
         {
           "name": "La Plaza Cultural",
-          "latitude": 40.7254607489919,
-          "longitude": -73.978468718265,
+          "latitude": 40.7254200589893,
+          "longitude": -73.9787313988776,
           "category": "Nature",
           "neighborhood": "East Village",
           "description": "Community garden and arts space turning a once‑vacant lot into a vibrant green commons."
@@ -1885,8 +1885,8 @@
         },
         {
           "name": "Little Island",
-          "latitude": 40.7420303929042,
-          "longitude": -74.0102829562118,
+          "latitude": 40.7418290454588,
+          "longitude": -74.0101455991957,
           "category": "Nature",
           "neighborhood": "Meatpacking District",
           "description": "Pier-top park of sculpted tulip pots and river views."
@@ -1941,8 +1941,8 @@
         },
         {
           "name": "Main Street Lawn",
-          "latitude": 40.70459,
-          "longitude": -73.99024,
+          "latitude": 40.7043425413694,
+          "longitude": -73.989895974468,
           "category": "Nature",
           "neighborhood": "DUMBO",
           "description": "Expansive turf under the Manhattan Bridge—perfect for picnics and 'YO/OY' selfies."
@@ -1957,32 +1957,32 @@
         },
         {
           "name": "Manhattan Bridge",
-          "latitude": 40.7077529374811,
-          "longitude": -73.9906383177278,
+          "latitude": 40.7075287208745,
+          "longitude": -73.9909486977106,
           "category": "Historical",
           "neighborhood": "DUMBO",
           "description": "1909 suspension bridge connecting Manhattan and Brooklyn with distinctive towers."
         },
         {
           "name": "Marsha P. Johnson State Park",
-          "latitude": 40.721504,
-          "longitude": -73.962036,
+          "latitude": 40.7214845547624,
+          "longitude": -73.9620613936772,
           "category": "Nature",
           "neighborhood": "Williamsburg",
           "description": "Grassy river views and the Saturday Smorgasburg food frenzy."
         },
         {
           "name": "McCarren Park",
-          "latitude": 40.722215,
-          "longitude": -73.951423,
+          "latitude": 40.720886271047,
+          "longitude": -73.9513911311328,
           "category": "Nature",
           "neighborhood": "Williamsburg",
           "description": "North Brooklyn's back yard—softball, track, dog run, repeat."
         },
         {
           "name": "McGolrick Park",
-          "latitude": 40.724463,
-          "longitude": -73.943634,
+          "latitude": 40.7244485614551,
+          "longitude": -73.9433636862995,
           "category": "Nature",
           "neighborhood": "Greenpoint",
           "description": "Canopy of plane trees, WPA pavilion, and weekend farmers' market vibes."
@@ -2045,8 +2045,8 @@
         },
         {
           "name": "New York Public Library",
-          "latitude": 40.7529921161936,
-          "longitude": -73.9818141162971,
+          "latitude": 40.7531721611579,
+          "longitude": -73.9821220138318,
           "category": "Historical",
           "neighborhood": "Midtown",
           "description": "Beaux‑Arts flagship guarded by Patience and Fortitude."
@@ -2101,8 +2101,8 @@
         },
         {
           "name": "Pebble Beach",
-          "latitude": 40.70452,
-          "longitude": -73.9906,
+          "latitude": 40.7042873968013,
+          "longitude": -73.9905185697384,
           "category": "Nature",
           "neighborhood": "DUMBO",
           "description": "Small waterfront area in Brooklyn Bridge Park with Manhattan skyline views."
@@ -2117,8 +2117,8 @@
         },
         {
           "name": "Port Authority Bus Terminal",
-          "latitude": 40.7568255504295,
-          "longitude": -73.990441967546,
+          "latitude": 40.757197110604,
+          "longitude": -73.9916885730063,
           "category": "Cultural",
           "neighborhood": "Hell's Kitchen",
           "description": "Transit hub serving interstate buses just west of Times Square."
@@ -2149,8 +2149,8 @@
         },
         {
           "name": "Riverside Park",
-          "latitude": 40.8096621998003,
-          "longitude": -73.9673029373645,
+          "latitude": 40.8082248021397,
+          "longitude": -73.966983411547,
           "category": "Nature",
           "neighborhood": "Upper West Side",
           "description": "Hudson-side greenway of lawns, promenades, and shade trees."
@@ -2189,8 +2189,8 @@
         },
         {
           "name": "Sara D. Roosevelt Park",
-          "latitude": 40.721887133615,
-          "longitude": -73.991542503038,
+          "latitude": 40.720232595007,
+          "longitude": -73.9923416284553,
           "category": "Nature",
           "neighborhood": "Lower East Side",
           "description": "Linear park stretching through the Lower East Side, providing green space and recreational facilities connecting diverse neighborhoods from Chinatown to the East Village."
@@ -2421,8 +2421,8 @@
         },
         {
           "name": "Tompkins Square",
-          "latitude": 40.7265514313407,
-          "longitude": -73.9817841032323,
+          "latitude": 40.7264664337763,
+          "longitude": -73.9817277082981,
           "category": "Nature",
           "neighborhood": "East Village",
           "description": "East Village commons of protests, pups, and punk — a community park with real edge and heart."
@@ -2461,8 +2461,8 @@
         },
         {
           "name": "Washington Square Park",
-          "latitude": 40.7310219833979,
-          "longitude": -73.9972998167265,
+          "latitude": 40.7308697609728,
+          "longitude": -73.9976018708652,
           "category": "Nature",
           "neighborhood": "Greenwich Village",
           "description": "The Village's living room — marble arch, buskers, chess hustlers, and NYU energy."
@@ -2501,8 +2501,8 @@
         },
         {
           "name": "WNYC Transmitter Park",
-          "latitude": 40.730035,
-          "longitude": -73.960979,
+          "latitude": 40.7298855125409,
+          "longitude": -73.9607347789941,
           "category": "Nature",
           "neighborhood": "Greenpoint",
           "description": "Tiny pier park where radio once ruled, sunsets still do."
@@ -2547,9 +2547,17 @@
           "description": "Lively street market on Palermo's south side where vendors shout and scooters weave through stalls overflowing with produce, meats, and street food; the bazaar blends Italian staples with North African spices."
         },
         {
+          "name": "Basilica della Santissima Trinità del Cancelliere",
+          "latitude": 38.1136845504117,
+          "longitude": 13.3689740983634,
+          "category": "Historical",
+          "neighborhood": "Kalsa",
+          "description": "An austere Norman basilica and one of Palermo’s finest surviving examples of medieval architecture."
+        },
+        {
           "name": "Botanical Gardens of Palermo",
-          "latitude": 38.1134331356558,
-          "longitude": 13.3727251332881,
+          "latitude": 38.112460635762,
+          "longitude": 13.3748255568209,
           "category": "Nature",
           "neighborhood": "Kalsa",
           "description": "Research-focused botanical garden opened in 1795, housing rare and exotic plants and serving as an educational institution for botanical science."
@@ -2563,6 +2571,14 @@
           "description": "Royal chapel commissioned by King Roger II and completed in 1143, famous for glittering Byzantine mosaics paired with carved Arab-Norman wooden ceilings."
         },
         {
+          "name": "Chiesa di San Domenico",
+          "latitude": 38.1191492263555,
+          "longitude": 13.3631867383149,
+          "category": "Historical",
+          "neighborhood": "Loggia",
+          "description": "A perfect example of Baroque architecture and burial site for illustrious Palermitans."
+        },
+        {
           "name": "Fontana Pretoria / Piazza Pretoria",
           "latitude": 38.11569,
           "longitude": 13.36189,
@@ -2572,8 +2588,8 @@
         },
         {
           "name": "Foro Italico",
-          "latitude": 38.1174,
-          "longitude": 13.37494,
+          "latitude": 38.1172078408013,
+          "longitude": 13.3747461522274,
           "category": "Nature",
           "neighborhood": "Kalsa",
           "description": "Seafront promenade and green space created in 1582 and later expanded along Palermo's waterfront."
@@ -2593,6 +2609,14 @@
           "category": "Historical",
           "neighborhood": "Albergheria",
           "description": "Twelfth-century church built by Admiral George of Antioch in thanks to the Virgin Mary; originally a Greek-cross plan, the church has been altered over centuries and even hosted Sicily's aristocratic parliament after the 1282 uprising."
+        },
+        {
+          "name": "Mercato del Capo",
+          "latitude": 38.1191138527799,
+          "longitude": 13.3539281660382,
+          "category": "Historical",
+          "neighborhood": "Monte di Pietà",
+          "description": "A historic Palermo market packed with street food, produce, and local life."
         },
         {
           "name": "Monastery of Santa Caterina",
@@ -2635,6 +2659,14 @@
           "description": "Fourteenth-century fortress-palace and later seat of the Spanish Inquisition; preserved dungeons feature chilling etchings by prisoners."
         },
         {
+          "name": "Palazzo delle Poste e Telegrafi",
+          "latitude": 38.1208481798506,
+          "longitude": 13.3616867181663,
+          "category": "Historical",
+          "neighborhood": "Loggia",
+          "description": "A hefty example of brutalist architecture housing the central post office."
+        },
+        {
           "name": "Palazzo Mirto",
           "latitude": 38.11674,
           "longitude": 13.36805,
@@ -2660,19 +2692,27 @@
         },
         {
           "name": "Palermo Cathedral",
-          "latitude": 38.11447,
-          "longitude": 13.35574,
+          "latitude": 38.1141207283415,
+          "longitude": 13.3559678871302,
           "category": "Historical",
           "neighborhood": "Albergheria",
           "description": "Cathedral complex begun in 1185 that blends Norman, Gothic, Baroque, and Neoclassical styles; houses royal tombs and richly decorated chapels."
         },
         {
           "name": "Piazza Marina",
-          "latitude": 38.11771,
-          "longitude": 13.3682,
+          "latitude": 38.1175508788584,
+          "longitude": 13.3691373215975,
           "category": "Nature",
           "neighborhood": "Kalsa",
           "description": "Historic square in the Kalsa quarter dominated by the Garibaldi Garden, which hosts Europe's largest Ficus macrophylla and was laid out in 1863; the area was once a swamp used by the Spanish Inquisition."
+        },
+        {
+          "name": "Porta Felice",
+          "latitude": 38.1197417583699,
+          "longitude": 13.3713790345524,
+          "category": "Historical",
+          "neighborhood": "Kalsa",
+          "description": "Former city gates decorated with colonnades, balconies & loggias in Renaissance & baroque styles."
         },
         {
           "name": "Porta Nuova",
@@ -2716,16 +2756,16 @@
         },
         {
           "name": "Teatro Massimo",
-          "latitude": 38.12042,
-          "longitude": 13.35793,
+          "latitude": 38.1201373101781,
+          "longitude": 13.3571266788683,
           "category": "Cultural",
           "neighborhood": "Monte di Pietà",
           "description": "Opera house inaugurated in 1897, renowned for grand neoclassical architecture, superb acoustics, and status as one of Europe's largest theaters."
         },
         {
           "name": "Teatro Politeama",
-          "latitude": 38.12531,
-          "longitude": 13.35718,
+          "latitude": 38.125036437323,
+          "longitude": 13.356409922896,
           "category": "Cultural",
           "neighborhood": "Politeama",
           "description": "Nineteenth-century neoclassical theater crowned with a bronze quadriga; its open-air stage and arcaded facade make it Palermo's second major opera house."
@@ -2755,8 +2795,8 @@
         },
         {
           "name": "Arc de Triomphe",
-          "latitude": 48.87391,
-          "longitude": 2.29481,
+          "latitude": 48.8738173058945,
+          "longitude": 2.29504287317423,
           "category": "Historical",
           "neighborhood": "8th Arrondissement",
           "description": "Monumental arch at Place Charles de Gaulle honouring Napoleon's victories; construction began in 1806 and the 50-m-high arch is engraved with bas-reliefs and the names of battles and generals."
@@ -2786,6 +2826,14 @@
           "description": "Lively district surrounding Place de la Bastille, known for its bars, concert venues and the Bassin de l'Arsenal marina."
         },
         {
+          "name": "Belleville",
+          "latitude": 48.8715788282775,
+          "longitude": 2.38779755441761,
+          "category": "Neighborhood",
+          "neighborhood": "Belleville",
+          "description": "A lively Paris neighborhood known for its street art, multicultural roots, and hilltop views."
+        },
+        {
           "name": "Buste de Dalida",
           "latitude": 48.8885695021422,
           "longitude": 2.3380638553697,
@@ -2802,6 +2850,14 @@
           "description": "Legendary Saint-Germain café, long associated with Parisian writers, artists, philosophers, and café culture."
         },
         {
+          "name": "Canal Saint-Martin",
+          "latitude": 48.8764890291963,
+          "longitude": 2.3662061971091,
+          "category": "Historical",
+          "neighborhood": "10th Arrondissement",
+          "description": "A tree-lined canal known for its iron footbridges, waterside cafés, and laid-back local atmosphere."
+        },
+        {
           "name": "Carnavalet Museum",
           "latitude": 48.85722,
           "longitude": 2.36278,
@@ -2811,8 +2867,8 @@
         },
         {
           "name": "Champ de Mars",
-          "latitude": 48.85593,
-          "longitude": 2.29822,
+          "latitude": 48.8552861363219,
+          "longitude": 2.29917480484764,
           "category": "Nature",
           "neighborhood": "7th Arrondissement",
           "description": "Vast open park stretching from the Eiffel Tower to the Ecole Militaire; once a military parade ground, now a popular spot for picnics and national celebrations."
@@ -2858,6 +2914,14 @@
           "description": "Museum dedicated to Salvador Dalí’s surreal sculptures, drawings, and dreamlike imagination."
         },
         {
+          "name": "Église Saint-Germain-des-Prés",
+          "latitude": 48.854016043933,
+          "longitude": 2.33372986767711,
+          "category": "Historical",
+          "neighborhood": "6th Arrondissement",
+          "description": "Paris’s oldest church, with medieval roots and centuries of art, architecture, and history."
+        },
+        {
           "name": "Église Saint-Pierre de Montmartre",
           "latitude": 48.8867583903053,
           "longitude": 2.34172234730671,
@@ -2875,11 +2939,35 @@
         },
         {
           "name": "Eiffel Tower",
-          "latitude": 48.85887,
-          "longitude": 2.29512,
+          "latitude": 48.8582734265645,
+          "longitude": 2.29398399227265,
           "category": "Historical",
           "neighborhood": "7th Arrondissement",
           "description": "Wrought-iron lattice tower built 1887-89 for the 1889 Universal Exhibition; named after engineer Gustave Eiffel and now a 330-m-tall global icon."
+        },
+        {
+          "name": "Eugène Delacroix Museum",
+          "latitude": 48.8546180348652,
+          "longitude": 2.33559322532774,
+          "category": "Historical",
+          "neighborhood": "Saint-Germain-Des-Près",
+          "description": "Sketches & paintings by enigmatic artist Delacroix, displayed in his house, studio & small museum."
+        },
+        {
+          "name": "Faune dansant",
+          "latitude": 48.8477544776517,
+          "longitude": 2.33980553882259,
+          "category": "Art",
+          "neighborhood": "6th Arrondissement",
+          "description": "Le Faune Dansant is a lively bronze statue tucked away in Paris’s Jardin du Luxembourg."
+        },
+        {
+          "name": "Fontaine Médicis",
+          "latitude": 48.8481302129384,
+          "longitude": 2.33932945436822,
+          "category": "Historical",
+          "neighborhood": "6th Arrondissement",
+          "description": "Historic, decorative fountain with sculptures in a quiet, tree-shaded area of Luxembourg Garden."
         },
         {
           "name": "Grand Palais",
@@ -2954,7 +3042,7 @@
           "description": "A grand riverside institute dedicated to French art, science, language, and culture."
         },
         {
-          "name": "Latin Quarter (Quartier Latin)",
+          "name": "Latin Quarter",
           "latitude": 48.84803,
           "longitude": 2.35554,
           "category": "Cultural",
@@ -3090,6 +3178,14 @@
           "description": "A former artists’ residence overlooking Montmartre’s vineyards, now a museum tracing the neighborhood’s bohemian, artistic, and cabaret history."
         },
         {
+          "name": "Musée Maillol",
+          "latitude": 48.8548050842119,
+          "longitude": 2.32492665767275,
+          "category": "Historical",
+          "neighborhood": "7th Arrondissement",
+          "description": "A small Paris museum dedicated to Aristide Maillol, with changing exhibitions spanning modern and contemporary art."
+        },
+        {
           "name": "Musée National Picasso‑Paris",
           "latitude": 48.85983,
           "longitude": 2.36261,
@@ -3139,24 +3235,24 @@
         },
         {
           "name": "Palais Garnier",
-          "latitude": 48.87213,
-          "longitude": 2.33142,
+          "latitude": 48.8718106075373,
+          "longitude": 2.33179596446013,
           "category": "Art",
           "neighborhood": "9th Arrondissement",
           "description": "Opulent 1,979-seat opera house completed in 1875 by architect Charles Garnier; its marble foyer and gilded auditorium epitomise Second-Empire grandeur."
         },
         {
           "name": "Panthéon",
-          "latitude": 48.84635,
-          "longitude": 2.34632,
+          "latitude": 48.8464023603707,
+          "longitude": 2.3453632511121,
           "category": "Historical",
           "neighborhood": "Latin Quarter",
           "description": "Neoclassical mausoleum built between 1758 and 1790 as a church; it now honours France's great men and women, housing the tombs of Voltaire, Rousseau, Marie Curie and others."
         },
         {
           "name": "Parc des Buttes-Chaumont",
-          "latitude": 48.8810660167225,
-          "longitude": 2.38277162886061,
+          "latitude": 48.8795385449146,
+          "longitude": 2.38352851409591,
           "category": "Nature",
           "neighborhood": "19th Arrondissement",
           "description": "19th-century park in former quarry, with tall trees, lake, waterfalls and old, iron railway bridge."
@@ -3195,56 +3291,56 @@
         },
         {
           "name": "Place Dauphine",
-          "latitude": 48.85642,
-          "longitude": 2.34225,
+          "latitude": 48.8566856884123,
+          "longitude": 2.34215839967984,
           "category": "Historical",
           "neighborhood": "Île de la Cité",
           "description": "Triangular square commissioned by Henri IV in 1607 and named after his heir; brick‑and‑stone houses surround a quiet park and cafés."
         },
         {
           "name": "Place de la Bastille",
-          "latitude": 48.85331,
-          "longitude": 2.36939,
+          "latitude": 48.8528394496005,
+          "longitude": 2.36895649044262,
           "category": "Historical",
           "neighborhood": "Bastille",
           "description": "Square on the site of the Bastille prison stormed on 14 July 1789; today it is a hub for demonstrations, nightlife and the July Column."
         },
         {
           "name": "Place de la Concorde",
-          "latitude": 48.86572,
-          "longitude": 2.32103,
+          "latitude": 48.865604535168,
+          "longitude": 2.32108532952303,
           "category": "Historical",
           "neighborhood": "8th Arrondissement",
           "description": "Vast 18th-century square designed by Ange-Jacques Gabriel and renamed during the French Revolution; features the 23-m Luxor Obelisk and two monumental fountains."
         },
         {
           "name": "Place de la Republique",
-          "latitude": 48.86819,
-          "longitude": 2.36336,
+          "latitude": 48.8675037324485,
+          "longitude": 2.36392803827255,
           "category": "Historical",
           "neighborhood": "3rd Arrondissement",
           "description": "Large square on the border of the 3rd, 10th and 11th Arrondissements; formerly Place du Chateau d'Eau, it was renamed in 1879 and contains the Monument a la Republique with a statue of Marianne."
         },
         {
           "name": "Place des Vosges",
-          "latitude": 48.85572,
-          "longitude": 2.36528,
+          "latitude": 48.8556333329106,
+          "longitude": 2.36553272681599,
           "category": "Historical",
           "neighborhood": "Le Marais",
           "description": "Henry IV's red‑brick square (1605–1612), Paris's oldest planned square, surrounded by arcaded mansions and a formal garden."
         },
         {
           "name": "Place du Tertre",
-          "latitude": 48.886515423717,
-          "longitude": 2.34079558946201,
+          "latitude": 48.8865365180974,
+          "longitude": 2.34080331265064,
           "category": "Cultural",
           "neighborhood": "Montmartre",
           "description": "Historic Montmartre square known for its open-air artists, cafés, and village-like atmosphere."
         },
         {
           "name": "Place Vendome",
-          "latitude": 48.86753,
-          "longitude": 2.32936,
+          "latitude": 48.8674787728615,
+          "longitude": 2.32947617041355,
           "category": "Cultural",
           "neighborhood": "1st Arrondissement",
           "description": "Neoclassical square north of the Tuileries known for the Ritz, Cartier, Chanel and the Ministry of Justice; the central Vendome Column commemorates Napoleon's victories."
@@ -3259,16 +3355,16 @@
         },
         {
           "name": "Pont de la Tournelle",
-          "latitude": 48.85083,
-          "longitude": 2.35544,
+          "latitude": 48.8506928236038,
+          "longitude": 2.35552610022833,
           "category": "Historical",
           "neighborhood": "Île Saint‑Louis",
           "description": "Three‑arch bridge linking Île Saint‑Louis to the Left Bank; rebuilt in 1928 and topped by a statue of St Genevieve."
         },
         {
           "name": "Pont Marie",
-          "latitude": 48.85262,
-          "longitude": 2.35717,
+          "latitude": 48.8528603680662,
+          "longitude": 2.35743432535196,
           "category": "Historical",
           "neighborhood": "Île Saint‑Louis",
           "description": "Stone arch bridge connecting Île Saint‑Louis to the Right Bank, built 1614‑1635 and among the oldest bridges in Paris."
@@ -3283,8 +3379,8 @@
         },
         {
           "name": "Pyramide du Louvre",
-          "latitude": 48.86115,
-          "longitude": 2.33584,
+          "latitude": 48.8609982982262,
+          "longitude": 2.33589112637808,
           "category": "Art",
           "neighborhood": "1st Arrondissement",
           "description": "Glass pyramid designed by I.M. Pei and commissioned by President Francois Mitterrand; completed in 1989, it stands 22 m high with 673 panes and serves as the Louvre's main entrance."
@@ -3323,16 +3419,16 @@
         },
         {
           "name": "Square du Vert‑Galant",
-          "latitude": 48.85756,
-          "longitude": 2.34003,
+          "latitude": 48.8576435862093,
+          "longitude": 2.33962894657276,
           "category": "Nature",
           "neighborhood": "Île de la Cité",
           "description": "Leafy point park (1884) at the tip of Île de la Cité, named for King Henri IV and offering panoramic views of the Seine."
         },
         {
           "name": "Square Louise Michel",
-          "latitude": 48.885043998932,
-          "longitude": 2.34338971861147,
+          "latitude": 48.8858718661933,
+          "longitude": 2.34422388415097,
           "category": "Historical",
           "neighborhood": "Montmartre",
           "description": "A lively green slope beneath Sacré-Cœur, where Montmartre opens into one of its most iconic views over Paris."
@@ -3347,24 +3443,24 @@
         },
         {
           "name": "Stravinsky Fountain",
-          "latitude": 48.85963,
-          "longitude": 2.35134,
+          "latitude": 48.8594681661236,
+          "longitude": 2.35151297704122,
           "category": "Art",
           "neighborhood": "Beaubourg",
           "description": "Whimsical fountain of 16 kinetic sculptures inspired by Stravinsky's 'Rite of Spring', created in 1983 by Jean Tinguely and Niki de Saint Phalle."
         },
         {
           "name": "The Centre Pompidou",
-          "latitude": 48.86084,
-          "longitude": 2.35217,
+          "latitude": 48.8606534709048,
+          "longitude": 2.35215478420631,
           "category": "Cultural",
           "neighborhood": "Beaubourg",
           "description": "High‑tech cultural centre housing Europe's largest modern and contemporary art collection, plus a library and music centre; designed by Renzo Piano, Richard Rogers and Gianfranco Franchini and opened in 1977."
         },
         {
           "name": "Tuileries Garden",
-          "latitude": 48.86365,
-          "longitude": 2.32749,
+          "latitude": 48.8632189623318,
+          "longitude": 2.32808529298404,
           "category": "Nature",
           "neighborhood": "1st Arrondissement",
           "description": "Formal garden laid out by Catherine de Medicis in the 16th century and redesigned by Andre Le Notre for Louis XIV; it later became a stage for royal festivities and revolutionary events."
