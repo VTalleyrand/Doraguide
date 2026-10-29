@@ -39,13 +39,15 @@ export const routeMetadata = {
   },
   '/terms': {
     title: 'Terms of Service — Dora',
-    description: 'Read the Dora terms of service.',
+    description:
+      'Read the terms for using Dora, covering accounts, passes and subscriptions, shared listening features, and acceptable use.',
     canonicalPath: '/terms',
     socialTitle: 'Terms of Service — Dora',
   },
   '/privacy': {
     title: 'Privacy Policy — Dora',
-    description: 'Read the Dora privacy policy.',
+    description:
+      'Learn what information Dora collects, how it is used, and the choices you have over location and notification permissions.',
     canonicalPath: '/privacy',
     socialTitle: 'Privacy Policy — Dora',
   },
