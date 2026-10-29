@@ -7,6 +7,7 @@ import {
 } from '../client/src/appBanner.js';
 import {
   getRouteMetadata,
+  notFoundMetadata,
   routeMetadata,
   siteUrl,
   socialImage,
@@ -114,6 +115,15 @@ for (const routePath of prerenderRoutes) {
 
   await writeRoute(routePath, html);
 }
+
+// Served by nginx (error_page 404) for any URL that has no prerendered page.
+const notFoundHtml = applyMetadata(
+  template.replace('<div id="root"></div>', `<div id="root">${render('/404')}</div>`),
+  notFoundMetadata
+).replace(/\s*<link\s+rel="canonical"\s+href="[^"]*"\s*\/>/, '')
+  .replace(/\s*<meta\s+property="og:url"\s+content="[^"]*"\s*\/>/, '')
+  .replace('</head>', '    <meta name="robots" content="noindex" />\n  </head>');
+await writeFile(path.join(distDir, '404.html'), notFoundHtml);
 
 const escapeXml = (value) =>
   value
