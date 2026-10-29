@@ -100,6 +100,8 @@ const writeRoute = async (routePath, html) => {
 
 const prerenderRoutes = [
   ...Object.keys(routeMetadata),
+  // Alias of /help (see routes.jsx); getRouteMetadata resolves its /help metadata.
+  '/support',
   ...cityGuideRoutePaths,
   ...neighborhoodGuideRoutePaths,
   ...storyRoutePaths,
