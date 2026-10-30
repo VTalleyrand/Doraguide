@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T15:58:25.714Z",
+  "generatedAt": "2026-10-30T16:16:50.145Z",
   "cities": [
     {
       "slug": "amsterdam",
@@ -187,7 +187,7 @@
           "latitude": 52.36948,
           "longitude": 4.90121,
           "category": "Historical",
-          "neighborhood": "Centrum",
+          "neighborhood": "Amsterdam-Centrum",
           "description": "17th‑century townhouse where Rembrandt lived and worked, now a museum preserving his life and art."
         },
         {
@@ -283,7 +283,7 @@
           "latitude": 52.3667,
           "longitude": 4.8947,
           "category": "Cultural",
-          "neighborhood": "Centrum",
+          "neighborhood": "Amsterdam-Centrum",
           "description": "Extravagant 1921 Art Deco movie palace blending Amsterdam School and Art Nouveau design."
         },
         {

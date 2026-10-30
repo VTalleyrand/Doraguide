@@ -5,6 +5,7 @@ import {
   storyRoutePaths,
 } from './data/featuredLocations.js';
 import {
+  formatPlaceCount,
   getCityGuideByPath,
   getNeighborhoodGuideByPath,
 } from './data/cityGuides.js';
@@ -101,7 +102,7 @@ export const getRouteMetadata = (pathname) => {
 
     return {
       title,
-      description: `Explore ${neighborhood.landmarkCount} places in ${neighborhood.name}, ${city.name}. Find places to see, local history, and stories behind the places around you.`,
+      description: `Explore ${formatPlaceCount(neighborhood.landmarkCount)} in ${neighborhood.name}, ${city.name}. Find places to see, local history, and stories behind the places around you.`,
       canonicalPath,
       socialTitle: `Discover ${neighborhood.name} with Dora`,
     };
