@@ -1,13 +1,5 @@
 import './NotFound.css';
 
-const links = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/help', label: 'Help' },
-  { href: '/press', label: 'Press' },
-  { href: '/vote', label: 'Vote for a city' },
-];
-
 function NotFound() {
   return (
     <section className="not-found-page">
@@ -19,11 +11,7 @@ function NotFound() {
           homepage or try one of these pages.
         </p>
         <nav className="not-found-page__links" aria-label="Main sections">
-          {links.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
+          <a href="/">Go Home</a>
         </nav>
       </div>
     </section>
