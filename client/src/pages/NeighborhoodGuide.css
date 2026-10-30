@@ -84,14 +84,7 @@
 }
 
 .neighborhood-guide__content {
-  padding: 8rem 0 0;
-}
-
-.neighborhood-guide__closing h2 {
-  margin: 0;
-  font-size: var(--type-section-title-size);
-  font-weight: var(--type-section-title-weight);
-  line-height: var(--type-section-title-line-height);
+  padding: 8rem 0 8rem;
 }
 
 .neighborhood-guide__explore {
@@ -207,41 +200,6 @@
   top: 6.4rem;
 }
 
-.neighborhood-guide__closing {
-  display: flex;
-  justify-content: center;
-  margin-top: 9rem;
-  padding: clamp(5.6rem, 8vw, 8rem) 2.4rem;
-  background: var(--color-surface);
-}
-
-.neighborhood-guide__closing-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 60ch;
-  text-align: center;
-}
-
-.neighborhood-guide__closing h2 {
-  margin: 0;
-  font-size: var(--type-section-title-size);
-  font-weight: var(--type-section-title-weight);
-  line-height: var(--type-section-title-line-height);
-}
-
-.neighborhood-guide__closing p {
-  max-width: 49rem;
-  margin: 1.2rem 0 0;
-  color: var(--color-text-subtle);
-  font-size: var(--type-body-size);
-  line-height: var(--type-body-line-height);
-}
-
-.neighborhood-guide__closing .primary-btn {
-  margin-top: 2rem;
-}
-
 @media (max-width: 760px) {
   .neighborhood-guide__inner {
     width: min(100% - 3.2rem, 112rem);
@@ -256,7 +214,7 @@
   }
 
   .neighborhood-guide__content {
-    padding: 6rem 0 0;
+    padding: 6rem 0 6rem;
   }
 
   .neighborhood-guide__explore {
@@ -282,11 +240,6 @@
 
   .neighborhood-guide__place-copy {
     padding: 1.5rem 1.6rem;
-  }
-
-  .neighborhood-guide__closing {
-    margin-top: 6rem;
-    padding: 5.6rem 1.6rem;
   }
 }
 
