@@ -44,6 +44,25 @@
   margin-top: 1.3rem;
 }
 
+.neighborhood-guide__back-link {
+  display: inline-block;
+  margin-bottom: 1.6rem;
+  color: var(--marker-indigo);
+  font-size: var(--type-label-size);
+  font-weight: 700;
+  line-height: var(--type-label-line-height);
+  text-decoration: none;
+}
+
+.neighborhood-guide__back-link:hover {
+  text-decoration: underline;
+}
+
+.neighborhood-guide__back-link:focus-visible {
+  outline: 0.3rem solid var(--marker-indigo);
+  outline-offset: 0.3rem;
+}
+
 .neighborhood-guide__more-trigger {
   padding: 0;
   border: 0;
