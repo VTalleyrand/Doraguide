@@ -65,7 +65,7 @@
 }
 
 .neighborhood-guide__content {
-  padding: 8rem 0 0;
+  padding: 8rem 0 8rem;
 }
 
 .neighborhood-guide__explore {
@@ -195,7 +195,7 @@
   }
 
   .neighborhood-guide__content {
-    padding: 6rem 0 0;
+    padding: 6rem 0 6rem;
   }
 
   .neighborhood-guide__explore {
