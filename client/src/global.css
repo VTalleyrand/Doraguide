@@ -241,6 +241,14 @@ body.menu-open {
   gap: 0;
 }
 
+.app-layout--city-guide {
+  min-height: 0;
+}
+
+.app-layout--city-guide .main-content {
+  flex: 0 0 auto;
+}
+
 .primary-btn {
   display: inline-flex;
   align-items: center;
