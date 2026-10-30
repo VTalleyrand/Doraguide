@@ -73,6 +73,13 @@ export const routeMetadata = {
     canonicalPath: '/vote',
     socialTitle: 'Vote for Dora’s Next City',
   },
+  '/cities': {
+    title: 'City Guides: Places to See in Every Dora City | Dora',
+    description:
+      'Browse Dora city guides to find places to see, neighborhoods to explore, and the stories behind the landmarks in each city.',
+    canonicalPath: '/cities',
+    socialTitle: 'City Guides | Dora',
+  },
 };
 
 export const notFoundMetadata = {
