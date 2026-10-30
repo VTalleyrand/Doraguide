@@ -7,6 +7,7 @@ const Footer = () => {
         <div className="site-footer__brand">Dora</div>
         <nav className="site-footer__nav" aria-label="Footer">
           <a href="/about">About</a>
+          <a href="/cities">City guides</a>
           <a href="/terms">Terms of Service</a>
           <a href="/privacy">Privacy Policy</a>
           <a href="/press">Press</a>
