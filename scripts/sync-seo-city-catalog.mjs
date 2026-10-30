@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { canonicalNeighborhoodName } from '../client/src/data/neighborhoodAliases.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
@@ -35,8 +36,10 @@ const validateCatalog = (catalog) => {
       fail(`${city.slug} must include at least three landmarks.`);
     }
 
+    const slug = city.slug.trim().toLowerCase();
+
     return {
-      slug: city.slug.trim().toLowerCase(),
+      slug,
       name: city.name.trim(),
       countryCode: isNonEmptyString(city.countryCode)
         ? city.countryCode.trim().toUpperCase()
@@ -57,7 +60,7 @@ const validateCatalog = (catalog) => {
             ? landmark.category.trim()
             : 'Landmark',
           neighborhood: isNonEmptyString(landmark.neighborhood)
-            ? landmark.neighborhood.trim()
+            ? canonicalNeighborhoodName(slug, landmark.neighborhood.trim())
             : null,
           description: isNonEmptyString(landmark.description)
             ? landmark.description.trim()

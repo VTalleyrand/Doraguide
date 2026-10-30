@@ -1,5 +1,6 @@
 import { appStoreUrl } from '../metadata.js';
 import {
+  formatPlaceCount,
   getCityGuideByPath,
   getCityGuideFaq,
   getGuideNeighborhoods,
@@ -44,7 +45,7 @@ const CityGuide = ({ routePath }) => {
             >
               <div className="city-guide__neighborhood-heading">
                 <h3>{neighborhood.name}</h3>
-                <p>{neighborhood.landmarkCount} places in Dora</p>
+                <p>{formatPlaceCount(neighborhood.landmarkCount)} in Dora</p>
               </div>
               <ul aria-label={`Highlights in ${neighborhood.name}`}>
                 {neighborhood.highlights.map((highlight) => (

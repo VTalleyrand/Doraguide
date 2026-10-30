@@ -26,6 +26,18 @@ const contentTypes = {
   '.xml': 'application/xml; charset=utf-8',
 };
 
+// Retired guide routes → their replacement (see client/src/data/neighborhoodAliases.js).
+const permanentRedirects = new Map([
+  ['/cities/amsterdam/centrum', '/cities/amsterdam/amsterdam-centrum'],
+]);
+
+const getPermanentRedirect = (url) => {
+  const pathname =
+    url.pathname.length > 1 ? url.pathname.replace(/\/+$/, '') : url.pathname;
+  const target = permanentRedirects.get(pathname);
+  return target ? `${target}${url.search}` : null;
+};
+
 const sendJson = (response, statusCode, payload) => {
   response.writeHead(statusCode, {
     'Content-Type': 'application/json; charset=utf-8',
@@ -203,6 +215,17 @@ const server = createServer(async (request, response) => {
 
     if (url.pathname.startsWith('/api/')) {
       sendJson(response, 404, { error: 'not_found' });
+      return;
+    }
+
+    const redirectTarget = getPermanentRedirect(url);
+
+    if (redirectTarget) {
+      response.writeHead(301, {
+        'Cache-Control': 'public, max-age=86400',
+        Location: redirectTarget,
+      });
+      response.end();
       return;
     }
 

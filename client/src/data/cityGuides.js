@@ -1,18 +1,15 @@
 import cityCatalog from './seo-city-catalog.json' with { type: 'json' };
 import { normalizeSitePath } from './featuredLocations.js';
+import {
+  canonicalNeighborhoodName,
+  routeSlugForNeighborhood,
+} from './neighborhoodAliases.js';
 
 export const CITY_GUIDE_ROUTE_BASE = '/cities';
 export const CITY_GUIDE_ROUTE_PREFIX = `${CITY_GUIDE_ROUTE_BASE}/`;
 const MIN_MARKERS_PER_NEIGHBORHOOD = 2;
 
 const routeSlugForCity = (slug) => slug.replaceAll('_', '-');
-const routeSlugForNeighborhood = (value) =>
-  value
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
 
 export const cityGuides = cityCatalog.cities.map((city) => ({
   ...city,
@@ -48,9 +45,11 @@ export function getCityGuideByPath(path) {
 const getNeighborhoodGroups = (city) =>
   city.landmarks.reduce((groups, landmark) => {
     if (!landmark.neighborhood) return groups;
-    const current = groups.get(landmark.neighborhood) || [];
-    current.push(landmark);
-    groups.set(landmark.neighborhood, current);
+    const name = canonicalNeighborhoodName(city.slug, landmark.neighborhood);
+    const current = groups.get(name) || [];
+    if (current.some((item) => item.name === landmark.name)) return groups;
+    current.push({ ...landmark, neighborhood: name });
+    groups.set(name, current);
     return groups;
   }, new Map());
 
@@ -94,6 +93,8 @@ const getTopCategories = (landmarks) =>
     .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))
     .map(([category]) => category);
 
+export const formatPlaceCount = (count) => `${count} ${count === 1 ? 'place' : 'places'}`;
+
 const joinNames = (items) => {
   if (items.length < 2) return items[0] || '';
   if (items.length === 2) return `${items[0]} and ${items[1]}`;
@@ -126,7 +127,8 @@ export function getGuideNeighborhoods(city) {
     .map(([name, landmarks]) => ({
       name,
       routeSlug: routeSlugForNeighborhood(name),
-      landmarkCount: landmarks.length,
+      // Count the places the guide actually lists (see getNeighborhoodGuideContent).
+      landmarkCount: selectGuideLandmarks(landmarks, landmarks.length).length,
       highlights: selectGuideLandmarks(landmarks, 3).map((landmark) => landmark.name),
       landmarks,
     }))
@@ -231,7 +233,7 @@ export function getNeighborhoodGuideFaq(city, neighborhood) {
   return [
     {
       question: `What are the best places to see in ${neighborhood.name}, ${city.name}?`,
-      answer: `Dora has ${neighborhood.landmarkCount} places to discover in ${neighborhood.name}, including ${joinNames(featured)}. Beyond those, there are many other sites and things to see, including ${joinNames(categoryDescriptors)}.`,
+      answer: `Dora has ${formatPlaceCount(neighborhood.landmarkCount)} to discover in ${neighborhood.name}, including ${joinNames(featured)}. Beyond those, there are many other sites and things to see, including ${joinNames(categoryDescriptors)}.`,
     },
     {
       question: `Can I use Dora for a self-guided tour of ${neighborhood.name}?`,
@@ -247,7 +249,7 @@ export function getNeighborhoodGuideFaq(city, neighborhood) {
     },
     {
       question: `How many places can I explore in ${neighborhood.name}?`,
-      answer: `Dora currently includes ${neighborhood.landmarkCount} places in ${neighborhood.name}. The map above shows where they are located in the neighborhood.`,
+      answer: `Dora currently includes ${formatPlaceCount(neighborhood.landmarkCount)} in ${neighborhood.name}. The map above shows where they are located in the neighborhood.`,
     },
     {
       question: `Where should I start in ${neighborhood.name}?`,

@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { appStoreUrl } from '../metadata.js';
 import {
+  formatPlaceCount,
   getNeighborhoodGuideByPath,
   getNeighborhoodGuideContent,
   getNeighborhoodGuideFaq,
@@ -66,7 +67,7 @@ const NeighborhoodGuide = ({ routePath }) => {
             <h1 id="neighborhood-guide-title">Places to see in {neighborhood.name}.</h1>
             <p className="neighborhood-guide__intro">
               Looking for the best places to see in {neighborhood.name}? Dora brings together{' '}
-              {neighborhood.landmarkCount} places spanning {joinList(topics)}. When a place catches
+              {formatPlaceCount(neighborhood.landmarkCount)} spanning {joinList(topics)}. When a place catches
               your eye, press play in Dora to hear the story behind it.
               {!isIntroExpanded && (
                 <>
