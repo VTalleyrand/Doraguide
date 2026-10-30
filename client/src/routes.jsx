@@ -6,6 +6,7 @@ import Press from './pages/Press.jsx';
 import Help from './pages/Help.jsx';
 import CityVote from './pages/CityVote.jsx';
 import StoryListen from './pages/StoryListen.jsx';
+import CityGuidesIndex from './pages/CityGuidesIndex.jsx';
 import CityGuide from './pages/CityGuide.jsx';
 import NeighborhoodGuide from './pages/NeighborhoodGuide.jsx';
 import NotFound from './pages/NotFound.jsx';
@@ -34,6 +35,7 @@ export const routes = {
   '/help': Help,
   '/support': Help,
   '/vote': CityVote,
+  [CITY_GUIDE_ROUTE_BASE]: CityGuidesIndex,
 };
 
 export const normalizePath = normalizeSitePath;

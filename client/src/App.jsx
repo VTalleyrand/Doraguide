@@ -12,6 +12,7 @@ function App({ children, locationPath, locationHash }) {
   const isHomePage = locationPath === '/';
   const isStoryPage = isValidStoryPath(locationPath);
   const isCityGuidePage =
+    locationPath === '/cities' ||
     isValidCityGuidePath(locationPath) || isValidNeighborhoodGuidePath(locationPath);
 
   useEffect(() => {

@@ -59,6 +59,12 @@ const NeighborhoodGuide = ({ routePath }) => {
       <div className="neighborhood-guide__inner neighborhood-guide__content">
         <div className="neighborhood-guide__explore">
           <div className="neighborhood-guide__place-list">
+            <a
+              className="neighborhood-guide__back-link"
+              href={`/cities/${city.routeSlug}`}
+            >
+              &larr; Back to {city.name}
+            </a>
             <h1 id="neighborhood-guide-title">Places to see in {neighborhood.name}.</h1>
             <p className="neighborhood-guide__intro">
               Looking for the best places to see in {neighborhood.name}? Dora brings together{' '}
