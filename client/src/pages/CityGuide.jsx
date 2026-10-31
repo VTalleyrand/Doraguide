@@ -1,8 +1,10 @@
 import {
   formatPlaceCount,
   getCityGuideByPath,
+  getCityGuideFaq,
   getGuideNeighborhoods,
 } from '../data/cityGuides.js';
+import GuideFaq from '../components/GuideFaq.jsx';
 import './CityGuide.css';
 
 const CityGuide = ({ routePath }) => {
@@ -11,6 +13,7 @@ const CityGuide = ({ routePath }) => {
   if (!city) return null;
 
   const neighborhoods = getGuideNeighborhoods(city);
+  const faq = getCityGuideFaq(city);
 
   return (
     <section className="city-guide" aria-labelledby="city-guide-title">
@@ -51,8 +54,9 @@ const CityGuide = ({ routePath }) => {
             </a>
           ))}
         </div>
-      </div>
 
+        <GuideFaq questions={faq} />
+      </div>
     </section>
   );
 };

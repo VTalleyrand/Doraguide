@@ -3,7 +3,9 @@ import {
   formatPlaceCount,
   getNeighborhoodGuideByPath,
   getNeighborhoodGuideContent,
+  getNeighborhoodGuideFaq,
 } from '../data/cityGuides.js';
+import GuideFaq from '../components/GuideFaq.jsx';
 import NeighborhoodMap from '../components/NeighborhoodMap.jsx';
 import NeighborhoodPlaceCard from '../components/NeighborhoodPlaceCard.jsx';
 import './NeighborhoodGuide.css';
@@ -31,6 +33,7 @@ const NeighborhoodGuide = ({ routePath }) => {
 
   const { city, neighborhood } = guide;
   const { landmarks, categories } = getNeighborhoodGuideContent(neighborhood);
+  const faq = getNeighborhoodGuideFaq(city, neighborhood);
   const featuredNames = landmarks.slice(0, 3).map((landmark) => landmark.name);
   const topics = categories.map(topicLabel);
   const mapRef = useRef(null);
@@ -136,8 +139,9 @@ const NeighborhoodGuide = ({ routePath }) => {
             />
           </div>
         </div>
-      </div>
 
+        <GuideFaq questions={faq} />
+      </div>
     </section>
   );
 };
